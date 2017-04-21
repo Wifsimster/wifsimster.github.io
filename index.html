@@ -93,7 +93,8 @@
 <li>2 résistances <a href="http://www.ebay.com/itm/100PCS-4-7K-4K7-Ohms-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071125870?hash=item3ab09c236e:g:k9EAAOSwjVVV3n3n" target="_blank" rel="external">4.7kΩ</a>.</li>
 </ul>
 <p>Attention !<br>Le code est en LUA et nécessite donc d’avoir l’ESP8266 avec le firmware nodemcu.</p>
-<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>Github</p>
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/i2c_display_scheme.png" alt=""></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/i2c-display-mqtt" target="_blank" rel="external">Github</a></p>
 <h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le principe est le suivant :</p>
 <ol>
 <li>L’ESP créé un client MQTT avec un id unique;</li>
@@ -102,11 +103,12 @@
 <li>L’ESP affiche une première fois les données à l’écran;</li>
 <li>Puis à chaque fois que le broker MQTT reçoit des nouvelles données sur ce topic, notre client met à jour les données à l’écran.</li>
 </ol>
-<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2>
+<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/i2c_display.jpg" alt=""></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/21/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/" data-id="cj1s0h58k0000p0gfzmti82ze" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/21/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/" data-id="cj1rzwybo0000zogfg7dagfxd" class="article-share-link">Partager</a>
       
       
     </footer>
