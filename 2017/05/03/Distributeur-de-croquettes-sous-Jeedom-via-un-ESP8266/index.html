@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Distributeur de croquettes sous Jeedom via un ESP8266 | Wifsimster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IntroductionAfin d’éviter LE problème quotidien : « nourrir le chat affamé », j’ai réalisé un distributeur connecté à Jeedom. Ce distributeur est constitué d’un simple moteur 12v actionné par un doubl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Distributeur de croquettes sous Jeedom via un ESP8266">
+<meta property="og:url" content="http://yoursite.com/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/index.html">
+<meta property="og:site_name" content="Wifsimster">
+<meta property="og:description" content="IntroductionAfin d’éviter LE problème quotidien : « nourrir le chat affamé », j’ai réalisé un distributeur connecté à Jeedom. Ce distributeur est constitué d’un simple moteur 12v actionné par un doubl">
+<meta property="og:image" content="http://yoursite.com/images/cat_feeder.jpg">
+<meta property="og:image" content="http://yoursite.com/images/cat_feeder_02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/cat_feeder_03.jpg">
+<meta property="og:image" content="http://yoursite.com/images/relay_command.png">
+<meta property="og:image" content="http://yoursite.com/images/cat_feeder_jeedom.png">
+<meta property="og:image" content="http://yoursite.com/images/cat_feeder_virtual.png">
+<meta property="og:image" content="http://yoursite.com/images/cat_feeder_scenari.png">
+<meta property="og:image" content="http://yoursite.com/images/cat_feeder_dash.png">
+<meta property="og:updated_time" content="2017-05-03T08:37:13.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Distributeur de croquettes sous Jeedom via un ESP8266">
+<meta name="twitter:description" content="IntroductionAfin d’éviter LE problème quotidien : « nourrir le chat affamé », j’ai réalisé un distributeur connecté à Jeedom. Ce distributeur est constitué d’un simple moteur 12v actionné par un doubl">
+<meta name="twitter:image" content="http://yoursite.com/images/cat_feeder.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Wifsimster" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wifsimster</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/" class="article-date">
+  <time datetime="2017-05-03T08:26:51.000Z" itemprop="datePublished">03-05-2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Distributeur de croquettes sous Jeedom via un ESP8266
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Afin d’éviter LE problème quotidien : « nourrir le chat affamé », j’ai réalisé un distributeur connecté à Jeedom.</p>
+<p>Ce distributeur est constitué d’un simple moteur 12v actionné par un double relais et contrôler par un ESP8266.</p>
+<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Afin de réaliser ce montage, il vous faut :</p>
+<ul>
+<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
+<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
+<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up);</li>
+<li>1 <a href="http://www.ebay.com/itm/1pcs-5V-2-Channel-Relay-Module-for-Arduino-PIC-ARM-DSP-AVR-Electronic-/400985229770?hash=item5d5c9509ca:g:cJgAAOxy86RSY-Jq" target="_blank" rel="external">double relais</a> module (5v).</li>
+</ul>
+<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le distributeur est constitué d’un moteur 12v qui fait tourner une tige filetée à laquelle est fixé un plateau.</p>
+<p>Le plateau est verrouillé en rotation par deux fine tiges à la base du distributeur.</p>
+<p>En conséquence, selon le sens de rotation du moteur, la plateau descend ou monte.</p>
+<p>Un tuyau  de plus gros diamètre englobe le tout afin de récupérer les croquettes et les verse à la base par un bec.</p>
+<p>Le distributeur est connecté à Jeedom par un ESP8266 et actionne le double relais sur requête HTTP.</p>
+<p><img src="/images/cat_feeder.jpg" alt=""><br><img src="/images/cat_feeder_02.jpg" alt=""><br><img src="/images/cat_feeder_03.jpg" alt=""></p>
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/relay_command.png" alt=""></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/distributeur-lua" target="_blank" rel="external">Github</a></p>
+<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Création d’un script pour communiquer avec l’esp8266 du distributeur :</p>
+<p><img src="/images/cat_feeder_jeedom.png" alt=""></p>
+<p>Création d’un virtuel pour interagir avec le script précédent :</p>
+<p><img src="/images/cat_feeder_virtual.png" alt=""></p>
+<p>Création d’un scénario pour automatiser la distribution des croquettes :</p>
+<p><img src="/images/cat_feeder_scenari.png" alt=""></p>
+<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/cat_feeder_dash.png" alt=""></p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/_gSTuAhnkl0" frameborder="0" allowfullscreen></iframe></div>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/" data-id="cj28shc3g0002v4xwf1v9zbak" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Température et pression (BMP180) sous Jeedom via un ESP8266
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/25/Communication-sans-fil-independante-via-deux-esp8266/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Communication sans fil indépendante via deux esp8266</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">mai 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">avril 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/03/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/">Contrôle de prise Chacon DIO First via RaspberryPi</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/">Ambi-like avec 240 LED WS2812B et une Teensy 2.0</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Flash-d’un-ESP8266/">Flash d’un ESP8266</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/">Température et pression (BMP180) sous Jeedom via un ESP8266</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/">Distributeur de croquettes sous Jeedom via un ESP8266</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Wifsimster<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

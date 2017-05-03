@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Affichage de valeurs sur un écran I2C via un ESP8266 | Wifsimster</title>
+  <title>Température et pression (BMP180) sous Jeedom via un ESP8266 | Wifsimster</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IntroductionCet article met en avant l’utilisation d’un écran I2C OLED et d’un ESP8266 afin d’afficher des valeurs en provenance d’un broker MQTT. PrérequisPour réaliser ce montage, il vous faut :  1">
+  <meta name="description" content="Matériel 1 ESP8266; 1 capteur BMP180 (température et pression); 1 régulateur LF33CV (5v vers 3.3v); 1 résistance 1kΩ (pull-up).   Câblage JeedomCréer un device virtuel.  Veuillez à bien noter les ID d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Affichage de valeurs sur un écran I2C via un ESP8266">
-<meta property="og:url" content="http://yoursite.com/2017/04/21/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/index.html">
+<meta property="og:title" content="Température et pression (BMP180) sous Jeedom via un ESP8266">
+<meta property="og:url" content="http://yoursite.com/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/index.html">
 <meta property="og:site_name" content="Wifsimster">
-<meta property="og:description" content="IntroductionCet article met en avant l’utilisation d’un écran I2C OLED et d’un ESP8266 afin d’afficher des valeurs en provenance d’un broker MQTT. PrérequisPour réaliser ce montage, il vous faut :  1">
-<meta property="og:image" content="http://yoursite.com/images/i2c_display_scheme.png">
-<meta property="og:image" content="http://yoursite.com/images/i2c_display.jpg">
-<meta property="og:updated_time" content="2017-04-25T18:53:18.269Z">
+<meta property="og:description" content="Matériel 1 ESP8266; 1 capteur BMP180 (température et pression); 1 régulateur LF33CV (5v vers 3.3v); 1 résistance 1kΩ (pull-up).   Câblage JeedomCréer un device virtuel.  Veuillez à bien noter les ID d">
+<meta property="og:image" content="http://yoursite.com/images/bmp180.png">
+<meta property="og:image" content="http://yoursite.com/images/bmp180_jeedom.png">
+<meta property="og:image" content="http://yoursite.com/images/bmp180_res.png">
+<meta property="og:updated_time" content="2017-05-03T08:42:20.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Affichage de valeurs sur un écran I2C via un ESP8266">
-<meta name="twitter:description" content="IntroductionCet article met en avant l’utilisation d’un écran I2C OLED et d’un ESP8266 afin d’afficher des valeurs en provenance d’un broker MQTT. PrérequisPour réaliser ce montage, il vous faut :  1">
-<meta name="twitter:image" content="http://yoursite.com/images/i2c_display_scheme.png">
+<meta name="twitter:title" content="Température et pression (BMP180) sous Jeedom via un ESP8266">
+<meta name="twitter:description" content="Matériel 1 ESP8266; 1 capteur BMP180 (température et pression); 1 régulateur LF33CV (5v vers 3.3v); 1 résistance 1kΩ (pull-up).   Câblage JeedomCréer un device virtuel.  Veuillez à bien noter les ID d">
+<meta name="twitter:image" content="http://yoursite.com/images/bmp180.png">
   
     <link rel="alternate" href="/atom.xml" title="Wifsimster" type="application/atom+xml">
   
@@ -66,10 +67,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/21/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/" class="article-date">
-  <time datetime="2017-04-21T15:33:30.000Z" itemprop="datePublished">21-04-2017</time>
+    <a href="/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/" class="article-date">
+  <time datetime="2017-05-03T08:37:56.000Z" itemprop="datePublished">03-05-2017</time>
 </a>
     
   </div>
@@ -80,7 +81,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Affichage de valeurs sur un écran I2C via un ESP8266
+      Température et pression (BMP180) sous Jeedom via un ESP8266
     </h1>
   
 
@@ -88,32 +89,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cet article met en avant l’utilisation d’un écran I2C OLED et d’un ESP8266 afin d’afficher des valeurs en provenance d’un broker MQTT.</p>
-<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Pour réaliser ce montage, il vous faut :</p>
-<ul>
+        <h2 id="Materiel"><a href="#Materiel" class="headerlink" title="Matériel"></a>Matériel</h2><ul>
 <li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
-<li>1 écran <a href="http://www.ebay.com/itm/0-96-I2C-IIC-SPI-Serial-128X64-White-OLED-LCD-LED-Display-Module-for-Arduino-/201428440360?hash=item2ee6121528:g:MOYAAOSwv0tVeD0N" target="_blank" rel="external">I2C 128×64 OLED</a>;</li>
+<li>1 capteur <a href="http://www.ebay.fr/itm/BMP180-Replace-BMP085-Digital-Barometric-Pressure-Sensor-Board-Module-Arduino-IE-/281807948504?hash=item419d100ad8:g:rJIAAOSwVL1WApmE" target="_blank" rel="external">BMP180</a> (température et pression);</li>
 <li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
-<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up);</li>
-<li>2 résistances <a href="http://www.ebay.com/itm/100PCS-4-7K-4K7-Ohms-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071125870?hash=item3ab09c236e:g:k9EAAOSwjVVV3n3n" target="_blank" rel="external">4.7kΩ</a>.</li>
+<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up). </li>
 </ul>
-<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir l’ESP8266 avec le firmware nodemcu.</p>
-<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/i2c_display_scheme.png" alt=""></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/i2c-display-mqtt" target="_blank" rel="external">Github</a></p>
-<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le principe est le suivant :</p>
-<ol>
-<li>L’ESP créé un client MQTT avec un id unique;</li>
-<li>Il se connecte au broker MQTT;</li>
-<li>Le client souscrit à un topic particulier où les données que l’on désire sont publiées;</li>
-<li>L’ESP affiche une première fois les données à l’écran;</li>
-<li>Puis à chaque fois que le broker MQTT reçoit des nouvelles données sur ce topic, notre client met à jour les données à l’écran.</li>
-</ol>
-<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/i2c_display.jpg" alt=""></p>
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/bmp180.png" alt=""></p>
+<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Créer un device virtuel.</p>
+<p><img src="/images/bmp180_jeedom.png" alt=""></p>
+<p>Veuillez à bien noter les ID de deux informations (température et pression), ici 535 et 536. Ces deux ID sont à insérer dans la requête HTTP à envoyer à Jeedom.</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/bmp180/" target="_blank" rel="external">HTTP version</a></p>
+<p><a href="https://github.com/Wifsimster/bmp180-mqtt" target="_blank" rel="external">MQTT version</a></p>
+<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/bmp180_res.png" alt=""></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/21/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/" data-id="cj28shc390000v4xw2j4b9kuc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/" data-id="cj28shc3m0007v4xwyn6us6ve" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -122,15 +115,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/04/25/Luminosite-sous-Jeedom-via-un-ESP8266/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/03/Flash-d’un-ESP8266/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
-          Luminosité sous Jeedom via un ESP8266
+          Flash d’un ESP8266
         
       </div>
     </a>
   
+  
+    <a href="/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Distributeur de croquettes sous Jeedom via un ESP8266</div>
+    </a>
   
 </nav>
 

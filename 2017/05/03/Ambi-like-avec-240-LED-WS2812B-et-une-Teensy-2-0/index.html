@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ambi-like avec 240 LED WS2812B et une Teensy 2.0 | Wifsimster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IntroductionJ’ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d’y ajouter un peu de couleurs ! J’ai donc réalisé un nouvel Ambi-like avec une ruban de 4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ambi-like avec 240 LED WS2812B et une Teensy 2.0">
+<meta property="og:url" content="http://yoursite.com/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/index.html">
+<meta property="og:site_name" content="Wifsimster">
+<meta property="og:description" content="IntroductionJ’ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d’y ajouter un peu de couleurs ! J’ai donc réalisé un nouvel Ambi-like avec une ruban de 4">
+<meta property="og:image" content="http://yoursite.com/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/images/strip_rgb_ws28121.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/images/teensy_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/IMG_20140921_1522391-1050x590.jpg">
+<meta property="og:image" content="http://yoursite.com/images/IMG_20140921_1523001.jpg">
+<meta property="og:image" content="http://yoursite.com/images/IMG_20140921_1531451-1050x590.jpg">
+<meta property="og:image" content="http://yoursite.com/images/periph.png">
+<meta property="og:updated_time" content="2017-05-03T08:56:17.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ambi-like avec 240 LED WS2812B et une Teensy 2.0">
+<meta name="twitter:description" content="IntroductionJ’ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d’y ajouter un peu de couleurs ! J’ai donc réalisé un nouvel Ambi-like avec une ruban de 4">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/images/strip_rgb_ws28121.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Wifsimster" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wifsimster</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/" class="article-date">
+  <time datetime="2017-05-03T08:49:57.000Z" itemprop="datePublished">03-05-2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ambi-like avec 240 LED WS2812B et une Teensy 2.0
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>J’ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d’y ajouter un peu de couleurs !</p>
+<p>J’ai donc réalisé un nouvel Ambi-like avec une ruban de 4m composé de 240 LED WS2812B soit 60 LED par mètre contrairement à mon ancien Ambi-like de la télévision qui lui est constitué d’uniquement 50 LED WS2801.</p>
+<p>J’en ai profité pour passer sur de l’Arduino-like (au lieu d’un Raspbery Pi), sur les conseils de plusieurs personnes, mon choix s’est porté sur une Teensy 2.0 vendu par <a href="http://www.pjrc.com/store/teensy.html" target="_blank" rel="external">PJRC</a> et qui permet de commander facilement un système Ambi-like.</p>
+<p>Le but principal ici est de pouvoir restituer le flux vidéo de l’ordinateur sur les LED, on verra qu’il est également possible de capturer le sons et également mettre des couleurs dynamiques d’ambiance.</p>
+<h2 id="Pourquoi-ce-choix-de-materiel"><a href="#Pourquoi-ce-choix-de-materiel" class="headerlink" title="Pourquoi ce choix de matériel ?"></a>Pourquoi ce choix de matériel ?</h2><p>Un système Ambi-like se fait généralement avec des LED WS2801 car elles sont adressables contrairement aux LED WS2811/WS2812. J’avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m’a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j’aime les défis et surtout les nouvelles choses :)</p>
+<p><img src="images/strip_rgb_ws28121.jpg" alt=""></p>
+<p>Pour le choix du contrôleur, j’avais déjà joué avec un Raspeberry Pi précédemment, je voulais donc tenter l’aventure sur un autre périphérique. Un Arduino correspond très bien au besoin, c’est petit, possède une faible consommation énergétique et il existe plusieurs systèmes d’Ambi-like dédiés. J’ai donc commandé une Tensy 2.0 qui est encore plus petite qu’un Arduino Uno et possède une plus grande puissance de calcul (ça se révélera important étant donné que mes LED ne sont pas adressables).</p>
+<p><img src="images/teensy_2.jpg" alt=""></p>
+<h2 id="Programmation"><a href="#Programmation" class="headerlink" title="Programmation"></a>Programmation</h2><p>J’ai donc découvert la programmation sous Arduino grâce à cette Teensy 2.0. A vrai dire avec quelques connaissance en C, c’est relativement simple !</p>
+<p>Il existe un logiciel de développement dédié pour les Arduino, à <a href="http://arduino.cc/en/Main/Software" target="_blank" rel="external">télécharger ici</a>, par défaut Arduino ne prend pas en charge les Teensy, il faut donc télécharger et installer sur votre installation d’Arduino le ‘patch’ <a href="https://www.pjrc.com/teensy/td_download.html" target="_blank" rel="external">Teensyduino</a>.</p>
+<p>Il embarque nativement des libraires de développement, à utiliser selon la fonction que vous voulez donner à votre système.</p>
+<p>Ici, nous voulons commander notre ruban à LED via notre ordinateur en passant par la Teensy. Pour cela nous utiliserons deux logiciels concurrent nommés <a href="http://www.ambibox.ru/en/index.php/Main_Page" target="_blank" rel="external">Ambibox</a> et <a href="http://lightpack.tv/downloads" target="_blank" rel="external">Prismatik</a>.</p>
+<p>Ces deux logiciels peuvent fonctionner en communiquant avec un système <a href="http://www.adafruit.com/products/461" target="_blank" rel="external">Adalight</a> (embarqué sur la Teensy).</p>
+<p>Le problème, c’est qu’Adalight est développé pour fonctionner avec des LED 2801. Après quelques heures de recherches, j’ai réussi à trouver un <a href="https://code.google.com/p/adalight-ws2812/source/browse/0.9?spec=svn2&amp;r=2" target="_blank" rel="external">fork d’Adalight</a> fonctionnant avec des LED WS2812.</p>
+<p>Ce fork d’Adalight repose malheureusement sur une ancienne librairie FastSPI_LED2 (permettant de commander des LED WS2811/WS2812), qui a évoluée et se trouve maintenant sous le nom FastLED (disponible sous l’éditeur Arduino).</p>
+<p>J’ai donc résolu mon problème en modifiant légèrement le code du fork pour utiliser la dernière version de la librairie FastLED, ma version disponible sur <a href="https://github.com/Wifsimster/adalight_ws2812" target="_blank" rel="external">Github</a> (dernière mise à jour 22/11/2015).</p>
+<p>Je ne vais pas vous expliquer comment charger le programme sur la Teensy, c’est très simple et repose sur le même principe que n’importe quel Arduino, pour plus d’informations, <a href="http://www.pjrc.com/teensy/loader_vista.html" target="_blank" rel="external">voir ici</a>.</p>
+<h2 id="Montage"><a href="#Montage" class="headerlink" title="Montage"></a>Montage</h2><p>J’ai donc simplement découpé des bandes pour chaque longueur des écrans, bien penser à respecter le sens des flèches du ruban (pour le signal).</p>
+<p>J’ai relié chaque bandes bout à bout par trois fils soudés de chaque côté et relié mon alimentation 5v 8A en entrée et sortie du ruban (préféré plusieurs points d’alimentation sur votre ruban).</p>
+<p><img src="/images/IMG_20140921_1522391-1050x590.jpg" alt=""></p>
+<p>Comme vous pouvez le voir ci-dessous, j’ai connecté les trois fils du ruban sur les ports VCC, GRD B1 de la Teensy 2.0. Le port B1 est paramétrable dans ma version de l’Adalight.</p>
+<p><img src="/images/IMG_20140921_1523001.jpg" alt=""></p>
+<h2 id="Communication-avec-Adalight"><a href="#Communication-avec-Adalight" class="headerlink" title="Communication avec Adalight"></a>Communication avec Adalight</h2><p>Adalight est très répandu et est de plus en plus reconnu par les logiciels Ambilight. J’ai donc testé les deux plus connus du moment, Prismatik et Ambibox !</p>
+<p><img src="/images/IMG_20140921_1531451-1050x590.jpg" alt=""></p>
+<h2 id="Update-22-11-2015"><a href="#Update-22-11-2015" class="headerlink" title="Update - 22/11/2015"></a>Update - 22/11/2015</h2><p>Suite à mon déménagement, j’ai dû me remettre dans la programmation de la Teensy et je viens donc d’en profiter pour mettre à jour ma version d’Adalight.</p>
+<p>Le plus gros problème que j’ai eu après tout ce temps (et un nouvelle installation de Windows) c’est la configuration de Prismatik !</p>
+<p>Penser à bien installer les drivers pour votre Teensy, les drivers sont embarqués dans le ‘patch’ <a href="https://www.pjrc.com/teensy/td_download.html" target="_blank" rel="external">Teensyduino</a> (voir au début de l’article) et par la suite récupéré le port dans la gestion de vos périphériques Windows.</p>
+<p><img src="/images/periph.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/" data-id="cj28shc3d0001v4xwdq0fi7ok" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/03/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Contrôle de prise Chacon DIO First via RaspberryPi
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/03/Flash-d’un-ESP8266/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Flash d’un ESP8266</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">mai 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">avril 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/03/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/">Contrôle de prise Chacon DIO First via RaspberryPi</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/">Ambi-like avec 240 LED WS2812B et une Teensy 2.0</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Flash-d’un-ESP8266/">Flash d’un ESP8266</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/">Température et pression (BMP180) sous Jeedom via un ESP8266</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/">Distributeur de croquettes sous Jeedom via un ESP8266</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Wifsimster<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

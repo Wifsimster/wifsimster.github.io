@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Communication sans fil indépendante via deux esp8266 | Wifsimster</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IntroductionLa problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome, c’est à dire sans point d’accès provenant d’un r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Communication sans fil indépendante via deux esp8266">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/Communication-sans-fil-independante-via-deux-esp8266/index.html">
+<meta property="og:site_name" content="Wifsimster">
+<meta property="og:description" content="IntroductionLa problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome, c’est à dire sans point d’accès provenant d’un r">
+<meta property="og:image" content="http://yoursite.com/images/scheme-client.png">
+<meta property="og:image" content="http://yoursite.com/images/scheme-server.png">
+<meta property="og:image" content="http://yoursite.com/images/image_client.jpg">
+<meta property="og:image" content="http://yoursite.com/images/image_server.jpg">
+<meta property="og:updated_time" content="2017-04-25T19:12:03.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Communication sans fil indépendante via deux esp8266">
+<meta name="twitter:description" content="IntroductionLa problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome, c’est à dire sans point d’accès provenant d’un r">
+<meta name="twitter:image" content="http://yoursite.com/images/scheme-client.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Wifsimster" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wifsimster</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Communication-sans-fil-independante-via-deux-esp8266" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/25/Communication-sans-fil-independante-via-deux-esp8266/" class="article-date">
+  <time datetime="2017-04-25T18:59:33.000Z" itemprop="datePublished">25-04-2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Communication sans fil indépendante via deux esp8266
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>La problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome, c’est à dire sans point d’accès provenant d’un routeur (ou autre box). Le but final étant de relier une cellule IR de détection de présence (se trouvant à l’extérieur) à une alarme (à l’intérieur de la maison).</p>
+<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Je pars du principe que :</p>
+<p>la détection de présence sur la cellule IR provoque un état haut sur une entrée GPIO;<br>l’alarme sera mise en fonction via un état haut d’une sortie GPIO.<br>Il vous faudra :</p>
+<ul>
+<li>2 <a href="http://www.ebay.com/itm/ESP8266-Serial-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-Support-AP-STA-/171653455849?hash=item27f757dfe9:g:KDkAAOSw-W5Uwh9z" target="_blank" rel="external">ESP8266</a>;</li>
+<li>2 régulateurs <a href="http://www.ebay.com/itm/LF33CV-Original-New-ST-Transistor-/400409071685?hash=item5d3a3d9045:g:pF4AAMXQk-FRE8mt" target="_blank" rel="external">LF33CV</a>;</li>
+<li>2 résistances <a href="http://www.ebay.com/itm/1000PCS-1K-1K-Ohm-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071106631?hash=item3ab09bd847:g:ymUAAOSwjVVV3nVm" target="_blank" rel="external">1KΩ</a>.</li>
+</ul>
+<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir les ESP8266 avec le firmware nodemcu.</p>
+<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Un esp va servir de serveur, c’est à dire qu’il va :</p>
+<ol>
+<li>Déclarer son propre point d’accès wifi;</li>
+<li>Instancier un serveur HTTP;</li>
+<li>Attendre une requête HTTP et produire une action en conséquence de cette requête.</li>
+</ol>
+<p>Le deuxième esp va lui servir de client, c’est à dire qu’il va :</p>
+<ol>
+<li>Essayer de se connecter sur le point d’accès wifi du serveur (pendant 1 min, led verte clignotante);</li>
+<li>Allumer la led verte pour indiquer que la connexion au serveur est établie;</li>
+<li>Attendre un changement d’état du port GPIO_2 (la cellule IR);</li>
+<li>Envoyer une requête HTTP au serveur avec l’état du port GPIO_2;</li>
+</ol>
+<h2 id="Schemas"><a href="#Schemas" class="headerlink" title="Schémas"></a>Schémas</h2><p><img src="/images/scheme-client.png" alt=""></p>
+<p><img src="/images/scheme-server.png" alt=""></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/soft-ap-client" target="_blank" rel="external">Client</a> | <a href="https://github.com/Wifsimster/soft-ap" target="_blank" rel="external">Serveur</a></p>
+<h2 id="Realisation"><a href="#Realisation" class="headerlink" title="Réalisation"></a>Réalisation</h2><p><img src="/images/image_client.jpg" alt=""></p>
+<p><img src="/images/image_server.jpg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/25/Communication-sans-fil-independante-via-deux-esp8266/" data-id="cj28shc3j0004v4xwqjrwg3ew" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Distributeur de croquettes sous Jeedom via un ESP8266
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/25/Luminosite-sous-Jeedom-via-un-ESP8266/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Luminosité sous Jeedom via un ESP8266</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">mai 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">avril 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/03/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/">Contrôle de prise Chacon DIO First via RaspberryPi</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/">Ambi-like avec 240 LED WS2812B et une Teensy 2.0</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Flash-d’un-ESP8266/">Flash d’un ESP8266</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/">Température et pression (BMP180) sous Jeedom via un ESP8266</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/">Distributeur de croquettes sous Jeedom via un ESP8266</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Wifsimster<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
