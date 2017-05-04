@@ -5,22 +5,361 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-03T11:58:57.232Z</updated>
+  <updated>2017-05-04T09:44:20.572Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>Wifsimster</name>
+    <name>Damien BATTISTELLA</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Communication sans fil indépendante via deux ESP8266</title>
+    <link href="http://yoursite.com/2016/04/15/Communication-sans-fil-independante-via-deux-esp8266/"/>
+    <id>http://yoursite.com/2016/04/15/Communication-sans-fil-independante-via-deux-esp8266/</id>
+    <published>2016-04-15T18:59:33.000Z</published>
+    <updated>2017-05-04T09:44:20.572Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>La problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome, c’est à dire sans point d’accès provenant d’un routeur (ou autre box). Le but final étant de relier une cellule IR de détection de présence (se trouvant à l’extérieur) à une alarme (à l’intérieur de la maison).</p>
+<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Je pars du principe que :</p>
+<p>la détection de présence sur la cellule IR provoque un état haut sur une entrée GPIO;<br>l’alarme sera mise en fonction via un état haut d’une sortie GPIO.<br>Il vous faudra :</p>
+<ul>
+<li>2 <a href="http://www.ebay.com/itm/ESP8266-Serial-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-Support-AP-STA-/171653455849?hash=item27f757dfe9:g:KDkAAOSw-W5Uwh9z" target="_blank" rel="external">ESP8266</a>;</li>
+<li>2 régulateurs <a href="http://www.ebay.com/itm/LF33CV-Original-New-ST-Transistor-/400409071685?hash=item5d3a3d9045:g:pF4AAMXQk-FRE8mt" target="_blank" rel="external">LF33CV</a>;</li>
+<li>2 résistances <a href="http://www.ebay.com/itm/1000PCS-1K-1K-Ohm-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071106631?hash=item3ab09bd847:g:ymUAAOSwjVVV3nVm" target="_blank" rel="external">1KΩ</a>.</li>
+</ul>
+<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir les ESP8266 avec le firmware nodemcu.</p>
+<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Un esp va servir de serveur, c’est à dire qu’il va :</p>
+<ol>
+<li>Déclarer son propre point d’accès wifi;</li>
+<li>Instancier un serveur HTTP;</li>
+<li>Attendre une requête HTTP et produire une action en conséquence de cette requête.</li>
+</ol>
+<p>Le deuxième esp va lui servir de client, c’est à dire qu’il va :</p>
+<ol>
+<li>Essayer de se connecter sur le point d’accès wifi du serveur (pendant 1 min, led verte clignotante);</li>
+<li>Allumer la led verte pour indiquer que la connexion au serveur est établie;</li>
+<li>Attendre un changement d’état du port GPIO_2 (la cellule IR);</li>
+<li>Envoyer une requête HTTP au serveur avec l’état du port GPIO_2;</li>
+</ol>
+<h2 id="Schemas"><a href="#Schemas" class="headerlink" title="Schémas"></a>Schémas</h2><p><img src="/images/scheme-client.png" alt=""></p>
+<p><img src="/images/scheme-server.png" alt=""></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/soft-ap-client" target="_blank" rel="external">Client</a> | <a href="https://github.com/Wifsimster/soft-ap" target="_blank" rel="external">Serveur</a></p>
+<h2 id="Realisation"><a href="#Realisation" class="headerlink" title="Réalisation"></a>Réalisation</h2><p><img src="/images/image_client.jpg" alt=""></p>
+<p><img src="/images/image_server.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;La problématique de ce projet 
+    
+    </summary>
+    
+    
+      <category term="ESP8266" scheme="http://yoursite.com/tags/ESP8266/"/>
+    
+      <category term="NodeMCU" scheme="http://yoursite.com/tags/NodeMCU/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Luminosité sous Jeedom via un ESP8266</title>
+    <link href="http://yoursite.com/2016/04/15/Luminosite-sous-Jeedom-via-un-ESP8266/"/>
+    <id>http://yoursite.com/2016/04/15/Luminosite-sous-Jeedom-via-un-ESP8266/</id>
+    <published>2016-04-15T18:52:21.000Z</published>
+    <updated>2017-05-04T09:44:08.902Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cet article met en avant la mise en place d’un capteur TSL2561 et d’un ESP8266 afin de récupérer la luminosité sous Jeedom.</p>
+<p>La communication des données se fera à travers un broker MQTT.</p>
+<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Pour réaliser ce montage, il vous faut :</p>
+<ul>
+<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
+<li>1 capteur <a href="http://www.ebay.fr/itm/TSL2561-Luminosity-Sensor-Breakout-infrared-Light-Sensor-integrating-sensor-/271789914195?hash=item3f47f0f853:g:bMIAAOSwNSxU8R-w" target="_blank" rel="external">TSL2561</a>;</li>
+<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
+<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up).</li>
+</ul>
+<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir l’ESP8266 avec le firmware nodemcu.</p>
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p>[En attente du capteur TSL2561 sous Fritzing]</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/tsl2561-mqtt" target="_blank" rel="external">Github</a></p>
+<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le principe est le suivant :</p>
+<ol>
+<li>L’ESP créé un client MQTT avec un id unique;</li>
+<li>Il se connecte au broker MQTT;</li>
+<li>A chaque changement de valeur du capteur TSL2561, le client MQTT publie les données sur un topic particulier;</li>
+<li>Le broker MQTT reçoit les données et les publie pour chaque client ayant souscrit à ce topic.</li>
+</ol>
+<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Il vous faut tout d’abord installer le plugin gratuit MQTT dans Jeedom.</p>
+<p>Dès lors que votre ESP8266 publiera sur le broker MQTT, le plugin Jeedom ajoutera automatiquement le device TSL2561 :</p>
+<p><img src="/images/tsl2561_mqtt.png" alt=""></p>
+<p><img src="/images/tsl2561_device.png" alt=""></p>
+<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/tsl2561_jeedom.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Cet article met en avant la mi
+    
+    </summary>
+    
+    
+      <category term="ESP8266" scheme="http://yoursite.com/tags/ESP8266/"/>
+    
+      <category term="NodeMCU" scheme="http://yoursite.com/tags/NodeMCU/"/>
+    
+      <category term="Jeedom" scheme="http://yoursite.com/tags/Jeedom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Affichage de valeurs sur un écran I2C via un ESP8266</title>
+    <link href="http://yoursite.com/2016/04/15/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/"/>
+    <id>http://yoursite.com/2016/04/15/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/</id>
+    <published>2016-04-15T15:33:30.000Z</published>
+    <updated>2017-05-04T09:43:47.842Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cet article met en avant l’utilisation d’un écran I2C OLED et d’un ESP8266 afin d’afficher des valeurs en provenance d’un broker MQTT.</p>
+<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Pour réaliser ce montage, il vous faut :</p>
+<ul>
+<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
+<li>1 écran <a href="http://www.ebay.com/itm/0-96-I2C-IIC-SPI-Serial-128X64-White-OLED-LCD-LED-Display-Module-for-Arduino-/201428440360?hash=item2ee6121528:g:MOYAAOSwv0tVeD0N" target="_blank" rel="external">I2C 128×64 OLED</a>;</li>
+<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
+<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up);</li>
+<li>2 résistances <a href="http://www.ebay.com/itm/100PCS-4-7K-4K7-Ohms-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071125870?hash=item3ab09c236e:g:k9EAAOSwjVVV3n3n" target="_blank" rel="external">4.7kΩ</a>.</li>
+</ul>
+<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir l’ESP8266 avec le firmware nodemcu.</p>
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/i2c_display_scheme.png" alt=""></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/i2c-display-mqtt" target="_blank" rel="external">Github</a></p>
+<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le principe est le suivant :</p>
+<ol>
+<li>L’ESP créé un client MQTT avec un id unique;</li>
+<li>Il se connecte au broker MQTT;</li>
+<li>Le client souscrit à un topic particulier où les données que l’on désire sont publiées;</li>
+<li>L’ESP affiche une première fois les données à l’écran;</li>
+<li>Puis à chaque fois que le broker MQTT reçoit des nouvelles données sur ce topic, notre client met à jour les données à l’écran.</li>
+</ol>
+<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/i2c_display.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Cet article met en avant l’uti
+    
+    </summary>
+    
+    
+      <category term="ESP8266" scheme="http://yoursite.com/tags/ESP8266/"/>
+    
+      <category term="NodeMCU" scheme="http://yoursite.com/tags/NodeMCU/"/>
+    
+      <category term="Jeedom" scheme="http://yoursite.com/tags/Jeedom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Distributeur de croquettes sous Jeedom via un ESP8266</title>
+    <link href="http://yoursite.com/2016/04/14/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/"/>
+    <id>http://yoursite.com/2016/04/14/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/</id>
+    <published>2016-04-14T08:26:51.000Z</published>
+    <updated>2017-05-04T09:44:33.226Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Afin d’éviter LE problème quotidien : « nourrir le chat affamé », j’ai réalisé un distributeur connecté à Jeedom.</p>
+<p>Ce distributeur est constitué d’un simple moteur 12v actionné par un double relais et contrôler par un ESP8266.</p>
+<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Afin de réaliser ce montage, il vous faut :</p>
+<ul>
+<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
+<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
+<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up);</li>
+<li>1 <a href="http://www.ebay.com/itm/1pcs-5V-2-Channel-Relay-Module-for-Arduino-PIC-ARM-DSP-AVR-Electronic-/400985229770?hash=item5d5c9509ca:g:cJgAAOxy86RSY-Jq" target="_blank" rel="external">double relais</a> module (5v).</li>
+</ul>
+<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le distributeur est constitué d’un moteur 12v qui fait tourner une tige filetée à laquelle est fixé un plateau.</p>
+<p>Le plateau est verrouillé en rotation par deux fine tiges à la base du distributeur.</p>
+<p>En conséquence, selon le sens de rotation du moteur, la plateau descend ou monte.</p>
+<p>Un tuyau  de plus gros diamètre englobe le tout afin de récupérer les croquettes et les verse à la base par un bec.</p>
+<p>Le distributeur est connecté à Jeedom par un ESP8266 et actionne le double relais sur requête HTTP.</p>
+<img src="/images/cat_feeder.jpg" width="372">
+<img src="/images/cat_feeder_02.jpg" width="372">
+<img src="/images/cat_feeder_03.jpg">
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/relay_command.png" alt=""></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/distributeur-lua" target="_blank" rel="external">Github</a></p>
+<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Création d’un script pour communiquer avec l’esp8266 du distributeur :</p>
+<p><img src="/images/cat_feeder_jeedom.png" alt=""></p>
+<p>Création d’un virtuel pour interagir avec le script précédent :</p>
+<p><img src="/images/cat_feeder_virtual.png" alt=""></p>
+<p>Création d’un scénario pour automatiser la distribution des croquettes :</p>
+<p><img src="/images/cat_feeder_scenari.png" alt=""></p>
+<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/cat_feeder_dash.png" alt=""></p>
+<div class="video-container"><iframe src="//www.youtube.com/embed/_gSTuAhnkl0" frameborder="0" allowfullscreen></iframe></div>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Afin d’éviter LE problème quot
+    
+    </summary>
+    
+    
+      <category term="ESP8266" scheme="http://yoursite.com/tags/ESP8266/"/>
+    
+      <category term="NodeMCU" scheme="http://yoursite.com/tags/NodeMCU/"/>
+    
+      <category term="Jeedom" scheme="http://yoursite.com/tags/Jeedom/"/>
+    
+      <category term="DIY" scheme="http://yoursite.com/tags/DIY/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flash d’un ESP8266</title>
+    <link href="http://yoursite.com/2016/01/13/Flash-d%E2%80%99un-ESP8266/"/>
+    <id>http://yoursite.com/2016/01/13/Flash-d’un-ESP8266/</id>
+    <published>2016-01-13T09:43:56.000Z</published>
+    <updated>2017-05-04T09:45:15.261Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/all_esp_modules1.png" alt=""></p>
+<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Voici les prérequis pour réaliser le flash d’un esp8266 :</p>
+<ul>
+<li>1 <a href="">esp8266 01</a>;</li>
+<li>1 <a href="">FTDI FT232RL USB</a> to TTL;</li>
+<li>1 alimenation 5v;</li>
+<li>le firmware <a href="">nodemcu</a> afin de développer en LUA;</li>
+<li>le logiciel <a href="">ESP8266Flasher</a> afin d’installer le firmware sur votre esp8266.</li>
+</ul>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>Vous avez besoin d’un bon régulateur 3.3v avec une alimentation qui peut délivrer de 500 à 600mA.<br>Si vous avez des erreurs dès le démarrage du wifi, l’alimentation est probablement en cause.</p>
+<h2 id="ESP8266-pins"><a href="#ESP8266-pins" class="headerlink" title="ESP8266 pins"></a>ESP8266 pins</h2><p><img src="/images/pins-1.jpg" alt=""></p>
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/firmware-1050x558.png" alt=""></p>
+<h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention !"></a>Attention !</h3><p>N’utiliser pas le 3.3v de votre FTDI (si disponible) mais passer plutôt par un régulateur LF33CV (5v to 3.3v).</p>
+<h2 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h2><p>La procédure est détaillée sur le <a href="https://github.com/nodemcu/nodemcu-flasher" target="_blank" rel="external">Github du projet</a>.</p>
+<p>Veuillez à bien respecter la procédure dans l’ordre étape par étape.</p>
+<p>Dès lors que votre ESP8266 est alimenté, vous pouvez lancer le logiciel.</p>
+<p>Par défaut un firmware (NodeMCU) est embarqué.</p>
+<p>A savoir qu’il existe plusieurs types de firmware, dont les deux plus populaires :</p>
+<ul>
+<li><a href="https://github.com/nodemcu/nodemcu-firmware" target="_blank" rel="external">NodeMCU</a> en LUA</li>
+<li>ESP8266 AT en C</li>
+</ul>
+<p>Télécharger la dernier version de NodeMCU (actuellement nodemcu_float_0.9.6-dev_20150704).</p>
+<p>Dans Config, supprimer toute la configuration et rajoutez uniquement nodemcu_float_0.9.6-dev_20150704.bin (en cochant bien la checkbox de gauche).</p>
+<p><img src="/images/config.png" alt=""></p>
+<p>Dans Operation, séléctionner le port COM correspondant à votre FTDI et lancez le flash.</p>
+<p>Si l’esp est bien détecté un QRcode doit apparaître dans la seconde et la barre de progression doit commencer à avancer.</p>
+<p><img src="/images/config_02.png" alt=""></p>
+<p>A la fin de l’update, une icône verte apparaîtra pour confirmer le succès de l’opération.</p>
+<p>Vous pouvez dès lors débrancher votre ESP8266 et retirer le GPIO_0 du GND.</p>
+<h3 id="Probleme-de-detection"><a href="#Probleme-de-detection" class="headerlink" title="Problème de détection ?"></a>Problème de détection ?</h3><p>Si l’ESP8266 n’est pas détecté par le logiciel, débranchez et rebrancher l’alimentation de l’ESP8266 pour forcer la détection.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/all_esp_modules1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Prerequis&quot;&gt;&lt;a href=&quot;#Prerequis&quot; class=&quot;headerlink&quot; title=&quot;Prérequis&quot;&gt;&lt;/a&gt;Prér
+    
+    </summary>
+    
+    
+      <category term="ESP8266" scheme="http://yoursite.com/tags/ESP8266/"/>
+    
+      <category term="NodeMCU" scheme="http://yoursite.com/tags/NodeMCU/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Température et pression (BMP180) sous Jeedom via un ESP8266</title>
+    <link href="http://yoursite.com/2016/01/13/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/"/>
+    <id>http://yoursite.com/2016/01/13/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/</id>
+    <published>2016-01-13T09:37:56.000Z</published>
+    <updated>2017-05-04T09:44:52.899Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Materiel"><a href="#Materiel" class="headerlink" title="Matériel"></a>Matériel</h2><ul>
+<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
+<li>1 capteur <a href="http://www.ebay.fr/itm/BMP180-Replace-BMP085-Digital-Barometric-Pressure-Sensor-Board-Module-Arduino-IE-/281807948504?hash=item419d100ad8:g:rJIAAOSwVL1WApmE" target="_blank" rel="external">BMP180</a> (température et pression);</li>
+<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
+<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up). </li>
+</ul>
+<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/bmp180.png" alt=""></p>
+<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Créer un device virtuel.</p>
+<p><img src="/images/bmp180_jeedom.png" alt=""></p>
+<p>Veuillez à bien noter les ID de deux informations (température et pression), ici 535 et 536. Ces deux ID sont à insérer dans la requête HTTP à envoyer à Jeedom.</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/bmp180/" target="_blank" rel="external">HTTP version</a></p>
+<p><a href="https://github.com/Wifsimster/bmp180-mqtt" target="_blank" rel="external">MQTT version</a></p>
+<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/bmp180_res.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Materiel&quot;&gt;&lt;a href=&quot;#Materiel&quot; class=&quot;headerlink&quot; title=&quot;Matériel&quot;&gt;&lt;/a&gt;Matériel&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;1 &lt;a href=&quot;http://www.ebay.fr/itm/ESP826
+    
+    </summary>
+    
+    
+      <category term="ESP8266" scheme="http://yoursite.com/tags/ESP8266/"/>
+    
+      <category term="NodeMCU" scheme="http://yoursite.com/tags/NodeMCU/"/>
+    
+      <category term="Jeedom" scheme="http://yoursite.com/tags/Jeedom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ambi-like avec 240 LED WS2812B et une Teensy 2.0</title>
+    <link href="http://yoursite.com/2014/10/06/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/"/>
+    <id>http://yoursite.com/2014/10/06/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/</id>
+    <published>2014-10-06T08:49:57.000Z</published>
+    <updated>2017-05-04T09:45:41.681Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>J’ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d’y ajouter un peu de couleurs !</p>
+<p>J’ai donc réalisé un nouvel Ambi-like avec une ruban de 4m composé de 240 LED WS2812B soit 60 LED par mètre contrairement à mon ancien Ambi-like de la télévision qui lui est constitué d’uniquement 50 LED WS2801.</p>
+<p>J’en ai profité pour passer sur de l’Arduino-like (au lieu d’un Raspbery Pi), sur les conseils de plusieurs personnes, mon choix s’est porté sur une Teensy 2.0 vendu par <a href="http://www.pjrc.com/store/teensy.html" target="_blank" rel="external">PJRC</a> et qui permet de commander facilement un système Ambi-like.</p>
+<p>Le but principal ici est de pouvoir restituer le flux vidéo de l’ordinateur sur les LED, on verra qu’il est également possible de capturer le sons et également mettre des couleurs dynamiques d’ambiance.</p>
+<h2 id="Pourquoi-ce-choix-de-materiel"><a href="#Pourquoi-ce-choix-de-materiel" class="headerlink" title="Pourquoi ce choix de matériel ?"></a>Pourquoi ce choix de matériel ?</h2><p>Un système Ambi-like se fait généralement avec des LED WS2801 car elles sont adressables contrairement aux LED WS2811/WS2812. J’avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m’a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j’aime les défis et surtout les nouvelles choses :)</p>
+<p><img src="/images/strip_rgb_ws28121.jpg" alt=""></p>
+<p>Pour le choix du contrôleur, j’avais déjà joué avec un Raspeberry Pi précédemment, je voulais donc tenter l’aventure sur un autre périphérique. Un Arduino correspond très bien au besoin, c’est petit, possède une faible consommation énergétique et il existe plusieurs systèmes d’Ambi-like dédiés. J’ai donc commandé une Tensy 2.0 qui est encore plus petite qu’un Arduino Uno et possède une plus grande puissance de calcul (ça se révélera important étant donné que mes LED ne sont pas adressables).</p>
+<p><img src="/images/teensy_2.jpg" alt=""></p>
+<h2 id="Programmation"><a href="#Programmation" class="headerlink" title="Programmation"></a>Programmation</h2><p>J’ai donc découvert la programmation sous Arduino grâce à cette Teensy 2.0. A vrai dire avec quelques connaissance en C, c’est relativement simple !</p>
+<p>Il existe un logiciel de développement dédié pour les Arduino, à <a href="http://arduino.cc/en/Main/Software" target="_blank" rel="external">télécharger ici</a>, par défaut Arduino ne prend pas en charge les Teensy, il faut donc télécharger et installer sur votre installation d’Arduino le ‘patch’ <a href="https://www.pjrc.com/teensy/td_download.html" target="_blank" rel="external">Teensyduino</a>.</p>
+<p>Il embarque nativement des libraires de développement, à utiliser selon la fonction que vous voulez donner à votre système.</p>
+<p>Ici, nous voulons commander notre ruban à LED via notre ordinateur en passant par la Teensy. Pour cela nous utiliserons deux logiciels concurrent nommés <a href="http://www.ambibox.ru/en/index.php/Main_Page" target="_blank" rel="external">Ambibox</a> et <a href="http://lightpack.tv/downloads" target="_blank" rel="external">Prismatik</a>.</p>
+<p>Ces deux logiciels peuvent fonctionner en communiquant avec un système <a href="http://www.adafruit.com/products/461" target="_blank" rel="external">Adalight</a> (embarqué sur la Teensy).</p>
+<p>Le problème, c’est qu’Adalight est développé pour fonctionner avec des LED 2801. Après quelques heures de recherches, j’ai réussi à trouver un <a href="https://code.google.com/p/adalight-ws2812/source/browse/0.9?spec=svn2&amp;r=2" target="_blank" rel="external">fork d’Adalight</a> fonctionnant avec des LED WS2812.</p>
+<p>Ce fork d’Adalight repose malheureusement sur une ancienne librairie FastSPI_LED2 (permettant de commander des LED WS2811/WS2812), qui a évoluée et se trouve maintenant sous le nom FastLED (disponible sous l’éditeur Arduino).</p>
+<p>J’ai donc résolu mon problème en modifiant légèrement le code du fork pour utiliser la dernière version de la librairie FastLED, ma version disponible sur <a href="https://github.com/Wifsimster/adalight_ws2812" target="_blank" rel="external">Github</a> (dernière mise à jour 22/11/2015).</p>
+<p>Je ne vais pas vous expliquer comment charger le programme sur la Teensy, c’est très simple et repose sur le même principe que n’importe quel Arduino, pour plus d’informations, <a href="http://www.pjrc.com/teensy/loader_vista.html" target="_blank" rel="external">voir ici</a>.</p>
+<h2 id="Montage"><a href="#Montage" class="headerlink" title="Montage"></a>Montage</h2><p>J’ai donc simplement découpé des bandes pour chaque longueur des écrans, bien penser à respecter le sens des flèches du ruban (pour le signal).</p>
+<p>J’ai relié chaque bandes bout à bout par trois fils soudés de chaque côté et relié mon alimentation 5v 8A en entrée et sortie du ruban (préféré plusieurs points d’alimentation sur votre ruban).</p>
+<p><img src="/images/IMG_20140921_1522391-1050x590.jpg" alt=""></p>
+<p>Comme vous pouvez le voir ci-dessous, j’ai connecté les trois fils du ruban sur les ports VCC, GRD B1 de la Teensy 2.0. Le port B1 est paramétrable dans ma version de l’Adalight.</p>
+<p><img src="/images/IMG_20140921_1523001.jpg" alt=""></p>
+<h2 id="Communication-avec-Adalight"><a href="#Communication-avec-Adalight" class="headerlink" title="Communication avec Adalight"></a>Communication avec Adalight</h2><p>Adalight est très répandu et est de plus en plus reconnu par les logiciels Ambilight. J’ai donc testé les deux plus connus du moment, Prismatik et Ambibox !</p>
+<p><img src="/images/IMG_20140921_1531451-1050x590.jpg" alt=""></p>
+<h2 id="Update-22-11-2015"><a href="#Update-22-11-2015" class="headerlink" title="Update - 22/11/2015"></a>Update - 22/11/2015</h2><p>Suite à mon déménagement, j’ai dû me remettre dans la programmation de la Teensy et je viens donc d’en profiter pour mettre à jour ma version d’Adalight.</p>
+<p>Le plus gros problème que j’ai eu après tout ce temps (et un nouvelle installation de Windows) c’est la configuration de Prismatik !</p>
+<p>Penser à bien installer les drivers pour votre Teensy, les drivers sont embarqués dans le ‘patch’ <a href="https://www.pjrc.com/teensy/td_download.html" target="_blank" rel="external">Teensyduino</a> (voir au début de l’article) et par la suite récupéré le port dans la gestion de vos périphériques Windows.</p>
+<p><img src="/images/periph.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;J’ai terminé il y a quelques s
+    
+    </summary>
+    
+    
+      <category term="Ambilight" scheme="http://yoursite.com/tags/Ambilight/"/>
+    
+      <category term="WS2118B" scheme="http://yoursite.com/tags/WS2118B/"/>
+    
+      <category term="Teensy" scheme="http://yoursite.com/tags/Teensy/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Bureau sur mesure avec pc intégré</title>
-    <link href="http://yoursite.com/2017/05/03/Bureau-sur-mesure-avec-pc-integre/"/>
-    <id>http://yoursite.com/2017/05/03/Bureau-sur-mesure-avec-pc-integre/</id>
-    <published>2017-05-03T10:48:31.000Z</published>
-    <updated>2017-05-03T11:58:57.232Z</updated>
+    <link href="http://yoursite.com/2014/09/05/Bureau-sur-mesure-avec-pc-integre/"/>
+    <id>http://yoursite.com/2014/09/05/Bureau-sur-mesure-avec-pc-integre/</id>
+    <published>2014-09-05T10:48:31.000Z</published>
+    <updated>2017-05-04T09:45:56.076Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>J’ai commencé la construction d’un bureau il y a de ça 1 mois. Je suis actuellement en attente de quelques pièces pour continuer, je vais donc en profiter pour présenter ce projet.</p>
 <p>J’ai toujours rêvé d’avoir un pc intégré dans mon bureau, surtout depuis que j’ai fait la connaissance de projets de <a href="http://www.geeky-gadgets.com/lian-li-computer-desk-houses-all-your-hardware-video-29-05-2014/" target="_blank" rel="external">Lian Li</a> ou <a href="https://www.youtube.com/user/l3pje" target="_blank" rel="external">Peter Brands</a>.</p>
@@ -49,36 +388,57 @@
 <p><img src="/images/IMG_20140618_2150151.jpg" alt=""></p>
 <h2 id="Construction"><a href="#Construction" class="headerlink" title="Construction"></a>Construction</h2><p>J’ai donc commencé par découper et assembler le fond du bureau, on peut y voir le découpage en 3 sections.</p>
 <p>J’ai ensuite assemblé l’extérieur et mis en place les deux éléments ensemble.</p>
-<p><img src="/images/IMG_20140618_2236031.jpg" alt=""><br><img src="/images/IMG_20140619_2011441.jpg" alt=""><br><img src="/images/IMG_20140620_1507091.jpg" alt=""></p>
+<img src="/images/IMG_20140618_2236031.jpg" width="240">
+<img src="/images/IMG_20140619_2011441.jpg" width="240">
+<img src="/images/IMG_20140620_1507091.jpg" width="240">
 <p>Pour finir l’assemblage des pièces principales, j’ai rajouté les deux plans du bureau.</p>
 <p><img src="/images/IMG_20140620_1806211.jpg" alt=""></p>
 <h2 id="Etagere-et-son"><a href="#Etagere-et-son" class="headerlink" title="Étagère et son"></a>Étagère et son</h2><p>Une fois que le bureau fut assemblé j’ai rajouté une étagère sur toute la longueur pour rehausser mes deux écrans, j’en ai donc profiter pour intégrer un système de son 3 voies (gauche, centre &amp; droit).</p>
 <p>J’alimente les haut-parleurs avec deux petits amplificateurs double voies trouvé sur Conrad, que je placerai au centre du meuble.</p>
-<p><img src="/images/IMG_20140625_2050191.jpg" alt=""><br><img src="/images/IMG_20140702_0805291.jpg" alt=""><br><img src="/images/IMG_20140702_2242061.jpg" alt=""><br><img src="/images/IMG_20140702_2239491.jpg" alt=""><br><img src="/images/IMG_20140713_1220231.jpg" alt=""></p>
+<img src="/images/IMG_20140625_2050191.jpg" width="240">
+<img src="/images/IMG_20140702_0805291.jpg" width="240">
+<img src="/images/IMG_20140702_2242061.jpg" width="240">
+<img src="/images/IMG_20140702_2239491.jpg" width="240">
+<img src="/images/IMG_20140713_1220231.jpg" width="240">
 <h2 id="Ventilation"><a href="#Ventilation" class="headerlink" title="Ventilation"></a>Ventilation</h2><p>Comme expliqué précédemment je voulais avoir un flux d’air de droite à gauche sur l’ensemble du plan principal grâce à 6 ventilateurs Corsair AF140.</p>
-<p><img src="/images/IMG_20140621_1604011.jpg" alt=""><br><img src="/images/IMG_20140621_1637371.jpg" alt=""><br><img src="/images/IMG_20140621_1727461.jpg" alt=""><br><img src="/images/IMG_20140621_1741411.jpg" alt=""></p>
+<img src="/images/IMG_20140621_1604011.jpg" width="372">
+<img src="/images/IMG_20140621_1637371.jpg" width="372">
+<img src="/images/IMG_20140621_1727461.jpg" width="372">
+<img src="/images/IMG_20140621_1741411.jpg" width="372">
 <h2 id="Carte-mere-et-passage-de-cables"><a href="#Carte-mere-et-passage-de-cables" class="headerlink" title="Carte-mère et passage de câbles"></a>Carte-mère et passage de câbles</h2><p>Je me suis donc attaqué à où et comment placer/fixer ma carte-mère dans le bureau.</p>
 <p>J’ai commencé par démonter mon boitier pour retirer le support de la carte mère, que j’ai ensuite ajusté et peint en noir.</p>
 <p>J’ai ensuite découpé  le meuble pour faire ressortir les connexions vers le compartiment du fond, où toutes les câbles passeront.</p>
-<p><img src="/images/IMG_20140714_1214291.jpg" alt=""><br><img src="/images/IMG_20140714_1408511.jpg" alt=""><br><img src="/images/IMG_20140714_1414331.jpg" alt=""><br><img src="/images/IMG_20140714_1936011.jpg" alt=""></p>
+<img src="/images/IMG_20140714_1214291.jpg" width="372">
+<img src="/images/IMG_20140714_1408511.jpg" width="372">
+<img src="/images/IMG_20140714_1414331.jpg" width="372">
+<img src="/images/IMG_20140714_1936011.jpg" width="372">
 <p>Mon alimentation actuelle n’est pas modulaire. Je ne peux donc pas la mettre où je veux.<br>J’ai donc décidé (pour le moment) de la placer au niveaux de mes genoux contre le compartiment gauche. J’ai donc réalisé une boite pour fixer l’alimentation sous le meuble.</p>
-<p><img src="/images/IMG_20140714_1934291.jpg" alt=""><br><img src="/images/IMG_20140717_2227571.jpg" alt=""></p>
+<img src="/images/IMG_20140714_1934291.jpg" width="372">
+<img src="/images/IMG_20140717_2227571.jpg" width="372">
 <p>J’ai ensuite rajouter les trous pour le passage des câbles de l’alimentation.</p>
-<p><img src="/images/IMG_20140717_1948521.jpg" alt=""><br><img src="/images/IMG_20140717_2227431.jpg" alt=""></p>
+<img src="/images/IMG_20140717_1948521.jpg" width="372">
+<img src="/images/IMG_20140717_2227431.jpg" width="372">
 <h2 id="Peinture"><a href="#Peinture" class="headerlink" title="Peinture"></a>Peinture</h2><p>Il ne manque plus qu’une bonne couche de peinture pour finaliser le gros oeuvre. J’ai testé pour la première fois la peinture avec pistolet à air. Ça a l’avantage d’être rapide et sans bavure mais par ailleurs vous peignez les alentours du meuble, mes outils sont maintenant tachetés de gris et blanc… J’ai commencé par passer une sous-couche multisupport sur l’ensemble du meuble, poncé le tout une fois sec et ensuite passé deux couches de peinture acrylique teintée en gris ( parce que pas assez de teinture noir sous la main :) ). Le résultat n’étant pas assez lisse à mon gout et je voulais à la base un bureau full noir, j’ai donc trouvé de l’acrylique noir. J’ai donc terminé par une dernière couche de peinture en noir sur les éléments visibles du meuble.</p>
-<p><img src="/images/IMG_20140720_1248311.jpg" alt=""><br><img src="/images/IMG_20140720_2250311.jpg" alt=""><br><img src="/images/IMG_20140717_1950101.jpg" alt=""></p>
-<p><img src="/images/IMG_20140720_2251211.jpg" alt=""><br><img src="/images/IMG_20140722_2146021.jpg" alt=""><br><img src="/images/IMG_20140722_2146131.jpg" alt=""></p>
+<img src="/images/IMG_20140720_1248311.jpg" width="240">
+<img src="/images/IMG_20140720_2250311.jpg" width="240">
+<img src="/images/IMG_20140717_1950101.jpg" width="240">
+<img src="/images/IMG_20140720_2251211.jpg" width="240">
+<img src="/images/IMG_20140722_2146021.jpg" width="240">
+<img src="/images/IMG_20140722_2146131.jpg" width="240">
 <h2 id="Assemblage-et-cablage"><a href="#Assemblage-et-cablage" class="headerlink" title="Assemblage et câblage"></a>Assemblage et câblage</h2><p>Y a plus qu’à tout mettre en place ! L’assemblage et le câblage m’a prit pas mal de temps. Surtout que je voulais faire du sleeving sur les câbles de la carte mère pour avoir un joli rendu.</p>
-<p><img src="/images/IMG_20140724_1440221.jpg" alt=""><br><img src="/images/IMG_20140724_1726241.jpg" alt=""><br><img src="/images/IMG_20140724_1844201.jpg" alt=""><br><img src="/images/IMG_20140730_0801161.jpg" alt=""></p>
+<img src="/images/IMG_20140724_1440221.jpg" width="372">
+<img src="/images/IMG_20140724_1726241.jpg" width="372">
+<img src="/images/IMG_20140724_1844201.jpg" width="372">
+<img src="/images/IMG_20140730_0801161.jpg" width="372">
 <h2 id="Rendu-final"><a href="#Rendu-final" class="headerlink" title="Rendu final"></a>Rendu final</h2><p>Et voilà le résultat, il y aura quelques optimisations et améliorations à venir (lumières, grille de ventilation, contrôle des amplis avec des prises 433MHz, etc…)  mais tout est là :)</p>
-<p><img src="/images/IMG_20140802_1523411-1050x776.jpg" alt=""></p>
+<img src="/images/IMG_20140802_1523411-1050x776.jpg">
 <p>Comme vous pouvez le voir le bureau + les pieds rendent le bureau très haut (plan de travail à 1m du sol).</p>
 <p>J’ai donc hésité à m’arrêter là et trouver une chaise de bar avec dossier ou bien faire de nouveaux pieds plus petits à hauteur d’un siège de bureau.</p>
 <p>Bien évidemment, j’ai construit de nouveaux pieds :p</p>
 <h2 id="Construction-des-pieds"><a href="#Construction-des-pieds" class="headerlink" title="Construction des pieds"></a>Construction des pieds</h2><p>J’ai donc rajouté sur la base de mon fichier Solidworks deux pieds avec porte de chaque côté (mais sans tiroir).</p>
-<p><img src="/images/IMG_20140816_1304191.jpg" alt=""></p>
 <p>Rien de bien compliqué, excepté que j’en ai profité pour intégrer NAS, server Debian et onduleur dans le pied de gauche !</p>
-<p><img src="/images/IMG_20140820_203706.jpg" alt=""></p>
+<img src="/images/IMG_20140816_1304191.jpg" width="372">
+<img src="/images/IMG_20140820_203706.jpg" width="372">
 <p>J’ai ajouté une entrée d’air ventilée sous le NAS, parce que oui tout ça ça chauffe à l’intérieur :</p>
 <p><img src="/images/IMG_20140820_2037391-1050x590.jpg" alt=""></p>
 <p>Une sous-couche multi-support blanche, puis une peinture glycéro noir (oui contrairement à celle du bureau):</p>
@@ -108,7 +468,8 @@
 <p>Je suis passé de deux écrans asymétriques à un triple display 24″ sur support, me libérant de l’espace et gagnant en immersion.</p>
 <p>En démontant quelques haut-parleurs, j’ai réussi à intégrer un système de son 3 voix  dans l’étagère, participant également à l’immersion.</p>
 <p>Et pour terminer, j’ai profité de la réalisation des pieds pour y intégrer mon NAS, serveur Debian et mon onduleur, qui sont maintenant cachés.</p>
-<p><img src="/images/IMG_20131228_1817001.jpg" alt=""><br><img src="/images/2014-09-031.jpg" alt=""></p>
+<img src="/images/IMG_20131228_1817001.jpg" width="372">
+<img src="/images/2014-09-031.jpg" width="372">
 <h2 id="Combien-ca-coute"><a href="#Combien-ca-coute" class="headerlink" title="Combien ça coûte ?"></a>Combien ça coûte ?</h2><p>Voici en détails le prix de revient de ce nouveau bureau.</p>
 <p><strong>Peintures : 121.6€</strong></p>
 <ul>
@@ -187,14 +548,16 @@
     </summary>
     
     
+      <category term="DIY" scheme="http://yoursite.com/tags/DIY/"/>
+    
   </entry>
   
   <entry>
     <title>Ambi-like avec un ruban WS2801, un Raspberry Pi et Hyperion</title>
-    <link href="http://yoursite.com/2017/05/03/Ambi-like-avec-un-ruban-WS2801-un-Raspberry-Pi-et-Hyperion/"/>
-    <id>http://yoursite.com/2017/05/03/Ambi-like-avec-un-ruban-WS2801-un-Raspberry-Pi-et-Hyperion/</id>
-    <published>2017-05-03T10:04:27.000Z</published>
-    <updated>2017-05-03T10:16:19.442Z</updated>
+    <link href="http://yoursite.com/2014/07/09/Ambi-like-avec-un-ruban-WS2801-un-Raspberry-Pi-et-Hyperion/"/>
+    <id>http://yoursite.com/2014/07/09/Ambi-like-avec-un-ruban-WS2801-un-Raspberry-Pi-et-Hyperion/</id>
+    <published>2014-07-09T10:04:27.000Z</published>
+    <updated>2017-05-04T09:46:19.841Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Le système <a href="http://en.wikipedia.org/wiki/Ambilight" target="_blank" rel="external">Ambilight</a> de chez Phiilips m’a fait les yeux doux depuis trop longtemps, je me suis donc décidé à faire un système Ambilight en <a href="http://fr.wikipedia.org/wiki/Do_it_yourself" target="_blank" rel="external">DIY</a>. Les projets  et tuto ne manquent pas sur le net, beaucoup de personnes se sont essayé à l’exercice et certains softs sont même très complet maintenant (Hyperion pour ne pas le citer).</p>
 <h2 id="Materiel"><a href="#Materiel" class="headerlink" title="Matériel"></a>Matériel</h2><p>Au niveau du matériel, j’ai choisi un ruban à 50 leds, une alimentation 5v 8A et un connecteur d’alimentation jack.</p>
@@ -204,7 +567,11 @@
 <li>1 connecteur d’alimentation jack (à l’<a href="http://www.amazon.fr/gp/product/B006WJL7Y6/ref=oh_details_o00_s00_i00?ie=UTF8&amp;psc=1" target="_blank" rel="external">unité 3€</a> ou <a href="http://www.amazon.fr/gp/product/B008H2HLUA/ref=oh_details_o08_s00_i00?ie=UTF8&amp;psc=1" target="_blank" rel="external">10 pour 7€</a>).</li>
 </ul>
 <h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><p>J’ai commencé par réaliser un cadre avec des morceaux de MDF qui ne me servaient à rien. C’est léger, facile à travaillé mais vite fragilisé avec les trous vu l’épaisseur.</p>
-<p><img src="/images/IMG_20140706_1353301.jpg" alt=""><br><img src="/images/IMG_20140706_1353481.jpg" alt=""><br><img src="/images/IMG_20140706_1532031.jpg" alt=""><br><img src="/images/IMG_20140706_1648501.jpg" alt=""><br><img src="/images/IMG_20140707_0843401.jpg" alt=""></p>
+<img src="/images/IMG_20140706_1353301.jpg" width="372">
+<img src="/images/IMG_20140706_1353481.jpg" width="372">
+<img src="/images/IMG_20140706_1532031.jpg" width="246">
+<img src="/images/IMG_20140706_1648501.jpg" width="246">
+<img src="/images/IMG_20140707_0843401.jpg" width="246">
 <h2 id="Connexion-avec-le-Raspberry-Pi"><a href="#Connexion-avec-le-Raspberry-Pi" class="headerlink" title="Connexion avec le Raspberry Pi"></a>Connexion avec le Raspberry Pi</h2><p>La connexion avec le Raspberry Pi est relativement simple, comme vous pouvez le voir sur le schéma ci-dessous.</p>
 <p>Les LED étant sensibles au voltage, il est préférable de les alimenter avec une alimentation extérieure connectée en parallèle au 5v du port GPIO.</p>
 <p><img src="/images/diagram1.png" alt=""></p>
@@ -224,7 +591,11 @@
 <p>Hypercon va donc vous générer un fichier hyperion.config.json à déposer par défaut dans /etc.</p>
 <p><img src="/images/hypercon_mainscreen_011-1050x565.jpg" alt=""></p>
 <h2 id="Cadre-en-acier"><a href="#Cadre-en-acier" class="headerlink" title="Cadre en acier"></a>Cadre en acier</h2><p>Mon cadre en MDF n’étant pas très résistant, j’ai acheté quelques cornières en acier, que j’ai découpé et ensuite peinte. Le résultat est bien mieux, l’ensemble est solide, léger et tient bien mieux à la TV.</p>
-<p><img src="/images/IMG_20140707_2149471.jpg" alt=""><br><img src="/images/IMG_20140707_2301481.jpg" alt=""><br><img src="/images/IMG_20140707_2347261.jpg" alt=""><br><img src="/images/IMG_20140708_0758191.jpg" alt=""><br><img src="/images/IMG_20140708_0757471.jpg" alt=""></p>
+<img src="/images/IMG_20140707_2149471.jpg" width="246">
+<img src="/images/IMG_20140707_2347261.jpg" width="246">
+<img src="/images/IMG_20140708_0757471.jpg" width="246">
+<img src="/images/IMG_20140707_2301481.jpg" width="372">
+<img src="/images/IMG_20140708_0758191.jpg" width="372">
 <h2 id="Configuration-avec-XBMC"><a href="#Configuration-avec-XBMC" class="headerlink" title="Configuration avec XBMC"></a>Configuration avec XBMC</h2><p>J’ai bataillé un moment avant de faire communiquer mon XBMC sous mon media center (Windows) avec le serveur Hyperion sur le Raspberry Pi.</p>
 <p>La seule solution (à l’heure actuelle) que j’ai trouvé, c’est de passer par l’addon XBMC Boblight qui rend possible la communication entre XBMC et Hyperion sur le réseau.</p>
 <p>J’ai testé l’addon Hyperion pour XBMC mais impossible d’établir une connexion…</p>
@@ -238,14 +609,20 @@
     </summary>
     
     
+      <category term="Ambilight" scheme="http://yoursite.com/tags/Ambilight/"/>
+    
+      <category term="WS2801" scheme="http://yoursite.com/tags/WS2801/"/>
+    
+      <category term="Raspberry Pi" scheme="http://yoursite.com/tags/Raspberry-Pi/"/>
+    
   </entry>
   
   <entry>
-    <title>Contrôle de prise Chacon DIO First via RaspberryPi</title>
-    <link href="http://yoursite.com/2017/05/03/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/"/>
-    <id>http://yoursite.com/2017/05/03/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/</id>
-    <published>2017-05-03T08:58:40.000Z</published>
-    <updated>2017-05-03T10:02:45.052Z</updated>
+    <title>Contrôle de prise Chacon DIO First via Raspberry Pi</title>
+    <link href="http://yoursite.com/2014/02/25/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/"/>
+    <id>http://yoursite.com/2014/02/25/Controle-de-prise-Chacon-DIO-First-via-RaspberryPi/</id>
+    <published>2014-02-25T09:58:40.000Z</published>
+    <updated>2017-05-04T09:46:42.121Z</updated>
     
     <content type="html"><![CDATA[<p>Bonjour,</p>
 <p>C’est donc mon premier article de domotique et également mon premier montage.</p>
@@ -257,7 +634,7 @@
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>J’ai commencé depuis quelques temps à m’amuser à intégrer <a href="http://encausse.wordpress.com/s-a-r-a-h/" target="_blank" rel="external">S.A.R.A.H.</a> dans la maison via un media center maison.<br>Pour information, S.A.R.A.H. permet de communiquer avec l’ensemble des objets connectés de la maison via requête HTTP à l’aide de la voix.</p>
 <p>J’ai fait l’acquisition de trois prises <a href="http://www.amazon.fr/prises-avec-t%C3%A9l%C3%A9commande-canaux-Chacon/dp/B005LKMAW0/ref=sr_1_1?ie=UTF8&amp;qid=1393325060&amp;sr=8-1&amp;keywords=chacon+dio" target="_blank" rel="external">Chacon DIO First</a> avec télécommande pour 30€ et d’un kit <a href="http://www.amazon.fr/gp/product/B00G23NW6S/ref=oh_details_o03_s00_i00?ie=UTF8&amp;psc=1" target="_blank" rel="external">récepteur/émetteur 433MHz</a> pour 3.45€ sur Amazon, il y a de ça une semaine.</p>
 <p>Je possédais déjà un Raspberry Pi, je ne pense pas que ce soit très difficile à trouver, tellement c’est répandu maintenant !</p>
-<p><img src="images/kit-3-prises-telecommandees-dio-first-dio-by-chacon-ref-54795-neuf-0617163001360086625-1.jpeg" alt=""></p>
+<p><img src="/images/chacon.jpeg" alt=""></p>
 <h2 id="Principe-amp-fonctionnement"><a href="#Principe-amp-fonctionnement" class="headerlink" title="Principe &amp; fonctionnement"></a>Principe &amp; fonctionnement</h2><p>Les prises Chacon DIO First fonctionne via radio fréquence en 433MHz.<br>Le principe est tout simple, reproduire les donnés émises par la télécommande via l’émétteur 433MHz couplé au Raspberry Pi.</p>
 <p>La télécommande communique avec les prises via le protocole Easy Home, ce protocole compose le signal sous 32 bits ainsi :</p>
 <ul>
@@ -300,7 +677,6 @@
 <p>A savoir que le numéro identifiant la télécommande peut être différent de celui de votre télécommande, lorsque vous branchez une prise DIO First, elle passe en mode apprentissage pendant les 5 premières secondes (elle clignote). Pendant ce mode d’apprentissage, vous pouvez envoyer un signal (action on) avec un nouveau code qu’elle apprendra.</p>
 <p>Si comme moi, vous apprenez malencontreusement le même code (identifiant et numéro de prise) à deux prises différentes, vous pouvez supprimer un apprentissage en envoyant une commande avec une action off lors de l’apprentissage de la prise en question.</p>
 <p><img src="/images/IMG_20140225_0824301-1050x787.jpg" alt=""></p>
-<p>Mon montage de l’émetteur 433MHz sur le Raspberry Pi</p>
 <h2 id="Integration-a-S-A-R-A-H-Connaissances-du-projet-requises"><a href="#Integration-a-S-A-R-A-H-Connaissances-du-projet-requises" class="headerlink" title="Intégration à S.A.R.A.H. (Connaissances du projet requises)"></a>Intégration à S.A.R.A.H. (Connaissances du projet requises)</h2><p>Le plus gros est fait ! Vous pouvez maintenant commander vos prises en exécutant la commande sur votre Raspberry Pi de n’importe qu’elle façon.</p>
 <p>Afin de lancer la commande via S.A.R.A.H. on va simplement exécuter la commande via SSH.</p>
 <p>Pour cela il existe un plugin SSH sous S.A.R.A.H qui permet de faire ça tout simplement.</p>
@@ -321,302 +697,9 @@
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>Ambi-like avec 240 LED WS2812B et une Teensy 2.0</title>
-    <link href="http://yoursite.com/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/"/>
-    <id>http://yoursite.com/2017/05/03/Ambi-like-avec-240-LED-WS2812B-et-une-Teensy-2-0/</id>
-    <published>2017-05-03T08:49:57.000Z</published>
-    <updated>2017-05-03T08:56:17.022Z</updated>
+      <category term="Raspberry Pi" scheme="http://yoursite.com/tags/Raspberry-Pi/"/>
     
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>J’ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d’y ajouter un peu de couleurs !</p>
-<p>J’ai donc réalisé un nouvel Ambi-like avec une ruban de 4m composé de 240 LED WS2812B soit 60 LED par mètre contrairement à mon ancien Ambi-like de la télévision qui lui est constitué d’uniquement 50 LED WS2801.</p>
-<p>J’en ai profité pour passer sur de l’Arduino-like (au lieu d’un Raspbery Pi), sur les conseils de plusieurs personnes, mon choix s’est porté sur une Teensy 2.0 vendu par <a href="http://www.pjrc.com/store/teensy.html" target="_blank" rel="external">PJRC</a> et qui permet de commander facilement un système Ambi-like.</p>
-<p>Le but principal ici est de pouvoir restituer le flux vidéo de l’ordinateur sur les LED, on verra qu’il est également possible de capturer le sons et également mettre des couleurs dynamiques d’ambiance.</p>
-<h2 id="Pourquoi-ce-choix-de-materiel"><a href="#Pourquoi-ce-choix-de-materiel" class="headerlink" title="Pourquoi ce choix de matériel ?"></a>Pourquoi ce choix de matériel ?</h2><p>Un système Ambi-like se fait généralement avec des LED WS2801 car elles sont adressables contrairement aux LED WS2811/WS2812. J’avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m’a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j’aime les défis et surtout les nouvelles choses :)</p>
-<p><img src="images/strip_rgb_ws28121.jpg" alt=""></p>
-<p>Pour le choix du contrôleur, j’avais déjà joué avec un Raspeberry Pi précédemment, je voulais donc tenter l’aventure sur un autre périphérique. Un Arduino correspond très bien au besoin, c’est petit, possède une faible consommation énergétique et il existe plusieurs systèmes d’Ambi-like dédiés. J’ai donc commandé une Tensy 2.0 qui est encore plus petite qu’un Arduino Uno et possède une plus grande puissance de calcul (ça se révélera important étant donné que mes LED ne sont pas adressables).</p>
-<p><img src="images/teensy_2.jpg" alt=""></p>
-<h2 id="Programmation"><a href="#Programmation" class="headerlink" title="Programmation"></a>Programmation</h2><p>J’ai donc découvert la programmation sous Arduino grâce à cette Teensy 2.0. A vrai dire avec quelques connaissance en C, c’est relativement simple !</p>
-<p>Il existe un logiciel de développement dédié pour les Arduino, à <a href="http://arduino.cc/en/Main/Software" target="_blank" rel="external">télécharger ici</a>, par défaut Arduino ne prend pas en charge les Teensy, il faut donc télécharger et installer sur votre installation d’Arduino le ‘patch’ <a href="https://www.pjrc.com/teensy/td_download.html" target="_blank" rel="external">Teensyduino</a>.</p>
-<p>Il embarque nativement des libraires de développement, à utiliser selon la fonction que vous voulez donner à votre système.</p>
-<p>Ici, nous voulons commander notre ruban à LED via notre ordinateur en passant par la Teensy. Pour cela nous utiliserons deux logiciels concurrent nommés <a href="http://www.ambibox.ru/en/index.php/Main_Page" target="_blank" rel="external">Ambibox</a> et <a href="http://lightpack.tv/downloads" target="_blank" rel="external">Prismatik</a>.</p>
-<p>Ces deux logiciels peuvent fonctionner en communiquant avec un système <a href="http://www.adafruit.com/products/461" target="_blank" rel="external">Adalight</a> (embarqué sur la Teensy).</p>
-<p>Le problème, c’est qu’Adalight est développé pour fonctionner avec des LED 2801. Après quelques heures de recherches, j’ai réussi à trouver un <a href="https://code.google.com/p/adalight-ws2812/source/browse/0.9?spec=svn2&amp;r=2" target="_blank" rel="external">fork d’Adalight</a> fonctionnant avec des LED WS2812.</p>
-<p>Ce fork d’Adalight repose malheureusement sur une ancienne librairie FastSPI_LED2 (permettant de commander des LED WS2811/WS2812), qui a évoluée et se trouve maintenant sous le nom FastLED (disponible sous l’éditeur Arduino).</p>
-<p>J’ai donc résolu mon problème en modifiant légèrement le code du fork pour utiliser la dernière version de la librairie FastLED, ma version disponible sur <a href="https://github.com/Wifsimster/adalight_ws2812" target="_blank" rel="external">Github</a> (dernière mise à jour 22/11/2015).</p>
-<p>Je ne vais pas vous expliquer comment charger le programme sur la Teensy, c’est très simple et repose sur le même principe que n’importe quel Arduino, pour plus d’informations, <a href="http://www.pjrc.com/teensy/loader_vista.html" target="_blank" rel="external">voir ici</a>.</p>
-<h2 id="Montage"><a href="#Montage" class="headerlink" title="Montage"></a>Montage</h2><p>J’ai donc simplement découpé des bandes pour chaque longueur des écrans, bien penser à respecter le sens des flèches du ruban (pour le signal).</p>
-<p>J’ai relié chaque bandes bout à bout par trois fils soudés de chaque côté et relié mon alimentation 5v 8A en entrée et sortie du ruban (préféré plusieurs points d’alimentation sur votre ruban).</p>
-<p><img src="/images/IMG_20140921_1522391-1050x590.jpg" alt=""></p>
-<p>Comme vous pouvez le voir ci-dessous, j’ai connecté les trois fils du ruban sur les ports VCC, GRD B1 de la Teensy 2.0. Le port B1 est paramétrable dans ma version de l’Adalight.</p>
-<p><img src="/images/IMG_20140921_1523001.jpg" alt=""></p>
-<h2 id="Communication-avec-Adalight"><a href="#Communication-avec-Adalight" class="headerlink" title="Communication avec Adalight"></a>Communication avec Adalight</h2><p>Adalight est très répandu et est de plus en plus reconnu par les logiciels Ambilight. J’ai donc testé les deux plus connus du moment, Prismatik et Ambibox !</p>
-<p><img src="/images/IMG_20140921_1531451-1050x590.jpg" alt=""></p>
-<h2 id="Update-22-11-2015"><a href="#Update-22-11-2015" class="headerlink" title="Update - 22/11/2015"></a>Update - 22/11/2015</h2><p>Suite à mon déménagement, j’ai dû me remettre dans la programmation de la Teensy et je viens donc d’en profiter pour mettre à jour ma version d’Adalight.</p>
-<p>Le plus gros problème que j’ai eu après tout ce temps (et un nouvelle installation de Windows) c’est la configuration de Prismatik !</p>
-<p>Penser à bien installer les drivers pour votre Teensy, les drivers sont embarqués dans le ‘patch’ <a href="https://www.pjrc.com/teensy/td_download.html" target="_blank" rel="external">Teensyduino</a> (voir au début de l’article) et par la suite récupéré le port dans la gestion de vos périphériques Windows.</p>
-<p><img src="/images/periph.png" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;J’ai terminé il y a quelques s
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Flash d’un ESP8266</title>
-    <link href="http://yoursite.com/2017/05/03/Flash-d%E2%80%99un-ESP8266/"/>
-    <id>http://yoursite.com/2017/05/03/Flash-d’un-ESP8266/</id>
-    <published>2017-05-03T08:43:56.000Z</published>
-    <updated>2017-05-03T08:49:17.106Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="images/all_esp_modules1.png" alt=""></p>
-<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Voici les prérequis pour réaliser le flash d’un esp8266 :</p>
-<ul>
-<li>1 <a href="">esp8266 01</a>;</li>
-<li>1 <a href="">FTDI FT232RL USB</a> to TTL;</li>
-<li>1 alimenation 5v;</li>
-<li>le firmware <a href="">nodemcu</a> afin de développer en LUA;</li>
-<li>le logiciel <a href="">ESP8266Flasher</a> afin d’installer le firmware sur votre esp8266.</li>
-</ul>
-<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>Vous avez besoin d’un bon régulateur 3.3v avec une alimentation qui peut délivrer de 500 à 600mA.<br>Si vous avez des erreurs dès le démarrage du wifi, l’alimentation est probablement en cause.</p>
-<h2 id="ESP8266-pins"><a href="#ESP8266-pins" class="headerlink" title="ESP8266 pins"></a>ESP8266 pins</h2><p><img src="images/pins-1.jpg" alt=""></p>
-<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="images/firmware-1050x558.png" alt=""></p>
-<h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention !"></a>Attention !</h3><p>N’utiliser pas le 3.3v de votre FTDI (si disponible) mais passer plutôt par un régulateur LF33CV (5v to 3.3v).</p>
-<h2 id="Flash"><a href="#Flash" class="headerlink" title="Flash"></a>Flash</h2><p>La procédure est détaillée sur le <a href="https://github.com/nodemcu/nodemcu-flasher" target="_blank" rel="external">Github du projet</a>.</p>
-<p>Veuillez à bien respecter la procédure dans l’ordre étape par étape.</p>
-<p>Dès lors que votre ESP8266 est alimenté, vous pouvez lancer le logiciel.</p>
-<p>Par défaut un firmware (NodeMCU) est embarqué.</p>
-<p>A savoir qu’il existe plusieurs types de firmware, dont les deux plus populaires :</p>
-<ul>
-<li><a href="https://github.com/nodemcu/nodemcu-firmware" target="_blank" rel="external">NodeMCU</a> en LUA</li>
-<li>ESP8266 AT en C</li>
-</ul>
-<p>Télécharger la dernier version de NodeMCU (actuellement nodemcu_float_0.9.6-dev_20150704).</p>
-<p>Dans Config, supprimer toute la configuration et rajoutez uniquement nodemcu_float_0.9.6-dev_20150704.bin (en cochant bien la checkbox de gauche).</p>
-<p><img src="images/config.png" alt=""></p>
-<p>Dans Operation, séléctionner le port COM correspondant à votre FTDI et lancez le flash.</p>
-<p>Si l’esp est bien détecté un QRcode doit apparaître dans la seconde et la barre de progression doit commencer à avancer.</p>
-<p><img src="images/config_02.png" alt=""></p>
-<p>A la fin de l’update, une icône verte apparaîtra pour confirmer le succès de l’opération.</p>
-<p>Vous pouvez dès lors débrancher votre ESP8266 et retirer le GPIO_0 du GND.</p>
-<h3 id="Probleme-de-detection"><a href="#Probleme-de-detection" class="headerlink" title="Problème de détection ?"></a>Problème de détection ?</h3><p>Si l’ESP8266 n’est pas détecté par le logiciel, débranchez et rebrancher l’alimentation de l’ESP8266 pour forcer la détection.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;images/all_esp_modules1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Prerequis&quot;&gt;&lt;a href=&quot;#Prerequis&quot; class=&quot;headerlink&quot; title=&quot;Prérequis&quot;&gt;&lt;/a&gt;Prére
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Température et pression (BMP180) sous Jeedom via un ESP8266</title>
-    <link href="http://yoursite.com/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/"/>
-    <id>http://yoursite.com/2017/05/03/Temperature-et-pression-BMP180-sous-Jeedom-via-un-ESP8266/</id>
-    <published>2017-05-03T08:37:56.000Z</published>
-    <updated>2017-05-03T08:42:20.805Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Materiel"><a href="#Materiel" class="headerlink" title="Matériel"></a>Matériel</h2><ul>
-<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
-<li>1 capteur <a href="http://www.ebay.fr/itm/BMP180-Replace-BMP085-Digital-Barometric-Pressure-Sensor-Board-Module-Arduino-IE-/281807948504?hash=item419d100ad8:g:rJIAAOSwVL1WApmE" target="_blank" rel="external">BMP180</a> (température et pression);</li>
-<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
-<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up). </li>
-</ul>
-<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/bmp180.png" alt=""></p>
-<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Créer un device virtuel.</p>
-<p><img src="/images/bmp180_jeedom.png" alt=""></p>
-<p>Veuillez à bien noter les ID de deux informations (température et pression), ici 535 et 536. Ces deux ID sont à insérer dans la requête HTTP à envoyer à Jeedom.</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/bmp180/" target="_blank" rel="external">HTTP version</a></p>
-<p><a href="https://github.com/Wifsimster/bmp180-mqtt" target="_blank" rel="external">MQTT version</a></p>
-<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/bmp180_res.png" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Materiel&quot;&gt;&lt;a href=&quot;#Materiel&quot; class=&quot;headerlink&quot; title=&quot;Matériel&quot;&gt;&lt;/a&gt;Matériel&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;1 &lt;a href=&quot;http://www.ebay.fr/itm/ESP826
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Distributeur de croquettes sous Jeedom via un ESP8266</title>
-    <link href="http://yoursite.com/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/"/>
-    <id>http://yoursite.com/2017/05/03/Distributeur-de-croquettes-sous-Jeedom-via-un-ESP8266/</id>
-    <published>2017-05-03T08:26:51.000Z</published>
-    <updated>2017-05-03T08:37:13.839Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Afin d’éviter LE problème quotidien : « nourrir le chat affamé », j’ai réalisé un distributeur connecté à Jeedom.</p>
-<p>Ce distributeur est constitué d’un simple moteur 12v actionné par un double relais et contrôler par un ESP8266.</p>
-<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Afin de réaliser ce montage, il vous faut :</p>
-<ul>
-<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
-<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
-<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up);</li>
-<li>1 <a href="http://www.ebay.com/itm/1pcs-5V-2-Channel-Relay-Module-for-Arduino-PIC-ARM-DSP-AVR-Electronic-/400985229770?hash=item5d5c9509ca:g:cJgAAOxy86RSY-Jq" target="_blank" rel="external">double relais</a> module (5v).</li>
-</ul>
-<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le distributeur est constitué d’un moteur 12v qui fait tourner une tige filetée à laquelle est fixé un plateau.</p>
-<p>Le plateau est verrouillé en rotation par deux fine tiges à la base du distributeur.</p>
-<p>En conséquence, selon le sens de rotation du moteur, la plateau descend ou monte.</p>
-<p>Un tuyau  de plus gros diamètre englobe le tout afin de récupérer les croquettes et les verse à la base par un bec.</p>
-<p>Le distributeur est connecté à Jeedom par un ESP8266 et actionne le double relais sur requête HTTP.</p>
-<p><img src="/images/cat_feeder.jpg" alt=""><br><img src="/images/cat_feeder_02.jpg" alt=""><br><img src="/images/cat_feeder_03.jpg" alt=""></p>
-<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/relay_command.png" alt=""></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/distributeur-lua" target="_blank" rel="external">Github</a></p>
-<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Création d’un script pour communiquer avec l’esp8266 du distributeur :</p>
-<p><img src="/images/cat_feeder_jeedom.png" alt=""></p>
-<p>Création d’un virtuel pour interagir avec le script précédent :</p>
-<p><img src="/images/cat_feeder_virtual.png" alt=""></p>
-<p>Création d’un scénario pour automatiser la distribution des croquettes :</p>
-<p><img src="/images/cat_feeder_scenari.png" alt=""></p>
-<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/cat_feeder_dash.png" alt=""></p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/_gSTuAhnkl0" frameborder="0" allowfullscreen></iframe></div>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Afin d’éviter LE problème quot
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Communication sans fil indépendante via deux esp8266</title>
-    <link href="http://yoursite.com/2017/04/25/Communication-sans-fil-independante-via-deux-esp8266/"/>
-    <id>http://yoursite.com/2017/04/25/Communication-sans-fil-independante-via-deux-esp8266/</id>
-    <published>2017-04-25T18:59:33.000Z</published>
-    <updated>2017-04-25T19:12:03.892Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>La problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome, c’est à dire sans point d’accès provenant d’un routeur (ou autre box). Le but final étant de relier une cellule IR de détection de présence (se trouvant à l’extérieur) à une alarme (à l’intérieur de la maison).</p>
-<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Je pars du principe que :</p>
-<p>la détection de présence sur la cellule IR provoque un état haut sur une entrée GPIO;<br>l’alarme sera mise en fonction via un état haut d’une sortie GPIO.<br>Il vous faudra :</p>
-<ul>
-<li>2 <a href="http://www.ebay.com/itm/ESP8266-Serial-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-Support-AP-STA-/171653455849?hash=item27f757dfe9:g:KDkAAOSw-W5Uwh9z" target="_blank" rel="external">ESP8266</a>;</li>
-<li>2 régulateurs <a href="http://www.ebay.com/itm/LF33CV-Original-New-ST-Transistor-/400409071685?hash=item5d3a3d9045:g:pF4AAMXQk-FRE8mt" target="_blank" rel="external">LF33CV</a>;</li>
-<li>2 résistances <a href="http://www.ebay.com/itm/1000PCS-1K-1K-Ohm-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071106631?hash=item3ab09bd847:g:ymUAAOSwjVVV3nVm" target="_blank" rel="external">1KΩ</a>.</li>
-</ul>
-<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir les ESP8266 avec le firmware nodemcu.</p>
-<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Un esp va servir de serveur, c’est à dire qu’il va :</p>
-<ol>
-<li>Déclarer son propre point d’accès wifi;</li>
-<li>Instancier un serveur HTTP;</li>
-<li>Attendre une requête HTTP et produire une action en conséquence de cette requête.</li>
-</ol>
-<p>Le deuxième esp va lui servir de client, c’est à dire qu’il va :</p>
-<ol>
-<li>Essayer de se connecter sur le point d’accès wifi du serveur (pendant 1 min, led verte clignotante);</li>
-<li>Allumer la led verte pour indiquer que la connexion au serveur est établie;</li>
-<li>Attendre un changement d’état du port GPIO_2 (la cellule IR);</li>
-<li>Envoyer une requête HTTP au serveur avec l’état du port GPIO_2;</li>
-</ol>
-<h2 id="Schemas"><a href="#Schemas" class="headerlink" title="Schémas"></a>Schémas</h2><p><img src="/images/scheme-client.png" alt=""></p>
-<p><img src="/images/scheme-server.png" alt=""></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/soft-ap-client" target="_blank" rel="external">Client</a> | <a href="https://github.com/Wifsimster/soft-ap" target="_blank" rel="external">Serveur</a></p>
-<h2 id="Realisation"><a href="#Realisation" class="headerlink" title="Réalisation"></a>Réalisation</h2><p><img src="/images/image_client.jpg" alt=""></p>
-<p><img src="/images/image_server.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;La problématique de ce projet 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Luminosité sous Jeedom via un ESP8266</title>
-    <link href="http://yoursite.com/2017/04/25/Luminosite-sous-Jeedom-via-un-ESP8266/"/>
-    <id>http://yoursite.com/2017/04/25/Luminosite-sous-Jeedom-via-un-ESP8266/</id>
-    <published>2017-04-25T18:52:21.000Z</published>
-    <updated>2017-04-25T18:58:28.435Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cet article met en avant la mise en place d’un capteur TSL2561 et d’un ESP8266 afin de récupérer la luminosité sous Jeedom.</p>
-<p>La communication des données se fera à travers un broker MQTT.</p>
-<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Pour réaliser ce montage, il vous faut :</p>
-<ul>
-<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
-<li>1 capteur <a href="http://www.ebay.fr/itm/TSL2561-Luminosity-Sensor-Breakout-infrared-Light-Sensor-integrating-sensor-/271789914195?hash=item3f47f0f853:g:bMIAAOSwNSxU8R-w" target="_blank" rel="external">TSL2561</a>;</li>
-<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
-<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up).</li>
-</ul>
-<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir l’ESP8266 avec le firmware nodemcu.</p>
-<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p>[En attente du capteur TSL2561 sous Fritzing]</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/tsl2561-mqtt" target="_blank" rel="external">Github</a></p>
-<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le principe est le suivant :</p>
-<ol>
-<li>L’ESP créé un client MQTT avec un id unique;</li>
-<li>Il se connecte au broker MQTT;</li>
-<li>A chaque changement de valeur du capteur TSL2561, le client MQTT publie les données sur un topic particulier;</li>
-<li>Le broker MQTT reçoit les données et les publie pour chaque client ayant souscrit à ce topic.</li>
-</ol>
-<h2 id="Jeedom"><a href="#Jeedom" class="headerlink" title="Jeedom"></a>Jeedom</h2><p>Il vous faut tout d’abord installer le plugin gratuit MQTT dans Jeedom.</p>
-<p>Dès lors que votre ESP8266 publiera sur le broker MQTT, le plugin Jeedom ajoutera automatiquement le device TSL2561 :</p>
-<p><img src="/images/tsl2561_mqtt.png" alt=""></p>
-<p><img src="/images/tsl2561_device.png" alt=""></p>
-<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/tsl2561_jeedom.png" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Cet article met en avant la mi
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Affichage de valeurs sur un écran I2C via un ESP8266</title>
-    <link href="http://yoursite.com/2017/04/21/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/"/>
-    <id>http://yoursite.com/2017/04/21/Affichage-de-valeurs-sur-un-ecran-I2C-via-un-ESP8266/</id>
-    <published>2017-04-21T15:33:30.000Z</published>
-    <updated>2017-04-25T18:53:18.269Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cet article met en avant l’utilisation d’un écran I2C OLED et d’un ESP8266 afin d’afficher des valeurs en provenance d’un broker MQTT.</p>
-<h2 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h2><p>Pour réaliser ce montage, il vous faut :</p>
-<ul>
-<li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ" target="_blank" rel="external">ESP8266</a>;</li>
-<li>1 écran <a href="http://www.ebay.com/itm/0-96-I2C-IIC-SPI-Serial-128X64-White-OLED-LCD-LED-Display-Module-for-Arduino-/201428440360?hash=item2ee6121528:g:MOYAAOSwv0tVeD0N" target="_blank" rel="external">I2C 128×64 OLED</a>;</li>
-<li>1 régulateur <a href="http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&amp;hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g" target="_blank" rel="external">LF33CV</a> (5v vers 3.3v);</li>
-<li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472" target="_blank" rel="external">1kΩ</a> (pull-up);</li>
-<li>2 résistances <a href="http://www.ebay.com/itm/100PCS-4-7K-4K7-Ohms-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071125870?hash=item3ab09c236e:g:k9EAAOSwjVVV3n3n" target="_blank" rel="external">4.7kΩ</a>.</li>
-</ul>
-<p>Attention !<br>Le code est en LUA et nécessite donc d’avoir l’ESP8266 avec le firmware nodemcu.</p>
-<h2 id="Cablage"><a href="#Cablage" class="headerlink" title="Câblage"></a>Câblage</h2><p><img src="/images/i2c_display_scheme.png" alt=""></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><a href="https://github.com/Wifsimster/i2c-display-mqtt" target="_blank" rel="external">Github</a></p>
-<h2 id="Principe"><a href="#Principe" class="headerlink" title="Principe"></a>Principe</h2><p>Le principe est le suivant :</p>
-<ol>
-<li>L’ESP créé un client MQTT avec un id unique;</li>
-<li>Il se connecte au broker MQTT;</li>
-<li>Le client souscrit à un topic particulier où les données que l’on désire sont publiées;</li>
-<li>L’ESP affiche une première fois les données à l’écran;</li>
-<li>Puis à chaque fois que le broker MQTT reçoit des nouvelles données sur ce topic, notre client met à jour les données à l’écran.</li>
-</ol>
-<h2 id="Resultat"><a href="#Resultat" class="headerlink" title="Résultat"></a>Résultat</h2><p><img src="/images/i2c_display.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;Cet article met en avant l’uti
-    
-    </summary>
-    
+      <category term="DIY" scheme="http://yoursite.com/tags/DIY/"/>
     
   </entry>
   
