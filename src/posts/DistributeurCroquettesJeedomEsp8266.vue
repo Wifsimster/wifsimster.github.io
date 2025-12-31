@@ -11,10 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Distributeur de croquettes sous Jeedom via un ESP8266',
   description: "Afin d'éviter LE problème quotidien : « nourrir le chat affamé », j'ai réalisé un distributeur connecté à Jeedom. Ce distributeur est constitué d'un simple moteur 12v actionné par un double relais et contrôler par un ESP8266.",
-  html: `<h2>Introduction</h2>
-<p>Afin d'éviter LE problème quotidien : « nourrir le chat affamé », j'ai réalisé un distributeur connecté à Jeedom.</p>
-<p>Ce distributeur est constitué d'un simple moteur 12v actionné par un double relais et contrôler par un ESP8266.</p>
-<h2>Prérequis</h2>
+  html: `<h2>Prérequis</h2>
 <p>Afin de réaliser ce montage, il vous faut :</p>
 <ul>
 <li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ">ESP8266</a>;</li>
@@ -50,10 +47,7 @@ const frenchContent: PostContent = {
 const englishContent: PostContent = {
   title: 'Cat food dispenser under Jeedom via ESP8266',
   description: "To avoid THE daily problem: 'feeding the hungry cat', I built a dispenser connected to Jeedom. This dispenser consists of a simple 12v motor actuated by a double relay and controlled by an ESP8266.",
-  html: `<h2>Introduction</h2>
-<p>To avoid THE daily problem: "feeding the hungry cat", I built a dispenser connected to Jeedom.</p>
-<p>This dispenser consists of a simple 12v motor actuated by a double relay and controlled by an ESP8266.</p>
-<h2>Prerequisites</h2>
+  html: `<h2>Prerequisites</h2>
 <p>To build this setup, you will need:</p>
 <ul>
 <li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ">ESP8266</a>;</li>

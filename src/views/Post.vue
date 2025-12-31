@@ -6,6 +6,9 @@
           <h1 class="text-4xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
             {{ post.title }}
           </h1>
+          <p v-if="post.description" class="text-xl text-gray-600 dark:text-zinc-400 mb-4 subtitle">
+            {{ post.description }}
+          </p>
           <div class="flex items-center text-sm text-gray-500 dark:text-zinc-400 mb-4">
             <time :datetime="post.date">{{ formattedDate }}</time>
           </div>
@@ -13,7 +16,11 @@
             <TagList :tags="post.tags" />
           </div>
         </header>
-        <component :is="postInfo.component" :locale="lang" />
+        <main>
+          <div class="prose prose-lg dark:prose-invert max-w-none">
+            <component :is="postInfo.component" :locale="lang" />
+          </div>
+        </main>
       </article>
     </div>
     <div v-else class="text-center py-12">

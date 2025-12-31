@@ -11,9 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Ambi-like avec un ruban WS2801, un Raspberry Pi et Hyperion',
   description: "Réalisation d'un système Ambi-like DIY avec un ruban de 50 LED WS2801, un Raspberry Pi et le logiciel Hyperion pour reproduire l'effet Ambilight de Philips.",
-  html: `<h2>Introduction</h2>
-<p>Le système <a href="http://en.wikipedia.org/wiki/Ambilight">Ambilight</a> de chez Phiilips m'a fait les yeux doux depuis trop longtemps, je me suis donc décidé à faire un système Ambilight en <a href="http://fr.wikipedia.org/wiki/Do_it_yourself">DIY</a>. Les projets et tuto ne manquent pas sur le net, beaucoup de personnes se sont essayé à l'exercice et certains softs sont même très complet maintenant (Hyperion pour ne pas le citer).</p>
-<h2>Matériel</h2>
+  html: `<h2>Matériel</h2>
 <p>Au niveau du matériel, j'ai choisi un ruban à 50 leds, une alimentation 5v 8A et un connecteur d'alimentation jack.</p>
 <ul>
 <li>1 ruban de 50 <a href="http://www.ebay.fr/itm/50PCS-WS2801-RGB-Full-Color-12mm-Pixels-digital-Addressable-LED-String-DC-5V-/121159316753?pt=US_Car_Lighting&hash=item1c35a87511">LED WS2801</a> pour 21€ ;</li>
@@ -74,9 +72,7 @@ rm /etc/init/hyperion.conf
 const englishContent: PostContent = {
   title: 'Ambi-like with WS2801 strip, Raspberry Pi and Hyperion',
   description: 'Building a DIY Ambi-like system with a 50 LED WS2801 strip, a Raspberry Pi and Hyperion software to reproduce Philips Ambilight effect.',
-  html: `<h2>Introduction</h2>
-<p>The <a href="http://en.wikipedia.org/wiki/Ambilight">Ambilight</a> system from Philips has been catching my eye for too long, so I decided to build an Ambilight system <a href="http://fr.wikipedia.org/wiki/Do_it_yourself">DIY</a> style. There's no shortage of projects and tutorials on the web, many people have tried it and some software is now very complete (Hyperion to name one).</p>
-<h2>Materials</h2>
+  html: `<h2>Materials</h2>
 <p>For the hardware, I chose a 50 LED strip, a 5v 8A power supply and a jack power connector.</p>
 <ul>
 <li>1 strip of 50 <a href="http://www.ebay.fr/itm/50PCS-WS2801-RGB-Full-Color-12mm-Pixels-digital-Addressable-LED-String-DC-5V-/121159316753?pt=US_Car_Lighting&hash=item1c35a87511">WS2801 LEDs</a> for 21€;</li>

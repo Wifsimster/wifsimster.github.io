@@ -11,12 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Ambi-like avec 240 LED WS2812B et une Teensy 2.0',
   description: "Réalisation d'un système Ambi-like avec un ruban de 4m composé de 240 LED WS2812B et une Teensy 2.0 pour restituer le flux vidéo de l'ordinateur sur les LED.",
-  html: `<h2>Introduction</h2>
-<p>J'ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d'y ajouter un peu de couleurs !</p>
-<p>J'ai donc réalisé un nouvel Ambi-like avec une ruban de 4m composé de 240 LED WS2812B soit 60 LED par mètre contrairement à mon ancien Ambi-like de la télévision qui lui est constitué d'uniquement 50 LED WS2801.</p>
-<p>J'en ai profité pour passer sur de l'Arduino-like (au lieu d'un Raspbery Pi), sur les conseils de plusieurs personnes, mon choix s'est porté sur une Teensy 2.0 vendu par <a href="http://www.pjrc.com/store/teensy.html">PJRC</a> et qui permet de commander facilement un système Ambi-like.</p>
-<p>Le but principal ici est de pouvoir restituer le flux vidéo de l'ordinateur sur les LED, on verra qu'il est également possible de capturer le sons et également mettre des couleurs dynamiques d'ambiance.</p>
-<h2>Pourquoi ce choix de matériel ?</h2>
+  html: `<h2>Pourquoi ce choix de matériel ?</h2>
 <p>Un système Ambi-like se fait généralement avec des LED WS2801 car elles sont adressables contrairement aux LED WS2811/WS2812. J'avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m'a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j'aime les défis et surtout les nouvelles choses :)</p>
 <p><img src="/images/strip_rgb_ws28121.jpg" alt="Ruban WS2812"></p>
 <p>Pour le choix du contrôleur, j'avais déjà joué avec un Raspeberry Pi précédemment, je voulais donc tenter l'aventure sur un autre périphérique. Un Arduino correspond très bien au besoin, c'est petit, possède une faible consommation énergétique et il existe plusieurs systèmes d'Ambi-like dédiés. J'ai donc commandé une Tensy 2.0 qui est encore plus petite qu'un Arduino Uno et possède une plus grande puissance de calcul (ça se révélera important étant donné que mes LED ne sont pas adressables).</p>
@@ -50,12 +45,7 @@ const frenchContent: PostContent = {
 const englishContent: PostContent = {
   title: 'Ambi-like with 240 WS2812B LEDs and a Teensy 2.0',
   description: 'Building an Ambi-like system with a 4m strip composed of 240 WS2812B LEDs and a Teensy 2.0 to reproduce the computer\'s video stream on the LEDs.',
-  html: `<h2>Introduction</h2>
-<p>I finished building my desk with integrated PC a few weeks ago. I had to add some colors to it!</p>
-<p>So I built a new Ambi-like with a 4m strip composed of 240 WS2812B LEDs, that's 60 LEDs per meter, unlike my old TV Ambi-like which only had 50 WS2801 LEDs.</p>
-<p>I took the opportunity to switch to Arduino-like (instead of a Raspberry Pi), on the advice of several people, my choice fell on a Teensy 2.0 sold by <a href="http://www.pjrc.com/store/teensy.html">PJRC</a> which allows easy control of an Ambi-like system.</p>
-<p>The main goal here is to be able to reproduce the computer's video stream on the LEDs, we'll see that it's also possible to capture sound and also set dynamic ambient colors.</p>
-<h2>Why this hardware choice?</h2>
+  html: `<h2>Why this hardware choice?</h2>
 <p>An Ambi-like system is usually done with WS2801 LEDs because they are addressable unlike WS2811/WS2812 LEDs. I admit I bought this strip on impulse (the number of LEDs per meter attracted me) without checking compatibility with current Ambi-like systems… But I like challenges and especially new things :)</p>
 <p><img src="/images/strip_rgb_ws28121.jpg" alt="WS2812 Strip"></p>
 <p>For the controller choice, I had already played with a Raspberry Pi previously, so I wanted to try the adventure on another device. An Arduino fits the need very well, it's small, has low power consumption and there are several dedicated Ambi-like systems. So I ordered a Teensy 2.0 which is even smaller than an Arduino Uno and has greater computing power (this will prove important given that my LEDs are not addressable).</p>

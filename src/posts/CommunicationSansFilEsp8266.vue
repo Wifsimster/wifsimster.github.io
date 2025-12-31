@@ -11,9 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Communication sans fil indépendante via deux ESP8266',
   description: 'La problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome',
-  html: `<h2>Introduction</h2>
-<p>La problématique de ce projet est de réaliser soit même une communication sans fil. Dans ce cas précis, une communication wifi et autonome, c'est à dire sans point d'accès provenant d'un routeur (ou autre box). Le but final étant de relier une cellule IR de détection de présence (se trouvant à l'extérieur) à une alarme (à l'intérieur de la maison).</p>
-<h2>Prérequis</h2>
+  html: `<h2>Prérequis</h2>
 <p>Je pars du principe que :</p>
 <ul>
 <li>la détection de présence sur la cellule IR provoque un état haut sur une entrée GPIO;</li>
@@ -54,9 +52,7 @@ Le code est en LUA et nécessite donc d'avoir les ESP8266 avec le firmware nodem
 const englishContent: PostContent = {
   title: 'Independent wireless communication via two ESP8266',
   description: 'The challenge of this project is to create your own wireless communication. In this specific case, a wifi and autonomous communication.',
-  html: `<h2>Introduction</h2>
-<p>The challenge of this project is to create your own wireless communication. In this specific case, a wifi and autonomous communication, meaning without an access point from a router (or other box). The final goal is to connect an IR presence detection cell (located outside) to an alarm (inside the house).</p>
-<h2>Prerequisites</h2>
+  html: `<h2>Prerequisites</h2>
 <p>I assume that:</p>
 <ul>
 <li>presence detection on the IR cell triggers a high state on a GPIO input;</li>

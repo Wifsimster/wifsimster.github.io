@@ -1,7 +1,7 @@
 <template>
-  <article class="prose prose-lg dark:prose-invert max-w-none">
+  <section class="prose prose-lg dark:prose-invert max-w-none">
     <div v-html="html" class="post-content"></div>
-  </article>
+  </section>
 </template>
 
 <script setup lang="ts">

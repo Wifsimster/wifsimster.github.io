@@ -11,9 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Affichage de valeurs sur un écran I2C via un ESP8266',
   description: "Cet article met en avant l'utilisation d'un écran I2C OLED et d'un ESP8266 afin d'afficher des valeurs en provenance d'un broker MQTT.",
-  html: `<h2>Introduction</h2>
-<p>Cet article met en avant l'utilisation d'un écran I2C OLED et d'un ESP8266 afin d'afficher des valeurs en provenance d'un broker MQTT.</p>
-<h2>Prérequis</h2>
+  html: `<h2>Prérequis</h2>
 <p>Pour réaliser ce montage, il vous faut :</p>
 <ul>
 <li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ">ESP8266</a>;</li>
@@ -44,9 +42,7 @@ Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu
 const englishContent: PostContent = {
   title: 'Display values on an I2C screen via ESP8266',
   description: 'This article highlights the use of an I2C OLED screen and an ESP8266 to display values from an MQTT broker.',
-  html: `<h2>Introduction</h2>
-<p>This article highlights the use of an I2C OLED screen and an ESP8266 to display values from an MQTT broker.</p>
-<h2>Prerequisites</h2>
+  html: `<h2>Prerequisites</h2>
 <p>To build this setup, you will need:</p>
 <ul>
 <li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ">ESP8266</a>;</li>

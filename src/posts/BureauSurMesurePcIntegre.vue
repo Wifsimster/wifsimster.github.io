@@ -11,14 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Bureau sur mesure avec pc intégré',
   description: "Construction d'un bureau sur mesure avec un PC intégré, incluant étagère pour écrans, système de son, ventilation et finitions.",
-  html: `<h2>Introduction</h2>
-<p>J'ai commencé la construction d'un bureau il y a de ça 1 mois. Je suis actuellement en attente de quelques pièces pour continuer, je vais donc en profiter pour présenter ce projet.</p>
-<p>J'ai toujours rêvé d'avoir un pc intégré dans mon bureau, surtout depuis que j'ai fait la connaissance de projets de <a href="http://www.geeky-gadgets.com/lian-li-computer-desk-houses-all-your-hardware-video-29-05-2014/">Lian Li</a> ou <a href="https://www.youtube.com/user/l3pje">Peter Brands</a>.</p>
-<p>Après quelques recherches et un peu de remise en pied sous SolidWorks j'ai donc pondu une premier version de mon futur bureau.</p>
-<p><img src="/images/Sans+titre1-1050x393.png" alt="Bureau vue 1"></p>
-<p>A savoir que, je possède déjà deux pieds de bureau que j'ai prévu d'encastrer sur le fond du bureau, comme ci-dessous :</p>
-<p><img src="/images/Sans+titre11-1050x675.png" alt="Bureau vue 2"></p>
-<h2>Choix et composants</h2>
+  html: `<h2>Choix et composants</h2>
 <p>Comme vous pouvez le voir ci-dessous j'ai découpé le bureau en 3 emplacements :</p>
 <ul>
 <li>l'emplacement gauche dédié à la carte mère et ses composants;</li>
@@ -139,13 +132,7 @@ J'ai donc décidé (pour le moment) de la placer au niveaux de mes genoux contre
 const englishContent: PostContent = {
   title: 'Custom desk with integrated PC',
   description: 'Building a custom desk with an integrated PC, including shelf for screens, sound system, ventilation and finishes.',
-  html: `<h2>Introduction</h2>
-<p>I started building a desk about 1 month ago. I'm currently waiting for a few parts to continue, so I'll take the opportunity to present this project.</p>
-<p>I've always dreamed of having a PC integrated into my desk, especially since I discovered projects from <a href="http://www.geeky-gadgets.com/lian-li-computer-desk-houses-all-your-hardware-video-29-05-2014/">Lian Li</a> or <a href="https://www.youtube.com/user/l3pje">Peter Brands</a>.</p>
-<p>After some research and a bit of redesigning in SolidWorks, I came up with a first version of my future desk.</p>
-<p><img src="/images/Sans+titre1-1050x393.png" alt="Desk view 1"></p>
-<p>Note that I already have two desk legs that I planned to embed on the back of the desk, as below:</p>
-<p><img src="/images/Sans+titre11-1050x675.png" alt="Desk view 2"></p>
+  html: `
 <h2>Choices and Components</h2>
 <p>As you can see below, I divided the desk into 3 areas:</p>
 <ul>

@@ -18,12 +18,6 @@ const frenchContent: PostContent = {
 <li><a href="http://www.homautomation.org/2013/10/09/how-to-control-di-o-devices-with-a-raspberry/">How to control dio devices with a raspberry pi</a>;</li>
 <li><a href="http://blog.idleman.fr/raspberry-pi-12-allumer-des-prises-distance/">Raspberry Pi 12 – Allumer des prises à distance</a>.</li>
 </ul>
-<h2>Introduction</h2>
-<p>J'ai commencé depuis quelques temps à m'amuser à intégrer <a href="http://encausse.wordpress.com/s-a-r-a-h/">S.A.R.A.H.</a> dans la maison via un media center maison.<br>
-Pour information, S.A.R.A.H. permet de communiquer avec l'ensemble des objets connectés de la maison via requête HTTP à l'aide de la voix.</p>
-<p>J'ai fait l'acquisition de trois prises <a href="http://www.amazon.fr/prises-avec-t%C3%A9l%C3%A9commande-canaux-Chacon/dp/B005LKMAW0/ref=sr_1_1?ie=UTF8&qid=1393325060&sr=8-1&keywords=chacon+dio">Chacon DIO First</a> avec télécommande pour 30€ et d'un kit <a href="http://www.amazon.fr/gp/product/B00G23NW6S/ref=oh_details_o03_s00_i00?ie=UTF8&psc=1">récepteur/émetteur 433MHz</a> pour 3.45€ sur Amazon, il y a de ça une semaine.</p>
-<p>Je possédais déjà un Raspberry Pi, je ne pense pas que ce soit très difficile à trouver, tellement c'est répandu maintenant !</p>
-<p><img src="/images/chacon.jpeg" alt="Chacon"></p>
 <h2>Principe & fonctionnement</h2>
 <p>Les prises Chacon DIO First fonctionne via radio fréquence en 433MHz.<br>
 Le principe est tout simple, reproduire les donnés émises par la télécommande via l'émétteur 433MHz couplé au Raspberry Pi.</p>
@@ -80,12 +74,6 @@ const englishContent: PostContent = {
 <li><a href="http://www.homautomation.org/2013/10/09/how-to-control-di-o-devices-with-a-raspberry/">How to control dio devices with a raspberry pi</a>;</li>
 <li><a href="http://blog.idleman.fr/raspberry-pi-12-allumer-des-prises-distance/">Raspberry Pi 12 – Allumer des prises à distance</a>.</li>
 </ul>
-<h2>Introduction</h2>
-<p>I've been having fun integrating <a href="http://encausse.wordpress.com/s-a-r-a-h/">S.A.R.A.H.</a> into the house via a home media center for some time.<br>
-For information, S.A.R.A.H. allows communication with all connected objects in the house via HTTP request using voice.</p>
-<p>I acquired three <a href="http://www.amazon.fr/prises-avec-t%C3%A9l%C3%A9commande-canaux-Chacon/dp/B005LKMAW0/ref=sr_1_1?ie=UTF8&qid=1393325060&sr=8-1&keywords=chacon+dio">Chacon DIO First</a> outlets with remote control for 30€ and a <a href="http://www.amazon.fr/gp/product/B00G23NW6S/ref=oh_details_o03_s00_i00?ie=UTF8&psc=1">433MHz receiver/transmitter</a> kit for 3.45€ on Amazon, about a week ago.</p>
-<p>I already had a Raspberry Pi, I don't think it's very difficult to find, it's so widespread now!</p>
-<p><img src="/images/chacon.jpeg" alt="Chacon"></p>
 <h2>Principle & Operation</h2>
 <p>Chacon DIO First outlets work via 433MHz radio frequency.<br>
 The principle is very simple, reproduce the data emitted by the remote control via the 433MHz transmitter coupled to the Raspberry Pi.</p>

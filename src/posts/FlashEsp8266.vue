@@ -11,9 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Flash d\'un ESP8266',
   description: 'Guide pour flasher un ESP8266 avec le firmware NodeMCU.',
-  html: `<h2>Introduction</h2>
-<p>Cet article explique comment flasher un ESP8266 avec le firmware NodeMCU.</p>
-<h2>Matériel nécessaire</h2>
+  html: `<h2>Matériel nécessaire</h2>
 <ul>
 <li>1 ESP8266</li>
 <li>Câble USB vers série (FTDI ou équivalent)</li>
@@ -26,9 +24,7 @@ const frenchContent: PostContent = {
 const englishContent: PostContent = {
   title: 'Flashing an ESP8266',
   description: 'Guide to flash an ESP8266 with NodeMCU firmware.',
-  html: `<h2>Introduction</h2>
-<p>This article explains how to flash an ESP8266 with NodeMCU firmware.</p>
-<h2>Required Materials</h2>
+  html: `<h2>Required Materials</h2>
 <ul>
 <li>1 ESP8266</li>
 <li>USB to serial cable (FTDI or equivalent)</li>

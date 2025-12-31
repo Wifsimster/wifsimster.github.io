@@ -11,10 +11,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Luminosité sous Jeedom via un ESP8266',
   description: "Cet article met en avant la mise en place d'un capteur TSL2561 et d'un ESP8266 afin de récupérer la luminosité sous Jeedom. La communication des données se fera à travers un broker MQTT.",
-  html: `<h2>Introduction</h2>
-<p>Cet article met en avant la mise en place d'un capteur TSL2561 et d'un ESP8266 afin de récupérer la luminosité sous Jeedom.</p>
-<p>La communication des données se fera à travers un broker MQTT.</p>
-<h2>Prérequis</h2>
+  html: `<h2>Prérequis</h2>
 <p>Pour réaliser ce montage, il vous faut :</p>
 <ul>
 <li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ">ESP8266</a>;</li>
@@ -48,10 +45,7 @@ Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu
 const englishContent: PostContent = {
   title: 'Brightness under Jeedom via ESP8266',
   description: 'This article highlights the setup of a TSL2561 sensor and an ESP8266 to retrieve brightness under Jeedom. Data communication will be through an MQTT broker.',
-  html: `<h2>Introduction</h2>
-<p>This article highlights the setup of a TSL2561 sensor and an ESP8266 to retrieve brightness under Jeedom.</p>
-<p>Data communication will be through an MQTT broker.</p>
-<h2>Prerequisites</h2>
+  html: `<h2>Prerequisites</h2>
 <p>To build this setup, you will need:</p>
 <ul>
 <li>1 <a href="http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ">ESP8266</a>;</li>
