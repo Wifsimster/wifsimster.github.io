@@ -1,6 +1,6 @@
-# Blog de Damien BATTISTELLA
+# Blog de Wifsimster
 
-Blog personnel de Damien BATTISTELLA - Passionate Web Dev 💻 ❤️
+Blog personnel de Wifsimster - Passionate Web Dev 💻 ❤️
 
 ## 🌐 Site web
 
@@ -127,7 +127,7 @@ MIT
 
 ## 👤 Auteur
 
-**Damien BATTISTELLA**
+**Wifsimster**
 
 - GitHub: [@Wifsimster](https://github.com/Wifsimster)
 - Twitter: [@wifsimster](https://twitter.com/wifsimster)
@@ -135,4 +135,4 @@ MIT
 
 ---
 
-© 2017-2025 Damien BATTISTELLA
+© 2017-2025 Wifsimster

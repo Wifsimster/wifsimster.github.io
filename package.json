@@ -15,7 +15,7 @@
     "blog",
     "diy"
   ],
-  "author": "Damien BATTISTELLA",
+  "author": "Wifsimster",
   "license": "MIT",
   "devDependencies": {
     "vitepress": "2.0.0-alpha.15",

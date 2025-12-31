@@ -4,7 +4,7 @@ titleTemplate: false
 layout: home
 
 hero:
-  name: Damien BATTISTELLA
+  name: Wifsimster
   text: Blog personnel
   tagline: Passionate Web Dev 💻
   actions:
