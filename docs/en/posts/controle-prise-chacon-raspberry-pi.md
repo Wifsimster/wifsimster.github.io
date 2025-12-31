@@ -1,7 +1,7 @@
 ---
 title: Contrôle de prise Chacon DIO First via Raspberry Pi
 date: 2014-02-25
-description: Premier article de domotique : contrôle de prises Chacon DIO First via un Raspberry Pi et un émetteur 433MHz.
+description: "Premier article de domotique : contrôle de prises Chacon DIO First via un Raspberry Pi et un émetteur 433MHz."
 tags:
   - Raspberry-Pi
   - DIY

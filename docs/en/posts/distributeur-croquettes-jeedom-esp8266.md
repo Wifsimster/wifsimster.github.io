@@ -1,7 +1,7 @@
 ---
 title: Distributeur de croquettes sous Jeedom via un ESP8266
 date: 2016-04-14
-description: Afin d'éviter LE problème quotidien : « nourrir le chat affamé », j'ai réalisé un distributeur connecté à Jeedom. Ce distributeur est constitué d'un simple moteur 12v actionné par un double relais et contrôler par un ESP8266.
+description: "Afin d'éviter LE problème quotidien : « nourrir le chat affamé », j'ai réalisé un distributeur connecté à Jeedom. Ce distributeur est constitué d'un simple moteur 12v actionné par un double relais et contrôler par un ESP8266."
 tags:
   - ESP8266
   - NodeMCU
