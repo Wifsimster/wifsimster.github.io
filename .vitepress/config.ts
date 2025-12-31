@@ -21,7 +21,7 @@ export default defineConfig({
       label: 'Français',
       lang: 'fr',
       title: 'Wifsimster',
-      description: 'Passionate Web Dev, Tech Geek, Raspberry Pi & ESP8266 Lover 💻 ❤️',
+      description: 'Passionate Web Dev 💻',
       themeConfig: {
         logo: '/wifsimster.png',
         siteTitle: 'Wifsimster',
@@ -66,8 +66,8 @@ export default defineConfig({
         },
 
         footer: {
-          message: '© 2017-2024 Damien BATTISTELLA',
-          copyright: 'Blog personnel - Tech, DIY, ESP8266 & Raspberry Pi'
+          message: '© 2017-2025 Damien BATTISTELLA',
+          copyright: 'Blog personnel'
         }
       }
     },
@@ -76,7 +76,7 @@ export default defineConfig({
       lang: 'en',
       link: '/en/',
       title: 'Wifsimster',
-      description: 'Passionate Web Dev, Tech Geek, Raspberry Pi & ESP8266 Lover 💻 ❤️',
+      description: 'Passionate Web Dev 💻',
       themeConfig: {
         logo: '/wifsimster.png',
         siteTitle: 'Wifsimster',
@@ -121,8 +121,8 @@ export default defineConfig({
         },
 
         footer: {
-          message: '© 2017-2024 Damien BATTISTELLA',
-          copyright: 'Personal Blog - Tech, DIY, ESP8266 & Raspberry Pi'
+          message: '© 2017-2025 Damien BATTISTELLA',
+          copyright: 'Personal Blog'
         }
       }
     }
