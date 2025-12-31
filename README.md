@@ -11,24 +11,39 @@ Le blog est accessible publiquement à : https://wifsimster.github.io/
 ```
 .
 ├── docs/                    # Contenu source VitePress
-│   ├── posts/              # Articles du blog (Markdown)
+│   ├── posts/              # Articles du blog en français (Markdown)
+│   ├── en/                 # Version anglaise
+│   │   ├── posts/          # Articles du blog en anglais
+│   │   ├── index.md        # Page d'accueil anglaise
+│   │   └── archives.md     # Archives anglaises
+│   ├── fr/                 # Version française
+│   │   ├── index.md        # Page d'accueil française
+│   │   └── archives.md     # Archives françaises
 │   ├── tags/               # Pages de tags
 │   ├── public/             # Assets statiques (images)
 │   │   ├── images/         # Images des articles
 │   │   └── img/            # Images générales
-│   ├── index.md            # Page d'accueil
-│   └── archives.md         # Page archives
+│   ├── index.md            # Page d'accueil par défaut
+│   └── archives.md         # Page archives par défaut
 ├── .vitepress/             # Configuration VitePress
 │   ├── config.ts           # Configuration principale
 │   └── theme/              # Personnalisation du thème
 └── package.json            # Dépendances et scripts
 ```
 
+## 🌍 Support multilingue
+
+Le blog supporte deux langues :
+- **Français** : articles dans `docs/posts/`, pages dans `docs/fr/`
+- **Anglais** : articles dans `docs/en/posts/`, pages dans `docs/en/`
+
+Les articles sont organisés par langue dans leurs répertoires respectifs, permettant une navigation séparée pour chaque langue.
+
 ## 🚀 Développement
 
 ### Prérequis
 
-- Node.js LTS (v20.x ou supérieur)
+- Node.js v24.0.0 ou supérieur
 - npm ou yarn
 
 ### Installation
@@ -67,8 +82,9 @@ npm run preview
 
 ## 📝 Ajouter un nouvel article
 
-1. Créer un nouveau fichier Markdown dans `docs/posts/`
-2. Ajouter le frontmatter avec les métadonnées :
+1. Créer un nouveau fichier Markdown dans `docs/posts/` pour la version française
+2. Créer la version anglaise correspondante dans `docs/en/posts/` si nécessaire
+3. Ajouter le frontmatter avec les métadonnées :
    ```yaml
    ---
    title: Titre de l'article
@@ -79,8 +95,10 @@ npm run preview
      - Tag2
    ---
    ```
-3. Ajouter le lien vers l'article dans `docs/index.md` et `docs/archives.md`
-4. Mettre à jour la sidebar dans `.vitepress/config.ts` si nécessaire
+4. Ajouter le lien vers l'article dans :
+   - `docs/index.md` et `docs/archives.md` pour la version française
+   - `docs/en/index.md` et `docs/en/archives.md` pour la version anglaise
+5. Mettre à jour la sidebar dans `.vitepress/config.ts` si nécessaire
 
 ## 🚢 Déploiement
 

@@ -60,6 +60,11 @@ export default defineConfig({
           provider: 'local'
         },
 
+        docFooter: {
+          prev: 'Page précédente',
+          next: 'Page suivante'
+        },
+
         footer: {
           message: '© 2017-2024 Damien BATTISTELLA',
           copyright: 'Blog personnel - Tech, DIY, ESP8266 & Raspberry Pi'
@@ -108,6 +113,11 @@ export default defineConfig({
 
         search: {
           provider: 'local'
+        },
+
+        docFooter: {
+          prev: 'Previous Page',
+          next: 'Next Page'
         },
 
         footer: {
