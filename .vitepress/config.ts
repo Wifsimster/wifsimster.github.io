@@ -13,74 +13,7 @@ export default defineConfig({
     ['meta', { name: 'author', content: 'Damien BATTISTELLA' }],
     ['meta', { property: 'og:site_name', content: 'Wifsimster' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['script', {}, `
-      (function() {
-        function injectLanguageSwitcher() {
-          const actions = document.querySelector('.VPNavBarActions');
-          if (!actions) return false;
-          if (actions.querySelector('.vp-locale-switch')) return true;
-          
-          const isEnglish = window.location.pathname.startsWith('/en');
-          const currentLocale = isEnglish ? 'EN' : 'FR';
-          
-          const switcher = document.createElement('div');
-          switcher.className = 'vp-locale-switch';
-          switcher.innerHTML = \`
-            <button class="vp-locale-switch-button" aria-label="\${currentLocale}">
-              <span class="vp-locale-switch-label">\${currentLocale}</span>
-              <svg class="vp-locale-switch-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-            </button>
-            <div class="vp-locale-switch-dropdown" style="display: none;">
-              <a href="/" class="vp-locale-switch-item \${!isEnglish ? 'active' : ''}">Français</a>
-              <a href="/en/" class="vp-locale-switch-item \${isEnglish ? 'active' : ''}">English</a>
-            </div>
-          \`;
-          
-          const button = switcher.querySelector('.vp-locale-switch-button');
-          const dropdown = switcher.querySelector('.vp-locale-switch-dropdown');
-          
-          button.addEventListener('click', function(e) {
-            e.stopPropagation();
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-          });
-          
-          document.addEventListener('click', function(e) {
-            if (!switcher.contains(e.target)) {
-              dropdown.style.display = 'none';
-            }
-          });
-          
-          const darkToggle = actions.querySelector('.VPNavBarAppearance');
-          if (darkToggle) {
-            actions.insertBefore(switcher, darkToggle);
-          } else {
-            actions.appendChild(switcher);
-          }
-          return true;
-        }
-        
-        function tryInject() {
-          if (!injectLanguageSwitcher()) {
-            setTimeout(tryInject, 100);
-          }
-        }
-        
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', tryInject);
-        } else {
-          tryInject();
-        }
-        
-        // Also try after a delay
-        setTimeout(tryInject, 500);
-        setTimeout(tryInject, 1000);
-      })();
-    `]
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
 
   locales: {

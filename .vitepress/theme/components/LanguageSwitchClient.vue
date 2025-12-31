@@ -47,10 +47,18 @@
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useRoute } from 'vitepress'
 
+// #region agent log
+fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:47',message:'LanguageSwitchClient script setup',data:{timestamp:Date.now()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+// #endregion
+
 const route = useRoute()
 const isOpen = ref(false)
 const buttonRef = ref<HTMLElement | null>(null)
 const dropdownRef = ref<HTMLElement | null>(null)
+
+// #region agent log
+fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:54',message:'LanguageSwitchClient route initialized',data:{hasRoute:!!route,routePath:route?.path},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+// #endregion
 
 const localeLinks = computed(() => {
   return [
@@ -81,13 +89,24 @@ const closeDropdown = () => {
 }
 
 onMounted(() => {
+  // #region agent log
+  fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:83',message:'LanguageSwitchClient onMounted called',data:{hasButtonRef:!!buttonRef.value,hasDropdownRef:!!dropdownRef.value},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+  // #endregion
+  
   const injectIntoNavbar = () => {
     const actions = document.querySelector('.VPNavBarActions')
     const switcher = buttonRef.value?.closest('.vp-locale-switch')
     
+    // #region agent log
+    fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:88',message:'injectIntoNavbar attempt',data:{hasActions:!!actions,hasSwitcher:!!switcher,actionsExists:!!document.querySelector('.VPNavBarActions')},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
+    
     if (actions && switcher) {
       // Check if already in actions
       if (actions.contains(switcher)) {
+        // #region agent log
+        fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:95',message:'Switcher already in actions',data:{timestamp:Date.now()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
         return true
       }
       
@@ -100,21 +119,43 @@ onMounted(() => {
       const darkToggle = actions.querySelector('.VPNavBarAppearance')
       if (darkToggle) {
         actions.insertBefore(switcher, darkToggle)
+        // #region agent log
+        fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:105',message:'Switcher inserted before dark toggle',data:{timestamp:Date.now()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
       } else {
         // If no dark toggle found, append to end
         actions.appendChild(switcher)
+        // #region agent log
+        fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:110',message:'Switcher appended to actions',data:{timestamp:Date.now()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
       }
       return true
     }
+    // #region agent log
+    fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:115',message:'injectIntoNavbar failed',data:{hasActions:!!actions,hasSwitcher:!!switcher},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
     return false
   }
   
   // Try multiple times with delays
   nextTick(() => {
-    if (!injectIntoNavbar()) {
+    const result1 = injectIntoNavbar()
+    // #region agent log
+    fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:122',message:'nextTick injection result',data:{success:result1},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
+    if (!result1) {
       setTimeout(() => {
-        if (!injectIntoNavbar()) {
-          setTimeout(() => injectIntoNavbar(), 500)
+        const result2 = injectIntoNavbar()
+        // #region agent log
+        fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:127',message:'100ms delay injection result',data:{success:result2},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
+        if (!result2) {
+          setTimeout(() => {
+            const result3 = injectIntoNavbar()
+            // #region agent log
+            fetch('http://127.0.0.1:7244/ingest/25df5bb8-6b26-448f-93cb-c2dbf83f83f2',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'theme/components/LanguageSwitchClient.vue:132',message:'500ms delay injection result',data:{success:result3},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+            // #endregion
+          }, 500)
         }
       }, 100)
     }
