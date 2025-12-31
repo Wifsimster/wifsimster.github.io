@@ -1,4 +1,6 @@
 ---
+title: Wifsimster Blog
+titleTemplate: false
 layout: home
 
 hero:

@@ -1,33 +1,35 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Wifsimster',
+  title: 'Wifsimster Blog',
+  titleTemplate: false,
   description: 'Passionate Web Dev, Tech Geek, Raspberry Pi & ESP8266 Lover 💻 ❤️',
   base: '/',
-  
+
   sitemap: {
     hostname: 'https://wifsimster.github.io'
   },
-  
+
   head: [
     ['meta', { name: 'author', content: 'Damien BATTISTELLA' }],
-    ['meta', { property: 'og:site_name', content: 'Wifsimster' }],
+    ['meta', { property: 'og:site_name', content: 'Wifsimster Blog' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
   ],
 
   locales: {
     root: {
       label: 'Français',
       lang: 'fr',
-      title: 'Wifsimster',
+      title: 'Wifsimster Blog',
+      titleTemplate: false,
       description: 'Passionate Web Dev 💻',
       themeConfig: {
         logo: '/wifsimster.png',
-        siteTitle: 'Wifsimster',
+        siteTitle: 'Wifsimster Blog',
         langMenuLabel: 'Changer de langue',
         i18nRouting: true,
-        
+
         nav: [
           { text: 'Accueil', link: '/' },
           { text: 'Archives', link: '/archives' }
@@ -75,14 +77,15 @@ export default defineConfig({
       label: 'English',
       lang: 'en',
       link: '/en/',
-      title: 'Wifsimster',
+      title: 'Wifsimster Blog',
+      titleTemplate: false,
       description: 'Passionate Web Dev 💻',
       themeConfig: {
         logo: '/wifsimster.png',
-        siteTitle: 'Wifsimster',
+        siteTitle: 'Wifsimster Blog',
         langMenuLabel: 'Change language',
         i18nRouting: true,
-        
+
         nav: [
           { text: 'Home', link: '/en/' },
           { text: 'Archives', link: '/en/archives' }
