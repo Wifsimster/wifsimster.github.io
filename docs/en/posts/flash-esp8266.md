@@ -1,7 +1,7 @@
 ---
-title: Flash d'un ESP8266
+title: Flashing an ESP8266
 date: 2016-01-13
-description: Guide pour flasher un ESP8266 avec le firmware NodeMCU.
+description: Guide to flash an ESP8266 with NodeMCU firmware.
 tags:
   - ESP8266
   - NodeMCU
@@ -9,14 +9,14 @@ tags:
 
 ## Introduction
 
-Cet article explique comment flasher un ESP8266 avec le firmware NodeMCU.
+This article explains how to flash an ESP8266 with NodeMCU firmware.
 
-## Matériel nécessaire
+## Required Materials
 
 - 1 ESP8266
-- Câble USB vers série (FTDI ou équivalent)
-- Logiciel de flash (esptool ou NodeMCU Flasher)
+- USB to serial cable (FTDI or equivalent)
+- Flash software (esptool or NodeMCU Flasher)
 
-## Procédure
+## Procedure
 
-[Contenu à compléter selon les détails du post original]
+[Content to be completed according to original post details]

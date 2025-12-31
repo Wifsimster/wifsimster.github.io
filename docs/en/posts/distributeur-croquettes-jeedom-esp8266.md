@@ -1,7 +1,7 @@
 ---
-title: Distributeur de croquettes sous Jeedom via un ESP8266
+title: Cat food dispenser under Jeedom via ESP8266
 date: 2016-04-14
-description: "Afin d'éviter LE problème quotidien : « nourrir le chat affamé », j'ai réalisé un distributeur connecté à Jeedom. Ce distributeur est constitué d'un simple moteur 12v actionné par un double relais et contrôler par un ESP8266."
+description: "To avoid THE daily problem: 'feeding the hungry cat', I built a dispenser connected to Jeedom. This dispenser consists of a simple 12v motor actuated by a double relay and controlled by an ESP8266."
 tags:
   - ESP8266
   - NodeMCU
@@ -11,40 +11,40 @@ tags:
 
 ## Introduction
 
-Afin d'éviter LE problème quotidien : « nourrir le chat affamé », j'ai réalisé un distributeur connecté à Jeedom.
+To avoid THE daily problem: "feeding the hungry cat", I built a dispenser connected to Jeedom.
 
-Ce distributeur est constitué d'un simple moteur 12v actionné par un double relais et contrôler par un ESP8266.
+This dispenser consists of a simple 12v motor actuated by a double relay and controlled by an ESP8266.
 
-## Prérequis
+## Prerequisites
 
-Afin de réaliser ce montage, il vous faut :
+To build this setup, you will need:
 
 - 1 [ESP8266](http://www.ebay.fr/itm/ESP8266-Serial-WIFI-Wireless-TransceiveR-Module-Send-Receive-LWIP-AP-STA-/271935772447?hash=item3f50a2971f:g:QEYAAOSw9N1VrfAJ);
-- 1 régulateur [LF33CV](http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g) (5v vers 3.3v);
-- 1 résistance [1kΩ](http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472) (pull-up);
-- 1 [double relais](http://www.ebay.com/itm/1pcs-5V-2-Channel-Relay-Module-for-Arduino-PIC-ARM-DSP-AVR-Electronic-/400985229770?hash=item5d5c9509ca:g:cJgAAOxy86RSY-Jq) module (5v).
+- 1 [LF33CV](http://www.ebay.fr/itm/LF33CV-Regulateur-TO-220-3V3-0-5A-STM-lot-de-5-ou-10-/181701724632?var=&hash=item2a4e4449d8:m:mzy0HUMgtVw3B4YO5VCN2-g) regulator (5v to 3.3v);
+- 1 [1kΩ](http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472) resistor (pull-up);
+- 1 [double relay](http://www.ebay.com/itm/1pcs-5V-2-Channel-Relay-Module-for-Arduino-PIC-ARM-DSP-AVR-Electronic-/400985229770?hash=item5d5c9509ca:g:cJgAAOxy86RSY-Jq) module (5v).
 
-## Principe
+## Principle
 
-Le distributeur est constitué d'un moteur 12v qui fait tourner une tige filetée à laquelle est fixé un plateau.
+The dispenser consists of a 12v motor that rotates a threaded rod to which a tray is attached.
 
-Le plateau est verrouillé en rotation par deux fine tiges à la base du distributeur.
+The tray is locked in rotation by two thin rods at the base of the dispenser.
 
-En conséquence, selon le sens de rotation du moteur, la plateau descend ou monte.
+Consequently, depending on the rotation direction of the motor, the tray goes down or up.
 
-Un tuyau de plus gros diamètre englobe le tout afin de récupérer les croquettes et les verse à la base par un bec.
+A larger diameter tube surrounds everything to collect the food and pours it at the base through a spout.
 
-Le distributeur est connecté à Jeedom par un ESP8266 et actionne le double relais sur requête HTTP.
+The dispenser is connected to Jeedom via an ESP8266 and actuates the double relay on HTTP request.
 
-![Distributeur 1](/images/cat_feeder.jpg)
+![Dispenser 1](/images/cat_feeder.jpg)
 
-![Distributeur 2](/images/cat_feeder_02.jpg)
+![Dispenser 2](/images/cat_feeder_02.jpg)
 
-![Distributeur 3](/images/cat_feeder_03.jpg)
+![Dispenser 3](/images/cat_feeder_03.jpg)
 
-## Câblage
+## Wiring
 
-![Schéma relais](/images/relay_command.png)
+![Relay diagram](/images/relay_command.png)
 
 ## Code
 
@@ -52,19 +52,19 @@ Le distributeur est connecté à Jeedom par un ESP8266 et actionne le double rel
 
 ## Jeedom
 
-Création d'un script pour communiquer avec l'esp8266 du distributeur :
+Create a script to communicate with the esp8266 of the dispenser:
 
 ![Jeedom script](/images/cat_feeder_jeedom.png)
 
-Création d'un virtuel pour interagir avec le script précédent :
+Create a virtual to interact with the previous script:
 
-![Jeedom virtuel](/images/cat_feeder_virtual.png)
+![Jeedom virtual](/images/cat_feeder_virtual.png)
 
-Création d'un scénario pour automatiser la distribution des croquettes :
+Create a scenario to automate food distribution:
 
-![Jeedom scénario](/images/cat_feeder_scenari.png)
+![Jeedom scenario](/images/cat_feeder_scenari.png)
 
-## Résultat
+## Result
 
 ![Dashboard](/images/cat_feeder_dash.png)
 

@@ -1,7 +1,7 @@
 ---
-title: Ambi-like avec 240 LED WS2812B et une Teensy 2.0
+title: Ambi-like with 240 WS2812B LEDs and a Teensy 2.0
 date: 2014-10-06
-description: Réalisation d'un système Ambi-like avec un ruban de 4m composé de 240 LED WS2812B et une Teensy 2.0 pour restituer le flux vidéo de l'ordinateur sur les LED.
+description: Building an Ambi-like system with a 4m strip composed of 240 WS2812B LEDs and a Teensy 2.0 to reproduce the computer's video stream on the LEDs.
 tags:
   - Ambilight
   - WS2812B
@@ -11,68 +11,68 @@ tags:
 
 ## Introduction
 
-J'ai terminé il y a quelques semaines la construction de mon bureau avec pc intégré. Je me devais d'y ajouter un peu de couleurs !
+I finished building my desk with integrated PC a few weeks ago. I had to add some colors to it!
 
-J'ai donc réalisé un nouvel Ambi-like avec une ruban de 4m composé de 240 LED WS2812B soit 60 LED par mètre contrairement à mon ancien Ambi-like de la télévision qui lui est constitué d'uniquement 50 LED WS2801.
+So I built a new Ambi-like with a 4m strip composed of 240 WS2812B LEDs, that's 60 LEDs per meter, unlike my old TV Ambi-like which only had 50 WS2801 LEDs.
 
-J'en ai profité pour passer sur de l'Arduino-like (au lieu d'un Raspbery Pi), sur les conseils de plusieurs personnes, mon choix s'est porté sur une Teensy 2.0 vendu par [PJRC](http://www.pjrc.com/store/teensy.html) et qui permet de commander facilement un système Ambi-like.
+I took the opportunity to switch to Arduino-like (instead of a Raspberry Pi), on the advice of several people, my choice fell on a Teensy 2.0 sold by [PJRC](http://www.pjrc.com/store/teensy.html) which allows easy control of an Ambi-like system.
 
-Le but principal ici est de pouvoir restituer le flux vidéo de l'ordinateur sur les LED, on verra qu'il est également possible de capturer le sons et également mettre des couleurs dynamiques d'ambiance.
+The main goal here is to be able to reproduce the computer's video stream on the LEDs, we'll see that it's also possible to capture sound and also set dynamic ambient colors.
 
-## Pourquoi ce choix de matériel ?
+## Why this hardware choice?
 
-Un système Ambi-like se fait généralement avec des LED WS2801 car elles sont adressables contrairement aux LED WS2811/WS2812. J'avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m'a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j'aime les défis et surtout les nouvelles choses :)
+An Ambi-like system is usually done with WS2801 LEDs because they are addressable unlike WS2811/WS2812 LEDs. I admit I bought this strip on impulse (the number of LEDs per meter attracted me) without checking compatibility with current Ambi-like systems… But I like challenges and especially new things :)
 
-![Ruban WS2812](/images/strip_rgb_ws28121.jpg)
+![WS2812 Strip](/images/strip_rgb_ws28121.jpg)
 
-Pour le choix du contrôleur, j'avais déjà joué avec un Raspeberry Pi précédemment, je voulais donc tenter l'aventure sur un autre périphérique. Un Arduino correspond très bien au besoin, c'est petit, possède une faible consommation énergétique et il existe plusieurs systèmes d'Ambi-like dédiés. J'ai donc commandé une Tensy 2.0 qui est encore plus petite qu'un Arduino Uno et possède une plus grande puissance de calcul (ça se révélera important étant donné que mes LED ne sont pas adressables).
+For the controller choice, I had already played with a Raspberry Pi previously, so I wanted to try the adventure on another device. An Arduino fits the need very well, it's small, has low power consumption and there are several dedicated Ambi-like systems. So I ordered a Teensy 2.0 which is even smaller than an Arduino Uno and has greater computing power (this will prove important given that my LEDs are not addressable).
 
 ![Teensy 2.0](/images/teensy_2.jpg)
 
-## Programmation
+## Programming
 
-J'ai donc découvert la programmation sous Arduino grâce à cette Teensy 2.0. A vrai dire avec quelques connaissance en C, c'est relativement simple !
+So I discovered Arduino programming thanks to this Teensy 2.0. To be honest with some C knowledge, it's relatively simple!
 
-Il existe un logiciel de développement dédié pour les Arduino, à [télécharger ici](http://arduino.cc/en/Main/Software), par défaut Arduino ne prend pas en charge les Teensy, il faut donc télécharger et installer sur votre installation d'Arduino le 'patch' [Teensyduino](https://www.pjrc.com/teensy/td_download.html).
+There is dedicated development software for Arduino, [download here](http://arduino.cc/en/Main/Software), by default Arduino doesn't support Teensy, so you need to download and install the [Teensyduino](https://www.pjrc.com/teensy/td_download.html) 'patch' on your Arduino installation.
 
-Il embarque nativement des libraires de développement, à utiliser selon la fonction que vous voulez donner à votre système.
+It natively includes development libraries, to use according to the function you want to give to your system.
 
-Ici, nous voulons commander notre ruban à LED via notre ordinateur en passant par la Teensy. Pour cela nous utiliserons deux logiciels concurrent nommés [Ambibox](http://www.ambibox.ru/en/index.php/Main_Page) et [Prismatik](http://lightpack.tv/downloads).
+Here, we want to control our LED strip via our computer through the Teensy. For this we will use two competing software named [Ambibox](http://www.ambibox.ru/en/index.php/Main_Page) and [Prismatik](http://lightpack.tv/downloads).
 
-Ces deux logiciels peuvent fonctionner en communiquant avec un système [Adalight](http://www.adafruit.com/products/461) (embarqué sur la Teensy).
+These two software can work by communicating with an [Adalight](http://www.adafruit.com/products/461) system (embedded on the Teensy).
 
-Le problème, c'est qu'Adalight est développé pour fonctionner avec des LED 2801. Après quelques heures de recherches, j'ai réussi à trouver un [fork d'Adalight](https://code.google.com/p/adalight-ws2812/source/browse/0.9?spec=svn2&r=2) fonctionnant avec des LED WS2812.
+The problem is that Adalight is developed to work with 2801 LEDs. After a few hours of research, I managed to find an [Adalight fork](https://code.google.com/p/adalight-ws2812/source/browse/0.9?spec=svn2&r=2) working with WS2812 LEDs.
 
-Ce fork d'Adalight repose malheureusement sur une ancienne librairie FastSPI_LED2 (permettant de commander des LED WS2811/WS2812), qui a évoluée et se trouve maintenant sous le nom FastLED (disponible sous l'éditeur Arduino).
+This Adalight fork unfortunately relies on an old FastSPI_LED2 library (allowing to control WS2811/WS2812 LEDs), which has evolved and is now called FastLED (available in the Arduino editor).
 
-J'ai donc résolu mon problème en modifiant légèrement le code du fork pour utiliser la dernière version de la librairie FastLED, ma version disponible sur [Github](https://github.com/Wifsimster/adalight_ws2812) (dernière mise à jour 22/11/2015).
+So I solved my problem by slightly modifying the fork code to use the latest version of the FastLED library, my version available on [Github](https://github.com/Wifsimster/adalight_ws2812) (last update 22/11/2015).
 
-Je ne vais pas vous expliquer comment charger le programme sur la Teensy, c'est très simple et repose sur le même principe que n'importe quel Arduino, pour plus d'informations, [voir ici](http://www.pjrc.com/teensy/loader_vista.html).
+I won't explain how to load the program on the Teensy, it's very simple and based on the same principle as any Arduino, for more information, [see here](http://www.pjrc.com/teensy/loader_vista.html).
 
-## Montage
+## Assembly
 
-J'ai donc simplement découpé des bandes pour chaque longueur des écrans, bien penser à respecter le sens des flèches du ruban (pour le signal).
+I simply cut strips for each screen length, making sure to respect the arrow direction of the strip (for the signal).
 
-J'ai relié chaque bandes bout à bout par trois fils soudés de chaque côté et relié mon alimentation 5v 8A en entrée et sortie du ruban (préféré plusieurs points d'alimentation sur votre ruban).
+I connected each strip end to end with three wires soldered on each side and connected my 5v 8A power supply at the input and output of the strip (prefer multiple power points on your strip).
 
-![Montage 1](/images/IMG_20140921_1522391-1050x590.jpg)
+![Assembly 1](/images/IMG_20140921_1522391-1050x590.jpg)
 
-Comme vous pouvez le voir ci-dessous, j'ai connecté les trois fils du ruban sur les ports VCC, GRD B1 de la Teensy 2.0. Le port B1 est paramétrable dans ma version de l'Adalight.
+As you can see below, I connected the three wires of the strip to the VCC, GRD B1 ports of the Teensy 2.0. The B1 port is configurable in my version of Adalight.
 
-![Montage 2](/images/IMG_20140921_1523001.jpg)
+![Assembly 2](/images/IMG_20140921_1523001.jpg)
 
-## Communication avec Adalight
+## Communication with Adalight
 
-Adalight est très répandu et est de plus en plus reconnu par les logiciels Ambilight. J'ai donc testé les deux plus connus du moment, Prismatik et Ambibox !
+Adalight is very widespread and increasingly recognized by Ambilight software. So I tested the two most known at the moment, Prismatik and Ambibox!
 
 ![Communication](/images/IMG_20140921_1531451-1050x590.jpg)
 
 ## Update - 22/11/2015
 
-Suite à mon déménagement, j'ai dû me remettre dans la programmation de la Teensy et je viens donc d'en profiter pour mettre à jour ma version d'Adalight.
+Following my move, I had to get back into Teensy programming and I just took the opportunity to update my Adalight version.
 
-Le plus gros problème que j'ai eu après tout ce temps (et un nouvelle installation de Windows) c'est la configuration de Prismatik !
+The biggest problem I had after all this time (and a new Windows installation) is Prismatik configuration!
 
-Penser à bien installer les drivers pour votre Teensy, les drivers sont embarqués dans le 'patch' [Teensyduino](https://www.pjrc.com/teensy/td_download.html) (voir au début de l'article) et par la suite récupéré le port dans la gestion de vos périphériques Windows.
+Remember to properly install the drivers for your Teensy, the drivers are embedded in the [Teensyduino](https://www.pjrc.com/teensy/td_download.html) 'patch' (see at the beginning of the article) and then retrieve the port in your Windows device management.
 
-![Périphériques](/images/periph.png)
+![Devices](/images/periph.png)

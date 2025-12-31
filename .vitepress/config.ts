@@ -5,6 +5,7 @@ export default defineConfig({
   titleTemplate: false,
   description: 'Passionate Web Dev, Tech Geek, Raspberry Pi & ESP8266 Lover 💻 ❤️',
   base: '/',
+  lang: 'fr',
 
   sitemap: {
     hostname: 'https://wifsimster.github.io'
@@ -16,6 +17,78 @@ export default defineConfig({
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
   ],
+
+  themeConfig: {
+    logo: {
+      src: '/images/wifsimster.png',
+      alt: 'Wifsimster Blog Logo'
+    },
+    siteTitle: 'Wifsimster Blog',
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/Wifsimster' },
+      { icon: 'twitter', link: 'https://twitter.com/wifsimster' }
+    ],
+
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            translations: {
+              button: {
+                buttonText: 'Rechercher',
+                buttonAriaLabel: 'Rechercher'
+              },
+              modal: {
+                displayDetails: 'Afficher la liste détaillée',
+                resetButtonTitle: 'Réinitialiser la recherche',
+                backButtonTitle: 'Fermer la recherche',
+                noResultsText: 'Aucun résultat',
+                footer: {
+                  selectText: 'Sélectionner',
+                  selectKeyAriaLabel: 'Entrée',
+                  navigateText: 'Naviguer',
+                  navigateUpKeyAriaLabel: 'Flèche haut',
+                  navigateDownKeyAriaLabel: 'Flèche bas',
+                  closeText: 'Fermer',
+                  closeKeyAriaLabel: 'Échap'
+                }
+              }
+            }
+          },
+          en: {
+            translations: {
+              button: {
+                buttonText: 'Search',
+                buttonAriaLabel: 'Search'
+              },
+              modal: {
+                displayDetails: 'Display detailed list',
+                resetButtonTitle: 'Reset search',
+                backButtonTitle: 'Close search',
+                noResultsText: 'No results',
+                footer: {
+                  selectText: 'Select',
+                  selectKeyAriaLabel: 'Enter',
+                  navigateText: 'Navigate',
+                  navigateUpKeyAriaLabel: 'Up arrow',
+                  navigateDownKeyAriaLabel: 'Down arrow',
+                  closeText: 'Close',
+                  closeKeyAriaLabel: 'Escape'
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    footer: {
+      message: '© 2017-2025 Wifsimster',
+      copyright: 'Blog personnel'
+    }
+  },
 
   locales: {
     root: {
@@ -31,13 +104,7 @@ export default defineConfig({
         ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
       ],
       themeConfig: {
-        logo: {
-          src: '/images/wifsimster.png',
-          alt: 'Wifsimster Blog Logo'
-        },
-        siteTitle: 'Wifsimster Blog',
         langMenuLabel: 'Changer de langue',
-        i18nRouting: true,
 
         nav: [
           {
@@ -134,14 +201,6 @@ export default defineConfig({
           ]
         },
 
-        socialLinks: [
-          { icon: 'github', link: 'https://github.com/Wifsimster' },
-          { icon: 'twitter', link: 'https://twitter.com/wifsimster' }
-        ],
-
-        search: {
-          provider: 'local'
-        },
 
         docFooter: {
           prev: 'Page précédente',
@@ -168,13 +227,7 @@ export default defineConfig({
         ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
       ],
       themeConfig: {
-        logo: {
-          src: '/images/wifsimster.png',
-          alt: 'Wifsimster Blog Logo'
-        },
-        siteTitle: 'Wifsimster Blog',
         langMenuLabel: 'Change language',
-        i18nRouting: true,
 
         nav: [
           {
@@ -271,14 +324,6 @@ export default defineConfig({
           ]
         },
 
-        socialLinks: [
-          { icon: 'github', link: 'https://github.com/Wifsimster' },
-          { icon: 'twitter', link: 'https://twitter.com/wifsimster' }
-        ],
-
-        search: {
-          provider: 'local'
-        },
 
         docFooter: {
           prev: 'Previous Page',

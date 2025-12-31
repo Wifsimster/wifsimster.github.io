@@ -4,12 +4,12 @@
   "description": "Blog personnel",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
-    "deploy": "npm run docs:build && echo 'Build completed. Deploy .vitepress/dist to GitHub Pages'"
+    "dev": "vite",
+    "build": "npm run build:content && vite build",
+    "build:content": "node scripts/build-content.js",
+    "preview": "vite preview",
+    "docker:build": "docker build -t wifsimster/wifsimster-blog .",
+    "docker:run": "docker run -p 8080:80 wifsimster/wifsimster-blog"
   },
   "keywords": [
     "blog",
@@ -17,9 +17,21 @@
   ],
   "author": "Wifsimster",
   "license": "MIT",
+  "dependencies": {
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4",
+    "primevue": "^4.5.4",
+    "@primeuix/themes": "^2.0.2",
+    "primeicons": "^7.0.0",
+    "@vueuse/core": "^14.1.0",
+    "markdown-it": "^14.1.0",
+    "front-matter": "^4.0.2"
+  },
   "devDependencies": {
-    "vitepress": "2.0.0-alpha.15",
-    "vue": "^3.5.26"
+    "@vitejs/plugin-vue": "^6.0.3",
+    "@tailwindcss/vite": "^4.1.18",
+    "vite": "^7.3.0",
+    "tailwindcss": "^4.1.18"
   },
   "engines": {
     "node": ">=24.0.0"

@@ -1,7 +1,7 @@
 ---
-title: Ambi-like avec un ruban WS2801, un Raspberry Pi et Hyperion
+title: Ambi-like with WS2801 strip, Raspberry Pi and Hyperion
 date: 2014-07-09
-description: Réalisation d'un système Ambi-like DIY avec un ruban de 50 LED WS2801, un Raspberry Pi et le logiciel Hyperion pour reproduire l'effet Ambilight de Philips.
+description: Building a DIY Ambi-like system with a 50 LED WS2801 strip, a Raspberry Pi and Hyperion software to reproduce Philips Ambilight effect.
 tags:
   - Ambilight
   - WS2801
@@ -11,19 +11,19 @@ tags:
 
 ## Introduction
 
-Le système [Ambilight](http://en.wikipedia.org/wiki/Ambilight) de chez Phiilips m'a fait les yeux doux depuis trop longtemps, je me suis donc décidé à faire un système Ambilight en [DIY](http://fr.wikipedia.org/wiki/Do_it_yourself). Les projets et tuto ne manquent pas sur le net, beaucoup de personnes se sont essayé à l'exercice et certains softs sont même très complet maintenant (Hyperion pour ne pas le citer).
+The [Ambilight](http://en.wikipedia.org/wiki/Ambilight) system from Philips has been catching my eye for too long, so I decided to build an Ambilight system [DIY](http://fr.wikipedia.org/wiki/Do_it_yourself) style. There's no shortage of projects and tutorials on the web, many people have tried it and some software is now very complete (Hyperion to name one).
 
-## Matériel
+## Materials
 
-Au niveau du matériel, j'ai choisi un ruban à 50 leds, une alimentation 5v 8A et un connecteur d'alimentation jack.
+For the hardware, I chose a 50 LED strip, a 5v 8A power supply and a jack power connector.
 
-- 1 ruban de 50 [LED WS2801](http://www.ebay.fr/itm/50PCS-WS2801-RGB-Full-Color-12mm-Pixels-digital-Addressable-LED-String-DC-5V-/121159316753?pt=US_Car_Lighting&hash=item1c35a87511) pour 21€ ;
-- 1 alimentation [5V 8A](http://www.ebay.fr/itm/5V-8A-Power-supply-AC-to-DC-Adapter-for-WS2811-WS2801-HL8806-LED-String-Light-/121153648301?hash=item1c3551f6ad&pt=US_Lighting_Parts_and_Accessories) pour 12€ ;
-- 1 connecteur d'alimentation jack (à l'[unité 3€](http://www.amazon.fr/gp/product/B006WJL7Y6/ref=oh_details_o00_s00_i00?ie=UTF8&psc=1) ou [10 pour 7€](http://www.amazon.fr/gp/product/B008H2HLUA/ref=oh_details_o08_s00_i00?ie=UTF8&psc=1)).
+- 1 strip of 50 [WS2801 LEDs](http://www.ebay.fr/itm/50PCS-WS2801-RGB-Full-Color-12mm-Pixels-digital-Addressable-LED-String-DC-5V-/121159316753?pt=US_Car_Lighting&hash=item1c35a87511) for 21€;
+- 1 [5V 8A](http://www.ebay.fr/itm/5V-8A-Power-supply-AC-to-DC-Adapter-for-WS2811-WS2801-HL8806-LED-String-Light-/121153648301?hash=item1c3551f6ad&pt=US_Lighting_Parts_and_Accessories) power supply for 12€;
+- 1 jack power connector ([single unit 3€](http://www.amazon.fr/gp/product/B006WJL7Y6/ref=oh_details_o00_s00_i00?ie=UTF8&psc=1) or [10 for 7€](http://www.amazon.fr/gp/product/B008H2HLUA/ref=oh_details_o08_s00_i00?ie=UTF8&psc=1)).
 
 ## Prototype
 
-J'ai commencé par réaliser un cadre avec des morceaux de MDF qui ne me servaient à rien. C'est léger, facile à travaillé mais vite fragilisé avec les trous vu l'épaisseur.
+I started by building a frame with MDF pieces that I had no use for. It's light, easy to work with but quickly weakened with holes given the thickness.
 
 ![Prototype 1](/images/IMG_20140706_1353301.jpg)
 
@@ -35,82 +35,82 @@ J'ai commencé par réaliser un cadre avec des morceaux de MDF qui ne me servaie
 
 ![Prototype 5](/images/IMG_20140707_0843401.jpg)
 
-## Connexion avec le Raspberry Pi
+## Connection with Raspberry Pi
 
-La connexion avec le Raspberry Pi est relativement simple, comme vous pouvez le voir sur le schéma ci-dessous.
+The connection with the Raspberry Pi is relatively simple, as you can see in the diagram below.
 
-Les LED étant sensibles au voltage, il est préférable de les alimenter avec une alimentation extérieure connectée en parallèle au 5v du port GPIO.
+Since LEDs are sensitive to voltage, it's preferable to power them with an external power supply connected in parallel to the 5v GPIO port.
 
-![Schéma connexion](/images/diagram1.png)
+![Connection diagram](/images/diagram1.png)
 
-## Installation d'Hyperion
+## Hyperion Installation
 
-Le plus simple pour utiliser Hyperion est d'utiliser une [Raspbian](http://www.raspberrypi.org/downloads/) sur votre Raspberry Pi, si jamais vous voulez absoluement tourner sur un aure OS je vous repporte sur le wiki d'Hyperion qui explique la procédure supplémentaire à suivre [ici](https://github.com/tvdzwan/hyperion/wiki/installation).
+The easiest way to use Hyperion is to use [Raspbian](http://www.raspberrypi.org/downloads/) on your Raspberry Pi. If you absolutely want to run on another OS, I refer you to the Hyperion wiki which explains the additional procedure to follow [here](https://github.com/tvdzwan/hyperion/wiki/installation).
 
-En premier lieu, une installation de quelques librairies est nécessaire pour faire tourner Hyperion sur votre Raspberi Pi.
+First, installation of a few libraries is necessary to run Hyperion on your Raspberry Pi.
 
 ```bash
 sudo apt-get update 
 sudo apt-get install libqtcore4 libqtgui4 libqt4-network libusb-1.0-0 libprotobuf7 ca-certificates
 ```
 
-Ensuite téléchargé et déployé Hyperion.
+Then download and deploy Hyperion.
 
 ```bash
 wget -N https://raw.github.com/tvdzwan/hyperion/master/bin/install_hyperion.sh
 sudo sh ./install_hyperion.sh
 ```
 
-A savoir qu'Hyperion se lancera automatiquement dès le prochain démarrage du Raspberry Pi.
+Note that Hyperion will automatically start on the next Raspberry Pi boot.
 
-Vous pouvez ensuite tester simple d'allumer votre ruban en rouge.
+You can then test by simply turning your strip red.
 
 ```bash
 hyperion-remote --priority 50 --color red --duration 5000
 ```
 
-Si vous souhaité désactiver le lancement automatique d'Hyperion au démarrage.
+If you want to disable Hyperion automatic startup.
 
 ```bash
 sudo /sbin/initctl stop hyperion
 rm /etc/init/hyperion.conf
 ```
 
-Pour information, je n'ai pas réussi à faire fonctionner mon connecteur usb/wifi Edimax sur la Raspbmc alors qu'il fonctionnait très bien sur ma Raspbian, je me suis donc résolu à connecter mon Raspberry Pi en RJ45.
+For information, I couldn't get my Edimax usb/wifi connector to work on Raspbmc while it worked perfectly on my Raspbian, so I resolved to connect my Raspberry Pi via RJ45.
 
-Il existe une application Android gratuite pour contrôler le serveur Hyperion à distance, disponible sur le [store](https://play.google.com/store/apps/details?id=nl.hyperion.hyperionfree).
+There is a free Android application to remotely control the Hyperion server, available on the [store](https://play.google.com/store/apps/details?id=nl.hyperion.hyperionfree).
 
-## Configuration d'Hyperion
+## Hyperion Configuration
 
-Hyperion possède un logiciel de paramétrage très bien fait, nommé [HyperCon](https://github.com/tvdzwan/hyperion/wiki/configuration), il permet de gérer l'ensemble des LED (position, couleurs, éclairage, taille, …). L'ensemble des possibilités est détaillées dans le lien précédent.
+Hyperion has a very well-made configuration software called [HyperCon](https://github.com/tvdzwan/hyperion/wiki/configuration), which allows you to manage all LEDs (position, colors, lighting, size, …). All possibilities are detailed in the previous link.
 
-Hypercon va donc vous générer un fichier hyperion.config.json à déposer par défaut dans /etc.
+HyperCon will generate a hyperion.config.json file to place by default in /etc.
 
 ![HyperCon](/images/hypercon_mainscreen_011-1050x565.jpg)
 
-## Cadre en acier
+## Steel Frame
 
-Mon cadre en MDF n'étant pas très résistant, j'ai acheté quelques cornières en acier, que j'ai découpé et ensuite peinte. Le résultat est bien mieux, l'ensemble est solide, léger et tient bien mieux à la TV.
+My MDF frame not being very resistant, I bought some steel angles, which I cut and then painted. The result is much better, the whole thing is solid, light and holds much better to the TV.
 
-![Cadre acier 1](/images/IMG_20140707_2149471.jpg)
+![Steel frame 1](/images/IMG_20140707_2149471.jpg)
 
-![Cadre acier 2](/images/IMG_20140707_2347261.jpg)
+![Steel frame 2](/images/IMG_20140707_2347261.jpg)
 
-![Cadre acier 3](/images/IMG_20140708_0757471.jpg)
+![Steel frame 3](/images/IMG_20140708_0757471.jpg)
 
-![Cadre acier 4](/images/IMG_20140707_2301481.jpg)
+![Steel frame 4](/images/IMG_20140707_2301481.jpg)
 
-![Cadre acier 5](/images/IMG_20140708_0758191.jpg)
+![Steel frame 5](/images/IMG_20140708_0758191.jpg)
 
-## Configuration avec XBMC
+## Configuration with XBMC
 
-J'ai bataillé un moment avant de faire communiquer mon XBMC sous mon media center (Windows) avec le serveur Hyperion sur le Raspberry Pi.
+I struggled for a while before getting my XBMC on my media center (Windows) to communicate with the Hyperion server on the Raspberry Pi.
 
-La seule solution (à l'heure actuelle) que j'ai trouvé, c'est de passer par l'addon XBMC Boblight qui rend possible la communication entre XBMC et Hyperion sur le réseau.
+The only solution (at the moment) I found is to use the XBMC Boblight addon which makes communication between XBMC and Hyperion over the network possible.
 
-J'ai testé l'addon Hyperion pour XBMC mais impossible d'établir une connexion…
+I tested the Hyperion addon for XBMC but couldn't establish a connection…
 
-## Vidéos
+## Videos
 
 <iframe src="//www.youtube.com/embed/OVBgoJScQIA" frameborder="0" allowfullscreen></iframe>
 

@@ -1,63 +1,63 @@
 ---
-title: Bureau sur mesure avec pc intégré
+title: Custom desk with integrated PC
 date: 2014-09-05
-description: Construction d'un bureau sur mesure avec un PC intégré, incluant étagère pour écrans, système de son, ventilation et finitions.
+description: Building a custom desk with an integrated PC, including shelf for screens, sound system, ventilation and finishes.
 tags:
   - DIY
 ---
 
 ## Introduction
 
-J'ai commencé la construction d'un bureau il y a de ça 1 mois. Je suis actuellement en attente de quelques pièces pour continuer, je vais donc en profiter pour présenter ce projet.
+I started building a desk about 1 month ago. I'm currently waiting for a few parts to continue, so I'll take the opportunity to present this project.
 
-J'ai toujours rêvé d'avoir un pc intégré dans mon bureau, surtout depuis que j'ai fait la connaissance de projets de [Lian Li](http://www.geeky-gadgets.com/lian-li-computer-desk-houses-all-your-hardware-video-29-05-2014/) ou [Peter Brands](https://www.youtube.com/user/l3pje).
+I've always dreamed of having a PC integrated into my desk, especially since I discovered projects from [Lian Li](http://www.geeky-gadgets.com/lian-li-computer-desk-houses-all-your-hardware-video-29-05-2014/) or [Peter Brands](https://www.youtube.com/user/l3pje).
 
-Après quelques recherches et un peu de remise en pied sous SolidWorks j'ai donc pondu une premier version de mon futur bureau.
+After some research and a bit of redesigning in SolidWorks, I came up with a first version of my future desk.
 
-![Bureau vue 1](/images/Sans+titre1-1050x393.png)
+![Desk view 1](/images/Sans+titre1-1050x393.png)
 
-A savoir que, je possède déjà deux pieds de bureau que j'ai prévu d'encastrer sur le fond du bureau, comme ci-dessous :
+Note that I already have two desk legs that I planned to embed on the back of the desk, as below:
 
-![Bureau vue 2](/images/Sans+titre11-1050x675.png)
+![Desk view 2](/images/Sans+titre11-1050x675.png)
 
-## Choix et composants
+## Choices and Components
 
-Comme vous pouvez le voir ci-dessous j'ai découpé le bureau en 3 emplacements :
+As you can see below, I divided the desk into 3 areas:
 
-- l'emplacement gauche dédié à la carte mère et ses composants;
-- l'emplacement du fond dédié à l'alimentation et sortie de câbles (carte mère, haut parleurs, ventilation, etc…)
-- l'emplacement de droit n'a pas d'attribution spécifique pour le moment, je pense mettre déjà quelques commandes comme l'allumage, le contrôle de la ventilation…
+- the left area dedicated to the motherboard and its components;
+- the back area dedicated to power supply and cable outputs (motherboard, speakers, ventilation, etc…)
+- the right area has no specific assignment for the moment, I'm thinking of putting some controls like power, ventilation control…
 
-![Plan bureau](/images/hg2.png)
+![Desk plan](/images/hg2.png)
 
-Les côtés gauche et droit du meuble posséderons 3 ventilateurs [Corsair AF140 QE](http://www.amazon.fr/Corsair-Ventilateur-Grand-Edition-Silencieuse/dp/B007RESGGC/ref=sr_1_1?s=computers&ie=UTF8&qid=1404472072&sr=1-1&keywords=af140) chacun afin de garantir une ventilation de droite à gauche du bloc principal.
+The left and right sides of the furniture will have 3 [Corsair AF140 QE](http://www.amazon.fr/Corsair-Ventilateur-Grand-Edition-Silencieuse/dp/B007RESGGC/ref=sr_1_1?s=computers&ie=UTF8&qid=1404472072&sr=1-1&keywords=af140) fans each to ensure ventilation from right to left of the main block.
 
-L'extérieur des côtés sera recouvert de filtres anti-poussière, commandé sur [modDIY](http://www.moddiy.com/products/%28Daily-Deals%29-Ultra-Thin-0.45mm-PVC-Fan-Dust-Filter-%284cm-~-14cm%29.html).
+The outside of the sides will be covered with dust filters, ordered from [modDIY](http://www.moddiy.com/products/%28Daily-Deals%29-Ultra-Thin-0.45mm-PVC-Fan-Dust-Filter-%284cm-~-14cm%29.html).
 
-J'ai choisi un [bouton poussoir éclairé](http://www.ebay.fr/itm/16mm-12V-Voiture-Aluminum-Metal-Switch-LED-Bouton-Poussoir-Interrupteur-Lumiere-/310909165183?ssPageName=ADME:L:OU:FR:3160) comme bouton d'allumage, que je placerai certainement sur la face avant à droite.
+I chose an [illuminated push button](http://www.ebay.fr/itm/16mm-12V-Voiture-Aluminum-Metal-Switch-LED-Bouton-Poussoir-Interrupteur-Lumiere-/310909165183?ssPageName=ADME:L:OU:FR:3160) as a power button, which I will certainly place on the front right.
 
-Côté sons, j'ai démonté (découpé) de vielle enceintes Awai et JVC pour récupérer les haut parleurs que je vais placer sur des caissons fixé au dessus du meuble.
+For sound, I disassembled (cut) old Awai and JVC speakers to recover the speakers that I will place on boxes fixed above the furniture.
 
-Je n'avais quasiment aucun outillage pour construire le bureau, j'ai donc investi dans quelques outils.  
-Principalement, la scie sauteuse m'a permise de faire toutes mes découpes, je n'ai rien fait à la scie circulaire. J'ai rattrapé les lignes avec une vielle ponceuse.
+I had almost no tools to build the desk, so I invested in a few tools.  
+Mainly, the jigsaw allowed me to make all my cuts, I did nothing with the circular saw. I fixed the lines with an old sander.
 
-![Outils](/images/IMG_20140618_2015281.jpg)
+![Tools](/images/IMG_20140618_2015281.jpg)
 
-Et sans oublié le plus important le bois ! Trouver le bois m'a pris un peu de temps. Je suis parti sur du MDF (medium density fibreà ou plus communément appelé medium (standard), fait pour être utilisé en intérieur, facile à travailler, n'éclate quasiment pas contrairement à du bois résineux et se peint simplement avec une sous-couche multi-support. C'est le bois idéal pour fabriquer un meuble pour un prix correcte !
+And not forgetting the most important: wood! Finding the wood took me a bit of time. I went with MDF (medium density fiberboard or more commonly called medium (standard), made to be used indoors, easy to work with, hardly splinters unlike softwood and paints simply with a multi-support primer. It's the ideal wood to make furniture for a reasonable price!
 
-Le médium se trouve généralement soit en magasin de bricolage style [Leroy Merlin](http://www.leroymerlin.fr/recherche=medium) ou alors chez des négociants en bois. N'ayant pas de Leroy Merlin à proximité, je me suis procuré le médium chez un négociant de bois.
+MDF is generally found either in DIY stores like [Leroy Merlin](http://www.leroymerlin.fr/recherche=medium) or at wood dealers. Not having a Leroy Merlin nearby, I got the MDF from a wood dealer.
 
-Pour information, j'ai acheté 4 plaques de 2m44x1m22x19mm.
+For information, I bought 4 sheets of 2m44x1m22x19mm.
 
-> Y a plus qu'à !
+> Let's get started!
 
-![Bois](/images/IMG_20140618_2150151.jpg)
+![Wood](/images/IMG_20140618_2150151.jpg)
 
 ## Construction
 
-J'ai donc commencé par découper et assembler le fond du bureau, on peut y voir le découpage en 3 sections.
+I started by cutting and assembling the back of the desk, you can see the division into 3 sections.
 
-J'ai ensuite assemblé l'extérieur et mis en place les deux éléments ensemble.
+I then assembled the exterior and put the two elements together.
 
 ![Construction 1](/images/IMG_20140618_2236031.jpg)
 
@@ -65,29 +65,29 @@ J'ai ensuite assemblé l'extérieur et mis en place les deux éléments ensemble
 
 ![Construction 3](/images/IMG_20140620_1507091.jpg)
 
-Pour finir l'assemblage des pièces principales, j'ai rajouté les deux plans du bureau.
+To finish assembling the main pieces, I added the two desk surfaces.
 
-![Plan bureau](/images/IMG_20140620_1806211.jpg)
+![Desk surface](/images/IMG_20140620_1806211.jpg)
 
-## Étagère et son
+## Shelf and Sound
 
-Une fois que le bureau fut assemblé j'ai rajouté une étagère sur toute la longueur pour rehausser mes deux écrans, j'en ai donc profiter pour intégrer un système de son 3 voies (gauche, centre & droit).
+Once the desk was assembled, I added a shelf along the entire length to raise my two screens, so I took the opportunity to integrate a 3-way sound system (left, center & right).
 
-J'alimente les haut-parleurs avec deux petits amplificateurs double voies trouvé sur Conrad, que je placerai au centre du meuble.
+I power the speakers with two small dual-channel amplifiers found on Conrad, which I will place in the center of the furniture.
 
-![Étagère 1](/images/IMG_20140625_2050191.jpg)
+![Shelf 1](/images/IMG_20140625_2050191.jpg)
 
-![Étagère 2](/images/IMG_20140702_0805291.jpg)
+![Shelf 2](/images/IMG_20140702_0805291.jpg)
 
-![Étagère 3](/images/IMG_20140702_2242061.jpg)
+![Shelf 3](/images/IMG_20140702_2242061.jpg)
 
-![Étagère 4](/images/IMG_20140702_2239491.jpg)
+![Shelf 4](/images/IMG_20140702_2239491.jpg)
 
-![Étagère 5](/images/IMG_20140713_1220231.jpg)
+![Shelf 5](/images/IMG_20140713_1220231.jpg)
 
 ## Ventilation
 
-Comme expliqué précédemment je voulais avoir un flux d'air de droite à gauche sur l'ensemble du plan principal grâce à 6 ventilateurs Corsair AF140.
+As explained previously, I wanted to have an airflow from right to left across the entire main surface thanks to 6 Corsair AF140 fans.
 
 ![Ventilation 1](/images/IMG_20140621_1604011.jpg)
 
@@ -97,145 +97,145 @@ Comme expliqué précédemment je voulais avoir un flux d'air de droite à gauch
 
 ![Ventilation 4](/images/IMG_20140621_1741411.jpg)
 
-## Carte-mère et passage de câbles
+## Motherboard and Cable Routing
 
-Je me suis donc attaqué à où et comment placer/fixer ma carte-mère dans le bureau.
+So I tackled where and how to place/fix my motherboard in the desk.
 
-J'ai commencé par démonter mon boitier pour retirer le support de la carte mère, que j'ai ensuite ajusté et peint en noir.
+I started by disassembling my case to remove the motherboard support, which I then adjusted and painted black.
 
-J'ai ensuite découpé le meuble pour faire ressortir les connexions vers le compartiment du fond, où toutes les câbles passeront.
+I then cut the furniture to bring out the connections to the back compartment, where all the cables will pass.
 
-![Carte-mère 1](/images/IMG_20140714_1214291.jpg)
+![Motherboard 1](/images/IMG_20140714_1214291.jpg)
 
-![Carte-mère 2](/images/IMG_20140714_1408511.jpg)
+![Motherboard 2](/images/IMG_20140714_1408511.jpg)
 
-![Carte-mère 3](/images/IMG_20140714_1414331.jpg)
+![Motherboard 3](/images/IMG_20140714_1414331.jpg)
 
-![Carte-mère 4](/images/IMG_20140714_1936011.jpg)
+![Motherboard 4](/images/IMG_20140714_1936011.jpg)
 
-Mon alimentation actuelle n'est pas modulaire. Je ne peux donc pas la mettre où je veux.  
-J'ai donc décidé (pour le moment) de la placer au niveaux de mes genoux contre le compartiment gauche. J'ai donc réalisé une boite pour fixer l'alimentation sous le meuble.
+My current power supply is not modular. So I can't put it where I want.  
+I decided (for the moment) to place it at knee level against the left compartment. So I made a box to fix the power supply under the furniture.
 
-![Alimentation 1](/images/IMG_20140714_1934291.jpg)
+![Power supply 1](/images/IMG_20140714_1934291.jpg)
 
-![Alimentation 2](/images/IMG_20140717_2227571.jpg)
+![Power supply 2](/images/IMG_20140717_2227571.jpg)
 
-J'ai ensuite rajouter les trous pour le passage des câbles de l'alimentation.
+I then added the holes for the power supply cable routing.
 
-![Câbles 1](/images/IMG_20140717_1948521.jpg)
+![Cables 1](/images/IMG_20140717_1948521.jpg)
 
-![Câbles 2](/images/IMG_20140717_2227431.jpg)
+![Cables 2](/images/IMG_20140717_2227431.jpg)
 
-## Peinture
+## Painting
 
-Il ne manque plus qu'une bonne couche de peinture pour finaliser le gros oeuvre. J'ai testé pour la première fois la peinture avec pistolet à air. Ça a l'avantage d'être rapide et sans bavure mais par ailleurs vous peignez les alentours du meuble, mes outils sont maintenant tachetés de gris et blanc… J'ai commencé par passer une sous-couche multisupport sur l'ensemble du meuble, poncé le tout une fois sec et ensuite passé deux couches de peinture acrylique teintée en gris ( parce que pas assez de teinture noir sous la main :) ). Le résultat n'étant pas assez lisse à mon gout et je voulais à la base un bureau full noir, j'ai donc trouvé de l'acrylique noir. J'ai donc terminé par une dernière couche de peinture en noir sur les éléments visibles du meuble.
+All that's left is a good coat of paint to finalize the main work. I tried air gun painting for the first time. It has the advantage of being fast and without smudges but on the other hand you paint the surroundings of the furniture, my tools are now spotted with gray and white… I started by applying a multi-support primer on the entire furniture, sanded everything once dry and then applied two coats of gray-tinted acrylic paint (because not enough black tint on hand :) ). The result not being smooth enough for my taste and I originally wanted a full black desk, so I found black acrylic. I finished with a final coat of black paint on the visible elements of the furniture.
 
-![Peinture 1](/images/IMG_20140720_1248311.jpg)
+![Painting 1](/images/IMG_20140720_1248311.jpg)
 
-![Peinture 2](/images/IMG_20140720_2250311.jpg)
+![Painting 2](/images/IMG_20140720_2250311.jpg)
 
-![Peinture 3](/images/IMG_20140717_1950101.jpg)
+![Painting 3](/images/IMG_20140717_1950101.jpg)
 
-![Peinture 4](/images/IMG_20140720_2251211.jpg)
+![Painting 4](/images/IMG_20140720_2251211.jpg)
 
-![Peinture 5](/images/IMG_20140722_2146021.jpg)
+![Painting 5](/images/IMG_20140722_2146021.jpg)
 
-![Peinture 6](/images/IMG_20140722_2146131.jpg)
+![Painting 6](/images/IMG_20140722_2146131.jpg)
 
-## Assemblage et câblage
+## Assembly and Wiring
 
-Y a plus qu'à tout mettre en place ! L'assemblage et le câblage m'a prit pas mal de temps. Surtout que je voulais faire du sleeving sur les câbles de la carte mère pour avoir un joli rendu.
+Just need to put everything in place! Assembly and wiring took me quite a bit of time. Especially since I wanted to do sleeving on the motherboard cables for a nice result.
 
-![Assemblage 1](/images/IMG_20140724_1440221.jpg)
+![Assembly 1](/images/IMG_20140724_1440221.jpg)
 
-![Assemblage 2](/images/IMG_20140724_1726241.jpg)
+![Assembly 2](/images/IMG_20140724_1726241.jpg)
 
-![Assemblage 3](/images/IMG_20140724_1844201.jpg)
+![Assembly 3](/images/IMG_20140724_1844201.jpg)
 
-![Assemblage 4](/images/IMG_20140730_0801161.jpg)
+![Assembly 4](/images/IMG_20140730_0801161.jpg)
 
-## Rendu final
+## Final Result
 
-Et voilà le résultat, il y aura quelques optimisations et améliorations à venir (lumières, grille de ventilation, contrôle des amplis avec des prises 433MHz, etc…) mais tout est là :)
+And here's the result, there will be some optimizations and improvements to come (lights, ventilation grille, amplifier control with 433MHz outlets, etc…) but everything is there :)
 
-![Rendu final](/images/IMG_20140802_1523411-1050x776.jpg)
+![Final result](/images/IMG_20140802_1523411-1050x776.jpg)
 
-Comme vous pouvez le voir le bureau + les pieds rendent le bureau très haut (plan de travail à 1m du sol).
+As you can see the desk + the legs make the desk very high (work surface at 1m from the ground).
 
-J'ai donc hésité à m'arrêter là et trouver une chaise de bar avec dossier ou bien faire de nouveaux pieds plus petits à hauteur d'un siège de bureau.
+So I hesitated to stop there and find a bar chair with backrest or make new smaller legs at desk chair height.
 
-Bien évidemment, j'ai construit de nouveaux pieds :p
+Obviously, I built new legs :p
 
-## Construction des pieds
+## Leg Construction
 
-J'ai donc rajouté sur la base de mon fichier Solidworks deux pieds avec porte de chaque côté (mais sans tiroir).
+So I added to the base of my SolidWorks file two legs with doors on each side (but without drawers).
 
-Rien de bien compliqué, excepté que j'en ai profité pour intégrer NAS, server Debian et onduleur dans le pied de gauche !
+Nothing too complicated, except that I took the opportunity to integrate NAS, Debian server and UPS in the left leg!
 
-![Pieds 1](/images/IMG_20140816_1304191.jpg)
+![Legs 1](/images/IMG_20140816_1304191.jpg)
 
-![Pieds 2](/images/IMG_20140820_203706.jpg)
+![Legs 2](/images/IMG_20140820_203706.jpg)
 
-J'ai ajouté une entrée d'air ventilée sous le NAS, parce que oui tout ça ça chauffe à l'intérieur :
+I added a ventilated air intake under the NAS, because yes all that heats up inside:
 
-![Ventilation NAS](/images/IMG_20140820_2037391-1050x590.jpg)
+![NAS Ventilation](/images/IMG_20140820_2037391-1050x590.jpg)
 
-Une sous-couche multi-support blanche, puis une peinture glycéro noir (oui contrairement à celle du bureau):
+A white multi-support primer, then black alkyd paint (yes unlike the desk):
 
-![Peinture pieds](/images/IMG_20140822_1920261-1050x590.jpg)
+![Legs painting](/images/IMG_20140822_1920261-1050x590.jpg)
 
-## Ventilations
+## Ventilation
 
-J'ai également terminé de câbler l'intégralité de mon système de ventilation, j'ai donc une ventillation de droite à gauche sous le plan de travail du bureau via 6 ventilateurs.
+I also finished wiring my entire ventilation system, so I have ventilation from right to left under the desk work surface via 6 fans.
 
-Les 6 ventilateurs sont reliés à mon rhéobus, je peux ainsi contrôler la vitesse de chaque ventilateur. Je rajouterai prochainement des sondes de température pour rendre dépendant la vitesse de la ventilation de la température.
+The 6 fans are connected to my rheostat, so I can control the speed of each fan. I will soon add temperature probes to make the ventilation speed dependent on temperature.
 
-Et pour terminer j'ai posé les caches de protections extérieurs des ventilateurs.
+And to finish, I installed the external fan protection covers.
 
-![Ventilations](/images/IMG_20140823_2018211-1050x598.jpg)
+![Ventilation](/images/IMG_20140823_2018211-1050x598.jpg)
 
-## Ecrans
+## Screens
 
-J'ai fini par investir dans un support [triple display](http://www.amazon.fr/gp/product/B005BREK9Y/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1) pour rendre le tout un peu plus classe !
+I finally invested in a [triple display](http://www.amazon.fr/gp/product/B005BREK9Y/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1) stand to make it all a bit more classy!
 
-Le pied du support étant beaucoup trop large pour mon étagère de bureau, j'ai rallongé le tube du support et je l'ai fixé à l'arrière du meuble.
+The stand base being much too wide for my desk shelf, I extended the stand tube and fixed it to the back of the furniture.
 
-![Support écrans](/images/IMG_20140823_1947551-1050x598.jpg)
+![Screen stand](/images/IMG_20140823_1947551-1050x598.jpg)
 
-Et voici le résultat avec trois [Iiyama Prolite E2483HS-B1](http://www.amazon.fr/gp/product/B00FABG2DI/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) :
+And here's the result with three [Iiyama Prolite E2483HS-B1](http://www.amazon.fr/gp/product/B00FABG2DI/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1):
 
-![Écrans](/images/IMG_20140823_2116131-1050x590.jpg)
+![Screens](/images/IMG_20140823_2116131-1050x590.jpg)
 
-## Siège
+## Chair
 
-J'ai également eu le plaisir d'avoir un nouveau siège de bureau pour mon anniversaire ;)
+I also had the pleasure of having a new desk chair for my birthday ;)
 
-![Siège](/images/2014-09-031.jpg)
+![Chair](/images/2014-09-031.jpg)
 
 ## Ambilight
 
-Je viens de rajouter cette semaine un ruban autocollant de led WS2812B de 4m à l'arrière des écrans pour reproduire un système ambilight de la même manière que sur ma TV (Cf. [Ambi-like avec un ruban WS2801, un Raspberry Pi et Hyperion](/posts/ambilight-ws2801-raspberry-pi-hyperion)).
+I just added this week a 4m WS2812B LED adhesive strip behind the screens to reproduce an ambilight system in the same way as on my TV (Cf. [Ambi-like with WS2801 strip, Raspberry Pi and Hyperion](/posts/ambilight-ws2801-raspberry-pi-hyperion)).
 
-Un article dédié arrive sous peu… mais voici le premier résultat :
+A dedicated article coming soon… but here's the first result:
 
 ![Ambilight](/images/IMG_20140903_0005141.jpg)
 
 <iframe src="//www.youtube.com/embed/wNnYBho63YU" frameborder="0" allowfullscreen></iframe>
 
-Pour terminer la construction de mon meuble de bureau, un petit bilan s'impose.
+To finish the construction of my desk furniture, a small summary is in order.
 
-## Mes objectifs initiaux
+## My Initial Goals
 
-Je voulais un bureau sur-mesure pour profiter au mieux de l'espace de la pièce et également que mon pc y soit intégré.
+I wanted a custom desk to make the best use of the room space and also have my PC integrated into it.
 
-Par la suite j'ai voulu rajouter une étagère pour accueillir mes écrans et également quelques hauts-parleurs.
+Subsequently, I wanted to add a shelf to accommodate my screens and also some speakers.
 
-## Mon niveau de connaissances
+## My Knowledge Level
 
-J'avais de simple connaissance en menuiserie (et manipulation d'outils) datant de mon enfance. C'est revenu assez rapidement après quelques erreurs…
+I had simple woodworking knowledge (and tool handling) from my childhood. It came back fairly quickly after a few mistakes…
 
-J'ai fait mes études dans l'électrotechnique, j'ai donc quelques connaissances en électricité et câblage, qui m'ont bien servit pour le coup :)
+I studied electrotechnics, so I have some knowledge in electricity and wiring, which served me well for this :)
 
-## Mon installation
+## My Installation
 
-Partant de quelques idées, et en m'inspirant de projets trouvés sur le net, j'ai donc réussi à réaliser mon bureau.
+Starting from a few ideas, and inspired by projects found on the net, I managed to build my desk.
