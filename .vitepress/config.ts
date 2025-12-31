@@ -23,7 +23,13 @@ export default defineConfig({
       lang: 'fr',
       title: 'Wifsimster Blog',
       titleTemplate: false,
-      description: 'Passionate Web Dev 💻',
+      description: 'Passionate Web Dev, Tech Geek, Raspberry Pi & ESP8266 Lover 💻 ❤️',
+      head: [
+        ['meta', { name: 'author', content: 'Wifsimster' }],
+        ['meta', { property: 'og:site_name', content: 'Wifsimster Blog' }],
+        ['meta', { name: 'twitter:card', content: 'summary' }],
+        ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
+      ],
       themeConfig: {
         logo: {
           src: '/images/wifsimster.png',
@@ -92,23 +98,41 @@ export default defineConfig({
           }
         ],
 
-        sidebar: [
-          {
-            text: 'Articles',
-            items: [
-              { text: 'Communication sans fil ESP8266', link: '/posts/communication-sans-fil-esp8266' },
-              { text: 'Luminosité Jeedom ESP8266', link: '/posts/luminosite-jeedom-esp8266' },
-              { text: 'Affichage I2C ESP8266', link: '/posts/affichage-i2c-esp8266' },
-              { text: 'Distributeur croquettes', link: '/posts/distributeur-croquettes-jeedom-esp8266' },
-              { text: 'Flash ESP8266', link: '/posts/flash-esp8266' },
-              { text: 'BMP180 Jeedom ESP8266', link: '/posts/temperature-pression-bmp180-jeedom-esp8266' },
-              { text: 'Ambilight WS2812B Teensy', link: '/posts/ambilight-ws2812b-teensy' },
-              { text: 'Bureau sur mesure', link: '/posts/bureau-sur-mesure-pc-integre' },
-              { text: 'Ambilight WS2801 Raspberry Pi', link: '/posts/ambilight-ws2801-raspberry-pi-hyperion' },
-              { text: 'Contrôle prise Chacon', link: '/posts/controle-prise-chacon-raspberry-pi' }
-            ]
-          }
-        ],
+        sidebar: {
+          '/posts/': [
+            {
+              text: 'Articles',
+              items: [
+                { text: 'Communication sans fil ESP8266', link: '/posts/communication-sans-fil-esp8266' },
+                { text: 'Luminosité Jeedom ESP8266', link: '/posts/luminosite-jeedom-esp8266' },
+                { text: 'Affichage I2C ESP8266', link: '/posts/affichage-i2c-esp8266' },
+                { text: 'Distributeur croquettes', link: '/posts/distributeur-croquettes-jeedom-esp8266' },
+                { text: 'Flash ESP8266', link: '/posts/flash-esp8266' },
+                { text: 'BMP180 Jeedom ESP8266', link: '/posts/temperature-pression-bmp180-jeedom-esp8266' },
+                { text: 'Ambilight WS2812B Teensy', link: '/posts/ambilight-ws2812b-teensy' },
+                { text: 'Bureau sur mesure', link: '/posts/bureau-sur-mesure-pc-integre' },
+                { text: 'Ambilight WS2801 Raspberry Pi', link: '/posts/ambilight-ws2801-raspberry-pi-hyperion' },
+                { text: 'Contrôle prise Chacon', link: '/posts/controle-prise-chacon-raspberry-pi' }
+              ]
+            }
+          ],
+          '/tags/': [
+            {
+              text: 'Tags',
+              items: [
+                { text: 'Ambilight', link: '/tags/Ambilight' },
+                { text: 'DIY', link: '/tags/DIY' },
+                { text: 'ESP8266', link: '/tags/ESP8266' },
+                { text: 'Jeedom', link: '/tags/Jeedom' },
+                { text: 'NodeMCU', link: '/tags/NodeMCU' },
+                { text: 'Raspberry Pi', link: '/tags/Raspberry-Pi' },
+                { text: 'Teensy', link: '/tags/Teensy' },
+                { text: 'WS2801', link: '/tags/WS2801' },
+                { text: 'WS2812B', link: '/tags/WS2812B' }
+              ]
+            }
+          ]
+        },
 
         socialLinks: [
           { icon: 'github', link: 'https://github.com/Wifsimster' },
@@ -136,7 +160,13 @@ export default defineConfig({
       link: '/en/',
       title: 'Wifsimster Blog',
       titleTemplate: false,
-      description: 'Passionate Web Dev 💻',
+      description: 'Passionate Web Dev, Tech Geek, Raspberry Pi & ESP8266 Lover 💻 ❤️',
+      head: [
+        ['meta', { name: 'author', content: 'Wifsimster' }],
+        ['meta', { property: 'og:site_name', content: 'Wifsimster Blog' }],
+        ['meta', { name: 'twitter:card', content: 'summary' }],
+        ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
+      ],
       themeConfig: {
         logo: {
           src: '/images/wifsimster.png',
@@ -205,23 +235,41 @@ export default defineConfig({
           }
         ],
 
-        sidebar: [
-          {
-            text: 'Articles',
-            items: [
-              { text: 'Wireless Communication ESP8266', link: '/en/posts/communication-sans-fil-esp8266' },
-              { text: 'Luminosity Jeedom ESP8266', link: '/en/posts/luminosite-jeedom-esp8266' },
-              { text: 'I2C Display ESP8266', link: '/en/posts/affichage-i2c-esp8266' },
-              { text: 'Cat Feeder', link: '/en/posts/distributeur-croquettes-jeedom-esp8266' },
-              { text: 'Flash ESP8266', link: '/en/posts/flash-esp8266' },
-              { text: 'BMP180 Jeedom ESP8266', link: '/en/posts/temperature-pression-bmp180-jeedom-esp8266' },
-              { text: 'Ambilight WS2812B Teensy', link: '/en/posts/ambilight-ws2812b-teensy' },
-              { text: 'Custom Desk', link: '/en/posts/bureau-sur-mesure-pc-integre' },
-              { text: 'Ambilight WS2801 Raspberry Pi', link: '/en/posts/ambilight-ws2801-raspberry-pi-hyperion' },
-              { text: 'Chacon Plug Control', link: '/en/posts/controle-prise-chacon-raspberry-pi' }
-            ]
-          }
-        ],
+        sidebar: {
+          '/en/posts/': [
+            {
+              text: 'Articles',
+              items: [
+                { text: 'Wireless Communication ESP8266', link: '/en/posts/communication-sans-fil-esp8266' },
+                { text: 'Luminosity Jeedom ESP8266', link: '/en/posts/luminosite-jeedom-esp8266' },
+                { text: 'I2C Display ESP8266', link: '/en/posts/affichage-i2c-esp8266' },
+                { text: 'Cat Feeder', link: '/en/posts/distributeur-croquettes-jeedom-esp8266' },
+                { text: 'Flash ESP8266', link: '/en/posts/flash-esp8266' },
+                { text: 'BMP180 Jeedom ESP8266', link: '/en/posts/temperature-pression-bmp180-jeedom-esp8266' },
+                { text: 'Ambilight WS2812B Teensy', link: '/en/posts/ambilight-ws2812b-teensy' },
+                { text: 'Custom Desk', link: '/en/posts/bureau-sur-mesure-pc-integre' },
+                { text: 'Ambilight WS2801 Raspberry Pi', link: '/en/posts/ambilight-ws2801-raspberry-pi-hyperion' },
+                { text: 'Chacon Plug Control', link: '/en/posts/controle-prise-chacon-raspberry-pi' }
+              ]
+            }
+          ],
+          '/en/tags/': [
+            {
+              text: 'Tags',
+              items: [
+                { text: 'Ambilight', link: '/en/tags/Ambilight' },
+                { text: 'DIY', link: '/en/tags/DIY' },
+                { text: 'ESP8266', link: '/en/tags/ESP8266' },
+                { text: 'Jeedom', link: '/en/tags/Jeedom' },
+                { text: 'NodeMCU', link: '/en/tags/NodeMCU' },
+                { text: 'Raspberry Pi', link: '/en/tags/Raspberry-Pi' },
+                { text: 'Teensy', link: '/en/tags/Teensy' },
+                { text: 'WS2801', link: '/en/tags/WS2801' },
+                { text: 'WS2812B', link: '/en/tags/WS2812B' }
+              ]
+            }
+          ]
+        },
 
         socialLinks: [
           { icon: 'github', link: 'https://github.com/Wifsimster' },
