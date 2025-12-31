@@ -1,37 +1,43 @@
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import type { Post } from '@/utils/posts'
-
-const posts = ref<Post[]>([])
-const loading = ref(false)
+import { getAllPosts, getPostBySlug as getPostInfoBySlug, getPostsByTag as getPostsByTagFromRegistry, getAllTags } from '@/posts'
+import { useI18n } from './useI18n'
 
 export function usePosts() {
-  const loadPosts = async (lang: 'fr' | 'en' = 'fr') => {
-    loading.value = true
-    try {
-      const response = await fetch(`/data/posts-${lang}.json`)
-      const data = await response.json()
-      posts.value = data.posts || []
-    } catch (error) {
-      console.error('Error loading posts:', error)
-      posts.value = []
-    } finally {
-      loading.value = false
+  const i18n = useI18n()
+  
+  const posts = computed(() => {
+    return getAllPosts(i18n.language.value)
+  })
+
+  const loading = computed(() => false)
+
+  const loadPosts = (lang: 'fr' | 'en' = 'fr') => {
+    // No-op: posts are loaded synchronously from registry
+  }
+
+  const getPostBySlug = (slug: string, lang: 'fr' | 'en' = 'fr'): Post | undefined => {
+    const postInfo = getPostInfoBySlug(slug)
+    if (!postInfo) return undefined
+    
+    const content = postInfo.getContent(lang)
+    return {
+      slug: postInfo.metadata.slug,
+      title: content.title,
+      date: postInfo.metadata.date,
+      description: content.description,
+      tags: postInfo.metadata.tags,
+      html: content.html,
+      lang
     }
   }
 
-  const getPostBySlug = (slug: string, lang: 'fr' | 'en' = 'fr') => {
-    return posts.value.find(post => post.slug === slug && post.lang === lang)
+  const getPostsByTag = (tag: string, lang: 'fr' | 'en' = 'fr'): Post[] => {
+    return getPostsByTagFromRegistry(tag, lang)
   }
 
-  const getPostsByTag = (tag: string, lang: 'fr' | 'en' = 'fr') => {
-    return posts.value.filter(
-      post => post.lang === lang && post.tags?.includes(tag)
-    )
-  }
-
-  const getArchivedPosts = (lang: 'fr' | 'en' = 'fr') => {
-    const filtered = posts.value.filter(post => post.lang === lang)
-    return filtered.sort((a, b) => {
+  const getArchivedPosts = (lang: 'fr' | 'en' = 'fr'): Post[] => {
+    return getAllPosts(lang).sort((a, b) => {
       const dateA = new Date(a.date).getTime()
       const dateB = new Date(b.date).getTime()
       return dateB - dateA
@@ -39,8 +45,7 @@ export function usePosts() {
   }
 
   const latestPosts = computed(() => {
-    return posts.value
-      .filter(post => post.lang === 'fr')
+    return getAllPosts(i18n.language.value)
       .sort((a, b) => {
         const dateA = new Date(a.date).getTime()
         const dateB = new Date(b.date).getTime()

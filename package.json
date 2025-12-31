@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:content && vite build",
-    "build:content": "node scripts/build-content.js",
+    "build": "vite build",
     "preview": "vite preview",
     "docker:build": "docker build -t wifsimster/wifsimster-blog .",
     "docker:run": "docker run -p 8080:80 wifsimster/wifsimster-blog"

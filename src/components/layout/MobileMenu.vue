@@ -1,11 +1,11 @@
 <template>
-  <div class="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+  <div class="md:hidden border-t border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
     <nav class="px-4 py-3 space-y-2">
       <RouterLink
         v-for="item in navItems"
         :key="item.path"
         :to="item.path"
-        class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
+        class="block px-3 py-2 text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-md transition-colors"
         active-class="bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400"
       >
         {{ item.label }}

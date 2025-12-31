@@ -1,20 +1,20 @@
 <template>
-  <article class="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 border border-gray-200 dark:border-gray-700">
+  <article class="bg-white dark:bg-zinc-800 rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 border border-gray-200 dark:border-zinc-700">
     <RouterLink :to="postLink" class="block">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
         {{ post.title }}
       </h2>
-      <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+      <div class="flex items-center text-sm text-gray-500 dark:text-zinc-400 mb-3">
         <time :datetime="post.date">{{ formattedDate }}</time>
       </div>
-      <p v-if="post.description" class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">
+      <p v-if="post.description" class="text-gray-700 dark:text-zinc-300 mb-4 line-clamp-3">
         {{ post.description }}
       </p>
       <div v-if="post.tags && post.tags.length > 0" class="flex flex-wrap gap-2">
         <span
           v-for="tag in post.tags"
           :key="tag"
-          class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded"
+          class="text-xs px-2 py-1 bg-gray-100 dark:bg-zinc-700 text-gray-600 dark:text-zinc-400 rounded"
         >
           {{ tag }}
         </span>

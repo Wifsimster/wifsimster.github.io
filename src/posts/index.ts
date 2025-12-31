@@ -1,0 +1,105 @@
+import type { Post, PostMetadata, PostContent } from '@/utils/posts'
+import AffichageI2cEsp8266, { metadata as affichageMetadata, getContent as getAffichageContent } from './AffichageI2cEsp8266.vue'
+import AmbilightWs2801RaspberryPiHyperion, { metadata as ambilightWs2801Metadata, getContent as getAmbilightWs2801Content } from './AmbilightWs2801RaspberryPiHyperion.vue'
+import AmbilightWs2812bTeensy, { metadata as ambilightWs2812bMetadata, getContent as getAmbilightWs2812bContent } from './AmbilightWs2812bTeensy.vue'
+import BureauSurMesurePcIntegre, { metadata as bureauMetadata, getContent as getBureauContent } from './BureauSurMesurePcIntegre.vue'
+import CommunicationSansFilEsp8266, { metadata as communicationMetadata, getContent as getCommunicationContent } from './CommunicationSansFilEsp8266.vue'
+import ControlePriseChaconRaspberryPi, { metadata as controlePriseMetadata, getContent as getControlePriseContent } from './ControlePriseChaconRaspberryPi.vue'
+import DistributeurCroquettesJeedomEsp8266, { metadata as distributeurMetadata, getContent as getDistributeurContent } from './DistributeurCroquettesJeedomEsp8266.vue'
+import FlashEsp8266, { metadata as flashMetadata, getContent as getFlashContent } from './FlashEsp8266.vue'
+import LuminositeJeedomEsp8266, { metadata as luminositeMetadata, getContent as getLuminositeContent } from './LuminositeJeedomEsp8266.vue'
+import TemperaturePressionBmp180JeedomEsp8266, { metadata as temperatureMetadata, getContent as getTemperatureContent } from './TemperaturePressionBmp180JeedomEsp8266.vue'
+
+export interface PostComponentInfo {
+  metadata: PostMetadata
+  getContent: (locale: 'fr' | 'en') => PostContent
+  component: any
+}
+
+const postRegistry: Record<string, PostComponentInfo> = {
+  'affichage-i2c-esp8266': {
+    metadata: affichageMetadata,
+    getContent: getAffichageContent,
+    component: AffichageI2cEsp8266
+  },
+  'ambilight-ws2801-raspberry-pi-hyperion': {
+    metadata: ambilightWs2801Metadata,
+    getContent: getAmbilightWs2801Content,
+    component: AmbilightWs2801RaspberryPiHyperion
+  },
+  'ambilight-ws2812b-teensy': {
+    metadata: ambilightWs2812bMetadata,
+    getContent: getAmbilightWs2812bContent,
+    component: AmbilightWs2812bTeensy
+  },
+  'bureau-sur-mesure-pc-integre': {
+    metadata: bureauMetadata,
+    getContent: getBureauContent,
+    component: BureauSurMesurePcIntegre
+  },
+  'communication-sans-fil-esp8266': {
+    metadata: communicationMetadata,
+    getContent: getCommunicationContent,
+    component: CommunicationSansFilEsp8266
+  },
+  'controle-prise-chacon-raspberry-pi': {
+    metadata: controlePriseMetadata,
+    getContent: getControlePriseContent,
+    component: ControlePriseChaconRaspberryPi
+  },
+  'distributeur-croquettes-jeedom-esp8266': {
+    metadata: distributeurMetadata,
+    getContent: getDistributeurContent,
+    component: DistributeurCroquettesJeedomEsp8266
+  },
+  'flash-esp8266': {
+    metadata: flashMetadata,
+    getContent: getFlashContent,
+    component: FlashEsp8266
+  },
+  'luminosite-jeedom-esp8266': {
+    metadata: luminositeMetadata,
+    getContent: getLuminositeContent,
+    component: LuminositeJeedomEsp8266
+  },
+  'temperature-pression-bmp180-jeedom-esp8266': {
+    metadata: temperatureMetadata,
+    getContent: getTemperatureContent,
+    component: TemperaturePressionBmp180JeedomEsp8266
+  }
+}
+
+export function getAllPosts(locale: 'fr' | 'en' = 'fr'): Post[] {
+  return Object.values(postRegistry).map(info => {
+    const content = info.getContent(locale)
+    return {
+      slug: info.metadata.slug,
+      title: content.title,
+      date: info.metadata.date,
+      description: content.description,
+      tags: info.metadata.tags,
+      html: content.html,
+      lang: locale
+    }
+  })
+}
+
+export function getPostBySlug(slug: string): PostComponentInfo | undefined {
+  return postRegistry[slug]
+}
+
+export function getPostsByTag(tag: string, locale: 'fr' | 'en' = 'fr'): Post[] {
+  return getAllPosts(locale).filter(post => post.tags?.includes(tag))
+}
+
+export function getAllTags(): Record<string, number> {
+  const tags: Record<string, number> = {}
+  Object.values(postRegistry).forEach(info => {
+    info.metadata.tags?.forEach(tag => {
+      tags[tag] = (tags[tag] || 0) + 1
+    })
+  })
+  return tags
+}
+
+export { postRegistry }

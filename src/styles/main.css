@@ -25,7 +25,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200;
+    @apply bg-white dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 transition-colors duration-200;
   }
 }
 
@@ -40,7 +40,7 @@
   .prose h4,
   .prose h5,
   .prose h6 {
-    @apply font-bold mt-8 mb-4 text-gray-900 dark:text-gray-100;
+    @apply font-bold mt-8 mb-4 text-gray-900 dark:text-zinc-100;
   }
 
   .prose h1 {
@@ -56,7 +56,7 @@
   }
 
   .prose p {
-    @apply mb-4 leading-7 text-gray-700 dark:text-gray-300;
+    @apply mb-4 leading-7 text-gray-700 dark:text-zinc-300;
   }
 
   .prose a {
@@ -69,7 +69,7 @@
   }
 
   .prose li {
-    @apply mb-2 text-gray-700 dark:text-gray-300;
+    @apply mb-2 text-gray-700 dark:text-zinc-300;
   }
 
   .prose img {
@@ -77,11 +77,11 @@
   }
 
   .prose code {
-    @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono;
+    @apply bg-gray-100 dark:bg-zinc-800 px-2 py-1 rounded text-sm font-mono;
   }
 
   .prose pre {
-    @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4;
+    @apply bg-gray-100 dark:bg-zinc-800 p-4 rounded-lg overflow-x-auto mb-4;
   }
 
   .prose pre code {
@@ -89,6 +89,6 @@
   }
 
   .prose blockquote {
-    @apply border-l-4 border-primary-500 pl-4 italic my-4 text-gray-600 dark:text-gray-400;
+    @apply border-l-4 border-primary-500 pl-4 italic my-4 text-gray-600 dark:text-zinc-400;
   }
 }
