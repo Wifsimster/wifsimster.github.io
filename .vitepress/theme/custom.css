@@ -1,0 +1,66 @@
+/**
+ * Personnalisation du thème VitePress
+ * Conservation de l'identité visuelle du blog original
+ */
+
+:root {
+  --vp-c-brand: #0085a1;
+  --vp-c-brand-light: #00a5c1;
+  --vp-c-brand-lighter: #00c5e1;
+  --vp-c-brand-dark: #006581;
+  --vp-c-brand-darker: #004561;
+}
+
+/* Styles pour la liste des posts */
+.post-list {
+  margin-top: 2rem;
+}
+
+.post-list h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-list h3:first-child {
+  margin-top: 0;
+}
+
+/* Footer personnalisé */
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+/* Amélioration de la lisibilité */
+.content {
+  max-width: 900px;
+}
+
+/* Styles pour les images */
+.content img {
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les blocs de code */
+.content pre {
+  border-radius: 4px;
+}
+
+/* Language switcher positioning - appears next to dark mode toggle */
+.VPNavBarActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Position language switcher in the actions area */
+.VPNavBarActions .vp-locale-switch {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure blog name is displayed in header instead of "VitePress" */
+.VPNavBarTitle .title {
+  font-size: 16px;
+  font-weight: 600;
+}
