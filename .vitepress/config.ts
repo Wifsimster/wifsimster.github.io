@@ -25,6 +25,8 @@ export default defineConfig({
       themeConfig: {
         logo: '/wifsimster.png',
         siteTitle: 'Wifsimster',
+        langMenuLabel: 'Changer de langue',
+        i18nRouting: true,
         
         nav: [
           { text: 'Accueil', link: '/' },
@@ -73,6 +75,8 @@ export default defineConfig({
       themeConfig: {
         logo: '/wifsimster.png',
         siteTitle: 'Wifsimster',
+        langMenuLabel: 'Change language',
+        i18nRouting: true,
         
         nav: [
           { text: 'Home', link: '/en/' },

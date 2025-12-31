@@ -46,19 +46,6 @@
   border-radius: 4px;
 }
 
-/* Language switcher positioning - appears next to dark mode toggle */
-.VPNavBarActions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Position language switcher in the actions area */
-.VPNavBarActions .vp-locale-switch {
-  display: flex;
-  align-items: center;
-}
-
 /* Ensure blog name is displayed in header instead of "VitePress" */
 .VPNavBarTitle .title {
   font-size: 16px;
