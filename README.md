@@ -4,47 +4,56 @@ Blog personnel de Wifsimster - Passionate Web Dev 💻 ❤️
 
 ## 🌐 Site web
 
-Le blog est accessible publiquement à : https://wifsimster.github.io/
+Le blog est accessible publiquement à : <https://wifsimster.github.io/>
 
 ## 📁 Structure du projet
 
-```
+```text
 .
-├── docs/                    # Contenu source VitePress
-│   ├── posts/              # Articles du blog en français (Markdown)
+├── src/                     # Code source de l'application Vue
+│   ├── components/         # Composants Vue réutilisables
+│   │   ├── blog/           # Composants spécifiques au blog
+│   │   └── layout/         # Composants de mise en page
+│   ├── composables/        # Composables Vue (hooks)
+│   ├── posts/              # Composants Vue pour les articles
+│   ├── router/             # Configuration Vue Router
+│   ├── styles/             # Styles CSS globaux
+│   ├── utils/              # Utilitaires
+│   ├── views/              # Vues principales (pages)
+│   └── App.vue             # Composant racine
+├── public/                 # Fichiers statiques
+│   ├── data/               # Données JSON des articles
+│   │   ├── posts-fr.json   # Articles en français
+│   │   └── posts-en.json   # Articles en anglais
+│   └── images/             # Images des articles
+├── docs/                   # Documentation et assets
+│   ├── posts/              # Articles Markdown (archives)
 │   ├── en/                 # Version anglaise
-│   │   ├── posts/          # Articles du blog en anglais
-│   │   ├── index.md        # Page d'accueil anglaise
-│   │   └── archives.md     # Archives anglaises
 │   ├── fr/                 # Version française
-│   │   ├── index.md        # Page d'accueil française
-│   │   └── archives.md     # Archives françaises
 │   ├── tags/               # Pages de tags
-│   ├── public/             # Assets statiques (images)
-│   │   ├── images/         # Images des articles
-│   │   └── img/            # Images générales
-│   ├── index.md            # Page d'accueil par défaut
-│   └── archives.md         # Page archives par défaut
-├── .vitepress/             # Configuration VitePress
-│   ├── config.ts           # Configuration principale
-│   └── theme/              # Personnalisation du thème
+│   └── public/             # Assets statiques (images)
+├── .vitepress/             # Configuration VitePress (legacy)
+├── docker-compose.yml      # Configuration Docker Compose
+├── Dockerfile              # Image Docker
+├── nginx.conf              # Configuration Nginx
 └── package.json            # Dépendances et scripts
 ```
 
 ## 🌍 Support multilingue
 
 Le blog supporte deux langues :
-- **Français** : articles dans `docs/posts/`, pages dans `docs/fr/`
-- **Anglais** : articles dans `docs/en/posts/`, pages dans `docs/en/`
 
-Les articles sont organisés par langue dans leurs répertoires respectifs, permettant une navigation séparée pour chaque langue.
+- **Français** : articles dans `public/data/posts-fr.json`, routes `/`
+- **Anglais** : articles dans `public/data/posts-en.json`, routes `/en/`
+
+Les articles sont stockés au format JSON et chargés dynamiquement par l'application Vue.
 
 ## 🚀 Développement
 
 ### Prérequis
 
 - Node.js v24.0.0 ou supérieur
-- npm ou yarn
+- npm
 
 ### Installation
 
@@ -64,13 +73,13 @@ Le site sera accessible sur `http://localhost:5173`
 
 ### Build
 
-Générer le site statique :
+Générer l'application pour la production :
 
 ```bash
 npm run build
 ```
 
-Le site sera généré dans `.vitepress/dist/`
+L'application sera générée dans le répertoire `dist/`
 
 ### Prévisualisation
 
@@ -82,23 +91,22 @@ npm run preview
 
 ## 📝 Ajouter un nouvel article
 
-1. Créer un nouveau fichier Markdown dans `docs/posts/` pour la version française
-2. Créer la version anglaise correspondante dans `docs/en/posts/` si nécessaire
-3. Ajouter le frontmatter avec les métadonnées :
-   ```yaml
-   ---
-   title: Titre de l'article
-   date: YYYY-MM-DD
-   description: Description courte
-   tags:
-     - Tag1
-     - Tag2
-   ---
+1. Ajouter les métadonnées de l'article dans `public/data/posts-fr.json` pour la version française
+2. Ajouter les métadonnées dans `public/data/posts-en.json` pour la version anglaise
+3. Créer le composant Vue correspondant dans `src/posts/` si nécessaire
+
+4. Le format JSON attendu :
+
+   ```json
+   {
+     "slug": "mon-article",
+     "title": "Titre de l'article",
+     "date": "2025-01-01",
+     "description": "Description courte",
+     "tags": ["Tag1", "Tag2"],
+     "component": "MonArticle"
+   }
    ```
-4. Ajouter le lien vers l'article dans :
-   - `docs/index.md` et `docs/archives.md` pour la version française
-   - `docs/en/index.md` et `docs/en/archives.md` pour la version anglaise
-5. Mettre à jour la sidebar dans `.vitepress/config.ts` si nécessaire
 
 ## 🚢 Déploiement
 
@@ -106,20 +114,48 @@ Le site est déployé automatiquement sur GitHub Pages via GitHub Actions.
 
 ### Déploiement manuel
 
-1. Build le site :
+1. Build l'application :
    ```bash
    npm run build
    ```
 
-2. Le répertoire `.vitepress/dist/` contient les fichiers statiques à déployer
+2. Le répertoire `dist/` contient les fichiers statiques à déployer
 
-3. Pour GitHub Pages, configurer le répertoire source sur `/.vitepress/dist` dans les paramètres du repository
+3. Pour GitHub Pages, configurer le répertoire source sur `/dist` dans les paramètres du repository
+
+## 🐳 Docker
+
+### Build de l'image Docker
+
+```bash
+npm run docker:build
+```
+
+### Exécution avec Docker
+
+```bash
+npm run docker:run
+```
+
+Le site sera accessible sur <http://localhost:8080>
+
+### Docker Compose
+
+```bash
+docker-compose up
+```
 
 ## 🛠️ Technologies utilisées
 
-- [VitePress](https://vitepress.dev/) - Framework de documentation/blog
-- [Vue 3](https://vuejs.org/) - Framework JavaScript (dépendance de VitePress)
-- [Vite](https://vitejs.dev/) - Build tool (dépendance de VitePress)
+- [Vue 3](https://vuejs.org/) - Framework JavaScript réactif
+- [Vue Router](https://router.vuejs.org/) - Routeur pour applications Vue
+- [PrimeVue](https://primevue.org/) - Bibliothèque de composants UI
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utility-first
+- [Vite](https://vitejs.dev/) - Build tool et serveur de développement
+- [VueUse](https://vueuse.org/) - Collection de composables Vue
+- [markdown-it](https://github.com/markdown-it/markdown-it) - Parser Markdown
+- [Docker](https://www.docker.com/) - Conteneurisation
+- [Nginx](https://nginx.org/) - Serveur web pour la production
 
 ## 📄 Licence
 
