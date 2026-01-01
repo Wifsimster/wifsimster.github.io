@@ -1,9 +1,37 @@
+# Dependencies
 node_modules/
-.vitepress/dist/
-.vitepress/cache/
-.DS_Store
-*.log
+
+# Build output
 dist/
-public/data/
-public/images/
-public/favicon.svg
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated data (uncomment if JSON files are auto-generated)
+# public/data/
