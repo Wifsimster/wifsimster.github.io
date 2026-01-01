@@ -27,6 +27,7 @@ const frenchContent: PostContent = {
 <ul>
 <li>Une planche en bois (pin ou similaire) d'environ 1,5 à 2 mètres de long</li>
 <li>8 aimants néodyme Ø10x2 mm pour la fixation</li>
+<li>Super glue standard pour coller les aimants dans leurs trous</li>
 <li>6 ampoules Edison style vintage (LED avec filaments visibles)</li>
 <li>6 douilles métalliques (laiton ou nickel brossé)</li>
 <li>Câbles électriques noirs gainés de tissu pour chaque ampoule</li>
@@ -41,7 +42,7 @@ const frenchContent: PostContent = {
 <p>Comme on peut le voir sur la photo, la planche est montée au plafond avec les fils électriques qui sortent par le trou central. Les marques au crayon visibles sur le bois indiquent les emplacements pour les différents composants.</p>
 
 <h3>Installation des aimants</h3>
-<p>Les aimants néodyme ont été installés dans la plaque interne selon le plan technique. Ces aimants permettent de maintenir fermement la planche en bois contre la plaque de montage fixée au plafond.</p>
+<p>Les aimants néodyme ont été installés dans la planche en bois selon le plan technique. J'ai percé des trous de Ø10 mm dans la planche aux emplacements prévus, puis j'ai collé chaque aimant dans son trou à l'aide de super glue standard. Ces aimants permettent de maintenir fermement la planche en bois contre la plaque de montage fixée au plafond.</p>
 
 <h3>Montage au plafond</h3>
 <p>La plaque de montage a été fixée au plafond à l'aide de vis, en s'assurant que les trous de fixation étaient bien alignés. Une fois la plaque de montage en place, la planche en bois avec les aimants peut être simplement positionnée et maintenue par magnétisme.</p>
@@ -52,14 +53,12 @@ const frenchContent: PostContent = {
 <h2>Résultat final</h2>
 <p>Le luminaire est maintenant installé et fonctionnel. Les 6 ampoules Edison créent une ambiance chaleureuse et moderne dans la pièce.</p>
 <p><img src="/images/luminaire-plafond-suspendu-resultat-1.jpg" alt="Résultat final du luminaire"></p>
-<p><img src="/images/luminaire-plafond-suspendu-resultat-2.jpg" alt="Résultat final du luminaire vue 2"></p>
-<p>Les ampoules sont suspendues à différentes hauteurs, créant un effet visuel dynamique. Le style industriel avec le bois naturel et les ampoules vintage s'intègre parfaitement dans un intérieur moderne.</p>
+<p>Un vernis style chêne foncé a été appliqué sur la planche en bois pour lui donner cette teinte chaude et élégante.</p>
 <p><img src="/images/luminaire-plafond-suspendu-resultat-salon.jpg" alt="Luminaire installé dans le salon"></p>
-<p>Comme on peut le voir dans cette vue d'ensemble, le luminaire est installé au-dessus de la zone TV et média, créant un éclairage d'ambiance parfait pour la pièce. Le contraste entre le bois naturel, les ampoules chaudes et le plafond blanc crée une atmosphère accueillante.</p>
 
 <h2>Conclusion</h2>
 <p>Ce projet de luminaire DIY était relativement simple à réaliser mais offre un résultat très satisfaisant. L'utilisation d'aimants néodyme pour la fixation facilite l'installation et permet un démontage facile si nécessaire. Le style industriel avec les ampoules Edison apporte une touche moderne et chaleureuse à la pièce.</p>
-<p>Le coût total du projet est raisonnable, surtout si vous récupérez certains matériaux. L'aspect le plus important est de bien planifier les emplacements des trous et des composants avant de commencer la construction.</p>`
+<p>Le coût total du projet est raisonnable, surtout si vous récupérez certains matériaux.</p>`
 }
 
 const englishContent: PostContent = {
@@ -81,6 +80,7 @@ const englishContent: PostContent = {
 <ul>
 <li>A wooden plank (pine or similar) approximately 1.5 to 2 meters long</li>
 <li>8 neodymium magnets Ø10x2 mm for mounting</li>
+<li>Standard super glue to glue the magnets in their holes</li>
 <li>6 vintage-style Edison bulbs (LED with visible filaments)</li>
 <li>6 metallic sockets (brass or brushed nickel)</li>
 <li>Black fabric-wrapped electrical cables for each bulb</li>
@@ -95,7 +95,7 @@ const englishContent: PostContent = {
 <p>As can be seen in the photo, the plank is mounted to the ceiling with electrical wires coming out through the central hole. The pencil marks visible on the wood indicate the locations for the various components.</p>
 
 <h3>Installing the Magnets</h3>
-<p>The neodymium magnets were installed in the internal plate according to the technical plan. These magnets allow the wooden plank to be firmly held against the mounting plate fixed to the ceiling.</p>
+<p>The neodymium magnets were installed in the wooden plank according to the technical plan. I drilled Ø10 mm holes in the plank at the planned locations, then glued each magnet in its hole using standard super glue. These magnets allow the wooden plank to be firmly held against the mounting plate fixed to the ceiling.</p>
 
 <h3>Ceiling Mounting</h3>
 <p>The mounting plate was fixed to the ceiling using screws, making sure the fixing holes were properly aligned. Once the mounting plate is in place, the wooden plank with magnets can simply be positioned and held by magnetism.</p>
@@ -106,14 +106,12 @@ const englishContent: PostContent = {
 <h2>Final Result</h2>
 <p>The light fixture is now installed and functional. The 6 Edison bulbs create a warm and modern ambiance in the room.</p>
 <p><img src="/images/luminaire-plafond-suspendu-resultat-1.jpg" alt="Final result of the light fixture"></p>
-<p><img src="/images/luminaire-plafond-suspendu-resultat-2.jpg" alt="Final result of the light fixture view 2"></p>
-<p>The bulbs are suspended at different heights, creating a dynamic visual effect. The industrial style with natural wood and vintage bulbs fits perfectly in a modern interior.</p>
+<p>A dark oak-style varnish was applied to the wooden plank to give it this warm and elegant tone.</p>
 <p><img src="/images/luminaire-plafond-suspendu-resultat-salon.jpg" alt="Light fixture installed in the living room"></p>
-<p>As can be seen in this overview, the light fixture is installed above the TV and media area, creating perfect ambient lighting for the room. The contrast between the natural wood, warm bulbs, and white ceiling creates an inviting atmosphere.</p>
 
 <h2>Conclusion</h2>
 <p>This DIY light fixture project was relatively simple to complete but offers a very satisfying result. Using neodymium magnets for mounting facilitates installation and allows for easy removal if needed. The industrial style with Edison bulbs brings a modern and warm touch to the room.</p>
-<p>The total cost of the project is reasonable, especially if you salvage some materials. The most important aspect is to properly plan the locations of holes and components before starting construction.</p>`
+<p>The total cost of the project is reasonable, especially if you salvage some materials.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
