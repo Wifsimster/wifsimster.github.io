@@ -10,6 +10,7 @@ import FlashEsp8266, { metadata as flashMetadata, getContent as getFlashContent 
 import LuminositeJeedomEsp8266, { metadata as luminositeMetadata, getContent as getLuminositeContent } from './LuminositeJeedomEsp8266.vue'
 import LuminairePlafondSuspendu, { metadata as luminaireMetadata, getContent as getLuminaireContent } from './LuminairePlafondSuspendu.vue'
 import TemperaturePressionBmp180JeedomEsp8266, { metadata as temperatureMetadata, getContent as getTemperatureContent } from './TemperaturePressionBmp180JeedomEsp8266.vue'
+import RenovationSalleDeBainAppartement2008, { metadata as renovationSalleDeBainMetadata, getContent as getRenovationSalleDeBainContent } from './RenovationSalleDeBainAppartement2008.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -72,6 +73,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: temperatureMetadata,
     getContent: getTemperatureContent,
     component: TemperaturePressionBmp180JeedomEsp8266
+  },
+  'renovation-salle-de-bain-appartement-2008': {
+    metadata: renovationSalleDeBainMetadata,
+    getContent: getRenovationSalleDeBainContent,
+    component: RenovationSalleDeBainAppartement2008
   }
 }
 

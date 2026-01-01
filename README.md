@@ -32,7 +32,6 @@ Le blog est accessible publiquement à : <https://wifsimster.github.io/>
 │   ├── fr/                 # Version française
 │   ├── tags/               # Pages de tags
 │   └── public/             # Assets statiques (images)
-├── .vitepress/             # Configuration VitePress (legacy)
 ├── docker-compose.yml      # Configuration Docker Compose
 ├── Dockerfile              # Image Docker
 ├── nginx.conf              # Configuration Nginx
