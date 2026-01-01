@@ -1,6 +1,17 @@
 <template>
   <div>
     <div v-if="postInfo && post">
+      <div class="mb-6">
+        <RouterLink
+          :to="`${langPrefix}/`"
+          class="inline-flex items-center text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+        >
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          {{ i18n.t('post.goBack') }}
+        </RouterLink>
+      </div>
       <article>
         <header class="mb-8">
           <h1 class="text-4xl font-bold text-gray-900 dark:text-zinc-100 mb-4">

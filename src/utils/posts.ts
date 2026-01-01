@@ -32,12 +32,19 @@ export interface PostComponent {
 
 export function formatDate(dateString: string, lang: 'fr' | 'en' = 'fr'): string {
   const date = new Date(dateString)
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  if (lang === 'fr') {
+    // Format dd/MM/yyyy for French
+    const day = date.getDate().toString().padStart(2, '0')
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    const year = date.getFullYear()
+    return `${day}/${month}/${year}`
+  } else {
+    // Format MM/dd/yyyy for English
+    const day = date.getDate().toString().padStart(2, '0')
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    const year = date.getFullYear()
+    return `${month}/${day}/${year}`
   }
-  return date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', options)
 }
 
 export function getSlugFromFilename(filename: string): string {
