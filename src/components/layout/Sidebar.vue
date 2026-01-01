@@ -85,6 +85,15 @@
             <i class="pi pi-linkedin text-base"></i>
             <span>{{ i18n.t('sidebar.linkedin') }}</span>
           </a>
+          <a
+            href="https://x.com/Wifsimster"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
+          >
+            <i class="pi pi-twitter text-base"></i>
+            <span>{{ i18n.t('sidebar.x') }}</span>
+          </a>
         </div>
       </div>
     </div>
