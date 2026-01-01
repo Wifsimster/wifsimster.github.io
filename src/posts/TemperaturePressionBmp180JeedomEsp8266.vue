@@ -19,16 +19,16 @@ const frenchContent: PostContent = {
 <li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472">1kΩ</a> (pull-up).</li>
 </ul>
 <h2>Câblage</h2>
-<p><img src="/images/bmp180.png" alt="BMP180"></p>
+<p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-cablage.png" alt="BMP180"></p>
 <h2>Jeedom</h2>
 <p>Créer un device virtuel.</p>
-<p><img src="/images/bmp180_jeedom.png" alt="BMP180 Jeedom"></p>
+<p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-jeedom.png" alt="BMP180 Jeedom"></p>
 <p>Veuillez à bien noter les ID de deux informations (température et pression), ici 535 et 536. Ces deux ID sont à insérer dans la requête HTTP à envoyer à Jeedom.</p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/bmp180/">HTTP version</a></p>
 <p><a href="https://github.com/Wifsimster/bmp180-mqtt">MQTT version</a></p>
 <h2>Résultat</h2>
-<p><img src="/images/bmp180_res.png" alt="BMP180 Résultat"></p>`
+<p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-resultat.png" alt="BMP180 Résultat"></p>`
 }
 
 const englishContent: PostContent = {
@@ -42,16 +42,16 @@ const englishContent: PostContent = {
 <li>1 <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472">1kΩ</a> resistor (pull-up).</li>
 </ul>
 <h2>Wiring</h2>
-<p><img src="/images/bmp180.png" alt="BMP180"></p>
+<p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-cablage.png" alt="BMP180"></p>
 <h2>Jeedom</h2>
 <p>Create a virtual device.</p>
-<p><img src="/images/bmp180_jeedom.png" alt="BMP180 Jeedom"></p>
+<p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-jeedom.png" alt="BMP180 Jeedom"></p>
 <p>Make sure to note the IDs of the two information (temperature and pressure), here 535 and 536. These two IDs are to be inserted in the HTTP request to send to Jeedom.</p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/bmp180/">HTTP version</a></p>
 <p><a href="https://github.com/Wifsimster/bmp180-mqtt">MQTT version</a></p>
 <h2>Result</h2>
-<p><img src="/images/bmp180_res.png" alt="BMP180 Result"></p>`
+<p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-resultat.png" alt="BMP180 Result"></p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

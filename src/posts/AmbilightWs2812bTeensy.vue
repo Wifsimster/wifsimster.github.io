@@ -13,9 +13,9 @@ const frenchContent: PostContent = {
   description: "Réalisation d'un système Ambi-like avec un ruban de 4m composé de 240 LED WS2812B et une Teensy 2.0 pour restituer le flux vidéo de l'ordinateur sur les LED.",
   html: `<h2>Pourquoi ce choix de matériel ?</h2>
 <p>Un système Ambi-like se fait généralement avec des LED WS2801 car elles sont adressables contrairement aux LED WS2811/WS2812. J'avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m'a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j'aime les défis et surtout les nouvelles choses :)</p>
-<p><img src="/images/strip_rgb_ws28121.jpg" alt="Ruban WS2812"></p>
+<p><img src="/images/ambilight-ws2812b-ruban.jpg" alt="Ruban WS2812"></p>
 <p>Pour le choix du contrôleur, j'avais déjà joué avec un Raspeberry Pi précédemment, je voulais donc tenter l'aventure sur un autre périphérique. Un Arduino correspond très bien au besoin, c'est petit, possède une faible consommation énergétique et il existe plusieurs systèmes d'Ambi-like dédiés. J'ai donc commandé une Tensy 2.0 qui est encore plus petite qu'un Arduino Uno et possède une plus grande puissance de calcul (ça se révélera important étant donné que mes LED ne sont pas adressables).</p>
-<p><img src="/images/teensy_2.jpg" alt="Teensy 2.0"></p>
+<p><img src="/images/ambilight-ws2812b-teensy.jpg" alt="Teensy 2.0"></p>
 <h2>Programmation</h2>
 <p>J'ai donc découvert la programmation sous Arduino grâce à cette Teensy 2.0. A vrai dire avec quelques connaissance en C, c'est relativement simple !</p>
 <p>Il existe un logiciel de développement dédié pour les Arduino, à <a href="http://arduino.cc/en/Main/Software">télécharger ici</a>, par défaut Arduino ne prend pas en charge les Teensy, il faut donc télécharger et installer sur votre installation d'Arduino le 'patch' <a href="https://www.pjrc.com/teensy/td_download.html">Teensyduino</a>.</p>
@@ -29,17 +29,17 @@ const frenchContent: PostContent = {
 <h2>Montage</h2>
 <p>J'ai donc simplement découpé des bandes pour chaque longueur des écrans, bien penser à respecter le sens des flèches du ruban (pour le signal).</p>
 <p>J'ai relié chaque bandes bout à bout par trois fils soudés de chaque côté et relié mon alimentation 5v 8A en entrée et sortie du ruban (préféré plusieurs points d'alimentation sur votre ruban).</p>
-<p><img src="/images/IMG_20140921_1522391-1050x590.jpg" alt="Montage 1"></p>
+<p><img src="/images/ambilight-ws2812b-montage-1.jpg" alt="Montage 1"></p>
 <p>Comme vous pouvez le voir ci-dessous, j'ai connecté les trois fils du ruban sur les ports VCC, GRD B1 de la Teensy 2.0. Le port B1 est paramétrable dans ma version de l'Adalight.</p>
-<p><img src="/images/IMG_20140921_1523001.jpg" alt="Montage 2"></p>
+<p><img src="/images/ambilight-ws2812b-montage-2.jpg" alt="Montage 2"></p>
 <h2>Communication avec Adalight</h2>
 <p>Adalight est très répandu et est de plus en plus reconnu par les logiciels Ambilight. J'ai donc testé les deux plus connus du moment, Prismatik et Ambibox !</p>
-<p><img src="/images/IMG_20140921_1531451-1050x590.jpg" alt="Communication"></p>
+<p><img src="/images/ambilight-ws2812b-communication.jpg" alt="Communication"></p>
 <h2>Update - 22/11/2015</h2>
 <p>Suite à mon déménagement, j'ai dû me remettre dans la programmation de la Teensy et je viens donc d'en profiter pour mettre à jour ma version d'Adalight.</p>
 <p>Le plus gros problème que j'ai eu après tout ce temps (et un nouvelle installation de Windows) c'est la configuration de Prismatik !</p>
 <p>Penser à bien installer les drivers pour votre Teensy, les drivers sont embarqués dans le 'patch' <a href="https://www.pjrc.com/teensy/td_download.html">Teensyduino</a> (voir au début de l'article) et par la suite récupéré le port dans la gestion de vos périphériques Windows.</p>
-<p><img src="/images/periph.png" alt="Périphériques"></p>`
+<p><img src="/images/ambilight-ws2812b-peripheriques.png" alt="Périphériques"></p>`
 }
 
 const englishContent: PostContent = {
@@ -47,9 +47,9 @@ const englishContent: PostContent = {
   description: 'Building an Ambi-like system with a 4m strip composed of 240 WS2812B LEDs and a Teensy 2.0 to reproduce the computer\'s video stream on the LEDs.',
   html: `<h2>Why this hardware choice?</h2>
 <p>An Ambi-like system is usually done with WS2801 LEDs because they are addressable unlike WS2811/WS2812 LEDs. I admit I bought this strip on impulse (the number of LEDs per meter attracted me) without checking compatibility with current Ambi-like systems… But I like challenges and especially new things :)</p>
-<p><img src="/images/strip_rgb_ws28121.jpg" alt="WS2812 Strip"></p>
+<p><img src="/images/ambilight-ws2812b-ruban.jpg" alt="WS2812 Strip"></p>
 <p>For the controller choice, I had already played with a Raspberry Pi previously, so I wanted to try the adventure on another device. An Arduino fits the need very well, it's small, has low power consumption and there are several dedicated Ambi-like systems. So I ordered a Teensy 2.0 which is even smaller than an Arduino Uno and has greater computing power (this will prove important given that my LEDs are not addressable).</p>
-<p><img src="/images/teensy_2.jpg" alt="Teensy 2.0"></p>
+<p><img src="/images/ambilight-ws2812b-teensy.jpg" alt="Teensy 2.0"></p>
 <h2>Programming</h2>
 <p>So I discovered Arduino programming thanks to this Teensy 2.0. To be honest with some C knowledge, it's relatively simple!</p>
 <p>There is dedicated development software for Arduino, <a href="http://arduino.cc/en/Main/Software">download here</a>, by default Arduino doesn't support Teensy, so you need to download and install the <a href="https://www.pjrc.com/teensy/td_download.html">Teensyduino</a> 'patch' on your Arduino installation.</p>
@@ -63,17 +63,17 @@ const englishContent: PostContent = {
 <h2>Assembly</h2>
 <p>I simply cut strips for each screen length, making sure to respect the arrow direction of the strip (for the signal).</p>
 <p>I connected each strip end to end with three wires soldered on each side and connected my 5v 8A power supply at the input and output of the strip (prefer multiple power points on your strip).</p>
-<p><img src="/images/IMG_20140921_1522391-1050x590.jpg" alt="Assembly 1"></p>
+<p><img src="/images/ambilight-ws2812b-montage-1.jpg" alt="Assembly 1"></p>
 <p>As you can see below, I connected the three wires of the strip to the VCC, GRD B1 ports of the Teensy 2.0. The B1 port is configurable in my version of Adalight.</p>
-<p><img src="/images/IMG_20140921_1523001.jpg" alt="Assembly 2"></p>
+<p><img src="/images/ambilight-ws2812b-montage-2.jpg" alt="Assembly 2"></p>
 <h2>Communication with Adalight</h2>
 <p>Adalight is very widespread and increasingly recognized by Ambilight software. So I tested the two most known at the moment, Prismatik and Ambibox!</p>
-<p><img src="/images/IMG_20140921_1531451-1050x590.jpg" alt="Communication"></p>
+<p><img src="/images/ambilight-ws2812b-communication.jpg" alt="Communication"></p>
 <h2>Update - 22/11/2015</h2>
 <p>Following my move, I had to get back into Teensy programming and I just took the opportunity to update my Adalight version.</p>
 <p>The biggest problem I had after all this time (and a new Windows installation) is Prismatik configuration!</p>
 <p>Remember to properly install the drivers for your Teensy, the drivers are embedded in the <a href="https://www.pjrc.com/teensy/td_download.html">Teensyduino</a> 'patch' (see at the beginning of the article) and then retrieve the port in your Windows device management.</p>
-<p><img src="/images/periph.png" alt="Devices"></p>`
+<p><img src="/images/ambilight-ws2812b-peripheriques.png" alt="Devices"></p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

@@ -23,7 +23,7 @@ const frenchContent: PostContent = {
 <p><strong>Attention !</strong><br>
 Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu.</p>
 <h2>Câblage</h2>
-<p><img src="/images/i2c_display_scheme.png" alt="Schéma I2C"></p>
+<p><img src="/images/affichage-i2c-esp8266-schema.png" alt="Schéma I2C"></p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/i2c-display-mqtt">Github</a></p>
 <h2>Principe</h2>
@@ -36,7 +36,7 @@ Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu
 <li>Puis à chaque fois que le broker MQTT reçoit des nouvelles données sur ce topic, notre client met à jour les données à l'écran.</li>
 </ol>
 <h2>Résultat</h2>
-<p><img src="/images/i2c_display.jpg" alt="Écran I2C"></p>`
+<p><img src="/images/affichage-i2c-esp8266-resultat.jpg" alt="Écran I2C"></p>`
 }
 
 const englishContent: PostContent = {
@@ -54,7 +54,7 @@ const englishContent: PostContent = {
 <p><strong>Warning!</strong><br>
 The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmware.</p>
 <h2>Wiring</h2>
-<p><img src="/images/i2c_display_scheme.png" alt="I2C Diagram"></p>
+<p><img src="/images/affichage-i2c-esp8266-schema.png" alt="I2C Diagram"></p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/i2c-display-mqtt">Github</a></p>
 <h2>Principle</h2>
@@ -67,7 +67,7 @@ The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmwa
 <li>Then each time the MQTT broker receives new data on this topic, our client updates the data on the screen.</li>
 </ol>
 <h2>Result</h2>
-<p><img src="/images/i2c_display.jpg" alt="I2C Screen"></p>`
+<p><img src="/images/affichage-i2c-esp8266-resultat.jpg" alt="I2C Screen"></p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

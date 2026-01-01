@@ -8,6 +8,7 @@ import ControlePriseChaconRaspberryPi, { metadata as controlePriseMetadata, getC
 import DistributeurCroquettesJeedomEsp8266, { metadata as distributeurMetadata, getContent as getDistributeurContent } from './DistributeurCroquettesJeedomEsp8266.vue'
 import FlashEsp8266, { metadata as flashMetadata, getContent as getFlashContent } from './FlashEsp8266.vue'
 import LuminositeJeedomEsp8266, { metadata as luminositeMetadata, getContent as getLuminositeContent } from './LuminositeJeedomEsp8266.vue'
+import LuminairePlafondSuspendu, { metadata as luminaireMetadata, getContent as getLuminaireContent } from './LuminairePlafondSuspendu.vue'
 import TemperaturePressionBmp180JeedomEsp8266, { metadata as temperatureMetadata, getContent as getTemperatureContent } from './TemperaturePressionBmp180JeedomEsp8266.vue'
 
 export interface PostComponentInfo {
@@ -61,6 +62,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: luminositeMetadata,
     getContent: getLuminositeContent,
     component: LuminositeJeedomEsp8266
+  },
+  'luminaire-plafond-suspendu': {
+    metadata: luminaireMetadata,
+    getContent: getLuminaireContent,
+    component: LuminairePlafondSuspendu
   },
   'temperature-pression-bmp180-jeedom-esp8266': {
     metadata: temperatureMetadata,

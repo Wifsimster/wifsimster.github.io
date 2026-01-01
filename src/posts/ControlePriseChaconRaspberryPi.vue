@@ -31,11 +31,11 @@ Le principe est tout simple, reproduire les donnés émises par la télécommand
 <p>Pour de meilleure explication, je vous réfère au tutoriel d'<a href="http://blog.idleman.fr/raspberry-pi-10-commander-le-raspberry-pi-par-radio/">Idleman 10</a> sur le Raspberry Pi.</p>
 <h2>Montage</h2>
 <p>Si vous n'avez jamais jouer avec les ports GPIO du Raspberry Pi voici le montage à adopté pour faire fonctionner l'émetteur 433MHz.</p>
-<p><img src="/images/RPi-copie-1024x742.jpg" alt="Schéma Raspberry Pi"></p>
+<p><img src="/images/controle-prise-chacon-schema-raspberry-pi.jpg" alt="Schéma Raspberry Pi"></p>
 <p>Vous pouvez voir sur le montage l'émetteur mais également le récepteur, ce n'est pas utile pour ce que l'on veut faire ici.</p>
 <p>Pour l'astuce, un câble de ventilateur PC à trois pins convient parfaitement pour l'émetteur 433MHz ;)</p>
 <p>Vous pouvez souder un fil conducteur à l'emplacement réservé à l'antenne (Ant) sur l'émetteur de 17,3cm, si vous voulez vous assurez de la bonne communication avec les prises.</p>
-<p><img src="/images/rf433k-300x225.jpg" alt="Émetteur 433MHz"></p>
+<p><img src="/images/controle-prise-chacon-emetteur-433mhz.jpg" alt="Émetteur 433MHz"></p>
 <h2>Logiciel</h2>
 <p>On passe ensuite au niveau logiciel sur le Raspberry Pi.</p>
 <p>Il vous faut avant tout chose installer la librairie WiringPi, permettant de simplifier l'accès aux ports GPIO:</p>
@@ -87,11 +87,11 @@ The principle is very simple, reproduce the data emitted by the remote control v
 <p>For better explanation, I refer you to <a href="http://blog.idleman.fr/raspberry-pi-10-commander-le-raspberry-pi-par-radio/">Idleman 10</a>'s tutorial on the Raspberry Pi.</p>
 <h2>Assembly</h2>
 <p>If you've never played with the Raspberry Pi GPIO ports, here's the setup to adopt to make the 433MHz transmitter work.</p>
-<p><img src="/images/RPi-copie-1024x742.jpg" alt="Raspberry Pi Diagram"></p>
+<p><img src="/images/controle-prise-chacon-schema-raspberry-pi.jpg" alt="Raspberry Pi Diagram"></p>
 <p>You can see in the setup the transmitter but also the receiver, it's not useful for what we want to do here.</p>
 <p>For the tip, a three-pin PC fan cable works perfectly for the 433MHz transmitter ;)</p>
 <p>You can solder a conductor wire at the antenna location (Ant) on the transmitter of 17.3cm, if you want to ensure good communication with the outlets.</p>
-<p><img src="/images/rf433k-300x225.jpg" alt="433MHz Transmitter"></p>
+<p><img src="/images/controle-prise-chacon-emetteur-433mhz.jpg" alt="433MHz Transmitter"></p>
 <h2>Software</h2>
 <p>Then we move to the software level on the Raspberry Pi.</p>
 <p>First of all, you need to install the WiringPi library, which simplifies GPIO port access:</p>

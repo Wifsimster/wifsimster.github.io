@@ -40,13 +40,13 @@ Le code est en LUA et nécessite donc d'avoir les ESP8266 avec le firmware nodem
 <li>Envoyer une requête HTTP au serveur avec l'état du port GPIO_2;</li>
 </ol>
 <h2>Schémas</h2>
-<p><img src="/images/scheme-client.png" alt="Schéma client"></p>
-<p><img src="/images/scheme-server.png" alt="Schéma serveur"></p>
+<p><img src="/images/communication-sans-fil-esp8266-schema-client.png" alt="Schéma client"></p>
+<p><img src="/images/communication-sans-fil-esp8266-schema-serveur.png" alt="Schéma serveur"></p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/soft-ap-client">Client</a> | <a href="https://github.com/Wifsimster/soft-ap">Serveur</a></p>
 <h2>Réalisation</h2>
-<p><img src="/images/image_client.jpg" alt="Image client"></p>
-<p><img src="/images/image_server.jpg" alt="Image serveur"></p>`
+<p><img src="/images/communication-sans-fil-esp8266-client.jpg" alt="Image client"></p>
+<p><img src="/images/communication-sans-fil-esp8266-serveur.jpg" alt="Image serveur"></p>`
 }
 
 const englishContent: PostContent = {
@@ -81,13 +81,13 @@ The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmwa
 <li>Send an HTTP request to the server with the GPIO_2 port state;</li>
 </ol>
 <h2>Diagrams</h2>
-<p><img src="/images/scheme-client.png" alt="Client diagram"></p>
-<p><img src="/images/scheme-server.png" alt="Server diagram"></p>
+<p><img src="/images/communication-sans-fil-esp8266-schema-client.png" alt="Client diagram"></p>
+<p><img src="/images/communication-sans-fil-esp8266-schema-serveur.png" alt="Server diagram"></p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/soft-ap-client">Client</a> | <a href="https://github.com/Wifsimster/soft-ap">Server</a></p>
 <h2>Realization</h2>
-<p><img src="/images/image_client.jpg" alt="Client image"></p>
-<p><img src="/images/image_server.jpg" alt="Server image"></p>`
+<p><img src="/images/communication-sans-fil-esp8266-client.jpg" alt="Client image"></p>
+<p><img src="/images/communication-sans-fil-esp8266-serveur.jpg" alt="Server image"></p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

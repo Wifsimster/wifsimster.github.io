@@ -20,15 +20,15 @@ const frenchContent: PostContent = {
 </ul>
 <h2>Prototype</h2>
 <p>J'ai commencé par réaliser un cadre avec des morceaux de MDF qui ne me servaient à rien. C'est léger, facile à travaillé mais vite fragilisé avec les trous vu l'épaisseur.</p>
-<p><img src="/images/IMG_20140706_1353301.jpg" alt="Prototype 1"></p>
-<p><img src="/images/IMG_20140706_1353481.jpg" alt="Prototype 2"></p>
-<p><img src="/images/IMG_20140706_1532031.jpg" alt="Prototype 3"></p>
-<p><img src="/images/IMG_20140706_1648501.jpg" alt="Prototype 4"></p>
-<p><img src="/images/IMG_20140707_0843401.jpg" alt="Prototype 5"></p>
+<p><img src="/images/ambilight-ws2801-prototype-1.jpg" alt="Prototype 1"></p>
+<p><img src="/images/ambilight-ws2801-prototype-2.jpg" alt="Prototype 2"></p>
+<p><img src="/images/ambilight-ws2801-prototype-3.jpg" alt="Prototype 3"></p>
+<p><img src="/images/ambilight-ws2801-prototype-4.jpg" alt="Prototype 4"></p>
+<p><img src="/images/ambilight-ws2801-prototype-5.jpg" alt="Prototype 5"></p>
 <h2>Connexion avec le Raspberry Pi</h2>
 <p>La connexion avec le Raspberry Pi est relativement simple, comme vous pouvez le voir sur le schéma ci-dessous.</p>
 <p>Les LED étant sensibles au voltage, il est préférable de les alimenter avec une alimentation extérieure connectée en parallèle au 5v du port GPIO.</p>
-<p><img src="/images/diagram1.png" alt="Schéma connexion"></p>
+<p><img src="/images/ambilight-ws2801-schema-connexion.png" alt="Schéma connexion"></p>
 <h2>Installation d'Hyperion</h2>
 <p>Le plus simple pour utiliser Hyperion est d'utiliser une <a href="http://www.raspberrypi.org/downloads/">Raspbian</a> sur votre Raspberry Pi, si jamais vous voulez absoluement tourner sur un aure OS je vous repporte sur le wiki d'Hyperion qui explique la procédure supplémentaire à suivre <a href="https://github.com/tvdzwan/hyperion/wiki/installation">ici</a>.</p>
 <p>En premier lieu, une installation de quelques librairies est nécessaire pour faire tourner Hyperion sur votre Raspberi Pi.</p>
@@ -52,14 +52,14 @@ rm /etc/init/hyperion.conf
 <h2>Configuration d'Hyperion</h2>
 <p>Hyperion possède un logiciel de paramétrage très bien fait, nommé <a href="https://github.com/tvdzwan/hyperion/wiki/configuration">HyperCon</a>, il permet de gérer l'ensemble des LED (position, couleurs, éclairage, taille, …). L'ensemble des possibilités est détaillées dans le lien précédent.</p>
 <p>Hypercon va donc vous générer un fichier hyperion.config.json à déposer par défaut dans /etc.</p>
-<p><img src="/images/hypercon_mainscreen_011-1050x565.jpg" alt="HyperCon"></p>
+<p><img src="/images/ambilight-ws2801-hypercon.jpg" alt="HyperCon"></p>
 <h2>Cadre en acier</h2>
 <p>Mon cadre en MDF n'étant pas très résistant, j'ai acheté quelques cornières en acier, que j'ai découpé et ensuite peinte. Le résultat est bien mieux, l'ensemble est solide, léger et tient bien mieux à la TV.</p>
-<p><img src="/images/IMG_20140707_2149471.jpg" alt="Cadre acier 1"></p>
-<p><img src="/images/IMG_20140707_2347261.jpg" alt="Cadre acier 2"></p>
-<p><img src="/images/IMG_20140708_0757471.jpg" alt="Cadre acier 3"></p>
-<p><img src="/images/IMG_20140707_2301481.jpg" alt="Cadre acier 4"></p>
-<p><img src="/images/IMG_20140708_0758191.jpg" alt="Cadre acier 5"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-1.jpg" alt="Cadre acier 1"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-2.jpg" alt="Cadre acier 2"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-3.jpg" alt="Cadre acier 3"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-4.jpg" alt="Cadre acier 4"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-5.jpg" alt="Cadre acier 5"></p>
 <h2>Configuration avec XBMC</h2>
 <p>J'ai bataillé un moment avant de faire communiquer mon XBMC sous mon media center (Windows) avec le serveur Hyperion sur le Raspberry Pi.</p>
 <p>La seule solution (à l'heure actuelle) que j'ai trouvé, c'est de passer par l'addon XBMC Boblight qui rend possible la communication entre XBMC et Hyperion sur le réseau.</p>
@@ -81,15 +81,15 @@ const englishContent: PostContent = {
 </ul>
 <h2>Prototype</h2>
 <p>I started by building a frame with MDF pieces that I had no use for. It's light, easy to work with but quickly weakened with holes given the thickness.</p>
-<p><img src="/images/IMG_20140706_1353301.jpg" alt="Prototype 1"></p>
-<p><img src="/images/IMG_20140706_1353481.jpg" alt="Prototype 2"></p>
-<p><img src="/images/IMG_20140706_1532031.jpg" alt="Prototype 3"></p>
-<p><img src="/images/IMG_20140706_1648501.jpg" alt="Prototype 4"></p>
-<p><img src="/images/IMG_20140707_0843401.jpg" alt="Prototype 5"></p>
+<p><img src="/images/ambilight-ws2801-prototype-1.jpg" alt="Prototype 1"></p>
+<p><img src="/images/ambilight-ws2801-prototype-2.jpg" alt="Prototype 2"></p>
+<p><img src="/images/ambilight-ws2801-prototype-3.jpg" alt="Prototype 3"></p>
+<p><img src="/images/ambilight-ws2801-prototype-4.jpg" alt="Prototype 4"></p>
+<p><img src="/images/ambilight-ws2801-prototype-5.jpg" alt="Prototype 5"></p>
 <h2>Connection with Raspberry Pi</h2>
 <p>The connection with the Raspberry Pi is relatively simple, as you can see in the diagram below.</p>
 <p>Since LEDs are sensitive to voltage, it's preferable to power them with an external power supply connected in parallel to the 5v GPIO port.</p>
-<p><img src="/images/diagram1.png" alt="Connection diagram"></p>
+<p><img src="/images/ambilight-ws2801-schema-connexion.png" alt="Connection diagram"></p>
 <h2>Hyperion Installation</h2>
 <p>The easiest way to use Hyperion is to use <a href="http://www.raspberrypi.org/downloads/">Raspbian</a> on your Raspberry Pi. If you absolutely want to run on another OS, I refer you to the Hyperion wiki which explains the additional procedure to follow <a href="https://github.com/tvdzwan/hyperion/wiki/installation">here</a>.</p>
 <p>First, installation of a few libraries is necessary to run Hyperion on your Raspberry Pi.</p>
@@ -113,14 +113,14 @@ rm /etc/init/hyperion.conf
 <h2>Hyperion Configuration</h2>
 <p>Hyperion has a very well-made configuration software called <a href="https://github.com/tvdzwan/hyperion/wiki/configuration">HyperCon</a>, which allows you to manage all LEDs (position, colors, lighting, size, …). All possibilities are detailed in the previous link.</p>
 <p>HyperCon will generate a hyperion.config.json file to place by default in /etc.</p>
-<p><img src="/images/hypercon_mainscreen_011-1050x565.jpg" alt="HyperCon"></p>
+<p><img src="/images/ambilight-ws2801-hypercon.jpg" alt="HyperCon"></p>
 <h2>Steel Frame</h2>
 <p>My MDF frame not being very resistant, I bought some steel angles, which I cut and then painted. The result is much better, the whole thing is solid, light and holds much better to the TV.</p>
-<p><img src="/images/IMG_20140707_2149471.jpg" alt="Steel frame 1"></p>
-<p><img src="/images/IMG_20140707_2347261.jpg" alt="Steel frame 2"></p>
-<p><img src="/images/IMG_20140708_0757471.jpg" alt="Steel frame 3"></p>
-<p><img src="/images/IMG_20140707_2301481.jpg" alt="Steel frame 4"></p>
-<p><img src="/images/IMG_20140708_0758191.jpg" alt="Steel frame 5"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-1.jpg" alt="Steel frame 1"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-2.jpg" alt="Steel frame 2"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-3.jpg" alt="Steel frame 3"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-4.jpg" alt="Steel frame 4"></p>
+<p><img src="/images/ambilight-ws2801-cadre-acier-5.jpg" alt="Steel frame 5"></p>
 <h2>Configuration with XBMC</h2>
 <p>I struggled for a while before getting my XBMC on my media center (Windows) to communicate with the Hyperion server on the Raspberry Pi.</p>
 <p>The only solution (at the moment) I found is to use the XBMC Boblight addon which makes communication between XBMC and Hyperion over the network possible.</p>

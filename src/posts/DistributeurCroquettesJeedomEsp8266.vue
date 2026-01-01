@@ -25,22 +25,22 @@ const frenchContent: PostContent = {
 <p>En conséquence, selon le sens de rotation du moteur, la plateau descend ou monte.</p>
 <p>Un tuyau de plus gros diamètre englobe le tout afin de récupérer les croquettes et les verse à la base par un bec.</p>
 <p>Le distributeur est connecté à Jeedom par un ESP8266 et actionne le double relais sur requête HTTP.</p>
-<p><img src="/images/cat_feeder.jpg" alt="Distributeur 1"></p>
-<p><img src="/images/cat_feeder_02.jpg" alt="Distributeur 2"></p>
-<p><img src="/images/cat_feeder_03.jpg" alt="Distributeur 3"></p>
+<p><img src="/images/distributeur-croquettes-1.jpg" alt="Distributeur 1"></p>
+<p><img src="/images/distributeur-croquettes-2.jpg" alt="Distributeur 2"></p>
+<p><img src="/images/distributeur-croquettes-3.jpg" alt="Distributeur 3"></p>
 <h2>Câblage</h2>
-<p><img src="/images/relay_command.png" alt="Schéma relais"></p>
+<p><img src="/images/distributeur-croquettes-schema-relais.png" alt="Schéma relais"></p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/distributeur-lua">Github</a></p>
 <h2>Jeedom</h2>
 <p>Création d'un script pour communiquer avec l'esp8266 du distributeur :</p>
-<p><img src="/images/cat_feeder_jeedom.png" alt="Jeedom script"></p>
+<p><img src="/images/distributeur-croquettes-jeedom-script.png" alt="Jeedom script"></p>
 <p>Création d'un virtuel pour interagir avec le script précédent :</p>
-<p><img src="/images/cat_feeder_virtual.png" alt="Jeedom virtuel"></p>
+<p><img src="/images/distributeur-croquettes-jeedom-virtuel.png" alt="Jeedom virtuel"></p>
 <p>Création d'un scénario pour automatiser la distribution des croquettes :</p>
-<p><img src="/images/cat_feeder_scenari.png" alt="Jeedom scénario"></p>
+<p><img src="/images/distributeur-croquettes-jeedom-scenario.png" alt="Jeedom scénario"></p>
 <h2>Résultat</h2>
-<p><img src="/images/cat_feeder_dash.png" alt="Dashboard"></p>
+<p><img src="/images/distributeur-croquettes-dashboard.png" alt="Dashboard"></p>
 <iframe src="//www.youtube.com/embed/_gSTuAhnkl0" frameborder="0" allowfullscreen></iframe>`
 }
 
@@ -61,22 +61,22 @@ const englishContent: PostContent = {
 <p>Consequently, depending on the rotation direction of the motor, the tray goes down or up.</p>
 <p>A larger diameter tube surrounds everything to collect the food and pours it at the base through a spout.</p>
 <p>The dispenser is connected to Jeedom via an ESP8266 and actuates the double relay on HTTP request.</p>
-<p><img src="/images/cat_feeder.jpg" alt="Dispenser 1"></p>
-<p><img src="/images/cat_feeder_02.jpg" alt="Dispenser 2"></p>
-<p><img src="/images/cat_feeder_03.jpg" alt="Dispenser 3"></p>
+<p><img src="/images/distributeur-croquettes-1.jpg" alt="Dispenser 1"></p>
+<p><img src="/images/distributeur-croquettes-2.jpg" alt="Dispenser 2"></p>
+<p><img src="/images/distributeur-croquettes-3.jpg" alt="Dispenser 3"></p>
 <h2>Wiring</h2>
-<p><img src="/images/relay_command.png" alt="Relay diagram"></p>
+<p><img src="/images/distributeur-croquettes-schema-relais.png" alt="Relay diagram"></p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/distributeur-lua">Github</a></p>
 <h2>Jeedom</h2>
 <p>Create a script to communicate with the esp8266 of the dispenser:</p>
-<p><img src="/images/cat_feeder_jeedom.png" alt="Jeedom script"></p>
+<p><img src="/images/distributeur-croquettes-jeedom-script.png" alt="Jeedom script"></p>
 <p>Create a virtual to interact with the previous script:</p>
-<p><img src="/images/cat_feeder_virtual.png" alt="Jeedom virtual"></p>
+<p><img src="/images/distributeur-croquettes-jeedom-virtuel.png" alt="Jeedom virtual"></p>
 <p>Create a scenario to automate food distribution:</p>
-<p><img src="/images/cat_feeder_scenari.png" alt="Jeedom scenario"></p>
+<p><img src="/images/distributeur-croquettes-jeedom-scenario.png" alt="Jeedom scenario"></p>
 <h2>Result</h2>
-<p><img src="/images/cat_feeder_dash.png" alt="Dashboard"></p>
+<p><img src="/images/distributeur-croquettes-dashboard.png" alt="Dashboard"></p>
 <iframe src="//www.youtube.com/embed/_gSTuAhnkl0" frameborder="0" allowfullscreen></iframe>`
 }
 

@@ -36,10 +36,10 @@ Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu
 <h2>Jeedom</h2>
 <p>Il vous faut tout d'abord installer le plugin gratuit MQTT dans Jeedom.</p>
 <p>Dès lors que votre ESP8266 publiera sur le broker MQTT, le plugin Jeedom ajoutera automatiquement le device TSL2561 :</p>
-<p><img src="/images/tsl2561_mqtt.png" alt="TSL2561 MQTT"></p>
-<p><img src="/images/tsl2561_device.png" alt="TSL2561 Device"></p>
+<p><img src="/images/luminosite-jeedom-esp8266-mqtt.png" alt="TSL2561 MQTT"></p>
+<p><img src="/images/luminosite-jeedom-esp8266-device.png" alt="TSL2561 Device"></p>
 <h2>Résultat</h2>
-<p><img src="/images/tsl2561_jeedom.png" alt="TSL2561 Jeedom"></p>`
+<p><img src="/images/luminosite-jeedom-esp8266-jeedom.png" alt="TSL2561 Jeedom"></p>`
 }
 
 const englishContent: PostContent = {
@@ -70,10 +70,10 @@ The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmwa
 <h2>Jeedom</h2>
 <p>You must first install the free MQTT plugin in Jeedom.</p>
 <p>Once your ESP8266 publishes on the MQTT broker, the Jeedom plugin will automatically add the TSL2561 device:</p>
-<p><img src="/images/tsl2561_mqtt.png" alt="TSL2561 MQTT"></p>
-<p><img src="/images/tsl2561_device.png" alt="TSL2561 Device"></p>
+<p><img src="/images/luminosite-jeedom-esp8266-mqtt.png" alt="TSL2561 MQTT"></p>
+<p><img src="/images/luminosite-jeedom-esp8266-device.png" alt="TSL2561 Device"></p>
 <h2>Result</h2>
-<p><img src="/images/tsl2561_jeedom.png" alt="TSL2561 Jeedom"></p>`
+<p><img src="/images/luminosite-jeedom-esp8266-jeedom.png" alt="TSL2561 Jeedom"></p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
