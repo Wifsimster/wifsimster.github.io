@@ -13,6 +13,7 @@ import TemperaturePressionBmp180JeedomEsp8266, { metadata as temperatureMetadata
 import RenovationSalleDeBainAppartement2008, { metadata as renovationSalleDeBainMetadata, getContent as getRenovationSalleDeBainContent } from './RenovationSalleDeBainAppartement2008.vue'
 import StructureRackBoisMurPlaco, { metadata as structureRackBoisMurPlacoMetadata, getContent as getStructureRackBoisMurPlacoContent } from './StructureRackBoisMurPlaco.vue'
 import AmenagementPlacardPieceBureau, { metadata as amenagementPlacardMetadata, getContent as getAmenagementPlacardContent } from './AmenagementPlacardPieceBureau.vue'
+import EmplacementRefrigerateurCuisineOuverte, { metadata as emplacementRefrigerateurMetadata, getContent as getEmplacementRefrigerateurContent } from './EmplacementRefrigerateurCuisineOuverte.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -90,6 +91,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: amenagementPlacardMetadata,
     getContent: getAmenagementPlacardContent,
     component: AmenagementPlacardPieceBureau
+  },
+  'emplacement-refrigerateur-cuisine-ouverte': {
+    metadata: emplacementRefrigerateurMetadata,
+    getContent: getEmplacementRefrigerateurContent,
+    component: EmplacementRefrigerateurCuisineOuverte
   }
 }
 

@@ -33,6 +33,10 @@ export const translations: Record<string, Record<string, string>> = {
     'tags.title': 'Articles taggés',
     'post.readMore': 'Lire la suite',
     'post.goBack': 'Retour à l\'accueil',
+    'post.notFound.title': 'Oups ! Article introuvable',
+    'post.notFound.message': 'Cet article semble avoir disparu dans les méandres du web...',
+    'post.notFound.suggestion': 'Peut-être qu\'il est parti en vacances ? 🌴',
+    'post.notFound.backHome': 'Retourner à l\'accueil',
     'toc.title': 'Table des matières',
     'footer.copyright': '© 2017-2025 Wifsimster',
     'footer.blog': 'Blog personnel'
@@ -71,6 +75,10 @@ export const translations: Record<string, Record<string, string>> = {
     'tags.title': 'Tagged Articles',
     'post.readMore': 'Read more',
     'post.goBack': 'Back to home',
+    'post.notFound.title': 'Oops! Post Not Found',
+    'post.notFound.message': 'This post seems to have vanished into the web\'s depths...',
+    'post.notFound.suggestion': 'Maybe it went on vacation? 🌴',
+    'post.notFound.backHome': 'Go back home',
     'toc.title': 'Table of Contents',
     'footer.copyright': '© 2017-2025 Wifsimster',
     'footer.blog': 'Personal Blog'

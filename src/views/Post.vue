@@ -34,11 +34,36 @@
         </main>
       </article>
     </div>
-    <div v-else class="text-center py-12">
-      <p class="text-gray-500 dark:text-zinc-400">Post not found</p>
-      <RouterLink :to="`${langPrefix}/`" class="text-primary-600 dark:text-primary-400 hover:underline mt-4 inline-block">
-        {{ i18n.t('nav.home') }}
-      </RouterLink>
+    <div v-else class="min-h-[60vh] flex items-center justify-center py-16 px-4">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="text-8xl mb-6 inline-block">🔍</div>
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
+          {{ i18n.t('post.notFound.title') }}
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-zinc-400 mb-3">
+          {{ i18n.t('post.notFound.message') }}
+        </p>
+        <p class="text-lg text-gray-500 dark:text-zinc-500 mb-8">
+          {{ i18n.t('post.notFound.suggestion') }}
+        </p>
+        <div class="mb-12">
+          <RouterLink 
+            :to="`${langPrefix}/`" 
+            class="inline-flex items-center px-6 py-3 bg-primary-600 dark:bg-primary-500 text-white rounded-lg font-medium transition-all duration-300 hover:bg-primary-700 dark:hover:bg-primary-600 hover:scale-105 hover:shadow-lg active:scale-95 shadow-md"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            {{ i18n.t('post.notFound.backHome') }}
+          </RouterLink>
+        </div>
+        <div class="flex justify-center items-center gap-4 flex-wrap">
+          <span class="text-3xl inline-block">📝</span>
+          <span class="text-3xl inline-block">💻</span>
+          <span class="text-3xl inline-block">🚀</span>
+          <span class="text-3xl inline-block">✨</span>
+        </div>
+      </div>
     </div>
     <ImageGallery
       v-model="galleryIsOpen"
