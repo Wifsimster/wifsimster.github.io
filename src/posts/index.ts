@@ -16,6 +16,8 @@ import AmenagementPlacardPieceBureau, { metadata as amenagementPlacardMetadata, 
 import EmplacementRefrigerateurCuisineOuverte, { metadata as emplacementRefrigerateurMetadata, getContent as getEmplacementRefrigerateurContent } from './EmplacementRefrigerateurCuisineOuverte.vue'
 import VisiteChoixMaisonRenovation, { metadata as visiteChoixMaisonMetadata, getContent as getVisiteChoixMaisonContent } from './VisiteChoixMaisonRenovation.vue'
 import RenovationSalleDeBainMaison1970, { metadata as renovationSalleDeBainMaison1970Metadata, getContent as getRenovationSalleDeBainMaison1970Content } from './RenovationSalleDeBainMaison1970.vue'
+import RenovationWcMaison1970, { metadata as renovationWcMaison1970Metadata, getContent as getRenovationWcMaison1970Content } from './RenovationWcMaison1970.vue'
+import RenovationCouloirMaison1970, { metadata as renovationCouloirMaison1970Metadata, getContent as getRenovationCouloirMaison1970Content } from './RenovationCouloirMaison1970.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -108,6 +110,16 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: renovationSalleDeBainMaison1970Metadata,
     getContent: getRenovationSalleDeBainMaison1970Content,
     component: RenovationSalleDeBainMaison1970
+  },
+  'renovation-wc-maison-1970': {
+    metadata: renovationWcMaison1970Metadata,
+    getContent: getRenovationWcMaison1970Content,
+    component: RenovationWcMaison1970
+  },
+  'renovation-couloir-maison-1970': {
+    metadata: renovationCouloirMaison1970Metadata,
+    getContent: getRenovationCouloirMaison1970Content,
+    component: RenovationCouloirMaison1970
   }
 }
 
