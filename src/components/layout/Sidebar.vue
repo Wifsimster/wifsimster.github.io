@@ -51,16 +51,16 @@
             <i class="pi pi-times text-sm"></i>
           </button>
         </div>
-        <!-- Top Keywords -->
+        <!-- Top Tags -->
         <div v-if="topKeywords.length > 0" class="mt-3 flex flex-wrap gap-2">
-          <button
-            v-for="keyword in topKeywords"
-            :key="keyword"
-            @click="searchByKeyword(keyword)"
+          <RouterLink
+            v-for="tag in topKeywords"
+            :key="tag"
+            :to="`${i18n.langPrefix.value}/tags/${encodeURIComponent(tag)}`"
             class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
           >
-            {{ keyword }}
-          </button>
+            {{ tag }}
+          </RouterLink>
         </div>
       </div>
 
@@ -142,7 +142,7 @@ const { searchQuery, setSearchQuery, clearSearch: clearGlobalSearch } = useSearc
 const lang = computed(() => i18n.language.value)
 const localSearchQuery = ref('')
 
-// Get top 3 keywords
+// Get top 3 tags
 const tagCounts = getAllTags()
 const topKeywords = computed(() => {
   return Object.entries(tagCounts)
@@ -166,13 +166,6 @@ const handleSearch = () => {
   }
 }
 
-const searchByKeyword = (keyword: string) => {
-  setSearchQuery(keyword)
-  const homePath = i18n.langPrefix.value || '/'
-  if (router.currentRoute.value.path !== homePath) {
-    router.push(homePath)
-  }
-}
 
 const clearSearch = () => {
   localSearchQuery.value = ''
