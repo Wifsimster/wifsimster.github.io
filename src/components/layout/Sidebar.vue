@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden lg:flex lg:flex-col w-80 border-r border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-900/50">
+  <aside class="hidden lg:flex lg:flex-col w-80 border-r border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-900/50 sticky top-0 h-screen">
     <div class="flex-1 overflow-y-auto p-6">
       <!-- Top Section: Name and Theme Toggles -->
       <div class="flex items-center justify-between mb-6">
@@ -41,7 +41,7 @@
       <!-- Navigation Links -->
       <nav class="space-y-1 mb-6">
         <RouterLink
-          :to="langPrefix || '/'"
+          :to="i18n.langPrefix.value || '/'"
           class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
           active-class="bg-gray-100 dark:bg-zinc-800 text-primary-600 dark:text-primary-400"
         >
@@ -110,7 +110,6 @@ const i18n = useI18n()
 const darkMode = useDarkMode()
 
 const lang = computed(() => i18n.language.value)
-const langPrefix = computed(() => lang.value === 'en' ? '/en' : '')
 
 const aboutMeTextWithHighlight = computed(() => {
   const text = i18n.t('sidebar.aboutMeText')

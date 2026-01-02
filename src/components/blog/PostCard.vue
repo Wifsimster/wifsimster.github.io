@@ -25,19 +25,17 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
 import { RouterLink } from 'vue-router'
 import type { Post } from '@/utils/posts'
 import { formatDate } from '@/utils/posts'
+import { useI18n } from '@/composables/useI18n'
 
 const props = defineProps<{
   post: Post
 }>()
 
-const route = useRoute()
-const lang = computed(() => route.path.startsWith('/en') ? 'en' : 'fr')
-const langPrefix = computed(() => lang.value === 'en' ? '/en' : '')
+const i18n = useI18n()
 
-const postLink = computed(() => `${langPrefix.value}/posts/${props.post.slug}`)
-const formattedDate = computed(() => formatDate(props.post.date, lang.value))
+const postLink = computed(() => `${i18n.langPrefix.value}/posts/${props.post.slug}`)
+const formattedDate = computed(() => formatDate(props.post.date, i18n.language.value))
 </script>

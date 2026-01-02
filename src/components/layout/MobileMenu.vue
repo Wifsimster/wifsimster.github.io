@@ -22,12 +22,9 @@ import { useI18n } from '@/composables/useI18n'
 const i18n = useI18n()
 
 const navItems = computed(() => {
-  const lang = i18n.language.value
-  const prefix = lang === 'en' ? '/en' : ''
-  
   return [
-    { path: prefix || '/', label: i18n.t('nav.home') },
-    { path: `${prefix}/archives`, label: i18n.t('nav.archives') }
+    { path: i18n.langPrefix.value || '/', label: i18n.t('nav.home') },
+    { path: `${i18n.langPrefix.value}/archives`, label: i18n.t('nav.archives') }
   ]
 })
 </script>

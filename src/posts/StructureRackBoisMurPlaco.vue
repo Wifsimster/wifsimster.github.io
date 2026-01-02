@@ -9,33 +9,20 @@ export const metadata: PostMetadata = {
 }
 
 const frenchContent: PostContent = {
-  title: 'Structure de rack en bois dans un mur en placo',
-  description: 'Création d\'une structure de rack en bois encastrée dans un mur en placo pour organiser l\'équipement réseau et électrique de manière discrète et professionnelle.',
+  title: 'Structure de rack en bois dans une cloison alvéolaire',
+  description: 'Création d\'une structure de rack en bois encastrée dans une cloison alvéolaire pour organiser l\'équipement réseau de manière discrète.',
   html: `<h2>Introduction</h2>
-<p>Lors de la rénovation de mon appartement, j'ai eu besoin de créer un espace dédié pour organiser mon équipement réseau et électrique. Plutôt que d'avoir des câbles et des équipements qui traînent, j'ai décidé de créer une structure de rack encastrée directement dans le mur en placo.</p>
-
-<h2>Matériel nécessaire</h2>
-<p>Pour réaliser ce projet, il vous faudra :</p>
-<ul>
-<li>Planches de bois (pin ou similaire) pour la structure</li>
-<li>Rails de rack métalliques (19 pouces standard)</li>
-<li>Panneau de brassage CAT.6 (24 ports)</li>
-<li>Étagère perforée pour rack</li>
-<li>Multiprise avec interrupteur</li>
-<li>Vis et chevilles pour fixation</li>
-<li>Outils de menuiserie (scie, perceuse, visseuse)</li>
-</ul>
+<p>Lors de la rénovation de mon appartement, j'ai eu besoin de créer un espace dédié pour organiser mon équipement réseau. Plutôt que d'avoir des câbles et des équipements qui traînent, j'ai décidé de créer une structure de rack encastrée directement dans le mur en cloison alvéolaire.</p>
 
 <h2>Préparation du mur</h2>
 <p>La première étape consiste à préparer l'emplacement dans le mur. J'ai d'abord repéré l'emplacement idéal, en tenant compte de la présence des câbles réseau et électriques existants.</p>
-<p>J'ai ensuite découpé le placo pour créer une ouverture rectangulaire permettant d'accueillir la structure de rack. Il est important de bien mesurer et de tracer les dimensions avant de découper.</p>
-<p><img src="/images/structure-rack-bois-preparation-1.jpg" alt="Préparation du mur et découpe du placo"></p>
-<p><img src="/images/structure-rack-bois-preparation-2.jpg" alt="Ouverture dans le placo avec câbles visibles"></p>
+<p>J'ai ensuite découpé la cloison alvéolaire pour créer une ouverture rectangulaire permettant d'accueillir la structure de rack.</p>
+<p><img src="/images/structure-rack-bois-preparation-1.jpg" alt="Préparation du mur et découpe de la cloison alvéolaire"></p>
+<p><img src="/images/structure-rack-bois-preparation-2.jpg" alt="Ouverture dans la cloison alvéolaire avec câbles visibles"></p>
 
 <h2>Construction de la structure en bois</h2>
 <p>J'ai construit une structure en bois qui servira de support pour les rails de rack. La structure est composée de quatre montants verticaux et de plusieurs traverses horizontales.</p>
 <p>J'ai utilisé des assemblages à vis à bois (pocket holes) pour assembler la structure de manière solide et discrète. Cette technique permet d'avoir des vis invisibles de l'extérieur.</p>
-<p><img src="/images/structure-rack-bois-construction-1.jpg" alt="Construction de la structure en bois"></p>
 <p><img src="/images/structure-rack-bois-construction-2.jpg" alt="Assemblage avec vis à bois"></p>
 
 <h2>Installation des rails de rack</h2>
@@ -67,33 +54,20 @@ const frenchContent: PostContent = {
 }
 
 const englishContent: PostContent = {
-  title: 'Wood rack structure in drywall',
-  description: 'Creating a wooden rack structure recessed into a drywall to organize network and electrical equipment in a discreet and professional manner.',
+  title: 'Wood rack structure in hollow partition wall',
+  description: 'Creating a wooden rack structure recessed into a hollow partition wall to organize network equipment in a discreet manner.',
   html: `<h2>Introduction</h2>
-<p>During the renovation of my apartment, I needed to create a dedicated space to organize my network and electrical equipment. Rather than having cables and equipment lying around, I decided to create a recessed rack structure directly in the drywall.</p>
-
-<h2>Required Materials</h2>
-<p>To carry out this project, you will need:</p>
-<ul>
-<li>Wood planks (pine or similar) for the structure</li>
-<li>Metal rack rails (standard 19 inches)</li>
-<li>CAT.6 patch panel (24 ports)</li>
-<li>Perforated rack shelf</li>
-<li>Power strip with switch</li>
-<li>Screws and anchors for mounting</li>
-<li>Woodworking tools (saw, drill, screwdriver)</li>
-</ul>
+<p>During the renovation of my apartment, I needed to create a dedicated space to organize my network equipment. Rather than having cables and equipment lying around, I decided to create a recessed rack structure directly in the hollow partition wall.</p>
 
 <h2>Wall Preparation</h2>
 <p>The first step is to prepare the location in the wall. I first identified the ideal location, taking into account the presence of existing network and electrical cables.</p>
-<p>I then cut the drywall to create a rectangular opening to accommodate the rack structure. It is important to measure carefully and mark the dimensions before cutting.</p>
-<p><img src="/images/structure-rack-bois-preparation-1.jpg" alt="Wall preparation and drywall cutting"></p>
-<p><img src="/images/structure-rack-bois-preparation-2.jpg" alt="Drywall opening with visible cables"></p>
+<p>I then cut the hollow partition wall to create a rectangular opening to accommodate the rack structure.</p>
+<p><img src="/images/structure-rack-bois-preparation-1.jpg" alt="Wall preparation and hollow partition wall cutting"></p>
+<p><img src="/images/structure-rack-bois-preparation-2.jpg" alt="Hollow partition wall opening with visible cables"></p>
 
 <h2>Wood Structure Construction</h2>
 <p>I built a wooden structure that will serve as a support for the rack rails. The structure consists of four vertical posts and several horizontal crossbeams.</p>
 <p>I used pocket hole joinery to assemble the structure in a strong and discreet way. This technique allows for invisible screws from the outside.</p>
-<p><img src="/images/structure-rack-bois-construction-1.jpg" alt="Wood structure construction"></p>
 <p><img src="/images/structure-rack-bois-construction-2.jpg" alt="Assembly with pocket hole screws"></p>
 
 <h2>Rack Rails Installation</h2>

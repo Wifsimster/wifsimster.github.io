@@ -17,6 +17,8 @@ export function useI18n() {
     return 'fr'
   })
 
+  const langPrefix = computed(() => language.value === 'en' ? '/en' : '')
+
   const switchLanguage = (lang: Language) => {
     const currentPath = route.path
     let newPath = currentPath
@@ -69,6 +71,7 @@ export function useI18n() {
         'tags.title': 'Articles taggés',
         'post.readMore': 'Lire la suite',
         'post.goBack': 'Retour à l\'accueil',
+        'toc.title': 'Table des matières',
         'footer.copyright': '© 2017-2025 Wifsimster',
         'footer.blog': 'Blog personnel'
       },
@@ -105,6 +108,7 @@ export function useI18n() {
         'tags.title': 'Tagged Articles',
         'post.readMore': 'Read more',
         'post.goBack': 'Back to home',
+        'toc.title': 'Table of Contents',
         'footer.copyright': '© 2017-2025 Wifsimster',
         'footer.blog': 'Personal Blog'
       }
@@ -121,6 +125,7 @@ export function useI18n() {
 
   return {
     language,
+    langPrefix,
     switchLanguage,
     t
   }

@@ -15,7 +15,7 @@
   --color-primary-900: #0c4a6e;
   
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif: "Merriweather", "Charter", "Bitstream Charter", "Sitka Text", "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -31,7 +31,7 @@
 
 @layer components {
   .prose {
-    @apply max-w-none;
+    @apply max-w-none font-serif;
   }
 
   .prose h1,
@@ -56,7 +56,9 @@
   }
 
   .prose p {
-    @apply mb-4 leading-7 text-gray-700 dark:text-zinc-300;
+    @apply mb-4 leading-relaxed text-gray-700 dark:text-zinc-300;
+    font-size: 1.125rem;
+    line-height: 1.75;
   }
 
   .prose a {
@@ -65,15 +67,39 @@
 
   .prose ul,
   .prose ol {
-    @apply mb-4 ml-6;
+    @apply mb-4 ml-6 space-y-2;
+  }
+
+  .prose ul {
+    @apply list-disc;
+  }
+
+  .prose ol {
+    @apply list-decimal;
   }
 
   .prose li {
     @apply mb-2 text-gray-700 dark:text-zinc-300;
+    line-height: 1.75;
+  }
+
+  .prose ul ul,
+  .prose ol ol,
+  .prose ul ol,
+  .prose ol ul {
+    @apply mt-2 mb-0 ml-6;
+  }
+
+  .prose ul ul {
+    @apply list-[circle];
+  }
+
+  .prose ul ul ul {
+    @apply list-[square];
   }
 
   .prose img {
-    @apply my-8 rounded-lg shadow-lg;
+    @apply my-8 rounded-lg shadow-lg max-w-xs md:max-w-sm;
   }
 
   .prose code {
@@ -90,5 +116,6 @@
 
   .prose blockquote {
     @apply border-l-4 border-primary-500 pl-4 italic my-4 text-gray-600 dark:text-zinc-400;
+    line-height: 1.75;
   }
 }

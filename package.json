@@ -18,20 +18,23 @@
   "author": "Wifsimster",
   "license": "MIT",
   "dependencies": {
-    "vue": "^3.5.26",
-    "vue-router": "^4.6.4",
-    "primevue": "^4.5.4",
     "@primeuix/themes": "^2.0.2",
-    "primeicons": "^7.0.0",
+    "@types/dompurify": "^3.0.5",
     "@vueuse/core": "^14.1.0",
+    "dompurify": "^3.3.1",
+    "front-matter": "^4.0.2",
     "markdown-it": "^14.1.0",
-    "front-matter": "^4.0.2"
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.4",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.3",
     "@tailwindcss/vite": "^4.1.18",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "tailwindcss": "^4.1.18",
     "vite": "^7.3.0",
-    "tailwindcss": "^4.1.18"
+    "vite-plugin-vue-devtools": "^8.0.5"
   },
   "engines": {
     "node": ">=24.0.0"
