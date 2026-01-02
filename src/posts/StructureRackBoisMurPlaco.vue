@@ -27,7 +27,7 @@ const frenchContent: PostContent = {
 
 <h2>Installation des rails de rack</h2>
 <p>Une fois la structure en bois assemblée, j'ai fixé les rails de rack métalliques à l'intérieur. Ces rails sont standardisés (19 pouces) et permettent de monter tout équipement rack classique.</p>
-<p>Les rails sont fixés verticalement sur les montants en bois à l'aide de vis adaptées. Il est important de vérifier l'alignement et le niveau pour que les équipements s'installent correctement.</p>
+<p>Les rails sont fixés verticalement sur les montants en bois à l'aide de vis.</p>
 <p><img src="/images/structure-rack-bois-rails-1.jpg" alt="Installation des rails de rack"></p>
 
 <h2>Installation de l'équipement</h2>
