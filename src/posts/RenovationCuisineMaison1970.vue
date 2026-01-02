@@ -22,10 +22,9 @@ const frenchContent: PostContent = {
 <p><img src="/images/renovation-cuisine-etat-initial-2.jpg" alt="Vue de la cuisine avant rénovation"></p>
 
 <h2>Préparation du sol</h2>
-<p>Le sol nécessitait une préparation importante avant l'installation du nouveau revêtement. J'ai commencé par nettoyer et niveler le béton existant. Des tranchées ont été creusées dans le sol pour faire passer les conduits de plomberie et d'électricité, permettant ainsi d'alimenter les différents points d'eau et les prises électriques nécessaires pour les électroménagers.</p>
-<p>Les conduits ont été installés avec soin, en veillant à respecter les normes et à faciliter la maintenance future. Cette étape est cruciale pour garantir une installation de qualité et éviter les problèmes ultérieurs.</p>
-<p><img src="/images/renovation-cuisine-sol-1.jpg" alt="Préparation du sol avec tranchées pour les conduits"></p>
-<p><img src="/images/renovation-cuisine-sol-2.jpg" alt="Installation des conduits dans les tranchées"></p>
+<p>Le sol nécessitait une préparation importante avant l'installation du nouveau revêtement. J'ai commencé par retirer entièrement les anciens carreaux, puis j'ai retiré l'ancienne plomberie. Une brèche qui divisait le sol en deux, correspondant au mur de la cave située en dessous, a été scellée avec du métal et du ciment pour assurer la solidité de la structure.</p>
+<p><img src="/images/renovation-cuisine-sol-2.jpg" alt="Nivellement du sol avec ragréage fibre"></p>
+<p><img src="/images/renovation-cuisine-sol-3.jpg" alt="Sol préparé et nivelé"></p>
 
 <h2>Ossature, isolation et placo</h2>
 <p>Pour créer une structure solide et isolée, j'ai commencé par l'installation du plafond. Le plafond étant un plancher hourdis, j'ai installé la structure en rails pour le placo avec des suspentes directement dans les marmites de l'hourdis, créant un espace rempli d'isolation thermique. Le plafond a été terminé en premier, avant de procéder aux murs.</p>
@@ -55,64 +54,47 @@ const frenchContent: PostContent = {
 <p><img src="/images/renovation-cuisine-electricite-2.jpg" alt="Conduits électriques dans l'ossature"></p>
 
 <h2>Installation de la plomberie</h2>
-<p>La plomberie a été installée avec des tuyaux PEX, un système moderne et fiable. Les tuyaux d'eau chaude sont marqués d'une bande rouge, et ceux d'eau froide d'une bande bleue, ce qui facilite l'identification et l'installation. Les tuyaux ont été fixés au mur avec des clips jaunes et positionnés précisément sous la fenêtre pour l'emplacement de l'évier.</p>
+<p>La plomberie a été installée avec des tuyaux multicouches, un système moderne et fiable.</p>
 <p>Cette installation anticipée permet de préparer l'arrivée d'eau pour l'évier et les autres points d'eau nécessaires dans la cuisine.</p>
-<p><img src="/images/renovation-cuisine-plomberie-1.jpg" alt="Installation des tuyaux PEX"></p>
-<p><img src="/images/renovation-cuisine-plomberie-2.jpg" alt="Détail des tuyaux avec bandes colorées"></p>
+<p><img src="/images/renovation-cuisine-plomberie-1.jpg" alt="Installation des tuyaux multicouches"></p>
 
 <h2>Peinture des murs</h2>
 <p>Les murs ont été peints en blanc pour créer un espace lumineux et moderne. J'ai choisi de peindre le mur au-dessus des meubles hauts en bleu foncé (teal), créant ainsi un accent coloré qui apporte de la personnalité à la cuisine. Cette touche de couleur contraste élégamment avec le blanc des meubles et de la crédence.</p>
-<p>Les sections inférieures des murs ont été préparées pour recevoir la crédence, tandis que les parties supérieures ont été peintes pour créer un espace cohérent et esthétique.</p>
 <p><img src="/images/renovation-cuisine-peinture-1.jpg" alt="Peinture des murs en blanc"></p>
 <p><img src="/images/renovation-cuisine-peinture-2.jpg" alt="Mur d'accent bleu foncé"></p>
 
 <h2>Carrelage du sol</h2>
 <p>Pour le sol, j'ai choisi de grands carreaux gris clair qui apportent une touche moderne à la cuisine. L'installation a été réalisée avec un système de nivellement professionnel utilisant des clips noirs et des cales violettes et blanches. Ce système garantit une surface parfaitement plane et des joints réguliers.</p>
-<p>Les joints ont été réalisés en gris foncé pour créer un contraste élégant avec les carreaux. Un niveau à bulle a été utilisé tout au long de l'installation pour s'assurer de la parfaite horizontalité du sol.</p>
+<p>Les joints ont été réalisés en gris foncé pour créer un contraste élégant avec les carreaux.</p>
 <p><img src="/images/renovation-cuisine-carrelage-1.jpg" alt="Installation du carrelage avec système de nivellement"></p>
 <p><img src="/images/renovation-cuisine-carrelage-2.jpg" alt="Détail du système de clips et cales"></p>
 <p><img src="/images/renovation-cuisine-carrelage-3.jpg" alt="Sol carrelé terminé"></p>
 
-<h2>Installation des meubles</h2>
-<p>Les meubles de cuisine ont été installés en suivant un plan en L. Les meubles bas sont blancs avec un design moderne sans poignées apparentes, créant une esthétique épurée. Les meubles hauts ont été installés au-dessus des meubles bas, et une colonne haute a été positionnée pour accueillir le four et le micro-ondes.</p>
-<p>Les meubles sont équipés de pieds réglables noirs qui permettent de les ajuster parfaitement au niveau du sol. Cette installation soigneuse garantit un rendu professionnel et fonctionnel.</p>
+<h2>Installation des meubles, du plan de travail et des électroménagers</h2>
+<p>Les meubles de cuisine ont été installés en suivant un plan en L, avec une colonne haute pour accueillir le four et le micro-ondes. Le plan de travail en stratifié imitation bois clair a été installé en suivant la forme en L, avec des découpes pour l'évier et les plaques de cuisson.</p>
+<p>Les électroménagers ont ensuite été installés.</p>
 <p><img src="/images/renovation-cuisine-meubles-1.jpg" alt="Installation des meubles bas"></p>
-<p><img src="/images/renovation-cuisine-meubles-2.jpg" alt="Colonne haute pour four et micro-ondes"></p>
-<p><img src="/images/renovation-cuisine-meubles-3.jpg" alt="Meubles hauts installés"></p>
-
-<h2>Installation du plan de travail</h2>
-<p>Le plan de travail en stratifié imitation bois clair a été installé en suivant la forme en L de la cuisine. Ce matériau apporte de la chaleur à l'espace et s'harmonise parfaitement avec le blanc des meubles. Des découpes ont été réalisées pour l'évier et les plaques de cuisson, garantissant une intégration parfaite.</p>
-<p><img src="/images/renovation-cuisine-plan-travail-1.jpg" alt="Installation du plan de travail"></p>
-<p><img src="/images/renovation-cuisine-plan-travail-2.jpg" alt="Plan de travail installé en L"></p>
-
-<h2>Installation des électroménagers</h2>
-<p>Les électroménagers ont été installés un par un, en commençant par l'évier noir avec robinet chromé en col de cygne, positionné sous la fenêtre. Les plaques de cuisson à induction noires ont été intégrées dans le plan de travail, et la hotte aspirante en inox (marque Candy) a été installée au-dessus, avec son éclairage intégré.</p>
-<p>Le four (marque Beko) a été installé dans la colonne haute, et le micro-ondes (marque Whirlpool) a été placé au-dessus dans une niche ouverte. Tous les appareils ont été correctement branchés aux réseaux électriques préparés précédemment.</p>
 <p><img src="/images/renovation-cuisine-electromenagers-1.jpg" alt="Installation de l'évier et du robinet"></p>
 <p><img src="/images/renovation-cuisine-electromenagers-2.jpg" alt="Plaques de cuisson et hotte installées"></p>
 
 <h2>Installation de la crédence</h2>
-<p>La crédence a été réalisée avec de grands carreaux rectangulaires blancs à effet marbre avec des veines grises. L'installation a été effectuée avec des croisillons rouges pour garantir des joints réguliers. La crédence s'étend du plan de travail jusqu'au bas des meubles hauts, et une section plus haute a été réalisée au-dessus des plaques de cuisson, jusqu'à la hotte.</p>
-<p>Plusieurs prises électriques ont été intégrées dans la crédence, avec des prises blanches et noires qui s'harmonisent avec le design. Cette installation soigneuse garantit un rendu professionnel et esthétique.</p>
+<p>La crédence a été réalisée avec de grands carreaux rectangulaires blancs à effet marbre.</p>
 <p><img src="/images/renovation-cuisine-splashback-1.jpg" alt="Installation de la crédence avec croisillons"></p>
 <p><img src="/images/renovation-cuisine-splashback-2.jpg" alt="Crédence terminée avec prises intégrées"></p>
 
 <h2>Éléments extérieurs</h2>
-<p>Pour compléter la rénovation, un volet roulant a été installé à l'extérieur de la fenêtre pour protéger la cuisine et réguler la lumière. Une porte vitrée a également été installée pour séparer la cuisine des autres espaces de la maison, créant une transition élégante tout en préservant la luminosité.</p>
-<p><img src="/images/renovation-cuisine-volet-1.jpg" alt="Installation du volet roulant"></p>
-<p><img src="/images/renovation-cuisine-porte-1.jpg" alt="Porte vitrée installée"></p>
+<p>Pour compléter la rénovation, l'ancien volet roulant a été retiré pour faire place à une nouvelle porte vitrée et isolée.</p>
+<p><img src="/images/renovation-cuisine-porte-1.jpg" alt="Nouvelle porte vitrée et isolée installée"></p>
 
 <h2>Résultat final</h2>
 <p>La rénovation complète de la cuisine est maintenant terminée. Le résultat est un espace fonctionnel, moderne et esthétique qui combine élégance et praticité. Le mur d'accent bleu foncé apporte une touche de personnalité, tandis que la crédence en marbre et les meubles blancs créent un design épuré et contemporain.</p>
 <p>Tous les électroménagers sont en place et fonctionnels, les réseaux sont correctement installés, et l'espace est prêt à être utilisé au quotidien. Cette rénovation a transformé complètement la cuisine, en faisant un espace agréable et moderne qui correspond parfaitement à nos attentes.</p>
 <p><img src="/images/renovation-cuisine-final-3.jpg" alt="Vue d'ensemble de la cuisine terminée"></p>
 <p><img src="/images/renovation-cuisine-final-4.jpg" alt="Détail de la zone de cuisson"></p>
-<p><img src="/images/renovation-cuisine-final-5.jpg" alt="Vue de l'évier et de la fenêtre"></p>
-<p><img src="/images/renovation-cuisine-final-6.jpg" alt="Cuisine complète avec tous les éléments"></p>
 
 <h2>Conclusion</h2>
 <p>La rénovation complète de la cuisine est maintenant terminée. Cette étape majeure du projet a nécessité de nombreuses compétences techniques et une planification minutieuse, de la démolition initiale aux finitions finales. Le résultat est un espace moderne, fonctionnel et esthétique qui répond parfaitement à nos besoins.</p>
-<p>Ce projet m'a permis d'apprendre énormément sur la rénovation complète d'une cuisine, de la gestion des réseaux à l'installation des meubles et des électroménagers. Les choix de design, comme le mur d'accent bleu foncé et la crédence en marbre, apportent une touche de personnalité à l'espace tout en conservant une esthétique moderne et épurée.</p>`
+<p>Ce projet m'a permis d'apprendre énormément sur la rénovation complète d'une cuisine, de la gestion des réseaux à l'installation des meubles et des électroménagers.</p>`
 }
 
 const englishContent: PostContent = {
@@ -129,10 +111,9 @@ const englishContent: PostContent = {
 <p><img src="/images/renovation-cuisine-etat-initial-2.jpg" alt="Kitchen view before renovation"></p>
 
 <h2>Floor Preparation</h2>
-<p>The floor needed significant preparation before installing the new covering. I started by cleaning and leveling the existing concrete. Trenches were dug in the floor to run plumbing and electrical conduits, thus allowing water supply to various points and electrical outlets needed for appliances.</p>
-<p>The conduits were installed carefully, ensuring compliance with standards and facilitating future maintenance. This step is crucial to guarantee quality installation and avoid future problems.</p>
-<p><img src="/images/renovation-cuisine-sol-1.jpg" alt="Floor preparation with trenches for conduits"></p>
-<p><img src="/images/renovation-cuisine-sol-2.jpg" alt="Conduit installation in trenches"></p>
+<p>The floor needed significant preparation before installing the new covering. I started by completely removing the old tiles, then removed the old plumbing. A breach that split the floor in two, corresponding to the wall of the cellar underneath, was sealed with metal and cement to ensure structural integrity.</p>
+<p><img src="/images/renovation-cuisine-sol-2.jpg" alt="Floor leveling with fiber screed"></p>
+<p><img src="/images/renovation-cuisine-sol-3.jpg" alt="Prepared and leveled floor"></p>
 
 <h2>Framing, Insulation and Drywall</h2>
 <p>To create a solid and insulated structure, I started with the ceiling installation. Since the ceiling is a hollow-core slab, I installed the rail structure for the drywall with hangers directly into the hollow cores of the slab, creating a space filled with thermal insulation. The ceiling was completed first, before proceeding with the walls.</p>
@@ -162,64 +143,47 @@ const englishContent: PostContent = {
 <p><img src="/images/renovation-cuisine-electricite-2.jpg" alt="Electrical conduits in framework"></p>
 
 <h2>Plumbing Installation</h2>
-<p>The plumbing was installed with PEX pipes, a modern and reliable system. Hot water pipes are marked with a red stripe, and cold water pipes with a blue stripe, which facilitates identification and installation. The pipes were fixed to the wall with yellow clips and positioned precisely under the window for the sink location.</p>
+<p>The plumbing was installed with multilayer pipes, a modern and reliable system.</p>
 <p>This anticipatory installation prepares the water supply for the sink and other water points needed in the kitchen.</p>
-<p><img src="/images/renovation-cuisine-plomberie-1.jpg" alt="PEX pipe installation"></p>
-<p><img src="/images/renovation-cuisine-plomberie-2.jpg" alt="Pipe detail with colored stripes"></p>
+<p><img src="/images/renovation-cuisine-plomberie-1.jpg" alt="Multilayer pipe installation"></p>
 
 <h2>Wall Painting</h2>
 <p>The walls were painted white to create a bright and modern space. I chose to paint the wall above the upper cabinets in dark blue (teal), creating a colored accent that adds personality to the kitchen. This touch of color elegantly contrasts with the white of the cabinets and backsplash.</p>
-<p>The lower sections of the walls were prepared to receive the backsplash, while the upper parts were painted to create a coherent and aesthetic space.</p>
 <p><img src="/images/renovation-cuisine-peinture-1.jpg" alt="Wall painting in white"></p>
 <p><img src="/images/renovation-cuisine-peinture-2.jpg" alt="Dark blue accent wall"></p>
 
 <h2>Floor Tiling</h2>
 <p>For the floor, I chose large light grey tiles that add a modern touch to the kitchen. The installation was done with a professional leveling system using black clips and purple and white wedges. This system guarantees a perfectly flat surface and regular joints.</p>
-<p>The joints were made in dark grey to create an elegant contrast with the tiles. A spirit level was used throughout the installation to ensure perfect floor horizontality.</p>
+<p>The joints were made in dark grey to create an elegant contrast with the tiles.</p>
 <p><img src="/images/renovation-cuisine-carrelage-1.jpg" alt="Tile installation with leveling system"></p>
 <p><img src="/images/renovation-cuisine-carrelage-2.jpg" alt="Clip and wedge system detail"></p>
 <p><img src="/images/renovation-cuisine-carrelage-3.jpg" alt="Completed tiled floor"></p>
 
-<h2>Cabinet Installation</h2>
-<p>The kitchen cabinets were installed following an L-shaped plan. The base cabinets are white with a modern handle-less design, creating a clean aesthetic. The upper cabinets were installed above the base cabinets, and a tall column was positioned to house the oven and microwave.</p>
-<p>The cabinets are equipped with black adjustable feet that allow perfect adjustment to the floor level. This careful installation guarantees a professional and functional result.</p>
+<h2>Cabinet, Countertop and Appliance Installation</h2>
+<p>The kitchen cabinets were installed following an L-shaped plan, with a tall column to house the oven and microwave. The light wood-look laminate countertop was installed following the L-shape, with cutouts for the sink and cooktop.</p>
+<p>The appliances were then installed.</p>
 <p><img src="/images/renovation-cuisine-meubles-1.jpg" alt="Base cabinet installation"></p>
-<p><img src="/images/renovation-cuisine-meubles-2.jpg" alt="Tall column for oven and microwave"></p>
-<p><img src="/images/renovation-cuisine-meubles-3.jpg" alt="Upper cabinets installed"></p>
-
-<h2>Countertop Installation</h2>
-<p>The light wood-look laminate countertop was installed following the L-shape of the kitchen. This material brings warmth to the space and harmonizes perfectly with the white cabinets. Cutouts were made for the sink and cooktop, ensuring perfect integration.</p>
-<p><img src="/images/renovation-cuisine-plan-travail-1.jpg" alt="Countertop installation"></p>
-<p><img src="/images/renovation-cuisine-plan-travail-2.jpg" alt="L-shaped countertop installed"></p>
-
-<h2>Appliance Installation</h2>
-<p>The appliances were installed one by one, starting with the black sink with chrome gooseneck faucet, positioned under the window. The black induction cooktop was integrated into the countertop, and the stainless steel range hood (Candy brand) was installed above, with its integrated lighting.</p>
-<p>The oven (Beko brand) was installed in the tall column, and the microwave (Whirlpool brand) was placed above in an open niche. All appliances were properly connected to the electrical networks prepared earlier.</p>
 <p><img src="/images/renovation-cuisine-electromenagers-1.jpg" alt="Sink and faucet installation"></p>
 <p><img src="/images/renovation-cuisine-electromenagers-2.jpg" alt="Cooktop and hood installed"></p>
 
 <h2>Backsplash Installation</h2>
-<p>The backsplash was made with large white rectangular marble-effect tiles with grey veining. The installation was done with red tile spacers to ensure regular joints. The backsplash extends from the countertop to the bottom of the upper cabinets, and a higher section was made above the cooktop, up to the hood.</p>
-<p>Several electrical outlets were integrated into the backsplash, with white and black outlets that harmonize with the design. This careful installation guarantees a professional and aesthetic result.</p>
+<p>The backsplash was made with large white rectangular marble-effect tiles.</p>
 <p><img src="/images/renovation-cuisine-splashback-1.jpg" alt="Backsplash installation with spacers"></p>
 <p><img src="/images/renovation-cuisine-splashback-2.jpg" alt="Completed backsplash with integrated outlets"></p>
 
 <h2>Exterior Elements</h2>
-<p>To complete the renovation, a roller shutter was installed outside the window to protect the kitchen and regulate light. A glass door was also installed to separate the kitchen from other spaces in the house, creating an elegant transition while preserving brightness.</p>
-<p><img src="/images/renovation-cuisine-volet-1.jpg" alt="Roller shutter installation"></p>
-<p><img src="/images/renovation-cuisine-porte-1.jpg" alt="Glass door installed"></p>
+<p>To complete the renovation, the old roller shutter was removed to make way for a new insulated glass door.</p>
+<p><img src="/images/renovation-cuisine-porte-1.jpg" alt="New insulated glass door installed"></p>
 
 <h2>Final Result</h2>
 <p>The complete kitchen renovation is now finished. The result is a functional, modern, and aesthetic space that combines elegance and practicality. The dark blue accent wall adds a touch of personality, while the marble backsplash and white cabinets create a clean and contemporary design.</p>
 <p>All appliances are in place and functional, the networks are properly installed, and the space is ready for daily use. This renovation completely transformed the kitchen, making it a pleasant and modern space that perfectly meets our expectations.</p>
 <p><img src="/images/renovation-cuisine-final-3.jpg" alt="Overall view of completed kitchen"></p>
 <p><img src="/images/renovation-cuisine-final-4.jpg" alt="Cooking area detail"></p>
-<p><img src="/images/renovation-cuisine-final-5.jpg" alt="Sink and window view"></p>
-<p><img src="/images/renovation-cuisine-final-6.jpg" alt="Complete kitchen with all elements"></p>
 
 <h2>Conclusion</h2>
 <p>The complete kitchen renovation is now finished. This major step in the project required many technical skills and meticulous planning, from the initial demolition to the final finishes. The result is a modern, functional, and aesthetic space that perfectly meets our needs.</p>
-<p>This project allowed me to learn a great deal about complete kitchen renovation, from network management to cabinet and appliance installation. The design choices, such as the dark blue accent wall and marble backsplash, add a touch of personality to the space while maintaining a modern and clean aesthetic.</p>`
+<p>This project allowed me to learn a great deal about complete kitchen renovation, from network management to cabinet and appliance installation.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
