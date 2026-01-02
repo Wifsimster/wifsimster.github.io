@@ -15,6 +15,7 @@ import StructureRackBoisMurPlaco, { metadata as structureRackBoisMurPlacoMetadat
 import AmenagementPlacardPieceBureau, { metadata as amenagementPlacardMetadata, getContent as getAmenagementPlacardContent } from './AmenagementPlacardPieceBureau.vue'
 import EmplacementRefrigerateurCuisineOuverte, { metadata as emplacementRefrigerateurMetadata, getContent as getEmplacementRefrigerateurContent } from './EmplacementRefrigerateurCuisineOuverte.vue'
 import VisiteChoixMaisonRenovation, { metadata as visiteChoixMaisonMetadata, getContent as getVisiteChoixMaisonContent } from './VisiteChoixMaisonRenovation.vue'
+import RenovationSalleDeBainMaison1970, { metadata as renovationSalleDeBainMaison1970Metadata, getContent as getRenovationSalleDeBainMaison1970Content } from './RenovationSalleDeBainMaison1970.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -102,6 +103,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: visiteChoixMaisonMetadata,
     getContent: getVisiteChoixMaisonContent,
     component: VisiteChoixMaisonRenovation
+  },
+  'renovation-salle-de-bain-maison-1970': {
+    metadata: renovationSalleDeBainMaison1970Metadata,
+    getContent: getRenovationSalleDeBainMaison1970Content,
+    component: RenovationSalleDeBainMaison1970
   }
 }
 
