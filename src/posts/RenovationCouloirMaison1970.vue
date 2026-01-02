@@ -43,8 +43,7 @@ const frenchContent: PostContent = {
 <p>Une fois le parquet installé, j'ai posé les plinthes pour finaliser le revêtement de sol. Les plinthes masquent l'espace entre le parquet et les murs, et apportent une finition propre et soignée. J'ai choisi des plinthes blanches pour s'harmoniser avec les murs.</p>
 
 <h2>Conclusion</h2>
-<p>La rénovation du couloir est maintenant terminée. Le résultat est un espace moderne, lumineux et fonctionnel, qui sert de transition harmonieuse entre les différentes pièces de la maison. Les murs blancs et le stratifié clair créent une ambiance chaleureuse et contemporaine. Le couloir rénové s'intègre parfaitement avec le reste des travaux effectués dans la maison, notamment la salle de bain et le WC.</p>
-<p>Ce projet m'a permis de perfectionner mes compétences en préparation de surfaces et en pose de revêtements de sol. La préparation minutieuse des murs et du sol est essentielle pour obtenir un résultat de qualité. Bien qu'étant un espace de transition, le couloir mérite autant d'attention que les autres pièces de la maison et contribue grandement à l'impression générale de la maison.</p>
+<p>La rénovation du couloir est maintenant terminée. Le résultat est un espace moderne, lumineux et fonctionnel, qui s'intègre parfaitement avec le reste des travaux effectués dans la maison. Le prochain article de cette série portera sur l'amélioration de l'entrée dans le couloir.</p>
 <p><img src="/images/renovation-couloir-final-1.jpg" alt="Couloir terminé - vue d'ensemble"></p>
 <p><img src="/images/renovation-couloir-final-2.jpg" alt="Couloir terminé - vue montrant les portes et l'éclairage"></p>`
 }
@@ -84,8 +83,7 @@ const englishContent: PostContent = {
 <p>Once the floor was installed, I installed the baseboards to finalize the floor covering. The baseboards hide the space between the floor and walls, and provide a clean and neat finish. I chose white baseboards to harmonize with the walls.</p>
 
 <h2>Conclusion</h2>
-<p>The hallway renovation is now complete. The result is a modern, bright, and functional space, which serves as a harmonious transition between the different rooms of the house. The white walls and light laminate create a warm and contemporary atmosphere. The renovated hallway integrates perfectly with the rest of the work done in the house, particularly the bathroom and WC.</p>
-<p>This project allowed me to perfect my skills in surface preparation and floor covering installation. Careful preparation of walls and floor is essential to achieve quality results. Although being a transition space, the hallway deserves as much attention as the other rooms of the house and greatly contributes to the overall impression of the house.</p>
+<p>The hallway renovation is now complete. The result is a modern, bright, and functional space, which integrates perfectly with the rest of the work done in the house. The next article in this series will be about improving the entry hall in the hallway.</p>
 <p><img src="/images/renovation-couloir-final-1.jpg" alt="Completed hallway - overview"></p>
 <p><img src="/images/renovation-couloir-final-2.jpg" alt="Completed hallway - view showing doors and lighting"></p>`
 }
