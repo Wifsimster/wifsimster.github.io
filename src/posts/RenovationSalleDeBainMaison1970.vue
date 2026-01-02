@@ -59,22 +59,14 @@ const frenchContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-electricite-1.jpg" alt="Gaines électriques sur le sol et les murs"></p>
 <p><img src="/images/renovation-salle-bain-electricite-2.jpg" alt="Boîte électrique avec marquage 'Cumulus'"></p>
 <p><img src="/images/renovation-salle-bain-electricite-3.jpg" alt="Plusieurs gaines fixées avec clips jaunes"></p>
-<p><img src="/images/renovation-salle-bain-electricite-rough-in-1.jpg" alt="Mur carrelé avec boîtes électriques et câblage exposés"></p>
-<p><img src="/images/renovation-salle-bain-electricite-eclairage-1.jpg" alt="Installation de l'éclairage LED du meuble vasque avec outils"></p>
-<p><img src="/images/renovation-salle-bain-electricite-eclairage-2.jpg" alt="Zone du meuble vasque avec bande LED installée"></p>
 
 <h2>Installation de la baignoire</h2>
-<p>J'ai positionné la baignoire, créé un encadrement en blocs de béton, installé la bordure blanche et connecté la plomberie.</p>
+<p>J'ai positionné la baignoire, créé un encadrement en blocs de béton cellulaire et connecté la plomberie. Pour assurer une étanchéité optimale, j'ai utilisé des joints triples (joint en trois couches), une méthode qui combine plusieurs matériaux ou couches pour garantir une protection maximale contre les infiltrations d'eau, notamment autour des bords de la baignoire et entre celle-ci et les revêtements muraux ou de sol. Cette technique est particulièrement recommandée pour les baignoires en acrylique ou en résine de synthèse, qui nécessitent une installation soigneuse pour éviter les déformations ou les fuites.</p>
 <p><img src="/images/renovation-salle-bain-baignoire-1.jpg" alt="Baignoire sur supports avec protection"></p>
 <p><img src="/images/renovation-salle-bain-baignoire-2.jpg" alt="Baignoire avec tuyaux en dessous"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-3.jpg" alt="Baignoire dans l'encadrement en placo"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-4.jpg" alt="Baignoire avec bordure blanche installée"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-5.jpg" alt="Baignoire dans niche avec encadrement en blocs de béton"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-6.jpg" alt="Installation de la baignoire avec outils (niveau à bulle, aspirateur)"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-7.jpg" alt="Baignoire sur sol de chape fraîche"></p>
 
 <h2>Travaux de carrelage</h2>
-<p>J'ai carrelé le sol avec de grands carreaux gris et les murs avec des carreaux rectangulaires blancs. J'ai utilisé un système de nivellement de carrelage (clips et cales) pour garantir un résultat parfait. J'ai également fait des choix de design avec des carreaux à effet bois et à effet pierre.</p>
+<p>J'ai carrelé le sol avec de grands carreaux gris et les murs avec des carreaux rectangulaires blancs. J'ai utilisé un système de nivellement de carrelage pour garantir un résultat parfait.</p>
 <p><img src="/images/renovation-salle-bain-carrelage-sol-1.jpg" alt="Carrelage du sol en cours avec cales de nivellement"></p>
 <p><img src="/images/renovation-salle-bain-carrelage-mur-1.jpg" alt="Carrelage des murs avec clips de nivellement noirs et violets"></p>
 <p><img src="/images/renovation-salle-bain-carrelage-mur-2.jpg" alt="Processus de carrelage avec carreaux à effet bois et à effet pierre"></p>
@@ -82,8 +74,8 @@ const frenchContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-carrelage-complete-1.jpg" alt="Carrelage des murs terminé avec raccords électriques et de plomberie visibles"></p>
 
 <h2>Meubles et finitions</h2>
-<p>J'ai installé les meubles vasque (OSKAR/IKEA), le double meuble vasque avec vasques sur colonne, les robinets et les équipements, l'éclairage LED pour le meuble vasque, l'équipement de douche et la machine à laver dans l'alcôve.</p>
-<p><img src="/images/renovation-salle-bain-meuble-1.jpg" alt="Assemblage de meubles OSKAR/IKEA (installation du meuble vasque)"></p>
+<p>J'ai installé les meubles vasque, le double meuble vasque avec vasques sur colonne, les robinets et les équipements, l'éclairage LED pour le meuble vasque, l'équipement de douche et la machine à laver dans l'alcôve.</p>
+<p><img src="/images/renovation-salle-bain-meuble-1.jpg" alt="Assemblage de meubles (installation du meuble vasque)"></p>
 <p><img src="/images/renovation-salle-bain-lavabo-installation-1.jpg" alt="Installation du lavabo et du robinet sur plan de travail à effet bois"></p>
 <p><img src="/images/renovation-salle-bain-lavabo-complete-1.jpg" alt="Double meuble vasque terminé avec vasques sur colonne et robinets"></p>
 <p><img src="/images/renovation-salle-bain-douche-1.jpg" alt="Installation de l'équipement de douche avec carreaux à effet bois"></p>
@@ -95,20 +87,12 @@ const frenchContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-final-1.jpg" alt="Vue de la salle de bain terminée avec baignoire, carreaux à effet bois et sèche-serviettes"></p>
 <p><img src="/images/renovation-salle-bain-final-2.jpg" alt="Vue complète de la salle de bain montrant baignoire, machine à laver et sèche-serviettes"></p>
 <p><img src="/images/renovation-salle-bain-final-3.jpg" alt="Vue d'ensemble de la salle de bain avec fenêtre, sèche-serviettes et plan de travail du meuble vasque"></p>
-<p><img src="/images/renovation-salle-bain-final-4.jpg" alt="Zone de la baignoire terminée avec carreaux à effet bois et équipement de douche"></p>
-<p><img src="/images/renovation-salle-bain-final-5.jpg" alt="Double meuble vasque avec miroir à éclairage LED et vasques sur colonne"></p>
-<p><img src="/images/renovation-salle-bain-final-6.jpg" alt="Zone du meuble vasque terminée avec lavabos, robinets et éclairage LED"></p>
-<p><img src="/images/renovation-salle-bain-final-7.jpg" alt="Détail du meuble vasque montrant la réflexion du miroir et l'éclairage intégré"></p>
-<p><img src="/images/renovation-salle-bain-final-8.jpg" alt="Vue d'ensemble complète de la salle de bain depuis un angle élevé montrant toutes les fonctionnalités"></p>
-<p><img src="/images/renovation-salle-bain-final-9.jpg" alt="Vue finale de la salle de bain avec baignoire, meuble vasque, machine à laver et sèche-serviettes"></p>
 
 <h2>Ce que j'ai appris</h2>
 <p>Ce projet m'a permis d'apprendre énormément de nouvelles compétences : la plomberie, le travail du béton, l'installation de placo, l'électricité... J'ai fait face à de nombreux défis, notamment la découverte inattendue de la plomberie dans le sol en béton, ce qui a considérablement élargi la portée du projet. Mais chaque défi a été une opportunité d'apprendre et de trouver des solutions.</p>
-<p>L'expansion inattendue du projet (plomberie de toute la maison) m'a enseigné l'importance de la flexibilité et de l'adaptation lors d'une rénovation. Parfois, les meilleurs projets sont ceux qui vous surprennent et vous poussent à aller plus loin que prévu.</p>
 
 <h2>Conclusion</h2>
-<p>La rénovation de la salle de bain est maintenant terminée. C'était un projet ambitieux qui m'a beaucoup appris et qui a transformé complètement cet espace. La salle de bain est maintenant moderne, fonctionnelle et agréable à utiliser.</p>
-<p>Des vidéos timelapse seront ajoutées ultérieurement pour chaque étape majeure du projet, permettant de voir l'évolution du chantier de manière accélérée.</p>`
+<p>La rénovation de la salle de bain est maintenant terminée. C'était un projet ambitieux qui m'a beaucoup appris et qui a transformé complètement cet espace. La salle de bain est maintenant moderne, fonctionnelle et agréable à utiliser.</p>`
 }
 
 const englishContent: PostContent = {
@@ -162,22 +146,14 @@ const englishContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-electricite-1.jpg" alt="Electrical conduits on floor and walls"></p>
 <p><img src="/images/renovation-salle-bain-electricite-2.jpg" alt="Electrical box with 'Cumulus' marking"></p>
 <p><img src="/images/renovation-salle-bain-electricite-3.jpg" alt="Multiple conduits secured with yellow clips"></p>
-<p><img src="/images/renovation-salle-bain-electricite-rough-in-1.jpg" alt="Tiled wall with exposed electrical boxes and wiring"></p>
-<p><img src="/images/renovation-salle-bain-electricite-eclairage-1.jpg" alt="Vanity LED lighting installation with tools"></p>
-<p><img src="/images/renovation-salle-bain-electricite-eclairage-2.jpg" alt="Vanity area with LED strip lighting installed"></p>
 
 <h2>Bathtub Installation</h2>
-<p>I positioned the bathtub, created a concrete block enclosure, installed the white ledge, and connected the plumbing.</p>
+<p>I positioned the bathtub, created a cellular concrete block enclosure, and connected the plumbing. To ensure optimal waterproofing, I used triple joints (three-layer joints), a method that combines multiple materials or layers to guarantee maximum protection against water infiltration, especially around the edges of the bathtub and between it and the wall or floor coverings. This technique is particularly recommended for acrylic or synthetic resin bathtubs, which require careful installation to avoid deformation or leaks.</p>
 <p><img src="/images/renovation-salle-bain-baignoire-1.jpg" alt="Bathtub on supports with protective covering"></p>
 <p><img src="/images/renovation-salle-bain-baignoire-2.jpg" alt="Bathtub with pipes underneath"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-3.jpg" alt="Bathtub in drywall enclosure"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-4.jpg" alt="Bathtub with white ledge/surround installed"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-5.jpg" alt="Bathtub in niche with concrete block enclosure"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-6.jpg" alt="Bathtub installation with tools (spirit level, vacuum)"></p>
-<p><img src="/images/renovation-salle-bain-baignoire-7.jpg" alt="Bathtub on fresh screed floor"></p>
 
 <h2>Tiling Work</h2>
-<p>I tiled the floor with large grey tiles and the walls with white rectangular tiles. I used a tile leveling system (clips and wedges) to ensure a perfect result. I also made design choices with wood-grain and stone-effect tiles.</p>
+<p>I tiled the floor with large grey tiles and the walls with white rectangular tiles. I used a tile leveling system (clips and wedges) to ensure a perfect result.</p>
 <p><img src="/images/renovation-salle-bain-carrelage-sol-1.jpg" alt="Floor tiling in progress with leveling wedges"></p>
 <p><img src="/images/renovation-salle-bain-carrelage-mur-1.jpg" alt="Wall tiling with black and purple leveling clips"></p>
 <p><img src="/images/renovation-salle-bain-carrelage-mur-2.jpg" alt="Tiling process with wood-grain and stone-effect tiles"></p>
@@ -185,8 +161,8 @@ const englishContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-carrelage-complete-1.jpg" alt="Completed wall tiling with electrical and plumbing rough-ins visible"></p>
 
 <h2>Cabinets & Finishing</h2>
-<p>I installed the vanity cabinets (OSKAR/IKEA), the double vanity with vessel sinks, faucets and fixtures, LED lighting for the vanity, shower fixture, and washing machine in the alcove.</p>
-<p><img src="/images/renovation-salle-bain-meuble-1.jpg" alt="OSKAR/IKEA cabinet assembly (vanity installation)"></p>
+<p>I installed the vanity cabinets, the double vanity with vessel sinks, faucets and fixtures, LED lighting for the vanity, shower fixture, and washing machine in the alcove.</p>
+<p><img src="/images/renovation-salle-bain-meuble-1.jpg" alt="Cabinet assembly (vanity installation)"></p>
 <p><img src="/images/renovation-salle-bain-lavabo-installation-1.jpg" alt="Sink and faucet installation on wood-grain countertop"></p>
 <p><img src="/images/renovation-salle-bain-lavabo-complete-1.jpg" alt="Completed double vanity with vessel sinks and faucets"></p>
 <p><img src="/images/renovation-salle-bain-douche-1.jpg" alt="Shower fixture installation with wood-grain tiles"></p>
@@ -198,20 +174,12 @@ const englishContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-final-1.jpg" alt="Completed bathroom view with bathtub, wood-grain tiles, and towel warmer"></p>
 <p><img src="/images/renovation-salle-bain-final-2.jpg" alt="Complete bathroom view showing bathtub, washing machine, and towel warmer"></p>
 <p><img src="/images/renovation-salle-bain-final-3.jpg" alt="Bathroom overview with window, towel warmer, and vanity counter"></p>
-<p><img src="/images/renovation-salle-bain-final-4.jpg" alt="Bathtub area completed with wood-grain tiles and shower fixture"></p>
-<p><img src="/images/renovation-salle-bain-final-5.jpg" alt="Double vanity with LED backlit mirror and vessel sinks"></p>
-<p><img src="/images/renovation-salle-bain-final-6.jpg" alt="Completed vanity area with sinks, faucets, and LED lighting"></p>
-<p><img src="/images/renovation-salle-bain-final-7.jpg" alt="Vanity detail showing mirror reflection and integrated lighting"></p>
-<p><img src="/images/renovation-salle-bain-final-8.jpg" alt="Complete bathroom overview from elevated angle showing all features"></p>
-<p><img src="/images/renovation-salle-bain-final-9.jpg" alt="Final bathroom view with bathtub, vanity, washing machine, and towel warmer"></p>
 
 <h2>What I Learned</h2>
 <p>This project allowed me to learn many new skills: plumbing, concrete work, drywall installation, electricity... I faced many challenges, particularly the unexpected discovery of plumbing in the concrete floor, which significantly expanded the project scope. But each challenge was an opportunity to learn and find solutions.</p>
-<p>The unexpected project expansion (entire house plumbing) taught me the importance of flexibility and adaptation during a renovation. Sometimes, the best projects are those that surprise you and push you to go further than expected.</p>
 
 <h2>Conclusion</h2>
-<p>The bathroom renovation is now complete. It was an ambitious project that taught me a lot and completely transformed this space. The bathroom is now modern, functional, and pleasant to use.</p>
-<p>Timelapse videos will be added later for each major step of the project, allowing you to see the evolution of the construction site in an accelerated manner.</p>`
+<p>The bathroom renovation is now complete. It was an ambitious project that taught me a lot and completely transformed this space. The bathroom is now modern, functional, and pleasant to use.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

@@ -28,9 +28,11 @@
           </div>
         </header>
         <main>
-          <div ref="postContentRef" class="prose prose-lg dark:prose-invert max-w-none">
-            <component :is="postInfo.component" :locale="lang" />
-          </div>
+          <PostContent 
+            v-if="post" 
+            :html="post.html" 
+            :on-image-click="handleImageClick"
+          />
         </main>
       </article>
     </div>
@@ -74,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, onMounted, nextTick, watch } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouterLink } from 'vue-router'
 import { useI18n } from '@/composables/useI18n'
@@ -84,6 +86,7 @@ import { formatDate } from '@/utils/posts'
 import type { Post } from '@/utils/posts'
 import TagList from '@/components/blog/TagList.vue'
 import ImageGallery from '@/components/blog/ImageGallery.vue'
+import PostContent from '@/components/blog/PostContent.vue'
 import { getPostBySlug as getPostInfoBySlug } from '@/posts'
 import type { GalleryImage } from '@/components/blog/ImageGallery.vue'
 
@@ -91,7 +94,6 @@ const route = useRoute()
 const i18n = useI18n()
 const { getPostBySlug } = usePosts()
 const gallery = useImageGallery()
-const postContentRef = ref<HTMLElement>()
 
 const lang = computed(() => route.path.startsWith('/en') ? 'en' : 'fr')
 const langPrefix = computed(() => lang.value === 'en' ? '/en' : '')
@@ -107,144 +109,6 @@ const formattedDate = computed(() => {
   return formatDate(post.value.date, lang.value)
 })
 
-const processImages = async () => {
-  await nextTick()
-  // Wait for the component to fully render
-  await new Promise(resolve => setTimeout(resolve, 300))
-  if (!postContentRef.value) return
-
-  // Check if already processed
-  if (postContentRef.value.hasAttribute('data-images-processed')) return
-  postContentRef.value.setAttribute('data-images-processed', 'true')
-
-  const allImages: GalleryImage[] = []
-  const imageElements = Array.from(postContentRef.value.querySelectorAll('img'))
-  
-  // Collect all images and create gallery items
-  imageElements.forEach((img) => {
-    const src = img.getAttribute('src') || ''
-    const alt = img.getAttribute('alt') || ''
-    
-    if (src && !(img as any).__galleryProcessed) {
-      allImages.push({
-        itemImageSrc: src,
-        thumbnailImageSrc: src,
-        alt: alt
-      })
-    }
-  })
-
-  if (allImages.length === 0) return
-
-  // Process images to group successive ones
-  const paragraphs = Array.from(postContentRef.value.querySelectorAll('p'))
-  const imageGroups: HTMLElement[][] = []
-  let currentGroup: HTMLElement[] = []
-
-  paragraphs.forEach((p) => {
-    const img = p.querySelector('img')
-    if (img && !(img as any).__galleryProcessed) {
-      currentGroup.push(p as HTMLElement)
-    } else {
-      if (currentGroup.length > 0) {
-        imageGroups.push([...currentGroup])
-        currentGroup = []
-      }
-    }
-  })
-
-  // Add last group if exists
-  if (currentGroup.length > 0) {
-    imageGroups.push(currentGroup)
-  }
-
-  // Process each group
-  imageGroups.forEach((group) => {
-    if (group.length === 0) return
-
-    // Create container for the group
-    const container = document.createElement('div')
-    container.className = 'grid grid-cols-2 md:grid-cols-3 gap-4 my-4'
-
-    // Store reference to first paragraph for insertion
-    const firstParagraph = group[0]
-    const parent = firstParagraph.parentElement
-    if (!parent) return
-
-    const imagesToMove: { img: HTMLImageElement, index: number }[] = []
-
-    // Collect images from paragraphs
-    group.forEach((p) => {
-      const img = p.querySelector('img')
-      if (img && !(img as any).__galleryProcessed) {
-        const src = img.getAttribute('src') || ''
-        const index = allImages.findIndex(i => i.itemImageSrc === src)
-        imagesToMove.push({ img, index })
-        ;(img as any).__galleryProcessed = true
-      }
-    })
-
-    // Create image elements in the container
-    imagesToMove.forEach(({ img, index }) => {
-      const imgClone = img.cloneNode(true) as HTMLImageElement
-      imgClone.className = 'w-full h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow hover:scale-105 max-w-xs md:max-w-sm mx-auto'
-      
-      imgClone.addEventListener('click', () => {
-        gallery.openGallery(allImages, index >= 0 ? index : 0)
-      })
-
-      const wrapper = document.createElement('div')
-      wrapper.className = 'flex items-center justify-center'
-      wrapper.appendChild(imgClone)
-      container.appendChild(wrapper)
-    })
-
-    // Insert container before the first paragraph
-    parent.insertBefore(container, firstParagraph)
-
-    // Remove the original paragraphs (they only contained images)
-    group.forEach((p) => {
-      if (p.parentElement && p.querySelector('img')) {
-        p.remove()
-      }
-    })
-  })
-
-  // Handle single images (not in groups)
-  const remainingImages = Array.from(postContentRef.value.querySelectorAll('p > img'))
-  remainingImages.forEach((img) => {
-    if ((img as any).__galleryProcessed) return
-    ;(img as any).__galleryProcessed = true
-
-    const src = img.getAttribute('src') || ''
-    if (!src) return
-    
-    const index = allImages.findIndex(i => i.itemImageSrc === src)
-    
-    // Update styling
-    const imgElement = img as HTMLImageElement
-    imgElement.className = 'w-full h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow hover:scale-105 max-w-xs md:max-w-sm mx-auto block'
-    
-    // Wrap in container
-    const wrapper = document.createElement('div')
-    wrapper.className = 'flex items-center justify-center my-4'
-    const parent = imgElement.parentElement
-    if (parent && parent.tagName === 'P') {
-      parent.insertBefore(wrapper, imgElement)
-      wrapper.appendChild(imgElement)
-      
-      // If paragraph is now empty, remove it
-      if (parent.textContent?.trim() === '' && parent.children.length === 0) {
-        parent.remove()
-      }
-    }
-
-    imgElement.addEventListener('click', () => {
-      gallery.openGallery(allImages, index >= 0 ? index : 0)
-    })
-  })
-}
-
 const handleImageClick = (images: GalleryImage[], index: number) => {
   gallery.openGallery(images, index)
 }
@@ -256,19 +120,5 @@ const galleryIsOpen = computed({
   set: (value: boolean) => {
     gallery.isOpen.value = value
   }
-})
-
-watch([postInfo, post], () => {
-  if (postInfo.value && post.value) {
-    // Remove processed attribute to allow reprocessing
-    if (postContentRef.value) {
-      postContentRef.value.removeAttribute('data-images-processed')
-    }
-    processImages()
-  }
-}, { immediate: true })
-
-onMounted(() => {
-  processImages()
 })
 </script>
