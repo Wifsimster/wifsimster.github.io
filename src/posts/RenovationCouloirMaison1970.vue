@@ -43,9 +43,7 @@ const frenchContent: PostContent = {
 <p>Une fois le parquet installé, j'ai posé les plinthes pour finaliser le revêtement de sol. Les plinthes masquent l'espace entre le parquet et les murs, et apportent une finition propre et soignée. J'ai choisi des plinthes blanches pour s'harmoniser avec les murs.</p>
 
 <h2>Conclusion</h2>
-<p>La rénovation du couloir est maintenant terminée. Le résultat est un espace moderne, lumineux et fonctionnel, qui s'intègre parfaitement avec le reste des travaux effectués dans la maison. Le prochain article de cette série portera sur l'amélioration de l'entrée dans le couloir.</p>
-<p><img src="/images/renovation-couloir-final-1.jpg" alt="Couloir terminé - vue d'ensemble"></p>
-<p><img src="/images/renovation-couloir-final-2.jpg" alt="Couloir terminé - vue montrant les portes et l'éclairage"></p>`
+<p>La rénovation du couloir est maintenant terminée. Le résultat est un espace moderne, lumineux et fonctionnel, qui s'intègre parfaitement avec le reste des travaux effectués dans la maison. Le prochain article de cette série portera sur l'amélioration de l'entrée dans le couloir.</p>`
 }
 
 const englishContent: PostContent = {
@@ -83,9 +81,7 @@ const englishContent: PostContent = {
 <p>Once the floor was installed, I installed the baseboards to finalize the floor covering. The baseboards hide the space between the floor and walls, and provide a clean and neat finish. I chose white baseboards to harmonize with the walls.</p>
 
 <h2>Conclusion</h2>
-<p>The hallway renovation is now complete. The result is a modern, bright, and functional space, which integrates perfectly with the rest of the work done in the house. The next article in this series will be about improving the entry hall in the hallway.</p>
-<p><img src="/images/renovation-couloir-final-1.jpg" alt="Completed hallway - overview"></p>
-<p><img src="/images/renovation-couloir-final-2.jpg" alt="Completed hallway - view showing doors and lighting"></p>`
+<p>The hallway renovation is now complete. The result is a modern, bright, and functional space, which integrates perfectly with the rest of the work done in the house. The next article in this series will be about improving the entry hall in the hallway.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
