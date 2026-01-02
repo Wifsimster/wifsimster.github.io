@@ -1,5 +1,5 @@
 import { ref, type Ref } from 'vue'
-import type { GalleryImage } from '@/components/blog/ImageGallery.vue'
+import type { GalleryImage } from '@/types/gallery'
 
 export function useImageGallery() {
   const isOpen = ref(false)
@@ -7,8 +7,16 @@ export function useImageGallery() {
   const images: Ref<GalleryImage[]> = ref([])
 
   const openGallery = (imageList: GalleryImage[], index: number = 0) => {
+    if (!imageList || imageList.length === 0) {
+      if (import.meta.env.DEV) {
+        console.warn('useImageGallery: Cannot open gallery with empty image list')
+      }
+      return
+    }
+    
+    const validIndex = Math.max(0, Math.min(index, imageList.length - 1))
     images.value = imageList
-    currentIndex.value = index
+    currentIndex.value = validIndex
     isOpen.value = true
   }
 

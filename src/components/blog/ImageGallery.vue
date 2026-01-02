@@ -80,12 +80,9 @@ import { ref, watch } from 'vue'
 import Dialog from 'primevue/dialog'
 import Galleria from 'primevue/galleria'
 import { onKeyStroke } from '@vueuse/core'
+import type { GalleryImage } from '@/types/gallery'
 
-export interface GalleryImage {
-  itemImageSrc: string
-  thumbnailImageSrc: string
-  alt: string
-}
+export type { GalleryImage }
 
 const props = defineProps<{
   modelValue: boolean

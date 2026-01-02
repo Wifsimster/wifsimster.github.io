@@ -1,6 +1,8 @@
 import { computed } from 'vue'
 import type { Post } from '@/utils/posts'
-import { getAllPosts, getPostBySlug as getPostInfoBySlug, getPostsByTag as getPostsByTagFromRegistry, getAllTags } from '@/posts'
+import type { Language } from '@/types/i18n'
+import { getAllPosts, getPostBySlug as getPostInfoBySlug, getPostsByTag as getPostsByTagFromRegistry } from '@/posts'
+import { sortPostsByDate } from '@/utils/posts'
 import { useI18n } from './useI18n'
 
 export function usePosts() {
@@ -10,17 +12,25 @@ export function usePosts() {
     return getAllPosts(i18n.language.value)
   })
 
-  const loading = computed(() => false)
-
-  const loadPosts = (lang: 'fr' | 'en' = 'fr') => {
-    // No-op: posts are loaded synchronously from registry
-  }
-
-  const getPostBySlug = (slug: string, lang: 'fr' | 'en' = 'fr'): Post | undefined => {
-    const postInfo = getPostInfoBySlug(slug)
-    if (!postInfo) return undefined
+  const getPostBySlug = (slug: string, lang?: Language): Post | undefined => {
+    if (!slug) {
+      if (import.meta.env.DEV) {
+        console.warn('usePosts: getPostBySlug called with empty slug')
+      }
+      return undefined
+    }
     
-    const content = postInfo.getContent(lang)
+    const targetLang = lang || i18n.language.value
+    const postInfo = getPostInfoBySlug(slug)
+    
+    if (!postInfo) {
+      if (import.meta.env.DEV) {
+        console.warn(`usePosts: Post with slug "${slug}" not found`)
+      }
+      return undefined
+    }
+    
+    const content = postInfo.getContent(targetLang)
     return {
       slug: postInfo.metadata.slug,
       title: content.title,
@@ -28,36 +38,26 @@ export function usePosts() {
       description: content.description,
       tags: postInfo.metadata.tags,
       html: content.html,
-      lang
+      lang: targetLang
     }
   }
 
-  const getPostsByTag = (tag: string, lang: 'fr' | 'en' = 'fr'): Post[] => {
-    return getPostsByTagFromRegistry(tag, lang)
+  const getPostsByTag = (tag: string, lang?: Language): Post[] => {
+    const targetLang = lang || i18n.language.value
+    return getPostsByTagFromRegistry(tag, targetLang)
   }
 
-  const getArchivedPosts = (lang: 'fr' | 'en' = 'fr'): Post[] => {
-    return getAllPosts(lang).sort((a, b) => {
-      const dateA = new Date(a.date).getTime()
-      const dateB = new Date(b.date).getTime()
-      return dateB - dateA
-    })
+  const getArchivedPosts = (lang?: Language): Post[] => {
+    const targetLang = lang || i18n.language.value
+    return sortPostsByDate(getAllPosts(targetLang))
   }
 
   const latestPosts = computed(() => {
-    return getAllPosts(i18n.language.value)
-      .sort((a, b) => {
-        const dateA = new Date(a.date).getTime()
-        const dateB = new Date(b.date).getTime()
-        return dateB - dateA
-      })
-      .slice(0, 10)
+    return sortPostsByDate(getAllPosts(i18n.language.value)).slice(0, 10)
   })
 
   return {
     posts,
-    loading,
-    loadPosts,
     getPostBySlug,
     getPostsByTag,
     getArchivedPosts,

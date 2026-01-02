@@ -50,3 +50,17 @@ export function formatDate(dateString: string, lang: 'fr' | 'en' = 'fr'): string
 export function getSlugFromFilename(filename: string): string {
   return filename.replace(/\.md$/, '')
 }
+
+/**
+ * Sorts posts by date
+ * @param posts - Array of posts to sort
+ * @param order - Sort order: 'desc' for newest first (default), 'asc' for oldest first
+ * @returns Sorted array of posts
+ */
+export function sortPostsByDate(posts: Post[], order: 'asc' | 'desc' = 'desc'): Post[] {
+  return [...posts].sort((a, b) => {
+    const dateA = new Date(a.date).getTime()
+    const dateB = new Date(b.date).getTime()
+    return order === 'desc' ? dateB - dateA : dateA - dateB
+  })
+}

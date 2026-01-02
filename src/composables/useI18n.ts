@@ -1,9 +1,7 @@
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-
-type Language = 'fr' | 'en'
-
-const currentLang = ref<Language>('fr')
+import type { Language } from '@/types/i18n'
+import { translations } from '@/i18n/translations'
 
 export function useI18n() {
   const route = useRoute()
@@ -37,89 +35,27 @@ export function useI18n() {
   }
 
   const t = (key: string, params?: Record<string, string>) => {
-    const translations: Record<string, Record<string, string>> = {
-      fr: {
-        'nav.home': 'Accueil',
-        'nav.articles': 'Articles',
-        'nav.archives': 'Archives',
-        'nav.tags': 'Tags',
-        'nav.blog': 'Blog',
-        'nav.projects': 'Projets',
-        'nav.resume': 'CV',
-        'sidebar.aboutMe': 'À propos',
-        'sidebar.aboutMeText': "Je suis Damien BATTISTELLA (alias Wifsimster), développeur web passionné.",
-        'sidebar.stayConnected': 'Restez connecté',
-        'sidebar.emailSignup': 'Inscription email',
-        'sidebar.github': 'GitHub',
-        'sidebar.linkedin': 'LinkedIn',
-        'sidebar.x': 'X (Twitter)',
-        'sidebar.rssFeed': 'Flux RSS',
-        'home.title': 'Wifsimster Blog',
-        'home.subtitle': 'Blog personnel',
-        'home.tagline': 'Passionate Web Dev 💻',
-        'home.viewArchives': 'Voir les archives',
-        'home.latestArticles': 'Derniers articles',
-        'home.introTitle': 'Salut, je suis Damien !',
-        'home.introText': "Je suis un développeur web passionné. J'ai créé ce blog pour partager mes projets et expériences !",
-        'home.blogTitle': 'Blog',
-        'home.searchPlaceholder': 'Rechercher des articles...',
-        'home.filterByTag': 'Filtrer par tag',
-        'home.clearFilters': 'Effacer les filtres',
-        'home.noResults': 'Aucun article trouvé',
-        'archives.title': 'Archives',
-        'archives.description': 'Tous les articles du blog, classés par date.',
-        'tags.title': 'Articles taggés',
-        'post.readMore': 'Lire la suite',
-        'post.goBack': 'Retour à l\'accueil',
-        'toc.title': 'Table des matières',
-        'footer.copyright': '© 2017-2025 Wifsimster',
-        'footer.blog': 'Blog personnel'
-      },
-      en: {
-        'nav.home': 'Home',
-        'nav.articles': 'Articles',
-        'nav.archives': 'Archives',
-        'nav.tags': 'Tags',
-        'nav.blog': 'Blog',
-        'nav.projects': 'Projects',
-        'nav.resume': 'Resume',
-        'sidebar.aboutMe': 'About Me',
-        'sidebar.aboutMeText': "I'm Damien BATTISTELLA (alias Wifsimster), passionate web developer.",
-        'sidebar.stayConnected': 'Stay Connected',
-        'sidebar.emailSignup': 'Email signup',
-        'sidebar.github': 'GitHub',
-        'sidebar.linkedin': 'LinkedIn',
-        'sidebar.x': 'X (Twitter)',
-        'sidebar.rssFeed': 'RSS feed',
-        'home.title': 'Wifsimster Blog',
-        'home.subtitle': 'Personal Blog',
-        'home.tagline': 'Passionate Web Dev 💻',
-        'home.viewArchives': 'View Archives',
-        'home.latestArticles': 'Latest Articles',
-        'home.introTitle': 'Hey, I\'m Damien!',
-        'home.introText': "I'm a passionate web developer. I've created this blog to share my projects and experiences!",
-        'home.blogTitle': 'Blog',
-        'home.searchPlaceholder': 'Search posts...',
-        'home.filterByTag': 'Filter by tag',
-        'home.clearFilters': 'Clear filters',
-        'home.noResults': 'No posts found',
-        'archives.title': 'Archives',
-        'archives.description': 'All blog articles, sorted by date.',
-        'tags.title': 'Tagged Articles',
-        'post.readMore': 'Read more',
-        'post.goBack': 'Back to home',
-        'toc.title': 'Table of Contents',
-        'footer.copyright': '© 2017-2025 Wifsimster',
-        'footer.blog': 'Personal Blog'
+    const langTranslations = translations[language.value]
+    if (!langTranslations) {
+      if (import.meta.env.DEV) {
+        console.warn(`Language "${language.value}" not found in translations`)
       }
+      return key
     }
 
-    let text = translations[language.value]?.[key] || key
+    let text = langTranslations[key] || key
+    
     if (params) {
       Object.keys(params).forEach(param => {
+        if (!text.includes(`{${param}}`)) {
+          if (import.meta.env.DEV) {
+            console.warn(`Parameter "${param}" not found in translation key "${key}"`)
+          }
+        }
         text = text.replace(`{${param}}`, params[param])
       })
     }
+    
     return text
   }
 
