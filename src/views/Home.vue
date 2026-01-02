@@ -20,8 +20,17 @@
             @input="(e) => setSearchQuery((e.target as HTMLInputElement).value)"
             type="text"
             :placeholder="i18n.t('home.searchPlaceholder')"
-            class="w-full px-4 py-2 pr-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400"
+            :class="[
+              'w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400',
+              searchQuery ? 'pr-10' : 'pr-24'
+            ]"
           />
+          <div
+            v-if="!searchQuery"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 dark:text-zinc-500 pointer-events-none"
+          >
+            {{ postsCountText }}
+          </div>
           <button
             v-if="searchQuery"
             @click="clearSearch"
@@ -35,9 +44,6 @@
 
       <!-- Tag Filters -->
       <div class="mb-6">
-        <p class="text-sm text-gray-600 dark:text-zinc-400 mb-3">
-          {{ i18n.t('home.filterByTag') }}
-        </p>
         <div class="flex flex-wrap gap-2">
           <button
             v-for="tag in availableTags"
@@ -65,24 +71,30 @@
         </button>
       </div>
 
-      <div v-if="filteredPosts.length > 0" class="space-y-4">
-        <article
-          v-for="post in filteredPosts"
-          :key="post.slug"
-          class="group"
-        >
-          <RouterLink
-            :to="`${langPrefix}/posts/${post.slug}`"
-            class="flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 p-3 rounded-lg transition-colors"
+      <div v-if="filteredPosts.length > 0" class="space-y-8">
+        <div v-for="yearGroup in postsByYear" :key="yearGroup.year" class="space-y-4">
+          <h2 class="flex justify-between items-center text-2xl font-bold text-gray-900 dark:text-zinc-100 border-b border-gray-300 dark:border-zinc-700 pb-2">
+            <span>{{ yearGroup.year }}</span>
+            <span class="text-sm text-gray-500 dark:text-zinc-400 font-normal">({{ yearGroup.posts.length }})</span>
+          </h2>
+          <article
+            v-for="post in yearGroup.posts"
+            :key="post.slug"
+            class="group"
           >
-            <time :datetime="post.date" class="text-sm text-gray-500 dark:text-zinc-400 whitespace-nowrap min-w-[100px]">
-              {{ formatDate(post.date, lang) }}
-            </time>
-            <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
-              {{ post.title }}
-            </h3>
-          </RouterLink>
-        </article>
+            <RouterLink
+              :to="`${langPrefix}/posts/${post.slug}`"
+              class="flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 p-3 rounded-lg transition-colors"
+            >
+              <time :datetime="post.date" class="text-sm text-gray-500 dark:text-zinc-400 whitespace-nowrap min-w-[100px]">
+                {{ formatDate(post.date, lang) }}
+              </time>
+              <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
+                {{ post.title }}
+              </h3>
+            </RouterLink>
+          </article>
+        </div>
       </div>
       <div v-else class="text-center py-12 text-gray-500 dark:text-zinc-400">
         {{ i18n.t('home.noResults') }}
@@ -112,6 +124,7 @@ const selectedTag = ref<string | null>(null)
 const tagCounts = getAllTags()
 const availableTags = computed(() => {
   return Object.entries(tagCounts)
+    .filter(([, count]) => count > 1)
     .sort(([, countA], [, countB]) => countB - countA)
     .map(([tag]) => tag)
 })
@@ -167,5 +180,30 @@ const filteredPosts = computed(() => {
       const dateB = new Date(b.date).getTime()
       return dateB - dateA
     })
+})
+
+const postsByYear = computed(() => {
+  const grouped = new Map<number, (typeof filteredPosts.value[0])[]>()
+  
+  filteredPosts.value.forEach(post => {
+    const year = new Date(post.date).getFullYear()
+    if (!grouped.has(year)) {
+      grouped.set(year, [])
+    }
+    grouped.get(year)!.push(post)
+  })
+  
+  // Convert to array and sort by year (newest first)
+  return Array.from(grouped.entries())
+    .map(([year, posts]) => ({ year, posts }))
+    .sort((a, b) => b.year - a.year)
+})
+
+const postsCountText = computed(() => {
+  const count = filteredPosts.value.length
+  const template = count === 1 
+    ? i18n.t('home.postsCount') 
+    : i18n.t('home.postsCountPlural')
+  return template.replace('{{count}}', count.toString())
 })
 </script>
