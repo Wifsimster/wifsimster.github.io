@@ -12,6 +12,7 @@ import LuminairePlafondSuspendu, { metadata as luminaireMetadata, getContent as 
 import TemperaturePressionBmp180JeedomEsp8266, { metadata as temperatureMetadata, getContent as getTemperatureContent } from './TemperaturePressionBmp180JeedomEsp8266.vue'
 import RenovationSalleDeBainAppartement2008, { metadata as renovationSalleDeBainMetadata, getContent as getRenovationSalleDeBainContent } from './RenovationSalleDeBainAppartement2008.vue'
 import StructureRackBoisMurPlaco, { metadata as structureRackBoisMurPlacoMetadata, getContent as getStructureRackBoisMurPlacoContent } from './StructureRackBoisMurPlaco.vue'
+import AmenagementPlacardPieceBureau, { metadata as amenagementPlacardMetadata, getContent as getAmenagementPlacardContent } from './AmenagementPlacardPieceBureau.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -84,6 +85,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: structureRackBoisMurPlacoMetadata,
     getContent: getStructureRackBoisMurPlacoContent,
     component: StructureRackBoisMurPlaco
+  },
+  'amenagement-placard-piece-bureau': {
+    metadata: amenagementPlacardMetadata,
+    getContent: getAmenagementPlacardContent,
+    component: AmenagementPlacardPieceBureau
   }
 }
 

@@ -4,7 +4,12 @@
       <!-- Top Section: Name and Theme Toggles -->
       <div class="flex items-center justify-between mb-6">
         <div class="flex items-center gap-2">
-          <span class="text-lg font-semibold text-gray-900 dark:text-zinc-100">Damien BATTISTELLA</span>
+          <RouterLink
+            :to="i18n.langPrefix.value || '/'"
+            class="text-lg font-semibold text-gray-900 dark:text-zinc-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer"
+          >
+            Damien BATTISTELLA
+          </RouterLink>
         </div>
         <div class="flex items-center gap-2">
           <button
@@ -26,28 +31,49 @@
 
       <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
 
+      <!-- Search Section -->
+      <div class="mb-6">
+        <div class="relative">
+          <input
+            v-model="localSearchQuery"
+            type="text"
+            :placeholder="i18n.t('home.searchPlaceholder')"
+            @keyup.enter="handleSearch"
+            class="w-full px-4 py-2 pl-10 pr-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 text-sm"
+          />
+          <i class="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 text-sm"></i>
+          <button
+            v-if="localSearchQuery"
+            @click="clearSearch"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 hover:text-gray-600 dark:hover:text-zinc-300 transition-colors"
+            aria-label="Clear search"
+          >
+            <i class="pi pi-times text-sm"></i>
+          </button>
+        </div>
+        <!-- Top Keywords -->
+        <div v-if="topKeywords.length > 0" class="mt-3 flex flex-wrap gap-2">
+          <button
+            v-for="keyword in topKeywords"
+            :key="keyword"
+            @click="searchByKeyword(keyword)"
+            class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+          >
+            {{ keyword }}
+          </button>
+        </div>
+      </div>
+
+      <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
+
       <!-- About Me Section -->
       <div class="mb-6">
         <h2 class="text-sm font-semibold text-gray-900 dark:text-zinc-100 mb-3">
           {{ i18n.t('sidebar.aboutMe') }}
         </h2>
-        <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed">
+        <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed mb-3">
           <span v-html="aboutMeTextWithHighlight"></span>
         </p>
-      </div>
-
-      <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
-
-      <!-- Navigation Links -->
-      <nav class="space-y-1 mb-6">
-        <RouterLink
-          :to="i18n.langPrefix.value || '/'"
-          class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
-          active-class="bg-gray-100 dark:bg-zinc-800 text-primary-600 dark:text-primary-400"
-        >
-          <i class="pi pi-file text-base"></i>
-          <span>{{ i18n.t('nav.blog') }}</span>
-        </RouterLink>
         <a
           href="https://cv.battistella.ovh/"
           target="_blank"
@@ -55,9 +81,9 @@
           class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
         >
           <i class="pi pi-user text-base"></i>
-          <span>{{ i18n.t('sidebar.aboutMe') }}</span>
+          <span>{{ i18n.t('sidebar.viewCV') }}</span>
         </a>
-      </nav>
+      </div>
 
       <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
 
@@ -101,15 +127,57 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { computed, ref, watch } from 'vue'
+import { RouterLink, useRouter } from 'vue-router'
 import { useI18n } from '@/composables/useI18n'
 import { useDarkMode } from '@/composables/useDarkMode'
+import { useSearch } from '@/composables/useSearch'
+import { getAllTags } from '@/posts'
 
 const i18n = useI18n()
 const darkMode = useDarkMode()
+const router = useRouter()
+const { searchQuery, setSearchQuery, clearSearch: clearGlobalSearch } = useSearch()
 
 const lang = computed(() => i18n.language.value)
+const localSearchQuery = ref('')
+
+// Get top 3 keywords
+const tagCounts = getAllTags()
+const topKeywords = computed(() => {
+  return Object.entries(tagCounts)
+    .sort(([, countA], [, countB]) => countB - countA)
+    .slice(0, 3)
+    .map(([tag]) => tag)
+})
+
+// Sync local search with global search
+watch(searchQuery, (newValue) => {
+  localSearchQuery.value = newValue
+}, { immediate: true })
+
+const handleSearch = () => {
+  if (localSearchQuery.value.trim()) {
+    setSearchQuery(localSearchQuery.value.trim())
+    const homePath = i18n.langPrefix.value || '/'
+    if (router.currentRoute.value.path !== homePath) {
+      router.push(homePath)
+    }
+  }
+}
+
+const searchByKeyword = (keyword: string) => {
+  setSearchQuery(keyword)
+  const homePath = i18n.langPrefix.value || '/'
+  if (router.currentRoute.value.path !== homePath) {
+    router.push(homePath)
+  }
+}
+
+const clearSearch = () => {
+  localSearchQuery.value = ''
+  clearGlobalSearch()
+}
 
 const aboutMeTextWithHighlight = computed(() => {
   const text = i18n.t('sidebar.aboutMeText')

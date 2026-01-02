@@ -14,12 +14,23 @@
     <section class="mb-16">
       <!-- Search Input -->
       <div class="mb-6">
-        <input
-          v-model="searchQuery"
-          type="text"
-          :placeholder="i18n.t('home.searchPlaceholder')"
-          class="w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400"
-        />
+        <div class="relative">
+          <input
+            :model-value="searchQuery"
+            @input="(e) => setSearchQuery((e.target as HTMLInputElement).value)"
+            type="text"
+            :placeholder="i18n.t('home.searchPlaceholder')"
+            class="w-full px-4 py-2 pr-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400"
+          />
+          <button
+            v-if="searchQuery"
+            @click="clearSearch"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 hover:text-gray-600 dark:hover:text-zinc-300 transition-colors"
+            aria-label="Clear search"
+          >
+            <i class="pi pi-times text-sm"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Tag Filters -->
@@ -81,24 +92,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from '@/composables/useI18n'
 import { usePosts } from '@/composables/usePosts'
+import { useSearch } from '@/composables/useSearch'
 import { formatDate } from '@/utils/posts'
 import { getAllTags } from '@/posts'
 
 const i18n = useI18n()
 const { posts } = usePosts()
+const { searchQuery, setSearchQuery, clearSearch } = useSearch()
 
 const lang = computed(() => i18n.language.value)
 const langPrefix = computed(() => lang.value === 'en' ? '/en' : '')
 
-const searchQuery = ref('')
 const selectedTag = ref<string | null>(null)
 
 const tagCounts = getAllTags()
-const availableTags = computed(() => Object.keys(tagCounts).sort())
+const availableTags = computed(() => {
+  return Object.entries(tagCounts)
+    .sort(([, countA], [, countB]) => countB - countA)
+    .map(([tag]) => tag)
+})
 
 const hasActiveFilters = computed(() => {
   return searchQuery.value.trim() !== '' || selectedTag.value !== null
@@ -113,7 +129,7 @@ const toggleTag = (tag: string) => {
 }
 
 const clearFilters = () => {
-  searchQuery.value = ''
+  clearSearch()
   selectedTag.value = null
 }
 
@@ -128,7 +144,7 @@ const stripHtml = (html: string): string => {
 }
 
 const matchesSearch = (post: typeof posts.value[0]): boolean => {
-  if (!searchQuery.value.trim()) return true
+  if (!searchQuery.value || !searchQuery.value.trim()) return true
   
   const query = searchQuery.value.toLowerCase().trim()
   const title = post.title.toLowerCase()
