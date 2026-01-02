@@ -12,7 +12,7 @@ const frenchContent: PostContent = {
   title: 'Rénovation complète de la salle de bain - Série rénovation #2',
   description: 'Rénovation totale de la salle de bain de la maison des années 1970, de la démolition à la finition.',
   html: `<h2>Introduction</h2>
-<p>Après avoir présenté la maison dans le premier article de cette série, il est temps de se pencher sur la rénovation de la salle de bain. Vous vous souvenez peut-être de cette salle de bain avec ses carreaux bruns des années 1970 ? Eh bien, c'est parti pour une rénovation complète, de la chape à la finition !</p>
+<p>Après avoir présenté la maison dans <a href="/posts/visite-choix-maison-renovation">le premier article de cette série</a>, il est temps de se pencher sur la rénovation de la salle de bain. Vous vous souvenez peut-être de cette salle de bain avec ses carreaux bruns des années 1970 ? Eh bien, c'est parti pour une rénovation complète, de la chape à la finition !</p>
 <p>Ce projet m'a permis d'apprendre énormément : plomberie, béton, placo, électricité... Mais surtout, j'ai découvert que toute la plomberie était encastrée dans le sol en béton, ce que je n'avais pas anticipé. En retirant les carreaux du sol, j'ai malheureusement endommagé plusieurs tuyaux, ce qui a finalement conduit à la rénovation complète de la plomberie de toute la maison.</p>
 
 <h2>Le défi</h2>
@@ -74,16 +74,16 @@ const frenchContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-carrelage-complete-1.jpg" alt="Carrelage des murs terminé avec raccords électriques et de plomberie visibles"></p>
 
 <h2>Meubles et finitions</h2>
-<p>J'ai installé les meubles vasque, le double meuble vasque avec vasques sur colonne, les robinets et les équipements, l'éclairage LED pour le meuble vasque, l'équipement de douche et la machine à laver dans l'alcôve.</p>
+<p>J'ai installé les meubles vasque, le double vasque suspendu, les robinets et les équipements, l'éclairage LED pour le meuble vasque, l'équipement de douche et la machine à laver dans l'alcôve.</p>
 <p><img src="/images/renovation-salle-bain-meuble-1.jpg" alt="Assemblage de meubles (installation du meuble vasque)"></p>
 <p><img src="/images/renovation-salle-bain-lavabo-installation-1.jpg" alt="Installation du lavabo et du robinet sur plan de travail à effet bois"></p>
-<p><img src="/images/renovation-salle-bain-lavabo-complete-1.jpg" alt="Double meuble vasque terminé avec vasques sur colonne et robinets"></p>
+<p><img src="/images/renovation-salle-bain-lavabo-complete-1.jpg" alt="Double vasque suspendu terminé avec robinets"></p>
 <p><img src="/images/renovation-salle-bain-douche-1.jpg" alt="Installation de l'équipement de douche avec carreaux à effet bois"></p>
 <p><img src="/images/renovation-salle-bain-lave-linge-1.jpg" alt="Machine à laver Samsung installée dans alcôve"></p>
 <p><img src="/images/renovation-salle-bain-lave-linge-2.jpg" alt="Zone de la machine à laver avec table à langer et rangement"></p>
 
 <h2>Résultat final</h2>
-<p>La transformation de la salle de bain est maintenant terminée. Le design moderne avec des carreaux à effet bois, la disposition fonctionnelle avec baignoire, meuble vasque et espace buanderie, le double meuble vasque avec miroir à éclairage LED intégré, l'espace buanderie intégré avec machine à laver et les solutions de rangement et de séchage des serviettes créent un espace à la fois esthétique et pratique.</p>
+<p>La transformation de la salle de bain est maintenant terminée. Le design moderne avec des carreaux à effet bois, la disposition fonctionnelle avec baignoire, meuble vasque et espace buanderie, le double vasque suspendu avec miroir à éclairage LED intégré, l'espace buanderie intégré avec machine à laver et les solutions de rangement et de séchage des serviettes créent un espace à la fois esthétique et pratique.</p>
 <p><img src="/images/renovation-salle-bain-final-1.jpg" alt="Vue de la salle de bain terminée avec baignoire, carreaux à effet bois et sèche-serviettes"></p>
 <p><img src="/images/renovation-salle-bain-final-2.jpg" alt="Vue complète de la salle de bain montrant baignoire, machine à laver et sèche-serviettes"></p>
 <p><img src="/images/renovation-salle-bain-final-3.jpg" alt="Vue d'ensemble de la salle de bain avec fenêtre, sèche-serviettes et plan de travail du meuble vasque"></p>
@@ -99,7 +99,7 @@ const englishContent: PostContent = {
   title: 'Complete Bathroom Renovation - Renovation Series #2',
   description: 'Total renovation of the 1970s house bathroom, from demolition to finishing. Unexpected discovery: all plumbing was in the concrete floor, requiring complete renovation of the house plumbing.',
   html: `<h2>Introduction</h2>
-<p>After presenting the house in the first article of this series, it's time to tackle the bathroom renovation. You may remember that bathroom with its brown 1970s tiles? Well, here we go for a complete renovation, from screed to finishing!</p>
+<p>After presenting the house in <a href="/en/posts/visite-choix-maison-renovation">the first article of this series</a>, it's time to tackle the bathroom renovation. You may remember that bathroom with its brown 1970s tiles? Well, here we go for a complete renovation, from screed to finishing!</p>
 <p>This project allowed me to learn a great deal: plumbing, concrete, drywall, electricity... But most importantly, I discovered that all the plumbing was embedded in the concrete floor, which I hadn't anticipated. When removing the floor tiles, I unfortunately damaged several pipes, which ultimately led to the complete renovation of the entire house's plumbing.</p>
 
 <h2>The Challenge</h2>
@@ -161,16 +161,16 @@ const englishContent: PostContent = {
 <p><img src="/images/renovation-salle-bain-carrelage-complete-1.jpg" alt="Completed wall tiling with electrical and plumbing rough-ins visible"></p>
 
 <h2>Cabinets & Finishing</h2>
-<p>I installed the vanity cabinets, the double vanity with vessel sinks, faucets and fixtures, LED lighting for the vanity, shower fixture, and washing machine in the alcove.</p>
+<p>I installed the vanity cabinets, the double suspended vanity, faucets and fixtures, LED lighting for the vanity, shower fixture, and washing machine in the alcove.</p>
 <p><img src="/images/renovation-salle-bain-meuble-1.jpg" alt="Cabinet assembly (vanity installation)"></p>
 <p><img src="/images/renovation-salle-bain-lavabo-installation-1.jpg" alt="Sink and faucet installation on wood-grain countertop"></p>
-<p><img src="/images/renovation-salle-bain-lavabo-complete-1.jpg" alt="Completed double vanity with vessel sinks and faucets"></p>
+<p><img src="/images/renovation-salle-bain-lavabo-complete-1.jpg" alt="Completed double suspended vanity with faucets"></p>
 <p><img src="/images/renovation-salle-bain-douche-1.jpg" alt="Shower fixture installation with wood-grain tiles"></p>
 <p><img src="/images/renovation-salle-bain-lave-linge-1.jpg" alt="Samsung washing machine installed in alcove"></p>
 <p><img src="/images/renovation-salle-bain-lave-linge-2.jpg" alt="Washing machine area with changing station and storage"></p>
 
 <h2>Final Result</h2>
-<p>The bathroom transformation is now complete. The modern design with wood-grain tiles, the functional layout with bathtub, vanity, and laundry area, the double vanity with integrated LED backlit mirror, the integrated laundry area with washing machine, and towel storage and drying solutions create a space that is both aesthetic and practical.</p>
+<p>The bathroom transformation is now complete. The modern design with wood-grain tiles, the functional layout with bathtub, vanity, and laundry area, the double suspended vanity with integrated LED backlit mirror, the integrated laundry area with washing machine, and towel storage and drying solutions create a space that is both aesthetic and practical.</p>
 <p><img src="/images/renovation-salle-bain-final-1.jpg" alt="Completed bathroom view with bathtub, wood-grain tiles, and towel warmer"></p>
 <p><img src="/images/renovation-salle-bain-final-2.jpg" alt="Complete bathroom view showing bathtub, washing machine, and towel warmer"></p>
 <p><img src="/images/renovation-salle-bain-final-3.jpg" alt="Bathroom overview with window, towel warmer, and vanity counter"></p>
