@@ -19,34 +19,25 @@ const frenchContent: PostContent = {
 <p>J'ai ensuite découpé la cloison alvéolaire pour créer une ouverture rectangulaire permettant d'accueillir la structure de rack.</p>
 <p><img src="/images/structure-rack-bois-preparation-1.jpg" alt="Préparation du mur et découpe de la cloison alvéolaire"></p>
 <p><img src="/images/structure-rack-bois-preparation-2.jpg" alt="Ouverture dans la cloison alvéolaire avec câbles visibles"></p>
+<p><img src="/images/structure-rack-bois-preparation-3.jpg" alt="Installation de la multiprise"></p>
 
 <h2>Construction de la structure en bois</h2>
 <p>J'ai construit une structure en bois qui servira de support pour les rails de rack. La structure est composée de quatre montants verticaux et de plusieurs traverses horizontales.</p>
 <p>J'ai utilisé des assemblages à vis à bois (pocket holes) pour assembler la structure de manière solide et discrète. Cette technique permet d'avoir des vis invisibles de l'extérieur.</p>
 <p><img src="/images/structure-rack-bois-construction-2.jpg" alt="Assemblage avec vis à bois"></p>
+<p><img src="/images/structure-rack-bois-construction-3.jpg" alt="Structure en bois assemblée"></p>
 
 <h2>Installation des rails de rack</h2>
 <p>Une fois la structure en bois assemblée, j'ai fixé les rails de rack métalliques à l'intérieur. Ces rails sont standardisés (19 pouces) et permettent de monter tout équipement rack classique.</p>
 <p>Les rails sont fixés verticalement sur les montants en bois à l'aide de vis.</p>
 <p><img src="/images/structure-rack-bois-rails-1.jpg" alt="Installation des rails de rack"></p>
 
-<h2>Installation de l'équipement</h2>
-<p>Une fois la structure en place dans le mur, j'ai installé l'équipement :</p>
-<ul>
-<li><strong>Panneau de brassage CAT.6</strong> : monté en haut du rack, il permet de centraliser toutes les connexions réseau</li>
-<li><strong>Étagère perforée</strong> : installée au milieu pour supporter d'autres équipements</li>
-<li><strong>Multiprise</strong> : fixée en bas du rack pour l'alimentation électrique de tous les équipements</li>
-</ul>
-<p><img src="/images/structure-rack-bois-equipement-1.jpg" alt="Rack avec panneau de brassage et étagère"></p>
-<p><img src="/images/structure-rack-bois-equipement-2.jpg" alt="Installation de la multiprise"></p>
-
 <h2>Résultat final</h2>
-<p>La structure de rack est maintenant complètement intégrée dans le mur. L'équipement réseau et électrique est organisé de manière professionnelle et discrète. Le panneau de brassage permet de gérer facilement toutes les connexions réseau, tandis que la multiprise centralise l'alimentation électrique.</p>
+<p>La structure de rack est maintenant complètement intégrée dans le mur. L'équipement réseau est organisé de manière professionnelle et discrète. Le panneau de brassage permet de gérer facilement toutes les connexions réseau.</p>
 <p>Cette solution offre plusieurs avantages :</p>
 <ul>
 <li>Équipement caché et organisé</li>
 <li>Accès facile pour la maintenance</li>
-<li>Installation professionnelle</li>
 <li>Gain de place</li>
 </ul>
 <p><img src="/images/structure-rack-bois-final-1.jpg" alt="Résultat final - Rack complet"></p>
@@ -64,34 +55,25 @@ const englishContent: PostContent = {
 <p>I then cut the hollow partition wall to create a rectangular opening to accommodate the rack structure.</p>
 <p><img src="/images/structure-rack-bois-preparation-1.jpg" alt="Wall preparation and hollow partition wall cutting"></p>
 <p><img src="/images/structure-rack-bois-preparation-2.jpg" alt="Hollow partition wall opening with visible cables"></p>
+<p><img src="/images/structure-rack-bois-preparation-3.jpg" alt="Power strip installation"></p>
 
 <h2>Wood Structure Construction</h2>
 <p>I built a wooden structure that will serve as a support for the rack rails. The structure consists of four vertical posts and several horizontal crossbeams.</p>
 <p>I used pocket hole joinery to assemble the structure in a strong and discreet way. This technique allows for invisible screws from the outside.</p>
 <p><img src="/images/structure-rack-bois-construction-2.jpg" alt="Assembly with pocket hole screws"></p>
+<p><img src="/images/structure-rack-bois-construction-3.jpg" alt="Assembled wood structure"></p>
 
 <h2>Rack Rails Installation</h2>
 <p>Once the wooden structure was assembled, I mounted the metal rack rails inside. These rails are standardized (19 inches) and allow mounting any standard rack equipment.</p>
 <p>The rails are mounted vertically on the wood posts using appropriate screws. It is important to check alignment and level so that equipment installs correctly.</p>
 <p><img src="/images/structure-rack-bois-rails-1.jpg" alt="Rack rails installation"></p>
 
-<h2>Equipment Installation</h2>
-<p>Once the structure was in place in the wall, I installed the equipment:</p>
-<ul>
-<li><strong>CAT.6 Patch Panel</strong>: mounted at the top of the rack, it allows centralizing all network connections</li>
-<li><strong>Perforated Shelf</strong>: installed in the middle to support other equipment</li>
-<li><strong>Power Strip</strong>: fixed at the bottom of the rack for electrical power supply of all equipment</li>
-</ul>
-<p><img src="/images/structure-rack-bois-equipement-1.jpg" alt="Rack with patch panel and shelf"></p>
-<p><img src="/images/structure-rack-bois-equipement-2.jpg" alt="Power strip installation"></p>
-
 <h2>Final Result</h2>
-<p>The rack structure is now completely integrated into the wall. Network and electrical equipment is organized in a professional and discreet manner. The patch panel allows easy management of all network connections, while the power strip centralizes electrical power.</p>
+<p>The rack structure is now completely integrated into the wall. Network equipment is organized in a professional and discreet manner. The patch panel allows easy management of all network connections.</p>
 <p>This solution offers several advantages:</p>
 <ul>
 <li>Hidden and organized equipment</li>
 <li>Easy access for maintenance</li>
-<li>Professional installation</li>
 <li>Space saving</li>
 </ul>
 <p><img src="/images/structure-rack-bois-final-1.jpg" alt="Final result - Complete rack"></p>
