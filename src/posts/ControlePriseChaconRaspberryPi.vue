@@ -5,7 +5,7 @@ import type { PostMetadata, PostContent } from '@/utils/posts'
 export const metadata: PostMetadata = {
   slug: 'controle-prise-chacon-raspberry-pi',
   date: '2014-02-25',
-  tags: ['Raspberry-Pi', 'DIY']
+  tags: ['Raspberry-Pi', 'DIY', 'Electronic']
 }
 
 const frenchContent: PostContent = {

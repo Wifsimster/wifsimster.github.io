@@ -5,7 +5,7 @@ import type { PostMetadata, PostContent } from '@/utils/posts'
 export const metadata: PostMetadata = {
   slug: 'ambilight-ws2801-raspberry-pi-hyperion',
   date: '2014-07-09',
-  tags: ['Ambilight', 'WS2801', 'Raspberry-Pi', 'DIY']
+  tags: ['Ambilight', 'WS2801', 'Raspberry-Pi', 'DIY', 'Electronic']
 }
 
 const frenchContent: PostContent = {
