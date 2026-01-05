@@ -4,7 +4,7 @@ import type { PostMetadata, PostContent } from '@/utils/posts'
 
 export const metadata: PostMetadata = {
   slug: 'renovation-cellier-bureau-maison-1970',
-  date: '2026-01-05',
+  date: '2025-10-17',
   tags: ['Renovation', 'DIY']
 }
 
