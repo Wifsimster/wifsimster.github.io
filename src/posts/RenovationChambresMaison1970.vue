@@ -17,7 +17,7 @@ const frenchContent: PostContent = {
 
 <h2>État initial / Démolition</h2>
 <p>Les deux chambres conservaient encore leurs finitions d'origine des années 1970. La première chambre était recouverte d'une tapisserie bleue qui avait vieilli et qui ne correspondait plus à nos attentes esthétiques. La deuxième chambre était recouverte d'une tapisserie rose, également datée. Les sols étaient recouverts d'anciens revêtements qui nécessitaient un remplacement complet. Les fenêtres d'origine étaient obsolètes et peu isolées.</p>
-<p>La première étape a consisté à démolir l'existant : retirer complètement les tapisseries bleue et rose des murs, ce qui a révélé l'état réel des murs sous-jacents. Le retrait de la tapisserie a nécessité de la patience et de la méthode pour éviter d'endommager les murs. Certaines zones nécessitaient un détapissage soigneux, tandis que d'autres se détachaient plus facilement.</p>
+<p>La première étape a consisté à démolir l'existant : retirer complètement les tapisseries bleue et rose des murs, ce qui a révélé l'état réel des murs sous-jacents. Le retrait de la tapisserie a nécessité de la patience et de la méthode pour éviter d'endommager les murs.</p>
 <p><img src="/images/renovation-chambres-demolition-1.jpg" alt="Détapissage de la tapisserie bleue"></p>
 <p><img src="/images/renovation-chambres-demolition-2.jpg" alt="Détapissage de la tapisserie rose"></p>
 
@@ -59,7 +59,7 @@ const englishContent: PostContent = {
 
 <h2>Initial State / Demolition</h2>
 <p>The two bedrooms still retained their original 1970s finishes. The first bedroom was covered with blue wallpaper that had aged and no longer met our aesthetic expectations. The second bedroom was covered with pink wallpaper, also dated. The floors were covered with old coverings that required complete replacement. The original windows were obsolete and poorly insulated.</p>
-<p>The first step was to demolish the existing elements: completely remove the blue and pink wallpaper from the walls, which revealed the real condition of the underlying walls. Removing the wallpaper required patience and method to avoid damaging the walls. Some areas required careful stripping, while others came off more easily.</p>
+<p>The first step was to demolish the existing elements: completely remove the blue and pink wallpaper from the walls, which revealed the real condition of the underlying walls. Removing the wallpaper required patience and method to avoid damaging the walls.</p>
 <p><img src="/images/renovation-chambres-demolition-1.jpg" alt="Stripping the blue wallpaper"></p>
 <p><img src="/images/renovation-chambres-demolition-2.jpg" alt="Stripping the pink wallpaper"></p>
 
