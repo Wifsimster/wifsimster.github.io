@@ -23,6 +23,7 @@ const frenchContent: PostContent = {
 
 <h2>Construction des nouveaux espaces</h2>
     <p>La construction des nouveaux espaces a été réalisée avec une ossature métallique (rails et montants) pour créer la structure des nouvelles cloisons. J'ai ensuite installé des plaques BA13 standard pour les murs de la chambre.</p>
+    <p><img src="/images/renovation-chambre-parentale-projection-3d-1.jpg" alt="Projection 3D des nouveaux espaces"></p>
     <p><img src="/images/renovation-chambre-parentale-ossature-1.jpg" alt="Installation de l'ossature métallique"></p>
     <p><img src="/images/renovation-chambre-parentale-placo-1.jpg" alt="Installation des plaques BA13 standard"></p>
 
@@ -33,24 +34,25 @@ const frenchContent: PostContent = {
 <p><img src="/images/renovation-chambre-parentale-dressing-construction-2.jpg" alt="Construction du dressing en cours"></p>
 <p><img src="/images/renovation-chambre-parentale-dressing-final-1.jpg" alt="Dressing final terminé"></p>
 
+<h2>Placard</h2>
+    <p>Un placard intégré a été créé dans la chambre pour le rangement. La construction a commencé par la préparation des murs existants : rebouchage, application d'enduit, ponçage puis peinture. Des étagères en bois ont été montées sur les murs pour le rangement. Les tuyaux de plomberie ont été intégrés dans la structure du placard pour alimenter le radiateur de la chambre.</p>
+    <p>Le placard final est une armoire coulissante intégrée s'étendant du sol au plafond, avec des portes en bois naturel (pin).</p>
+    <p><img src="/images/renovation-chambre-parentale-placard-construction-1.jpg" alt="Préparation des murs avec rebouchage et enduit"></p>
+    <p><img src="/images/renovation-chambre-parentale-placard-construction-2.jpg" alt="Installation des étagères et intégration de la plomberie"></p>
+    <p><img src="/images/renovation-chambre-parentale-placard-construction-3.jpg" alt="Placard intégré avec portes coulissantes en bois naturel"></p>
+
 <h2>Sol et finitions</h2>
-    <p>Le sol de la chambre a été préparé avec des panneaux d'isolation verts (sous-couche) pour améliorer l'isolation thermique et phonique. Le plancher en stratifié, comme dans les autres chambres et le salon, a ensuite été installé avec les outils appropriés, et les plinthes ont été fixées.</p>
-    <p>Les finitions ont consisté à appliquer l'enduit de rebouchage sur les murs pour masquer les vis et les joints entre les plaques BA13. Les murs ont été peints en blanc pour créer un espace lumineux et moderne.</p>
+    <p>Le sol de la chambre a été préparé avec des panneaux d'isolation verts (sous-couche) pour améliorer l'isolation thermique et phonique. Le plancher en stratifié, comme dans les autres chambres et le salon, a ensuite été installé.</p>
+    <p>Les finitions ont consisté à appliquer l'enduit de rebouchage sur les murs pour masquer les vis et les joints entre les plaques BA13. Les murs ont été peints en blanc pour créer un espace lumineux et moderne. Le radiateur a été démonté et repeint au pistolet en blanc (anciennement bleu). La fenêtre a été remplacée par une fenêtre coulissante en alu blanche.</p>
 <p><img src="/images/renovation-chambre-parentale-sol-isolation-1.jpg" alt="Panneaux d'isolation verts"></p>
 <p><img src="/images/renovation-chambre-parentale-sol-installation-1.jpg" alt="Installation du plancher en cours"></p>
 <p><img src="/images/renovation-chambre-parentale-sol-final-1.jpg" alt="Plancher terminé"></p>
-<p><img src="/images/renovation-chambre-parentale-enduit-1.jpg" alt="Application de l'enduit de rebouchage"></p>
-<p><img src="/images/renovation-chambre-parentale-portes-1.jpg" alt="Portes coulissantes installées"></p>
-<p><img src="/images/renovation-chambre-parentale-porte-verre-1.jpg" alt="Porte avec verre dépoli"></p>
-<p><img src="/images/renovation-chambre-parentale-fenetre-1.jpg" alt="Fenêtre et vue sur le jardin"></p>
 
 <h2>Résultat final</h2>
-    <p>La rénovation complète de la chambre parentale est maintenant terminée. Le résultat est un espace fonctionnel, moderne et esthétique qui combine élégance et praticité. La chambre agrandie offre maintenant un dressing intégré spacieux. Le plancher clair apporte une touche de chaleur à l'ensemble, et la grande fenêtre offre une vue magnifique sur le jardin.</p>
-<p><img src="/images/renovation-chambre-parentale-final-1.jpg" alt="Chambre parentale presque terminée"></p>
-<p><img src="/images/renovation-chambre-parentale-final-2.jpg" alt="Détails finaux avec radiateur monté"></p>
+    <p>La rénovation complète de la chambre parentale est maintenant terminée. Le résultat est un espace fonctionnel, moderne et esthétique qui combine élégance et praticité. La chambre agrandie offre maintenant un dressing intégré. Le plancher clair apporte une touche de chaleur à l'ensemble, et la grande fenêtre offre une vue magnifique sur le jardin.</p>
 
 <h2>Conclusion</h2>
-<p>La rénovation complète de la chambre parentale est maintenant terminée. Cette étape majeure du projet a nécessité de nombreuses compétences techniques et une planification minutieuse, de la démolition initiale aux finitions finales. Le résultat est un espace moderne, fonctionnel et esthétique qui répond parfaitement à nos besoins.</p>
+<p>La rénovation complète de la chambre parentale est maintenant terminée. Le résultat est un espace moderne, fonctionnel et esthétique qui répond parfaitement à nos besoins.</p>
     <p>Ce projet m'a permis d'apprendre énormément sur l'agrandissement d'une pièce, la création de nouveaux espaces avec ossature métallique et plaques BA13, et la construction d'un dressing intégré. La chambre parentale est maintenant un espace de vie agréable et confortable, parfait pour se détendre.</p>`
 }
 
@@ -69,6 +71,7 @@ const englishContent: PostContent = {
 
 <h2>Construction of New Spaces</h2>
     <p>The construction of new spaces was carried out with a metal framework (rails and studs) to create the structure of the new partitions. I then installed standard BA13 boards for the bedroom walls.</p>
+    <p><img src="/images/renovation-chambre-parentale-projection-3d-1.jpg" alt="3D projection of new spaces"></p>
     <p><img src="/images/renovation-chambre-parentale-ossature-1.jpg" alt="Metal framework installation"></p>
     <p><img src="/images/renovation-chambre-parentale-placo-1.jpg" alt="Standard BA13 board installation"></p>
 
@@ -79,24 +82,25 @@ const englishContent: PostContent = {
 <p><img src="/images/renovation-chambre-parentale-dressing-construction-2.jpg" alt="Dressing room construction in progress"></p>
 <p><img src="/images/renovation-chambre-parentale-dressing-final-1.jpg" alt="Final completed dressing room"></p>
 
+<h2>Closet</h2>
+    <p>A built-in closet was created in the bedroom for storage. Construction began with preparation of the existing walls: filling, joint compound application, sanding, then painting. Wooden shelves were mounted on the walls for storage. Plumbing pipes were integrated into the closet structure to supply the bedroom radiator.</p>
+    <p>The final closet is a built-in sliding wardrobe extending from floor to ceiling, with natural wood doors (pine).</p>
+    <p><img src="/images/renovation-chambre-parentale-placard-construction-1.jpg" alt="Wall preparation with filling and joint compound"></p>
+    <p><img src="/images/renovation-chambre-parentale-placard-construction-2.jpg" alt="Shelf installation and plumbing integration"></p>
+    <p><img src="/images/renovation-chambre-parentale-placard-construction-3.jpg" alt="Built-in closet with natural wood sliding doors"></p>
+
 <h2>Floor and Finishing</h2>
-    <p>The bedroom floor was prepared with green insulation panels (underlayment) to improve thermal and acoustic insulation. The laminate flooring, like in the other bedrooms and living room, was then installed with appropriate tools, and baseboards were secured.</p>
-    <p>Finishing involved applying joint compound to the walls to hide screws and joints between BA13 boards. The walls were painted white to create a bright and modern space.</p>
+    <p>The bedroom floor was prepared with green insulation panels (underlayment) to improve thermal and acoustic insulation. The laminate flooring, like in the other bedrooms and living room, was then installed.</p>
+    <p>Finishing involved applying joint compound to the walls to hide screws and joints between BA13 boards. The walls were painted white to create a bright and modern space. The radiator was dismantled and spray-painted white (formerly blue). The window was replaced with a white aluminum sliding window.</p>
 <p><img src="/images/renovation-chambre-parentale-sol-isolation-1.jpg" alt="Green insulation panels"></p>
 <p><img src="/images/renovation-chambre-parentale-sol-installation-1.jpg" alt="Flooring installation in progress"></p>
 <p><img src="/images/renovation-chambre-parentale-sol-final-1.jpg" alt="Completed flooring"></p>
-<p><img src="/images/renovation-chambre-parentale-enduit-1.jpg" alt="Joint compound application"></p>
-<p><img src="/images/renovation-chambre-parentale-portes-1.jpg" alt="Sliding doors installed"></p>
-<p><img src="/images/renovation-chambre-parentale-porte-verre-1.jpg" alt="Door with frosted glass"></p>
-<p><img src="/images/renovation-chambre-parentale-fenetre-1.jpg" alt="Window and garden view"></p>
 
 <h2>Final Result</h2>
-    <p>The complete parental bedroom renovation is now finished. The result is a functional, modern, and aesthetic space that combines elegance and practicality. The expanded bedroom now offers a spacious integrated dressing room. The light flooring adds a warm touch to the whole, and the large window offers a magnificent view of the garden.</p>
-<p><img src="/images/renovation-chambre-parentale-final-1.jpg" alt="Nearly completed parental bedroom"></p>
-<p><img src="/images/renovation-chambre-parentale-final-2.jpg" alt="Final details with mounted radiator"></p>
+    <p>The complete parental bedroom renovation is now finished. The result is a functional, modern, and aesthetic space that combines elegance and practicality. The expanded bedroom now offers an integrated dressing room. The light flooring adds a warm touch to the whole, and the large window offers a magnificent view of the garden.</p>
 
 <h2>Conclusion</h2>
-<p>The complete parental bedroom renovation is now finished. This major step in the project required many technical skills and meticulous planning, from the initial demolition to the final finishes. The result is a modern, functional, and aesthetic space that perfectly meets our needs.</p>
+<p>The complete parental bedroom renovation is now finished. The result is a modern, functional, and aesthetic space that perfectly meets our needs.</p>
     <p>This project allowed me to learn a great deal about expanding a room, creating new spaces with metal framework and BA13 boards, and building an integrated dressing room. The parental bedroom is now a pleasant and comfortable living space, perfect for relaxing.</p>`
 }
 
