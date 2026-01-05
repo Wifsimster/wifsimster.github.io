@@ -21,7 +21,7 @@ export const translations: Record<string, Record<string, string>> = {
     'home.tagline': 'Passionate Web Dev 💻',
     'home.viewArchives': 'Voir les archives',
     'home.latestArticles': 'Derniers articles',
-    'home.introTitle': 'Salut, je suis Damien !',
+    'home.introTitle': 'Hello, je suis Damien !',
     'home.introText': "J'ai créé ce blog pour partager mes projets et expériences !",
     'home.blogTitle': 'Blog',
     'home.searchPlaceholder': 'Rechercher des articles...',
