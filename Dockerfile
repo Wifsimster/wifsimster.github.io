@@ -1,5 +1,10 @@
+# Build args
+ARG VERSION=0.0.0
+ARG BUILD_DATE
+ARG VCS_REF
+
 # Build stage
-FROM node:24-alpine AS builder
+FROM node:24-alpine AS build
 
 WORKDIR /app
 
@@ -9,24 +14,35 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci
 
-# Copy source files
+# Copy source code
 COPY . .
 
-# Build content and application
+# Build the application
 RUN npm run build
 
 # Production stage
 FROM nginx:alpine
 
-# Copy built files from builder
-COPY --from=builder /app/dist /usr/share/nginx/html
-COPY --from=builder /app/public /usr/share/nginx/html
+# OCI metadata labels
+LABEL org.opencontainers.image.title="wifsimster-blog" \
+      org.opencontainers.image.description="Blog personnel - DIY, domotique et projets électroniques" \
+      org.opencontainers.image.version="${VERSION}" \
+      org.opencontainers.image.created="${BUILD_DATE}" \
+      org.opencontainers.image.revision="${VCS_REF}" \
+      org.opencontainers.image.source="https://github.com/Wifsimster/wifsimster.github.io"
+
+# Copy built assets
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port
+# Expose port 80
 EXPOSE 80
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
