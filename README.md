@@ -4,7 +4,7 @@ Blog personnel de Wifsimster - Passionate Web Dev
 
 ## Site web
 
-Le blog est accessible publiquement : <https://wifsimster.github.io/>
+Le blog est accessible publiquement : <https://blog.battistella.ovh/>
 
 ## A propos
 
