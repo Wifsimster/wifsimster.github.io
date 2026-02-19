@@ -19,12 +19,7 @@
           </RouterLink>
         </nav>
         <div class="flex items-center space-x-4">
-          <button
-            @click="i18n.switchLanguage(i18n.language.value === 'fr' ? 'en' : 'fr')"
-            class="px-3 py-1 text-sm text-gray-700 dark:text-zinc-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-          >
-            {{ i18n.language.value === 'fr' ? 'EN' : 'FR' }}
-          </button>
+          <LanguageToggle />
           <button
             @click="darkMode.toggleDark()"
             class="p-2 text-gray-700 dark:text-zinc-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -45,6 +40,7 @@ import { RouterLink } from 'vue-router'
 import { useI18n } from '@/composables/useI18n'
 import { useDarkMode } from '@/composables/useDarkMode'
 import MobileMenu from './MobileMenu.vue'
+import LanguageToggle from './LanguageToggle.vue'
 
 const i18n = useI18n()
 const darkMode = useDarkMode()

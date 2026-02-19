@@ -11,6 +11,9 @@
         {{ item.label }}
       </RouterLink>
     </nav>
+    <div class="px-4 py-3 border-t border-gray-200 dark:border-zinc-800 flex items-center justify-center">
+      <LanguageToggle />
+    </div>
   </div>
 </template>
 
@@ -18,6 +21,7 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useI18n } from '@/composables/useI18n'
+import LanguageToggle from './LanguageToggle.vue'
 
 const i18n = useI18n()
 
