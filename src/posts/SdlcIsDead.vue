@@ -9,9 +9,11 @@ export const metadata: PostMetadata = {
 }
 
 const englishContent: PostContent = {
-  title: 'The SDLC Is Dead. I Know Because I\'m Burying It From the Inside.',
+  title: 'The SDLC Is Dead. You Just Haven\'t Noticed Yet.',
   description: 'A point of view on the state of software development in 2026. Why the SDLC was always broken, why AI agents are making it impossible to ignore, and why European tech needs to wake up.',
-  html: `<p>For months now, I've been reading articles about AI. On LinkedIn, on X, on tech blogs, on every corner of the internet. AI and disruption. AI and regression. AI and quality collapse. AI and slop. AI is killing software. AI is making us dumber. AI is producing garbage code. AI is the end of craftsmanship.</p>
+  html: `<p><strong>TL;DR:</strong> The SDLC was always broken - AI agents just made it impossible to ignore. Most of the process was waste. Coding, testing, documentation, CI/CD, deployments, even meetings - agents handle all of it now. What survives: domain knowledge, architectural thinking, context engineering, and judgment. European tech needs to wake up or get left behind. 2026 is the year to decide.</p>
+<hr>
+<p>For months now, I've been reading articles about AI. On LinkedIn, on X, on tech blogs, on every corner of the internet. AI and disruption. AI and regression. AI and quality collapse. AI and slop. AI is killing software. AI is making us dumber. AI is producing garbage code. AI is the end of craftsmanship.</p>
 <p>I've read hundreds of them. And I'm telling you: <strong>I disagree with most of them, in all my being.</strong></p>
 <p>Not because the concerns aren't real. Some are. But because the overwhelming narrative is fear disguised as wisdom. People clinging to the way things were, dressing up resistance as rigor, calling inertia "quality standards." The loudest voices are the ones with the most to lose - the process owners, the methodology consultants, the people whose careers are built on the very ceremony that AI is making obsolete.</p>
 <p>So here it is. My point of view. Not a reaction to one article, but to all of them. This is how I see the software development job in 2026, and why this year is the welcome disruption I've been secretly hoping for.</p>
@@ -119,14 +121,18 @@ const englishContent: PostContent = {
 <p><strong>2026 is the year to decide.</strong> Are you evolving, or are you waiting for the ice age to pass?</p>
 <p>It's not going to pass.</p>
 
-<hr>
-<p><em>I'm a Tech Lead Manager in enterprise software. I build software, products, and people. When I'm not modernizing legacy systems, I'm experimenting with AI. I never believed in Agile. I never trusted manual QA. The future is proving me right.</em></p>`
+<h2>Conclusion</h2>
+<p>I wrote this article in one sitting. Not because I had it all figured out, but because I couldn't hold it in anymore. Every day brings a new model, a new agent capability, a new proof that the old way of building software is dying. And every day, I see the same organizations pretending nothing has changed.</p>
+<p>I'm not claiming to have all the answers. I'm a senior developer who dove headfirst into AI a year ago and watched his entire understanding of the job get rewritten in real time. What I know is this: the developers who adapt will thrive. The ones who don't will be replaced - not by AI, but by developers who use AI.</p>
+<p>Stop debating. Start building. The tools are here. The only thing missing is the will to use them.</p>`
 }
 
 const frenchContent: PostContent = {
-  title: 'Le SDLC est mort. Je le sais parce que je l\'enterre de l\'intérieur.',
+  title: 'Le SDLC est mort. Vous ne l\'avez juste pas encore remarqué.',
   description: 'Un point de vue sur l\'état du développement logiciel en 2026. Pourquoi le SDLC a toujours été défaillant, pourquoi les agents IA rendent cela impossible à ignorer, et pourquoi la tech européenne doit se réveiller.',
-  html: `<p>Depuis des mois, je lis des articles sur l'IA. Sur LinkedIn, sur X, sur les blogs tech, dans tous les recoins d'Internet. L'IA et la disruption. L'IA et la régression. L'IA et l'effondrement de la qualité. L'IA et le slop. L'IA tue le logiciel. L'IA nous rend plus bêtes. L'IA produit du code poubelle. L'IA, c'est la fin de l'artisanat.</p>
+  html: `<p><strong>TL;DR :</strong> Le SDLC (Software Development Life Cycle - le cycle de vie du développement logiciel) a toujours été cassé - les agents IA ont juste rendu ça impossible à ignorer. La majorité du processus était du gaspillage. Le code, les tests, la documentation, la CI/CD, les déploiements, même les réunions - les agents gèrent tout ça maintenant. Ce qui survit : la connaissance métier, la pensée architecturale, l'ingénierie de contexte et le jugement. La tech européenne doit se réveiller ou se faire distancer. 2026 est l'année de la décision.</p>
+<hr>
+<p>Depuis des mois, je lis des articles sur l'IA. Sur LinkedIn, sur X, sur les blogs tech, dans tous les recoins d'Internet. L'IA et la disruption. L'IA et la régression. L'IA et l'effondrement de la qualité. L'IA et le slop. L'IA tue le logiciel. L'IA nous rend plus bêtes. L'IA produit du code poubelle. L'IA, c'est la fin de l'artisanat.</p>
 <p>J'en ai lu des centaines. Et je vous le dis : <strong>je suis en désaccord avec la plupart d'entre eux, de tout mon être.</strong></p>
 <p>Non pas parce que les préoccupations ne sont pas réelles. Certaines le sont. Mais parce que le récit dominant est de la peur déguisée en sagesse. Des gens qui s'accrochent à la façon dont les choses étaient, qui habillent la résistance en rigueur, qui appellent l'inertie "standards de qualité". Les voix les plus fortes sont celles qui ont le plus à perdre - les propriétaires de processus, les consultants en méthodologie, les personnes dont les carrières sont bâties sur la cérémonie même que l'IA rend obsolète.</p>
 <p>Alors voici. Mon point de vue. Pas une réaction à un article, mais à tous. Voici comment je vois le métier du développement logiciel en 2026, et pourquoi cette année est la disruption bienvenue que j'espérais secrètement.</p>
@@ -234,8 +240,10 @@ const frenchContent: PostContent = {
 <p><strong>2026 est l'année de la décision.</strong> Est-ce que vous évoluez, ou est-ce que vous attendez que l'ère glaciaire passe ?</p>
 <p>Elle ne passera pas.</p>
 
-<hr>
-<p><em>Je suis Tech Lead Manager dans le logiciel d'entreprise. Je construis du logiciel, des produits et des équipes. Quand je ne modernise pas des systèmes legacy, j'expérimente avec l'IA. Je n'ai jamais cru en Agile. Je n'ai jamais fait confiance à la QA manuelle. L'avenir me donne raison.</em></p>`
+<h2>Conclusion</h2>
+<p>J'ai écrit cet article d'une traite. Pas parce que j'avais tout compris, mais parce que je ne pouvais plus le garder pour moi. Chaque jour apporte un nouveau modèle, une nouvelle capacité d'agent, une nouvelle preuve que l'ancienne façon de construire du logiciel est en train de mourir. Et chaque jour, je vois les mêmes organisations faire comme si rien n'avait changé.</p>
+<p>Je ne prétends pas avoir toutes les réponses. Je suis un développeur senior qui a plongé tête la première dans l'IA il y a un an et qui a vu toute sa compréhension du métier se réécrire en temps réel. Ce que je sais, c'est ça : les développeurs qui s'adaptent vont prospérer. Ceux qui ne le font pas seront remplacés - pas par l'IA, mais par des développeurs qui utilisent l'IA.</p>
+<p>Arrêtez de débattre. Commencez à construire. Les outils sont là. La seule chose qui manque, c'est la volonté de s'en servir.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
