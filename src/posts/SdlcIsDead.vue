@@ -78,7 +78,7 @@ const englishContent: PostContent = {
 <p>They're confusing the <strong>requirement</strong> with the <strong>implementation.</strong></p>
 <p>Compliance demands <strong>traceability</strong>, not ceremony. It demands that you can prove what changed, why, and that it was verified. It never demanded story points. It never demanded three-day PR reviews. It never demanded manual QA sign-off.</p>
 <p>An agent that generates code, writes tests, runs them, checks types, validates against architectural constraints, and logs every step provides <strong>more traceability</strong> than a human developer who reviewed a PR half-asleep on a Friday afternoon and a QA tester who clicked through 60% of the test script before lunch. We just can't accept that yet, because the ceremony felt safe.</p>
-<p>I work on a system that manages the entire lifecycle of a patient in a hospital, from admission to discharge, from prescriptions to billing. If the SDLC can die here, in the most regulated, conservative, risk-averse corner of the software industry, it can die anywhere.</p>
+<p>If the SDLC can die in the most regulated, conservative, risk-averse corners of the software industry, it can die anywhere. The question isn't whether your domain is too critical for this. It's whether you're honest enough to admit the ceremony was never what kept it safe.</p>
 
 <h2>What I actually do now</h2>
 <p>My role has fundamentally changed. I used to spend my days in the process machine:</p>
@@ -193,7 +193,7 @@ const frenchContent: PostContent = {
 <p>Ils confondent l'<strong>exigence</strong> avec l'<strong>implémentation.</strong></p>
 <p>La conformité exige la <strong>traçabilité</strong>, pas la cérémonie. Elle exige que vous puissiez prouver ce qui a changé, pourquoi, et que cela a été vérifié. Elle n'a jamais exigé de story points. Elle n'a jamais exigé de revues de PR de trois jours. Elle n'a jamais exigé de validation QA manuelle.</p>
 <p>Un agent qui génère du code, écrit des tests, les exécute, vérifie les types, valide contre les contraintes architecturales et enregistre chaque étape fournit <strong>plus de traçabilité</strong> qu'un développeur humain qui a revu une PR à moitié endormi un vendredi après-midi et un testeur QA qui a cliqué sur 60% du script de test avant le déjeuner. On ne peut juste pas encore l'accepter, parce que la cérémonie semblait sûre.</p>
-<p>Je travaille sur un système qui gère le cycle de vie complet d'un patient à l'hôpital, de l'admission à la sortie, des prescriptions à la facturation. Si le SDLC peut mourir ici, dans le coin le plus réglementé, conservateur et averse au risque de l'industrie logicielle, il peut mourir n'importe où.</p>
+<p>Si le SDLC peut mourir dans les coins les plus réglementés, conservateurs et averses au risque de l'industrie logicielle, il peut mourir n'importe où. La question n'est pas de savoir si votre domaine est trop critique pour ça. C'est de savoir si vous êtes assez honnête pour admettre que la cérémonie n'a jamais été ce qui le protégeait.</p>
 
 <h2>Ce que je fais vraiment maintenant</h2>
 <p>Mon rôle a fondamentalement changé. Avant, je passais mes journées dans la machine à processus :</p>
@@ -205,9 +205,9 @@ const frenchContent: PostContent = {
 <li>Attendre que la QA valide manuellement ce que les tests automatisés couvraient déjà</li>
 </ul>
 <p>Maintenant je passe mes journées sur des choses qui comptent vraiment :</p>
-<p><strong>L'ingénierie de contexte.</strong> Donner à l'agent les bonnes décisions architecturales, les bonnes contraintes, les bonnes connaissances métier. En santé, cela signifie s'assurer que l'agent comprend qu'un HL7 ADT^A01 est une admission patient, que HPRIM XML est un standard français dont personne hors de France n'a entendu parler, que le module de facturation a des dépendances que le système de types n'attrapera pas. La qualité de ce que les agents construisent est directement proportionnelle à la qualité du contexte que vous leur donnez.</p>
+<p><strong>L'ingénierie de contexte.</strong> Donner à l'agent les bonnes décisions architecturales, les bonnes contraintes, les bonnes connaissances métier. En santé, cela signifie s'assurer que l'agent comprend qu'un HL7 ADT^A01 est une admission patient, que HPRIM XML est un standard français dont personne hors de France n'a entendu parler, que le module de facturation a des dépendances que le typage n'attrapera pas. La qualité de ce que les agents construisent est directement proportionnelle à la qualité du contexte que vous leur donnez.</p>
 <p><strong>Vérifier l'intention, pas la syntaxe.</strong> Je ne lis plus les diffs ligne par ligne. Je vérifie que la sortie correspond à ce dont nous avions besoin. Est-ce que le flux d'interopérabilité fonctionne ? Est-ce que le test automatisé couvre le vrai cas limite ? Est-ce que la gestion d'erreur est appropriée pour un système qui tourne dans un hôpital ?</p>
-<p><strong>Construire des garde-fous, pas des portes.</strong> Au lieu d'une porte de revue PR où le code attend dans une file pendant des jours, j'investis dans des vérifications automatisées. Sécurité de type. Tests d'intégration contre de vrais formats de messages HL7. Fonctions de fitness architecturale. Suites e2e. Si la sortie de l'agent passe tout cela, ça part en production. Pas de porte humaine. Pas de QA manuelle. Pas de file de revue.</p>
+<p><strong>Construire des garde-fous, pas des portes.</strong> Au lieu d'une porte de revue PR où le code attend dans une file pendant des jours, j'investis dans des vérifications automatisées. Typage strict. Tests d'intégration contre de vrais formats de messages HL7. Fonctions de fitness architecturale. Suites e2e. Si la sortie de l'agent passe tout cela, ça part en production. Pas de porte humaine. Pas de QA manuelle. Pas de file de revue.</p>
 <p><strong>Pousser en production.</strong> Le chemin le plus rapide de l'intention à l'impact. C'est l'objectif. Toujours.</p>
 
 <h2>Le maker sait</h2>
