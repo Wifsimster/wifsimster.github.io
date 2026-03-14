@@ -9,7 +9,7 @@ export const metadata: PostMetadata = {
 }
 
 const englishContent: PostContent = {
-  title: 'The SDLC Is Dead. I Know Because I\'m Burying It In a Hospital.',
+  title: 'The SDLC Is Dead. I Know Because I\'m Burying It From the Inside.',
   description: 'A point of view on the state of software development in 2026. Why the SDLC was always broken, why AI agents are making it impossible to ignore, and why European tech needs to wake up.',
   html: `<p>For months now, I've been reading articles about AI. On LinkedIn, on X, on tech blogs, on every corner of the internet. AI and disruption. AI and regression. AI and quality collapse. AI and slop. AI is killing software. AI is making us dumber. AI is producing garbage code. AI is the end of craftsmanship.</p>
 <p>I've read hundreds of them. And I'm telling you: <strong>I disagree with most of them, in all my being.</strong></p>
@@ -20,7 +20,7 @@ const englishContent: PostContent = {
 
 <h2>Who I am and why this matters</h2>
 <p>I'm a Tech Lead Manager. I've been working in large enterprises since 2012, from banking to healthcare. I lead a team of developers, working on a 30-year-old legacy system and its migration to a modern ecosystem.</p>
-<p>I've spent over a decade in this world. A world where a bug doesn't break a dashboard, it breaks a patient admission workflow. A world where people will tell you that you absolutely need the full SDLC ceremony because lives are at stake.</p>
+<p>I've spent over a decade in this world. A world where a bug doesn't break a dashboard, it breaks a critical business workflow. A world where people will tell you that you absolutely need the full SDLC ceremony because the stakes are too high.</p>
 <p>And I'm telling you: the SDLC was always the wrong answer to the right question.</p>
 
 <h2>Europe's mammoths are sleepwalking into irrelevance</h2>
@@ -65,16 +65,16 @@ const englishContent: PostContent = {
 <p>Before AI agents, "ship fast" was a cultural aspiration. You'd say it in team meetings, then spend three days waiting for a PR review. Now, with agents generating code, tests, and deployment configs in one loop, shipping fast is the default. The question isn't "how do we ship faster?" anymore. It's "what's still in the way?"</p>
 <p>The answer, most of the time, is process. Process, and organizations too afraid to let go of it.</p>
 
-<h2>Humans have no place in testing</h2>
-<p>I'll say something that makes QA managers uncomfortable: <strong>humans should not be testing software.</strong></p>
-<p>Manual QA is a relic. A human clicking through screens, following test scripts, filing bug reports - that entire workflow is slower, less reliable, and less thorough than automated tests. Every time. Without exception.</p>
+<h2>Humans have no place in the loop</h2>
+<p>I'll say something that makes a lot of people uncomfortable: <strong>humans should not be testing software. They shouldn't be writing documentation either. Or configuring CI/CD pipelines. Or running deployments. Or even leading most meetings.</strong></p>
+<p>And I'm not even talking about coding - that's already handled by agents.</p>
+<p>Manual QA is a relic. A human clicking through screens, following test scripts, filing bug reports - that entire workflow is slower, less reliable, and less thorough than automated tests. Every time. Without exception. The same goes for documentation that no one reads because it's always outdated - agents generate it from the code, always in sync, always accurate. CI/CD pipelines? Agents configure, maintain, and optimize them. Deployments? Automated end to end. Meetings? Sub-agents with personas debate, challenge, and produce better decisions than most rooms full of humans.</p>
 <p>If your tests can't be automated, your architecture is wrong. That's not an AI opinion. That's a software engineering opinion I've held for years. Testability is a design property. If you need a human to verify your software works, you've built it wrong.</p>
-<p>Here's what testing looks like in 2026: unit tests, integration tests, end-to-end tests, type checking, architectural fitness functions - all generated alongside the code, all automated, all running in CI/CD, all faster and more reliable than any human.</p>
-<p>The agent writes the code and the tests together. Not as an afterthought. Not in a separate "testing phase." The entire QA function as a separate stage, as a separate team, as a separate line item on the org chart - it's over.</p>
-<p>Does this happen overnight? No. Building a solid automated test suite takes time, effort, and discipline. It's actually my main focus this year for my applications. But that's the point - this is where you should be investing your energy. Not in manual QA processes, not in human review gates, but in building the automated safety net that lets you ship with confidence.</p>
+<p>Here's what 2026 looks like: everything is generated alongside the code, everything is automated, everything runs in CI/CD. Faster and more reliable than any human. The agent writes the code, the tests, the docs, the deployment configs - together. Not as an afterthought. Not in separate phases. The entire chain from intent to production is one continuous, automated flow.</p>
+<p>Does this happen overnight? No. Building this level of automation takes time, effort, and discipline. It's actually my main focus this year for my applications. But that's the point - this is where you should be investing your energy. Not in manual processes, not in human gates, but in building the automated machinery that lets you ship with confidence.</p>
 
-<h2>Healthcare isn't special (and that's the point)</h2>
-<p>People will tell you healthcare is different. That you can't move fast with patient data. That compliance requires the full SDLC ceremony.</p>
+<h2>Your domain isn't special (and that's the point)</h2>
+<p>People will tell you their industry is different. That you can't move fast with sensitive data. That compliance requires the full SDLC ceremony.</p>
 <p>They're confusing the <strong>requirement</strong> with the <strong>implementation.</strong></p>
 <p>Compliance demands <strong>traceability</strong>, not ceremony. It demands that you can prove what changed, why, and that it was verified. It never demanded story points. It never demanded three-day PR reviews. It never demanded manual QA sign-off.</p>
 <p>An agent that generates code, writes tests, runs them, checks types, validates against architectural constraints, and logs every step provides <strong>more traceability</strong> than a human developer who reviewed a PR half-asleep on a Friday afternoon and a QA tester who clicked through 60% of the test script before lunch. We just can't accept that yet, because the ceremony felt safe.</p>
@@ -103,14 +103,14 @@ const englishContent: PostContent = {
 
 <h2>What survives</h2>
 <p>Not much.</p>
-<p><strong>Domain knowledge</strong> survives. The agent needs someone who understands the problem space. Healthcare is deep. A 30-year-old ERP is deep. The intersection of both is a maze that no model has fully mapped.</p>
+<p><strong>Domain knowledge</strong> survives. The agent needs someone who understands the problem space. Legacy systems are deep. Business domains are deep. The intersection of both is a maze that no model has fully mapped.</p>
 <p><strong>Architectural intent</strong> survives. Clean Architecture isn't dead. The hexagonal boundaries, the dependency rules, the separation of domain from infrastructure - these still matter. But they're expressed as context for the agent, not as diagrams on a whiteboard that get stale in a week.</p>
 <p><strong>Automated verification</strong> survives and becomes everything. Tests, type checks, security scans, behavioral diffs, architectural fitness functions - the entire safety net is code, not people. Code checking code.</p>
 <p><strong>Observability</strong> survives and becomes the foundation. When code ships continuously, your monitoring stack is your last line of defense. We're moving from "review before ship" to "ship and verify continuously."</p>
 <p><strong>Everything else is ceremony.</strong> And ceremony is what you do when you don't trust your tools, your architecture, or your automated checks. The tools got good enough. Time to let go.</p>
 
 <h2>A wake-up call for European tech</h2>
-<p>I'm not writing this from San Francisco. I'm not at a startup with 5 people and no customers. I'm in France, inside a large healthcare software organization, modernizing a 30-year-old system that hospitals depend on every day.</p>
+<p>I'm not writing this from San Francisco. I'm not at a startup with 5 people and no customers. I'm in France, inside a large enterprise, modernizing a 30-year-old system that organizations depend on every day.</p>
 <p>And I'm telling you: <strong>the gap is widening.</strong></p>
 <p>While American and Asian teams are already operating in the post-SDLC world - shipping with agents, automating everything, hiring for judgment and domain expertise - most European organizations are still running the old playbook. Still hiring "5 years of Java." Still running two-week sprints. Still debating whether AI is a fad or a threat.</p>
 <p>It's neither. It's the new reality. And the organizations that treat it as a tool to optimize the old way of working, rather than a reason to fundamentally rethink how they build software, will be left behind.</p>
@@ -120,11 +120,11 @@ const englishContent: PostContent = {
 <p>It's not going to pass.</p>
 
 <hr>
-<p><em>I'm a Tech Lead Manager in healthcare software. I build software, products, and people. When I'm not modernizing legacy healthcare systems, I'm wiring microcontrollers and building home automation. I never believed in Agile. I never trusted manual QA. The future is proving me right.</em></p>`
+<p><em>I'm a Tech Lead Manager in enterprise software. I build software, products, and people. When I'm not modernizing legacy systems, I'm experimenting with AI. I never believed in Agile. I never trusted manual QA. The future is proving me right.</em></p>`
 }
 
 const frenchContent: PostContent = {
-  title: 'Le SDLC est mort. Je le sais parce que je l\'enterre dans un hôpital.',
+  title: 'Le SDLC est mort. Je le sais parce que je l\'enterre de l\'intérieur.',
   description: 'Un point de vue sur l\'état du développement logiciel en 2026. Pourquoi le SDLC a toujours été défaillant, pourquoi les agents IA rendent cela impossible à ignorer, et pourquoi la tech européenne doit se réveiller.',
   html: `<p>Depuis des mois, je lis des articles sur l'IA. Sur LinkedIn, sur X, sur les blogs tech, dans tous les recoins d'Internet. L'IA et la disruption. L'IA et la régression. L'IA et l'effondrement de la qualité. L'IA et le slop. L'IA tue le logiciel. L'IA nous rend plus bêtes. L'IA produit du code poubelle. L'IA, c'est la fin de l'artisanat.</p>
 <p>J'en ai lu des centaines. Et je vous le dis : <strong>je suis en désaccord avec la plupart d'entre eux, de tout mon être.</strong></p>
@@ -135,7 +135,7 @@ const frenchContent: PostContent = {
 
 <h2>Qui je suis et pourquoi c'est important</h2>
 <p>Je suis Tech Lead Manager. Je travaille dans de grandes entreprises depuis 2012, du secteur bancaire à la santé. Je dirige une équipe de développeurs, travaillant sur un système legacy de 30 ans et sa migration vers un écosystème moderne.</p>
-<p>J'ai passé plus d'une décennie dans ce monde. Un monde où un bug ne casse pas un tableau de bord, il casse un workflow d'admission patient. Un monde où les gens vous diront que vous avez absolument besoin de la cérémonie SDLC complète parce que des vies sont en jeu.</p>
+<p>J'ai passé plus d'une décennie dans ce monde. Un monde où un bug ne casse pas un tableau de bord, il casse un workflow métier critique. Un monde où les gens vous diront que vous avez absolument besoin de la cérémonie SDLC complète parce que les enjeux sont trop élevés.</p>
 <p>Et je vous le dis : le SDLC a toujours été la mauvaise réponse à la bonne question.</p>
 
 <h2>Les mammouths européens marchent vers l'irrélevance en somnambules</h2>
@@ -180,16 +180,16 @@ const frenchContent: PostContent = {
 <p>Avant les agents IA, "livrer vite" était une aspiration culturelle. Vous le disiez en réunion d'équipe, puis vous passiez trois jours à attendre une revue de PR. Maintenant, avec des agents qui génèrent du code, des tests et des configs de déploiement dans une seule boucle, livrer vite est la valeur par défaut. La question n'est plus "comment livrer plus vite ?" C'est "qu'est-ce qui est encore en travers du chemin ?"</p>
 <p>La réponse, la plupart du temps, c'est le processus. Le processus, et des organisations trop effrayées pour le lâcher.</p>
 
-<h2>Les humains n'ont pas leur place dans les tests</h2>
-<p>Je vais dire quelque chose qui met les managers QA mal à l'aise : <strong>les humains ne devraient pas tester le logiciel.</strong></p>
-<p>La QA manuelle est une relique. Un humain qui clique sur des écrans, qui suit des scripts de test, qui remplit des rapports de bugs - tout ce workflow est plus lent, moins fiable et moins exhaustif que les tests automatisés. À chaque fois. Sans exception.</p>
+<h2>Les humains n'ont pas leur place dans la boucle</h2>
+<p>Je vais dire quelque chose qui met beaucoup de monde mal à l'aise : <strong>les humains ne devraient pas tester le logiciel. Ils ne devraient pas non plus écrire la documentation. Ni configurer les pipelines CI/CD. Ni gérer les déploiements. Ni même animer la plupart des réunions.</strong></p>
+<p>Et je ne parle même pas du code - ça, c'est déjà géré par les agents.</p>
+<p>La QA manuelle est une relique. Un humain qui clique sur des écrans, qui suit des scripts de test, qui remplit des rapports de bugs - tout ce workflow est plus lent, moins fiable et moins exhaustif que les tests automatisés. À chaque fois. Sans exception. Pareil pour la documentation que personne ne lit parce qu'elle est toujours obsolète - les agents la génèrent depuis le code, toujours à jour, toujours exacte. Les pipelines CI/CD ? Les agents les configurent, les maintiennent et les optimisent. Les déploiements ? Automatisés de bout en bout. Les réunions ? Des sous-agents avec des personas débattent, se challengent et produisent de meilleures décisions que la plupart des salles remplies d'humains.</p>
 <p>Si vos tests ne peuvent pas être automatisés, c'est votre architecture qui est mauvaise. Ce n'est pas une opinion IA. C'est une opinion d'ingénierie logicielle que je porte depuis des années. La testabilité est une propriété de conception. Si vous avez besoin d'un humain pour vérifier que votre logiciel fonctionne, vous l'avez mal construit.</p>
-<p>Voici à quoi ressemblent les tests en 2026 : tests unitaires, tests d'intégration, tests end-to-end, typage, fonctions de fitness architecturale - tous générés avec le code, tous automatisés, tous en CI/CD, tous plus rapides et plus fiables que n'importe quel humain.</p>
-<p>L'agent écrit le code et les tests ensemble. Pas comme une réflexion après coup. Pas dans une "phase de test" séparée. La fonction QA entière en tant qu'étape séparée, en tant qu'équipe séparée, en tant que ligne séparée sur l'organigramme - c'est terminé.</p>
-<p>Est-ce que ça arrive du jour au lendemain ? Non. Construire une suite de tests automatisés solide prend du temps, de l'effort et de la discipline. C'est d'ailleurs mon principal chantier cette année pour mes applications. Mais c'est justement là où il faut investir son énergie. Pas dans des processus de QA manuelle, pas dans des portes de validation humaine, mais dans la construction du filet de sécurité automatisé qui vous permet de livrer en confiance.</p>
+<p>Voici à quoi ressemble 2026 : tout est généré avec le code, tout est automatisé, tout tourne en CI/CD. Plus rapide et plus fiable que n'importe quel humain. L'agent écrit le code, les tests, la doc, les configs de déploiement - ensemble. Pas comme une réflexion après coup. Pas dans des phases séparées. Toute la chaîne de l'intention à la production est un flux continu et automatisé.</p>
+<p>Est-ce que ça arrive du jour au lendemain ? Non. Construire ce niveau d'automatisation prend du temps, de l'effort et de la discipline. C'est d'ailleurs mon principal chantier cette année pour mes applications. Mais c'est justement là où il faut investir son énergie. Pas dans des processus manuels, pas dans des portes de validation humaine, mais dans la construction de la machinerie automatisée qui vous permet de livrer en confiance.</p>
 
-<h2>La santé n'est pas spéciale (et c'est tout l'intérêt)</h2>
-<p>Les gens vous diront que la santé est différente. Que vous ne pouvez pas aller vite avec les données patients. Que la conformité exige la cérémonie SDLC complète.</p>
+<h2>Votre domaine n'est pas spécial (et c'est tout l'intérêt)</h2>
+<p>Les gens vous diront que leur industrie est différente. Que vous ne pouvez pas aller vite avec des données sensibles. Que la conformité exige la cérémonie SDLC complète.</p>
 <p>Ils confondent l'<strong>exigence</strong> avec l'<strong>implémentation.</strong></p>
 <p>La conformité exige la <strong>traçabilité</strong>, pas la cérémonie. Elle exige que vous puissiez prouver ce qui a changé, pourquoi, et que cela a été vérifié. Elle n'a jamais exigé de story points. Elle n'a jamais exigé de revues de PR de trois jours. Elle n'a jamais exigé de validation QA manuelle.</p>
 <p>Un agent qui génère du code, écrit des tests, les exécute, vérifie les types, valide contre les contraintes architecturales et enregistre chaque étape fournit <strong>plus de traçabilité</strong> qu'un développeur humain qui a revu une PR à moitié endormi un vendredi après-midi et un testeur QA qui a cliqué sur 60% du script de test avant le déjeuner. On ne peut juste pas encore l'accepter, parce que la cérémonie semblait sûre.</p>
@@ -218,14 +218,14 @@ const frenchContent: PostContent = {
 
 <h2>Ce qui survit</h2>
 <p>Pas grand-chose.</p>
-<p><strong>La connaissance métier</strong> survit. L'agent a besoin de quelqu'un qui comprend l'espace problème. La santé est profonde. Un ERP de 30 ans est profond. L'intersection des deux est un labyrinthe qu'aucun modèle n'a entièrement cartographié.</p>
+<p><strong>La connaissance métier</strong> survit. L'agent a besoin de quelqu'un qui comprend l'espace problème. Les systèmes legacy sont profonds. Les domaines métier sont profonds. L'intersection des deux est un labyrinthe qu'aucun modèle n'a entièrement cartographié.</p>
 <p><strong>L'intention architecturale</strong> survit. La Clean Architecture n'est pas morte. Les frontières hexagonales, les règles de dépendance, la séparation du domaine et de l'infrastructure - tout cela compte encore. Mais c'est exprimé comme contexte pour l'agent, pas comme des diagrammes sur un tableau blanc qui deviennent obsolètes en une semaine.</p>
 <p><strong>La vérification automatisée</strong> survit et devient tout. Tests, vérifications de types, scans de sécurité, diffs comportementaux, fonctions de fitness architecturale - le filet de sécurité entier est du code, pas des personnes. Du code qui vérifie du code.</p>
 <p><strong>L'observabilité</strong> survit et devient la fondation. Quand le code est livré en continu, votre stack de monitoring est votre dernière ligne de défense. Nous passons de "revue avant livraison" à "livrer et vérifier en continu."</p>
 <p><strong>Tout le reste est de la cérémonie.</strong> Et la cérémonie, c'est ce que vous faites quand vous ne faites pas confiance à vos outils, votre architecture ou vos vérifications automatisées. Les outils sont devenus assez bons. Il est temps de lâcher prise.</p>
 
 <h2>Un signal d'alarme pour la tech européenne</h2>
-<p>Je n'écris pas cela depuis San Francisco. Je ne suis pas dans une startup de 5 personnes sans clients. Je suis en France, au sein d'une grande organisation de logiciels de santé, en train de moderniser un système de 30 ans dont les hôpitaux dépendent chaque jour.</p>
+<p>Je n'écris pas cela depuis San Francisco. Je ne suis pas dans une startup de 5 personnes sans clients. Je suis en France, au sein d'une grande entreprise, en train de moderniser un système de 30 ans dont des organisations dépendent chaque jour.</p>
 <p>Et je vous le dis : <strong>l'écart se creuse.</strong></p>
 <p>Alors que les équipes américaines et asiatiques opèrent déjà dans le monde post-SDLC - livrant avec des agents, automatisant tout, recrutant pour le jugement et l'expertise métier - la plupart des organisations européennes jouent encore l'ancien scénario. Recrutent encore "5 ans de Java." Font encore des sprints de deux semaines. Débattent encore de savoir si l'IA est une mode ou une menace.</p>
 <p>Ce n'est ni l'un ni l'autre. C'est la nouvelle réalité. Et les organisations qui la traitent comme un outil pour optimiser l'ancienne façon de travailler, plutôt que comme une raison de repenser fondamentalement comment elles construisent du logiciel, seront laissées pour compte.</p>
@@ -235,7 +235,7 @@ const frenchContent: PostContent = {
 <p>Elle ne passera pas.</p>
 
 <hr>
-<p><em>Je suis Tech Lead Manager dans le logiciel de santé. Je construis du logiciel, des produits et des équipes. Quand je ne modernise pas des systèmes de santé legacy, je câble des microcontrôleurs et je construis de la domotique. Je n'ai jamais cru en Agile. Je n'ai jamais fait confiance à la QA manuelle. L'avenir me donne raison.</em></p>`
+<p><em>Je suis Tech Lead Manager dans le logiciel d'entreprise. Je construis du logiciel, des produits et des équipes. Quand je ne modernise pas des systèmes legacy, j'expérimente avec l'IA. Je n'ai jamais cru en Agile. Je n'ai jamais fait confiance à la QA manuelle. L'avenir me donne raison.</em></p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
