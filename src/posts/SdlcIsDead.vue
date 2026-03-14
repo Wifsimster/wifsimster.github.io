@@ -96,7 +96,7 @@ const englishContent: PostContent = {
 <p><strong>Pushing to production.</strong> The fastest path from intent to impact. That's the goal. Always.</p>
 
 <h2>The maker knows</h2>
-<p>I'm a maker. Weekends, I wire microcontrollers, solder LED strips, build home automation systems. I've built ambilight clones, custom furniture with integrated PCs, automated pet feeders connected to my smart home.</p>
+<p>I'm a maker. Evenings and weekends, I experiment with AI - trying to keep up with the crazy things that come out every single day. We've never had this much innovation at once. Agents and developer brains combined are producing at lightning-fast velocity, and the stream of new tools, new models, new possibilities never stops.</p>
 <p>Makers don't follow an SDLC. You have an idea. You prototype. You test it - not by writing a test plan, but by plugging it in and seeing if it works. You iterate. The feedback loop is immediate. You don't write a ticket before soldering a sensor to a breadboard. You don't estimate how many story points it takes to wire a relay. You don't ask a QA team to verify your LED strip works. You plug it in. It lights up or it doesn't. You fix it or you try something else.</p>
 <p>What AI agents are bringing to professional software development is <strong>the maker's feedback loop</strong>. Intent, build, test, iterate, ship. No ceremony. No handoffs. No waiting. No manual QA. Just building and shipping.</p>
 <p><strong>I've always built things this way. The industry is finally catching up.</strong></p>
@@ -211,7 +211,7 @@ const frenchContent: PostContent = {
 <p><strong>Pousser en production.</strong> Le chemin le plus rapide de l'intention à l'impact. C'est l'objectif. Toujours.</p>
 
 <h2>Le maker sait</h2>
-<p>Je suis un maker. Les week-ends, je câble des microcontrôleurs, je soude des bandeaux LED, je construis des systèmes de domotique. J'ai construit des clones ambilight, des meubles sur mesure avec des PC intégrés, des distributeurs de croquettes automatisés connectés à ma maison intelligente.</p>
+<p>Je suis un maker. Les soirs et les week-ends, j'expérimente avec l'IA - j'essaie de suivre les trucs dingues qui sortent chaque jour. On n'a jamais eu autant d'innovation en même temps. Les agents combinés aux cerveaux de développeurs produisent à une vélocité fulgurante, et le flux de nouveaux outils, nouveaux modèles, nouvelles possibilités ne s'arrête jamais.</p>
 <p>Les makers ne suivent pas de SDLC. Vous avez une idée. Vous prototypez. Vous testez - pas en écrivant un plan de test, mais en branchant et en voyant si ça marche. Vous itérez. La boucle de feedback est immédiate. Vous n'écrivez pas un ticket avant de souder un capteur sur une breadboard. Vous n'estimez pas combien de story points il faut pour câbler un relais. Vous ne demandez pas à une équipe QA de vérifier que votre bandeau LED fonctionne. Vous le branchez. Ça s'allume ou pas. Vous corrigez ou vous essayez autre chose.</p>
 <p>Ce que les agents IA apportent au développement logiciel professionnel, c'est <strong>la boucle de feedback du maker</strong>. Intention, construction, test, itération, livraison. Pas de cérémonie. Pas de passages de relais. Pas d'attente. Pas de QA manuelle. Juste construire et livrer.</p>
 <p><strong>J'ai toujours construit les choses de cette façon. L'industrie rattrape enfin son retard.</strong></p>
