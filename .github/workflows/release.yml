@@ -141,10 +141,10 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Deploy to production
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: deploy
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          script: /home/deploy/deploy-blog.sh
+  deploy:
+    name: Deploy to production
+    runs-on: self-hosted
+    needs: release
+    steps:
+      - name: Deploy
+        run: /home/deploy/deploy-personal-blog.sh
