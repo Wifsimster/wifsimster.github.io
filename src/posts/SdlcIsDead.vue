@@ -43,7 +43,7 @@ const englishContent: PostContent = {
 <p>An AI agent doesn't care if you've spent 10 years writing Java or 2 months. It writes Java. It writes TypeScript. It writes Python. It writes whatever you need, often better than the "expert" you're trying to hire, because it's seen more codebases than any human ever will.</p>
 <p>So what should you hire for? The things agents can't do:</p>
 <ul>
-<li><strong>Domain expertise.</strong> Understanding the problem space. Knowing why a hospital's patient pathway has seven states instead of three. Knowing that HPRIM XML is a French standard nobody outside France has heard of. Knowing the business rules that no specification fully captures. This is what gives agents the right context to produce the right code.</li>
+<li><strong>Domain expertise.</strong> Understanding the problem space. Knowing the business rules that no specification fully captures. Knowing why a workflow has seven states instead of three. This is what gives agents the right context to produce the right code.</li>
 <li><strong>Architectural thinking.</strong> Clean Architecture, hexagonal boundaries, dependency rules, system design - the ability to structure systems so they remain maintainable, testable, and evolvable. Agents need to know where to put things. Someone has to define that.</li>
 <li><strong>Context engineering.</strong> The new core skill. The ability to give agents the right constraints, the right decisions, the right domain knowledge so they produce what you actually need. This is what separates a developer who uses AI from a developer who is multiplied by AI.</li>
 <li><strong>Judgment.</strong> Knowing when the agent is wrong. Knowing when the architecture doesn't fit. Knowing when the test covers the wrong edge case. Knowing when to ship and when to stop.</li>
@@ -51,7 +51,7 @@ const englishContent: PostContent = {
 <p>None of these are programming languages. None of these show up on a French job posting. And that's the problem.</p>
 
 <h2>2026: the year everything breaks</h2>
-<p>A disclaimer: five months ago, I wouldn't have written this. The recent wave of LLM models and the relentless stream of news that came with them have completely rewritten how I think about this job. What follows is not a belief I've held for years. It's a conviction that formed fast, because the evidence hit fast.</p>
+<p>A disclaimer: I'm not an AI expert. I'm a senior developer who went all-in on AI a year ago. And five months ago, I wouldn't have written this. The recent wave of LLM models and the relentless stream of news that came with them have completely rewritten how I think about this job. What follows is not a belief I've held for years. It's a conviction that formed fast, because the evidence hit fast.</p>
 <p>This isn't gradual. The disruption is happening now, and it's happening fast.</p>
 <p>For <strong>employees</strong>: the developer who refuses to work with AI agents will be outproduced 10-to-1 by the developer who does. Not because they're a worse engineer. Because the tools changed and they didn't. Expertise in a programming language used to be a career. In 2026, it's a commodity. The agents commoditized it. What's left is everything above the code: domain knowledge, architectural vision, context engineering, judgment.</p>
 <p>For <strong>organizations</strong>: the company that still runs two-week sprints, three-day PR reviews, manual QA cycles, and quarterly release trains will ship in a quarter what an AI-native team ships in a week. That's not a productivity gap. That's an extinction-level gap. Your competitors aren't optimizing their process. They're eliminating it.</p>
@@ -69,17 +69,9 @@ const englishContent: PostContent = {
 <p>I'll say something that makes QA managers uncomfortable: <strong>humans should not be testing software.</strong></p>
 <p>Manual QA is a relic. A human clicking through screens, following test scripts, filing bug reports - that entire workflow is slower, less reliable, and less thorough than automated tests. Every time. Without exception.</p>
 <p>If your tests can't be automated, your architecture is wrong. That's not an AI opinion. That's a software engineering opinion I've held for years. Testability is a design property. If you need a human to verify your software works, you've built it wrong.</p>
-<p>Here's what testing looks like in 2026:</p>
-<ul>
-<li><strong>Unit tests</strong> are generated alongside the code. The agent writes them. They run in milliseconds.</li>
-<li><strong>Integration tests</strong> verify real message flows - actual HL7 messages, actual healthcare transactions, actual database states.</li>
-<li><strong>End-to-end tests</strong> simulate the full user journey. No human clicking. No test scripts. No QA team.</li>
-<li><strong>Type checking</strong> catches entire categories of bugs at compile time.</li>
-<li><strong>Architectural fitness functions</strong> verify that the code respects boundaries, dependencies, and domain rules.</li>
-</ul>
-<p>All automated. All running in CI/CD. All faster and more reliable than any human.</p>
+<p>Here's what testing looks like in 2026: unit tests, integration tests, end-to-end tests, type checking, architectural fitness functions - all generated alongside the code, all automated, all running in CI/CD, all faster and more reliable than any human.</p>
 <p>The agent writes the code and the tests together. Not as an afterthought. Not in a separate "testing phase." The entire QA function as a separate stage, as a separate team, as a separate line item on the org chart - it's over.</p>
-<p>I work on a healthcare ERP that handles patient admissions. If I can trust automated tests over human QA in <strong>this</strong> domain, you can trust them in yours.</p>
+<p>Does this happen overnight? No. Building a solid automated test suite takes time, effort, and discipline. It's actually my main focus this year for my applications. But that's the point - this is where you should be investing your energy. Not in manual QA processes, not in human review gates, but in building the automated safety net that lets you ship with confidence.</p>
 
 <h2>Healthcare isn't special (and that's the point)</h2>
 <p>People will tell you healthcare is different. That you can't move fast with patient data. That compliance requires the full SDLC ceremony.</p>
@@ -166,7 +158,7 @@ const frenchContent: PostContent = {
 <p>Un agent IA se fiche que vous ayez passé 10 ans à écrire du Java ou 2 mois. Il écrit du Java. Il écrit du TypeScript. Il écrit du Python. Il écrit ce dont vous avez besoin, souvent mieux que l'"expert" que vous essayez de recruter, parce qu'il a vu plus de codebases que n'importe quel humain.</p>
 <p>Alors pour quoi devriez-vous recruter ? Les choses que les agents ne peuvent pas faire :</p>
 <ul>
-<li><strong>L'expertise métier.</strong> Comprendre l'espace problème. Savoir pourquoi le parcours patient d'un hôpital a sept états au lieu de trois. Savoir que HPRIM XML est un standard français dont personne hors de France n'a entendu parler. Connaître les règles métier qu'aucune spécification ne capture pleinement. C'est ce qui donne aux agents le bon contexte pour produire le bon code.</li>
+<li><strong>L'expertise métier.</strong> Comprendre l'espace problème. Connaître les règles métier qu'aucune spécification ne capture pleinement. Savoir pourquoi un workflow a sept états au lieu de trois. C'est ce qui donne aux agents le bon contexte pour produire le bon code.</li>
 <li><strong>La pensée architecturale.</strong> Clean Architecture, frontières hexagonales, règles de dépendance, conception système - la capacité à structurer des systèmes pour qu'ils restent maintenables, testables et évoluables. Les agents ont besoin de savoir où mettre les choses. Quelqu'un doit définir cela.</li>
 <li><strong>L'ingénierie de contexte.</strong> La nouvelle compétence fondamentale. La capacité à donner aux agents les bonnes contraintes, les bonnes décisions, les bonnes connaissances métier pour qu'ils produisent ce dont vous avez réellement besoin. C'est ce qui sépare un développeur qui utilise l'IA d'un développeur qui est multiplié par l'IA.</li>
 <li><strong>Le jugement.</strong> Savoir quand l'agent a tort. Savoir quand l'architecture ne convient pas. Savoir quand le test couvre le mauvais cas limite. Savoir quand livrer et quand s'arrêter.</li>
@@ -174,7 +166,7 @@ const frenchContent: PostContent = {
 <p>Rien de tout cela n'est un langage de programmation. Rien de tout cela n'apparaît sur une offre d'emploi française. Et c'est le problème.</p>
 
 <h2>2026 : l'année où tout casse</h2>
-<p>Un avertissement : il y a cinq mois, je n'aurais pas écrit cela. Les récents modèles de LLM et le flot incessant de nouvelles qui les ont accompagnés ont complètement réécrit ma façon de penser ce métier. Ce qui suit n'est pas une conviction que je porte depuis des années. C'est une conviction qui s'est formée vite, parce que les preuves sont arrivées vite.</p>
+<p>Un avertissement : je ne suis pas un expert en IA. Je suis un développeur senior qui s'est plongé à fond dans l'IA il y a un an. Et il y a cinq mois, je n'aurais pas écrit cela. Les récents modèles de LLM et le flot incessant de nouvelles qui les ont accompagnés ont complètement réécrit ma façon de penser ce métier. Ce qui suit n'est pas une conviction que je porte depuis des années. C'est une conviction qui s'est formée vite, parce que les preuves sont arrivées vite.</p>
 <p>Ce n'est pas graduel. La disruption se produit maintenant, et elle se produit vite.</p>
 <p>Pour les <strong>employés</strong> : le développeur qui refuse de travailler avec des agents IA sera surpassé 10 contre 1 par celui qui le fait. Pas parce qu'il est un moins bon ingénieur. Parce que les outils ont changé et pas lui. L'expertise dans un langage de programmation était une carrière. En 2026, c'est une commodité. Les agents l'ont commoditisée. Ce qui reste, c'est tout ce qui est au-dessus du code : connaissance métier, vision architecturale, ingénierie de contexte, jugement.</p>
 <p>Pour les <strong>organisations</strong> : l'entreprise qui fait encore des sprints de deux semaines, des revues de PR de trois jours, des cycles de QA manuels et des trains de release trimestriels livrera en un trimestre ce qu'une équipe IA-native livre en une semaine. Ce n'est pas un écart de productivité. C'est un écart de niveau extinction. Vos concurrents n'optimisent pas leur processus. Ils l'éliminent.</p>
@@ -192,17 +184,9 @@ const frenchContent: PostContent = {
 <p>Je vais dire quelque chose qui met les managers QA mal à l'aise : <strong>les humains ne devraient pas tester le logiciel.</strong></p>
 <p>La QA manuelle est une relique. Un humain qui clique sur des écrans, qui suit des scripts de test, qui remplit des rapports de bugs - tout ce workflow est plus lent, moins fiable et moins exhaustif que les tests automatisés. À chaque fois. Sans exception.</p>
 <p>Si vos tests ne peuvent pas être automatisés, c'est votre architecture qui est mauvaise. Ce n'est pas une opinion IA. C'est une opinion d'ingénierie logicielle que je porte depuis des années. La testabilité est une propriété de conception. Si vous avez besoin d'un humain pour vérifier que votre logiciel fonctionne, vous l'avez mal construit.</p>
-<p>Voici à quoi ressemblent les tests en 2026 :</p>
-<ul>
-<li><strong>Les tests unitaires</strong> sont générés avec le code. L'agent les écrit. Ils s'exécutent en millisecondes.</li>
-<li><strong>Les tests d'intégration</strong> vérifient de vrais flux de messages - de vrais messages HL7, de vraies transactions de santé, de vrais états de base de données.</li>
-<li><strong>Les tests end-to-end</strong> simulent le parcours utilisateur complet. Pas de clics humains. Pas de scripts de test. Pas d'équipe QA.</li>
-<li><strong>Le typage</strong> attrape des catégories entières de bugs à la compilation.</li>
-<li><strong>Les fonctions de fitness architecturale</strong> vérifient que le code respecte les frontières, les dépendances et les règles métier.</li>
-</ul>
-<p>Tout automatisé. Tout en CI/CD. Tout plus rapide et plus fiable que n'importe quel humain.</p>
+<p>Voici à quoi ressemblent les tests en 2026 : tests unitaires, tests d'intégration, tests end-to-end, typage, fonctions de fitness architecturale - tous générés avec le code, tous automatisés, tous en CI/CD, tous plus rapides et plus fiables que n'importe quel humain.</p>
 <p>L'agent écrit le code et les tests ensemble. Pas comme une réflexion après coup. Pas dans une "phase de test" séparée. La fonction QA entière en tant qu'étape séparée, en tant qu'équipe séparée, en tant que ligne séparée sur l'organigramme - c'est terminé.</p>
-<p>Je travaille sur un ERP de santé qui gère les admissions de patients. Si je peux faire confiance aux tests automatisés plutôt qu'à la QA humaine dans <strong>ce</strong> domaine, vous pouvez leur faire confiance dans le vôtre.</p>
+<p>Est-ce que ça arrive du jour au lendemain ? Non. Construire une suite de tests automatisés solide prend du temps, de l'effort et de la discipline. C'est d'ailleurs mon principal chantier cette année pour mes applications. Mais c'est justement là où il faut investir son énergie. Pas dans des processus de QA manuelle, pas dans des portes de validation humaine, mais dans la construction du filet de sécurité automatisé qui vous permet de livrer en confiance.</p>
 
 <h2>La santé n'est pas spéciale (et c'est tout l'intérêt)</h2>
 <p>Les gens vous diront que la santé est différente. Que vous ne pouvez pas aller vite avec les données patients. Que la conformité exige la cérémonie SDLC complète.</p>
