@@ -24,6 +24,7 @@ import RenovationSalonMaison1970, { metadata as renovationSalonMaison1970Metadat
 import RenovationChambreParentaleMaison1970, { metadata as renovationChambreParentaleMaison1970Metadata, getContent as getRenovationChambreParentaleMaison1970Content } from './RenovationChambreParentaleMaison1970.vue'
 import RenovationChambresMaison1970, { metadata as renovationChambresMaison1970Metadata, getContent as getRenovationChambresMaison1970Content } from './RenovationChambresMaison1970.vue'
 import RenovationCellierBureauMaison1970, { metadata as renovationCellierBureauMaison1970Metadata, getContent as getRenovationCellierBureauMaison1970Content } from './RenovationCellierBureauMaison1970.vue'
+import SdlcIsDead, { metadata as sdlcIsDeadMetadata, getContent as getSdlcIsDeadContent } from './SdlcIsDead.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -156,6 +157,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: renovationCellierBureauMaison1970Metadata,
     getContent: getRenovationCellierBureauMaison1970Content,
     component: RenovationCellierBureauMaison1970
+  },
+  'sdlc-is-dead': {
+    metadata: sdlcIsDeadMetadata,
+    getContent: getSdlcIsDeadContent,
+    component: SdlcIsDead
   }
 }
 
