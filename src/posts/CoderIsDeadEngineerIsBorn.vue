@@ -1,0 +1,251 @@
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+import type { PostMetadata, PostContent } from '@/utils/posts'
+
+export const metadata: PostMetadata = {
+  slug: 'coder-is-dead-engineer-is-born',
+  date: '2026-03-15',
+  tags: ['Software', 'AI', 'Opinion']
+}
+
+const englishContent: PostContent = {
+  title: 'The Coder Is Dead. The Software Engineer Is Finally Born.',
+  description: 'Coding was never the job. It was the bottleneck we mistook for the craft. AI removed it. What remains is what always mattered: architecture, domain expertise, product vision, and judgment. A look at the new roles emerging in software development.',
+  html: `<p><strong>TL;DR:</strong> The "coder" job — the person whose primary value is translating intent into syntax — is being automated away. But software development isn't dying. It's evolving into what it always should have been: designing systems, understanding businesses, engineering context, and exercising judgment. The roles of tomorrow are already emerging. Some companies are already hiring for them.</p>
+<hr>
+<p>In my previous article, I argued that <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">the SDLC is dead</a>. That the ceremony, the process, the human gates — most of it was always waste. AI agents just made it impossible to pretend otherwise.</p>
+<p>But killing the process raises an obvious question: <strong>if AI writes the code, runs the tests, generates the docs, and deploys to production — what's left for humans to do?</strong></p>
+<p>The answer isn't "nothing." The answer is "everything that actually mattered all along." We just couldn't see it because we were too busy typing semicolons.</p>
+
+<h2>Coding was never the job</h2>
+<p>Here's the thing nobody wants to say out loud: <strong>coding was always a translation layer.</strong> A lossy, slow, error-prone translation layer between what you meant and what the machine did.</p>
+<p>You had a business rule in your head. You translated it into a programming language. The compiler translated it into machine code. At every step, fidelity was lost. Every bug was a translation error. Every code review was a check on whether the translation was accurate. The entire industry built ceremonies around managing the risk of this translation going wrong.</p>
+<p>AI agents short-circuit the entire chain. You describe what you want. The agent produces working code. Not pseudo-code, not a draft — working, tested, deployable code. The translation layer that defined a generation of careers is being compressed to near-zero.</p>
+<p>Andrej Karpathy recently built an open-source tool that scores every job in America on AI exposure, using data from all 342 Bureau of Labor Statistics occupations. Software developers score 8-9 out of 10. That's higher than nurses, physicians, and retail workers. The work product is digital, the job can be done from a home office, and the core activity — writing code — is exactly what LLMs are best at.</p>
+<p>But here's the nuance that most people miss: <strong>software developers score 8-9. Software engineering scores much lower.</strong> Because engineering isn't writing code. It's deciding what to build, why, and how the pieces fit together. The coder is exposed. The engineer is not.</p>
+
+<h2>What software development was always supposed to be</h2>
+<p>Strip away the coding, and what's left is what senior engineers have always known mattered most:</p>
+<ul>
+<li><strong>Understanding the domain.</strong> Why does this hospital workflow have seven states? What happens when a patient transfer coincides with a billing cycle close? Why can't you merge these two database tables even though they look identical? This knowledge lives in people's heads, not in codebases. No model has mapped it. No agent can infer it.</li>
+<li><strong>Designing the architecture.</strong> Clean boundaries, dependency rules, hexagonal ports, system decomposition. Where do you put things so the system stays testable, maintainable, and evolvable over decades? The agent needs to know where to put the code. Someone has to define that structure.</li>
+<li><strong>Making product decisions.</strong> What should we build next? What does the user actually need versus what they asked for? What's the smallest thing we can ship that delivers the most value? This was always the PO's job. Now it can be the same person who builds it.</li>
+<li><strong>Exercising judgment.</strong> The agent produced a fix. Does it actually solve the problem? Does it introduce a subtle regression in a workflow you know is fragile? Is the test covering the right edge case or the obvious one? Judgment is the last line of defense, and it requires experience, context, and domain knowledge that no model possesses.</li>
+</ul>
+<p>This is what software development was always supposed to be. We just buried it under ten layers of syntax, frameworks, and process.</p>
+
+<h2>The great merge</h2>
+<p>The most visible sign of this transformation is the convergence of roles. The walls between developer, product owner, designer, QA, and DevOps are collapsing. Not because the skills don't matter — but because one person can now own the full spectrum.</p>
+
+<h3>Product Engineer</h3>
+<p>The hottest emerging title. A single person combining product vision, technical fluency, and domain expertise — previously split across PM, PO, and developer. Andrew Ng noted that teams are flipping ratios from 1 PM per 4 engineers to the equivalent of 2 PMs per 1 engineer, as AI compresses the implementation gap. Shopify calls these people "spiky generalists" — deep in one area, but defaulting to the highest-impact work rather than staying in a prescribed role. Product School's 2026 trends describe a "Full-Stack Product Lead" merging PM, Design, and Engineering Management into one.</p>
+
+<h3>Context Engineer</h3>
+<p>This is the role I'm most excited about because it's what I do every day. A Context Engineer doesn't write code — they design the information architecture that makes AI agents effective. Architecture decisions, business rules, domain constraints, all structured so the agent has exactly what it needs. MIT Technology Review named the arc from "vibe coding to context engineering" as the defining shift of 2025. EY is already hiring for this role. It's not prompt engineering — it's systems thinking applied to AI.</p>
+
+<h3>Design Engineer</h3>
+<p>Designer + frontend developer, collapsed into one. This role already has a dedicated job board. When an agent can generate any UI component, the value shifts from implementation to design judgment — knowing what feels right, what's accessible, what serves the user.</p>
+
+<h3>Software Orchestrator / Agentic Engineer</h3>
+<p>Boris Cherny, the creator of Claude Code at Anthropic, predicted the "Software Engineer" title could vanish by 2026 — replaced by "Software Orchestrator," someone who manages swarms of agents rather than writing code. Andrej Karpathy calls it "agentic engineering" — the evolution beyond vibe coding, where you design and manage AI workflows rather than chatting with a model. This is not science fiction. This is what I do at 9am on a Tuesday.</p>
+
+<h3>The end of standalone QA</h3>
+<p>I'll be direct: <strong>I never understood the need for QA analysts as a separate role.</strong> If the business rules are well-defined and the architecture is testable, automated verification was always the right answer — even before AI. What QA analysts actually did was compensate for bad specifications and untestable architectures. The job existed because the business wasn't properly formalized, not because humans are better at clicking buttons than machines.</p>
+<p>AI just made this painfully obvious. Agents generate comprehensive test suites alongside the code. They cover edge cases systematically. They run in seconds. The standalone QA role — the person who follows a test script, clicks through screens, fills bug reports — has no future. What survives is the domain expert who notices when something feels wrong. That's judgment, not QA.</p>
+<p>Google and Meta have already eliminated traditional QA roles in favor of SDETs (Software Development Engineers in Test). The rest of the industry will follow.</p>
+
+<h2>What my team looks like today</h2>
+<p>I'm not theorizing. My team already works this way.</p>
+<p>Every collaborator on my team owns the full chain: product understanding, code, tests, documentation, and release. They don't hand off to a QA team. They don't wait for a PO to write a ticket. They don't ask DevOps to configure the pipeline. They do it all — with AI agents handling the implementation layer.</p>
+<p>One of my developers received a feature request last week. In the old world, this goes through a PO who writes a story, a developer who implements it, a reviewer who checks it, a QA who validates it, and a release manager who ships it. Five roles. Three weeks minimum.</p>
+<p>Instead, the developer understood the business need directly, discussed the edge cases with the domain expert (a nurse, in our healthcare context), described the solution to the agent with the right architectural context, reviewed the output, validated the tests, and pushed to production. One person. One morning. Same traceability. Better test coverage.</p>
+<p>My three interns and one apprentice — all final-year engineering students — work the same way. They don't specialize in "Java" or "Angular." They specialize in understanding the problem. The agent handles the rest. They progress faster than any junior I've seen in 14 years because they spend their cognitive energy on the domain, not on syntax battles.</p>
+<p>This is not the future. This is a Tuesday.</p>
+
+<h2>The skills that actually matter</h2>
+<p>If you're a software professional wondering what to invest in, here's my honest take:</p>
+<p><strong>Domain expertise is the new moat.</strong> The person who understands why the hospital admission workflow has seven states, or why the insurance billing module handles edge cases the way it does, or why the HL7 message format diverges from the spec in this specific hospital — that person is irreplaceable. No agent has that knowledge. No model was trained on it. It lives in your head, and it's what makes the difference between code that works and code that works in the real world.</p>
+<p><strong>Architectural thinking is the new seniority marker.</strong> Clean Architecture, hexagonal boundaries, dependency inversion, system decomposition — these aren't abstract concepts anymore. They're the structure that makes AI agents effective. A well-architected system is one where agents can operate autonomously within clear boundaries. A poorly-architected system is one where every agent output needs manual review because nobody trusts where the code ends up.</p>
+<p><strong>Context engineering is the new core skill.</strong> The ability to structure domain knowledge, constraints, and decisions in a format that agents can consume. This is not prompt engineering. Prompt engineering is asking the right question. Context engineering is building the entire knowledge system that makes every question produce the right answer. It's the highest-leverage skill in software development right now.</p>
+<p><strong>Product vision is the new differentiator.</strong> When implementation is near-free, the bottleneck shifts entirely to knowing what to build. Understanding user needs, market dynamics, business constraints — and translating that into intent that agents can execute. The developer who also thinks like a product owner is worth ten who just "write code."</p>
+<p><strong>Judgment is the last line of defense.</strong> Knowing when the agent is wrong. Knowing when the test covers the obvious case but misses the critical one. Knowing when to ship and when to stop. This comes from experience, from scars, from having been wrong before. No shortcut. No model replacement.</p>
+
+<h2>What to do about it</h2>
+<p>For <strong>individuals</strong>:</p>
+<ol>
+<li><strong>Stop investing in language expertise.</strong> "5 years of Java" is a depreciating asset. Invest in domain knowledge, architectural patterns, and learning to work with AI agents effectively.</li>
+<li><strong>Learn to think in products, not features.</strong> Understand the full chain from user need to production. Don't wait for a PO to tell you what to build.</li>
+<li><strong>Build your context engineering skills.</strong> Practice structuring knowledge for agents. Architecture Decision Records, domain glossaries, constraint documents — this is the new literacy.</li>
+<li><strong>Develop domain depth.</strong> Pick an industry. Learn it deeply. The intersection of tech fluency and domain expertise is where the highest value lives.</li>
+</ol>
+<p>For <strong>organizations</strong>:</p>
+<ol>
+<li><strong>Rewrite your job descriptions.</strong> Replace "5 years of Spring Boot" with "deep understanding of healthcare workflows" or "experience designing systems that evolve over decades."</li>
+<li><strong>Merge roles deliberately.</strong> Don't wait for it to happen organically. Create Product Engineer roles. Give developers product ownership. Let your best people operate across the full spectrum.</li>
+<li><strong>Kill standalone QA.</strong> Invest in testable architecture and automated verification instead. The money you spend on a QA team is better spent on architectural fitness functions and CI/CD pipelines.</li>
+<li><strong>Invest in context infrastructure.</strong> Document your domain knowledge, architecture decisions, and business rules in agent-consumable formats. This is the highest-ROI investment in 2026.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>The coder is dead. The person whose primary value was translating business intent into programming language syntax — that role is being automated. Fast. Andrej Karpathy scored it 8-9 out of 10 on AI exposure. The market agrees: junior developer hiring in Big Tech has collapsed 73% in a year.</p>
+<p>But software development? Software development is finally being born. Freed from the tyranny of syntax, it's becoming what it always should have been: understanding problems, designing solutions, engineering context, and exercising judgment. The roles are merging. The walls are falling. The person who can think about the product, design the architecture, engineer the context, and validate the output — that person doesn't just survive. They thrive.</p>
+<p>My team already works this way. Every person owns the full chain. The interns learn faster than any junior I've ever seen. The quality is higher because the cognitive energy goes to the domain, not to debugging semicolons.</p>
+<p>This is not a prediction. This is a Tuesday at my office.</p>
+<p>The question isn't whether this transformation is coming. It's whether you'll be the one driving it — or the one being replaced by someone who does.</p>
+
+<hr>
+<h2>Sources</h2>
+<ol>
+<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/karpathy/llm-job-exposure">Andrej Karpathy — LLM Job Exposure Scoring</a> — AI exposure scores for all 342 BLS occupations (software devs: 8-9/10)</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.technologyreview.com/2025/11/05/1127477/from-vibe-coding-to-context-engineering-2025-in-software-development/">MIT Technology Review — From vibe coding to context engineering</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://careers.ey.com/ey/job/New-York-Context-Engineer-Manager-Consulting-Location-OPEN-NY-10001-8604/1370274733/">EY — Context Engineer job posting</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://medium.com/@falkgottlob/the-rise-of-the-ai-product-engineer-redefining-product-development-through-end-to-end-ownership-bedefd22c703">The Rise of the AI Product Engineer (Medium, Falk Gottlob)</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://productschool.com/blog/product-fundamentals/product-management-trends">Product School — Product Management Trends 2026</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.cnbc.com/2025/04/07/shopify-ceo-prove-ai-cant-do-jobs-before-asking-for-more-headcount.html">CNBC — Shopify CEO on AI-first hiring</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://x.com/tobi/status/1909251946235437514">Tobi Lütke on X — Shopify's "spiky generalists"</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://aidevdayindia.org/blogs/latest-ai-news/anthropic-software-engineer-job-news.html">Boris Cherny (Anthropic) — "Software Engineer" title could vanish by 2026</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://x.com/karpathy/status/2004607146781278521">Andrej Karpathy on X — "profession is being dramatically refactored"</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.thehansindia.com/technology/tech-news/karpathy-says-vibe-coding-is-fading-as-agentic-engineering-becomes-the-new-ai-coding-era-1045758">Karpathy: Vibe coding fading, agentic engineering rising</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://designengineer.io/">Design Engineer job board</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.coderabbit.ai/blog/developers-are-dead-long-live-developers">CodeRabbit — Developers are dead. Long live developers.</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.washingtonpost.com/business/2025/03/14/programming-jobs-lost-artificial-intelligence/">Washington Post — A big drop in programmers may be the first sign of job loss to AI</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.reveliolabs.com/news/macro/is-ai-responsible-for-the-rise-in-entry-level-unemployment/">Revelio Labs — Is AI responsible for the rise in entry-level unemployment?</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.pwc.com/us/en/tech-effect/ai-analytics/agentic-ai-workforce-redesign.html">PwC — No more pyramids: Rethinking your workforce for the agentic AI era</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://omnis.partners/the-rise-of-the-full-stack-generalist-the-most-important-hire-for-ai-startups-in-2025/">Omnis Partners — The Rise of the Full-Stack Generalist</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html">CIO.com — Demand for junior developers softens as AI takes over</a></li>
+</ol>`
+}
+
+const frenchContent: PostContent = {
+  title: 'Le codeur est mort. L\'ingénieur logiciel est enfin né.',
+  description: 'Coder n\'a jamais été le métier. C\'était le goulot d\'étranglement qu\'on a confondu avec l\'artisanat. L\'IA l\'a supprimé. Ce qui reste est ce qui a toujours compté : l\'architecture, l\'expertise métier, la vision produit et le jugement. Un regard sur les nouveaux rôles qui émergent dans le développement logiciel.',
+  html: `<p><strong>TL;DR :</strong> Le métier de "codeur" — la personne dont la valeur principale est de traduire une intention en syntaxe — est en train d'être automatisé. Mais le développement logiciel ne meurt pas. Il évolue vers ce qu'il aurait toujours dû être : concevoir des systèmes, comprendre les métiers, ingénierer le contexte et exercer son jugement. Les rôles de demain émergent déjà. Certaines entreprises recrutent déjà pour eux.</p>
+<hr>
+<p>Dans mon article précédent, j'ai argumenté que <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">le SDLC est mort</a>. Que la cérémonie, le processus, les validations humaines — la majeure partie a toujours été du gaspillage. Les agents IA ont juste rendu impossible de faire semblant.</p>
+<p>Mais tuer le processus soulève une question évidente : <strong>si l'IA écrit le code, exécute les tests, génère la doc et déploie en production — que reste-t-il aux humains ?</strong></p>
+<p>La réponse n'est pas "rien." La réponse est "tout ce qui comptait vraiment depuis le début." On ne le voyait pas parce qu'on était trop occupés à taper des points-virgules.</p>
+
+<h2>Coder n'a jamais été le métier</h2>
+<p>Voici ce que personne ne veut dire tout haut : <strong>coder a toujours été une couche de traduction.</strong> Une couche de traduction lente, imparfaite et source d'erreurs entre ce que vous vouliez dire et ce que la machine faisait.</p>
+<p>Vous aviez une règle métier en tête. Vous la traduisiez dans un langage de programmation. Le compilateur la traduisait en code machine. À chaque étape, de la fidélité était perdue. Chaque bug était une erreur de traduction. Chaque revue de code était une vérification de l'exactitude de cette traduction. Toute l'industrie a construit des cérémonies autour de la gestion du risque que cette traduction tourne mal.</p>
+<p>Les agents IA court-circuitent toute la chaîne. Vous décrivez ce que vous voulez. L'agent produit du code fonctionnel. Pas du pseudo-code, pas un brouillon — du code fonctionnel, testé, déployable. La couche de traduction qui a défini une génération de carrières est compressée à quasi-zéro.</p>
+<p>Andrej Karpathy a récemment construit un outil open-source qui note chaque métier aux États-Unis sur son exposition à l'IA, à partir des 342 professions du Bureau of Labor Statistics. Les développeurs logiciels sont notés 8-9 sur 10. C'est plus haut que les infirmiers, les médecins et les vendeurs. Le produit du travail est numérique, le job peut se faire entièrement en télétravail, et l'activité principale — écrire du code — est exactement ce que les LLMs font le mieux.</p>
+<p>Mais voici la nuance que la plupart des gens manquent : <strong>les développeurs-codeurs sont notés 8-9. L'ingénierie logicielle est bien moins exposée.</strong> Parce que l'ingénierie, ce n'est pas écrire du code. C'est décider quoi construire, pourquoi, et comment les pièces s'assemblent. Le codeur est exposé. L'ingénieur ne l'est pas.</p>
+
+<h2>Ce que le développement logiciel aurait toujours dû être</h2>
+<p>Enlevez le code, et ce qui reste est ce que les ingénieurs seniors ont toujours su être l'essentiel :</p>
+<ul>
+<li><strong>Comprendre le domaine.</strong> Pourquoi ce workflow d'admission hospitalière a-t-il sept états ? Que se passe-t-il quand un transfert patient coïncide avec une clôture de cycle de facturation ? Pourquoi ne peut-on pas fusionner ces deux tables même si elles semblent identiques ? Cette connaissance vit dans la tête des gens, pas dans les codebases. Aucun modèle ne l'a cartographiée. Aucun agent ne peut la deviner.</li>
+<li><strong>Concevoir l'architecture.</strong> Frontières propres, règles de dépendance, ports hexagonaux, décomposition système. Où met-on les choses pour que le système reste testable, maintenable et évoluable sur des décennies ? L'agent a besoin de savoir où placer le code. Quelqu'un doit définir cette structure.</li>
+<li><strong>Prendre des décisions produit.</strong> Que devrait-on construire ensuite ? De quoi l'utilisateur a-t-il réellement besoin versus ce qu'il a demandé ? Quelle est la plus petite chose qu'on peut livrer qui délivre le plus de valeur ? C'était le rôle du PO. Maintenant ça peut être la même personne qui construit.</li>
+<li><strong>Exercer son jugement.</strong> L'agent a produit un fix. Est-ce que ça résout vraiment le problème ? Est-ce que ça introduit une régression subtile dans un workflow qu'on sait fragile ? Est-ce que le test couvre le bon cas limite ou le cas évident ? Le jugement est la dernière ligne de défense, et il demande de l'expérience, du contexte et une connaissance métier qu'aucun modèle ne possède.</li>
+</ul>
+<p>C'est ça que le développement logiciel aurait toujours dû être. On l'a juste enterré sous dix couches de syntaxe, de frameworks et de processus.</p>
+
+<h2>La grande fusion</h2>
+<p>Le signe le plus visible de cette transformation, c'est la convergence des rôles. Les murs entre développeur, product owner, designer, QA et DevOps s'effondrent. Pas parce que les compétences ne comptent plus — mais parce qu'une seule personne peut désormais couvrir tout le spectre.</p>
+
+<h3>Product Engineer</h3>
+<p>Le titre émergent le plus en vogue. Une personne unique combinant vision produit, maîtrise technique et expertise métier — auparavant répartis entre PM, PO et développeur. Andrew Ng a noté que les équipes inversent les ratios de 1 PM pour 4 ingénieurs vers l'équivalent de 2 PMs pour 1 ingénieur, à mesure que l'IA compresse le fossé d'implémentation. Shopify appelle ces profils des "spiky generalists" — profonds dans un domaine, mais par défaut orientés vers le travail à plus fort impact plutôt que confinés dans un rôle prescrit. Le rapport 2026 de Product School décrit un "Full-Stack Product Lead" fusionnant PM, Design et Engineering Management en un seul rôle.</p>
+
+<h3>Context Engineer</h3>
+<p>C'est le rôle qui m'enthousiasme le plus parce que c'est ce que je fais chaque jour. Un Context Engineer n'écrit pas de code — il conçoit l'architecture d'information qui rend les agents IA efficaces. Décisions architecturales, règles métier, contraintes domaine, le tout structuré pour que l'agent ait exactement ce dont il a besoin. Le MIT Technology Review a nommé l'arc du "vibe coding au context engineering" comme le virage définissant 2025. EY recrute déjà pour ce poste. Ce n'est pas du prompt engineering — c'est de la pensée système appliquée à l'IA.</p>
+
+<h3>Design Engineer</h3>
+<p>Designer + développeur frontend, fusionnés en un seul. Ce rôle a déjà un site d'offres d'emploi dédié. Quand un agent peut générer n'importe quel composant UI, la valeur se déplace de l'implémentation vers le jugement de design — savoir ce qui fonctionne, ce qui est accessible, ce qui sert l'utilisateur.</p>
+
+<h3>Software Orchestrator / Agentic Engineer</h3>
+<p>Boris Cherny, le créateur de Claude Code chez Anthropic, a prédit que le titre "Software Engineer" pourrait disparaître d'ici 2026 — remplacé par "Software Orchestrator," quelqu'un qui gère des essaims d'agents plutôt que d'écrire du code. Andrej Karpathy appelle ça l'"agentic engineering" — l'évolution au-delà du vibe coding, où l'on conçoit et gère des workflows IA plutôt que de discuter avec un modèle. Ce n'est pas de la science-fiction. C'est ce que je fais à 9h un mardi matin.</p>
+
+<h3>La fin du QA en tant que rôle autonome</h3>
+<p>Je vais être direct : <strong>je n'ai jamais compris le besoin d'analystes QA comme rôle séparé.</strong> Si les règles métier sont bien définies et l'architecture est testable, la vérification automatisée a toujours été la bonne réponse — même avant l'IA. Ce que les analystes QA faisaient réellement, c'était compenser des spécifications bancales et des architectures non testables. Le poste existait parce que le métier n'était pas correctement formalisé, pas parce que les humains sont meilleurs que les machines pour cliquer sur des boutons.</p>
+<p>L'IA a juste rendu ça douloureusement évident. Les agents génèrent des suites de tests complètes en même temps que le code. Ils couvrent les cas limites systématiquement. Ils s'exécutent en secondes. Le rôle de QA autonome — la personne qui suit un script de test, clique sur des écrans, remplit des rapports de bugs — n'a pas d'avenir. Ce qui survit, c'est l'expert métier qui remarque quand quelque chose ne va pas. C'est du jugement, pas de la QA.</p>
+<p>Google et Meta ont déjà éliminé les rôles de QA traditionnels au profit des SDETs (Software Development Engineers in Test). Le reste de l'industrie suivra.</p>
+
+<h2>À quoi ressemble mon équipe aujourd'hui</h2>
+<p>Je ne théorise pas. Mon équipe fonctionne déjà comme ça.</p>
+<p>Chaque collaborateur de mon équipe maîtrise toute la chaîne : compréhension produit, code, tests, documentation et release. Ils ne passent pas le relais à une équipe QA. Ils n'attendent pas qu'un PO écrive un ticket. Ils ne demandent pas au DevOps de configurer le pipeline. Ils font tout — avec les agents IA qui gèrent la couche d'implémentation.</p>
+<p>Un de mes développeurs a reçu une demande de fonctionnalité la semaine dernière. Dans l'ancien monde, ça passe par un PO qui écrit une story, un développeur qui implémente, un reviewer qui vérifie, un QA qui valide, et un release manager qui livre. Cinq rôles. Trois semaines minimum.</p>
+<p>Au lieu de ça, le développeur a compris le besoin métier directement, discuté des cas limites avec l'expert domaine (une infirmière, dans notre contexte santé), décrit la solution à l'agent avec le bon contexte architectural, validé le résultat, vérifié les tests, et poussé en production. Une personne. Une matinée. Même traçabilité. Meilleure couverture de tests.</p>
+<p>Mes trois stagiaires et mon alternant — tous en dernière année d'école d'ingénieur — travaillent de la même façon. Ils ne se spécialisent pas en "Java" ou "Angular." Ils se spécialisent dans la compréhension du problème. L'agent gère le reste. Ils progressent plus vite que n'importe quel junior que j'ai vu en 14 ans parce qu'ils investissent leur énergie cognitive dans le domaine, pas dans des batailles de syntaxe.</p>
+<p>Ce n'est pas le futur. C'est un mardi.</p>
+
+<h2>Les compétences qui comptent vraiment</h2>
+<p>Si vous êtes un professionnel du logiciel et que vous vous demandez sur quoi investir, voici mon point de vue sans détour :</p>
+<p><strong>L'expertise métier est le nouveau rempart.</strong> La personne qui comprend pourquoi le workflow d'admission hospitalière a sept états, ou pourquoi le module de facturation assurance gère les cas limites de cette façon, ou pourquoi le format de message HL7 diverge de la spec dans cet hôpital précis — cette personne est irremplaçable. Aucun agent n'a cette connaissance. Aucun modèle n'a été entraîné dessus. Elle vit dans votre tête, et c'est ce qui fait la différence entre du code qui fonctionne et du code qui fonctionne dans le monde réel.</p>
+<p><strong>La pensée architecturale est le nouveau marqueur de séniorité.</strong> Clean Architecture, frontières hexagonales, inversion de dépendances, décomposition système — ce ne sont plus des concepts abstraits. C'est la structure qui rend les agents IA efficaces. Un système bien architecturé est un système où les agents peuvent opérer de manière autonome dans des frontières claires. Un système mal architecturé est un système où chaque output d'agent nécessite une revue manuelle parce que personne ne fait confiance à l'endroit où le code atterrit.</p>
+<p><strong>L'ingénierie de contexte est la nouvelle compétence fondamentale.</strong> La capacité à structurer la connaissance métier, les contraintes et les décisions dans un format que les agents peuvent consommer. Ce n'est pas du prompt engineering. Le prompt engineering, c'est poser la bonne question. L'ingénierie de contexte, c'est construire tout le système de connaissance qui fait que chaque question produit la bonne réponse. C'est la compétence à plus fort levier dans le développement logiciel aujourd'hui.</p>
+<p><strong>La vision produit est le nouveau différenciateur.</strong> Quand l'implémentation est quasi-gratuite, le goulot d'étranglement se déplace entièrement vers savoir quoi construire. Comprendre les besoins utilisateurs, les dynamiques de marché, les contraintes business — et traduire ça en intention que les agents peuvent exécuter. Le développeur qui pense aussi comme un product owner vaut dix développeurs qui "écrivent du code."</p>
+<p><strong>Le jugement est la dernière ligne de défense.</strong> Savoir quand l'agent a tort. Savoir quand le test couvre le cas évident mais rate le cas critique. Savoir quand livrer et quand s'arrêter. Ça vient de l'expérience, des cicatrices, d'avoir eu tort avant. Pas de raccourci. Pas de remplacement par un modèle.</p>
+
+<h2>Que faire concrètement</h2>
+<p>Pour les <strong>individus</strong> :</p>
+<ol>
+<li><strong>Arrêtez d'investir dans l'expertise d'un langage.</strong> "5 ans de Java" est un actif qui se déprécie. Investissez dans la connaissance métier, les patterns architecturaux et l'apprentissage du travail avec les agents IA.</li>
+<li><strong>Apprenez à penser en produits, pas en fonctionnalités.</strong> Comprenez toute la chaîne du besoin utilisateur à la production. N'attendez pas qu'un PO vous dise quoi construire.</li>
+<li><strong>Développez vos compétences en ingénierie de contexte.</strong> Entraînez-vous à structurer la connaissance pour les agents. Architecture Decision Records, glossaires métier, documents de contraintes — c'est la nouvelle littératie.</li>
+<li><strong>Creusez un domaine.</strong> Choisissez une industrie. Apprenez-la en profondeur. L'intersection de la maîtrise technique et de l'expertise métier, c'est là que la plus haute valeur se trouve.</li>
+</ol>
+<p>Pour les <strong>organisations</strong> :</p>
+<ol>
+<li><strong>Réécrivez vos fiches de poste.</strong> Remplacez "5 ans de Spring Boot" par "compréhension approfondie des workflows hospitaliers" ou "expérience dans la conception de systèmes qui évoluent sur des décennies."</li>
+<li><strong>Fusionnez les rôles délibérément.</strong> N'attendez pas que ça se fasse tout seul. Créez des postes de Product Engineer. Donnez aux développeurs la propriété produit. Laissez vos meilleurs talents opérer sur tout le spectre.</li>
+<li><strong>Supprimez la QA autonome.</strong> Investissez dans une architecture testable et la vérification automatisée à la place. L'argent que vous dépensez pour une équipe QA est mieux investi dans des fonctions de fitness architecturale et des pipelines CI/CD.</li>
+<li><strong>Investissez dans l'infrastructure de contexte.</strong> Documentez vos connaissances métier, décisions d'architecture et règles de gestion dans des formats consommables par les agents. C'est l'investissement au meilleur ROI en 2026.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>Le codeur est mort. La personne dont la valeur principale était de traduire une intention métier en syntaxe de langage de programmation — ce rôle est en train d'être automatisé. Vite. Andrej Karpathy l'a noté 8-9 sur 10 en exposition à l'IA. Le marché est d'accord : le recrutement junior en Big Tech s'est effondré de 73% en un an.</p>
+<p>Mais le développement logiciel ? Le développement logiciel est enfin en train de naître. Libéré de la tyrannie de la syntaxe, il devient ce qu'il aurait toujours dû être : comprendre les problèmes, concevoir des solutions, ingénierer le contexte et exercer le jugement. Les rôles fusionnent. Les murs tombent. La personne qui peut penser le produit, concevoir l'architecture, ingénierer le contexte et valider le résultat — cette personne ne se contente pas de survivre. Elle prospère.</p>
+<p>Mon équipe fonctionne déjà comme ça. Chaque personne maîtrise toute la chaîne. Les stagiaires apprennent plus vite que n'importe quel junior que j'ai vu. La qualité est meilleure parce que l'énergie cognitive va au domaine, pas au débogage de points-virgules.</p>
+<p>Ce n'est pas une prédiction. C'est un mardi à mon bureau.</p>
+<p>La question n'est pas de savoir si cette transformation arrive. C'est de savoir si vous serez celui qui la conduit — ou celui qui sera remplacé par quelqu'un qui le fait.</p>
+
+<hr>
+<h2>Sources</h2>
+<ol>
+<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/karpathy/llm-job-exposure">Andrej Karpathy — LLM Job Exposure Scoring</a> — scores d'exposition IA pour les 342 professions BLS (développeurs : 8-9/10)</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.technologyreview.com/2025/11/05/1127477/from-vibe-coding-to-context-engineering-2025-in-software-development/">MIT Technology Review — Du vibe coding au context engineering</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://careers.ey.com/ey/job/New-York-Context-Engineer-Manager-Consulting-Location-OPEN-NY-10001-8604/1370274733/">EY — Offre d'emploi Context Engineer</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://medium.com/@falkgottlob/the-rise-of-the-ai-product-engineer-redefining-product-development-through-end-to-end-ownership-bedefd22c703">The Rise of the AI Product Engineer (Medium, Falk Gottlob)</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://productschool.com/blog/product-fundamentals/product-management-trends">Product School — Tendances Product Management 2026</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.cnbc.com/2025/04/07/shopify-ceo-prove-ai-cant-do-jobs-before-asking-for-more-headcount.html">CNBC — Le PDG de Shopify sur le recrutement AI-first</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://x.com/tobi/status/1909251946235437514">Tobi Lütke sur X — Les "spiky generalists" de Shopify</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://aidevdayindia.org/blogs/latest-ai-news/anthropic-software-engineer-job-news.html">Boris Cherny (Anthropic) — Le titre "Software Engineer" pourrait disparaître d'ici 2026</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://x.com/karpathy/status/2004607146781278521">Andrej Karpathy sur X — "La profession est en train d'être dramatiquement restructurée"</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.thehansindia.com/technology/tech-news/karpathy-says-vibe-coding-is-fading-as-agentic-engineering-becomes-the-new-ai-coding-era-1045758">Karpathy : le vibe coding s'efface, l'agentic engineering monte</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://designengineer.io/">Design Engineer — site d'offres d'emploi dédié</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.coderabbit.ai/blog/developers-are-dead-long-live-developers">CodeRabbit — Developers are dead. Long live developers.</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.washingtonpost.com/business/2025/03/14/programming-jobs-lost-artificial-intelligence/">Washington Post — Une forte baisse des programmeurs, premier signe de pertes d'emplois liées à l'IA</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.reveliolabs.com/news/macro/is-ai-responsible-for-the-rise-in-entry-level-unemployment/">Revelio Labs — L'IA est-elle responsable de la hausse du chômage junior ?</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.pwc.com/us/en/tech-effect/ai-analytics/agentic-ai-workforce-redesign.html">PwC — No more pyramids: Rethinking your workforce for the agentic AI era</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://omnis.partners/the-rise-of-the-full-stack-generalist-the-most-important-hire-for-ai-startups-in-2025/">Omnis Partners — The Rise of the Full-Stack Generalist</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html">CIO.com — La demande de développeurs juniors faiblit face à l'IA</a></li>
+</ol>`
+}
+
+export function getContent(locale: 'fr' | 'en'): PostContent {
+  return locale === 'fr' ? frenchContent : englishContent
+}
+
+export default defineComponent({
+  name: 'CoderIsDeadEngineerIsBorn',
+  props: {
+    locale: {
+      type: String as () => 'fr' | 'en',
+      required: true
+    }
+  },
+  setup(props) {
+    const content = computed(() => {
+      return getContent(props.locale)
+    })
+    return { content }
+  },
+  template: '<div v-html="content.html"></div>'
+})
+</script>
+
+<template>
+  <div v-html="content.html"></div>
+</template>
