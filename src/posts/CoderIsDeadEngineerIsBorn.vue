@@ -103,6 +103,7 @@ const englishContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.pwc.com/us/en/tech-effect/ai-analytics/agentic-ai-workforce-redesign.html">PwC — No more pyramids: Rethinking your workforce for the agentic AI era</a></li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://omnis.partners/the-rise-of-the-full-stack-generalist-the-most-important-hire-for-ai-startups-in-2025/">Omnis Partners — The Rise of the Full-Stack Generalist</a></li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html">CIO.com — Demand for junior developers softens as AI takes over</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://ghuntley.com/real/">Geoffrey Huntley — Software development now costs less than the wage of a minimum wage worker</a></li>
 </ol>`
 }
 
@@ -201,6 +202,7 @@ const frenchContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.pwc.com/us/en/tech-effect/ai-analytics/agentic-ai-workforce-redesign.html">PwC — No more pyramids: Rethinking your workforce for the agentic AI era</a></li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://omnis.partners/the-rise-of-the-full-stack-generalist-the-most-important-hire-for-ai-startups-in-2025/">Omnis Partners — The Rise of the Full-Stack Generalist</a></li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.cio.com/article/4062024/demand-for-junior-developers-softens-as-ai-takes-over.html">CIO.com — La demande de développeurs juniors faiblit face à l'IA</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://ghuntley.com/real/">Geoffrey Huntley — Le développement logiciel coûte désormais moins que le salaire minimum</a></li>
 </ol>`
 }
 
