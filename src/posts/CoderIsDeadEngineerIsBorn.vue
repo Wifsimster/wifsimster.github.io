@@ -70,7 +70,7 @@ const englishContent: PostContent = {
 <ol>
 <li><strong>Stop investing in language expertise.</strong> "5 years of Java" is a depreciating asset. Invest in domain knowledge, architectural patterns, and learning to work with AI agents effectively.</li>
 <li><strong>Learn to think in products, not features.</strong> Understand the full chain from user need to production. Don't wait for a PO to tell you what to build.</li>
-<li><strong>Build your context engineering skills.</strong> Practice structuring knowledge for agents. Start with an Architecture Decision Record for your current project's three biggest constraints. Build a domain glossary. Write a constraint document that an agent can consume. This is the new literacy.</li>
+<li><strong>Build your context engineering skills.</strong> Practice structuring knowledge for agents. Start with an <a target="_blank" rel="noopener noreferrer" href="https://adr.github.io/">Architecture Decision Record (ADR)</a> for your current project's three biggest constraints. Build a domain glossary. Write a constraint document that an agent can consume. This is the new literacy.</li>
 <li><strong>Develop domain depth.</strong> Pick an industry. Learn it deeply. The intersection of tech fluency and domain expertise is where the highest value lives.</li>
 </ol>
 <p>For <strong>organizations</strong>:</p>
@@ -175,7 +175,7 @@ const frenchContent: PostContent = {
 <ol>
 <li><strong>Arrêtez d'investir dans l'expertise d'un langage.</strong> "5 ans de Java" est un actif qui se déprécie. Investissez dans la connaissance métier, les patterns architecturaux et l'apprentissage du travail avec les agents IA.</li>
 <li><strong>Apprenez à penser en produits, pas en fonctionnalités.</strong> Comprenez toute la chaîne du besoin utilisateur à la production. N'attendez pas qu'un PO vous dise quoi construire.</li>
-<li><strong>Développez vos compétences en ingénierie de contexte.</strong> Entraînez-vous à structurer la connaissance pour les agents. Commencez par un Architecture Decision Record sur les trois plus grosses contraintes de votre projet actuel. Construisez un glossaire métier. Rédigez un document de contraintes qu'un agent peut consommer. C'est la nouvelle littératie.</li>
+<li><strong>Développez vos compétences en ingénierie de contexte.</strong> Entraînez-vous à structurer la connaissance pour les agents. Commencez par un <a target="_blank" rel="noopener noreferrer" href="https://adr.github.io/">Architecture Decision Record (ADR)</a> sur les trois plus grosses contraintes de votre projet actuel. Construisez un glossaire métier. Rédigez un document de contraintes qu'un agent peut consommer. C'est la nouvelle littératie.</li>
 <li><strong>Creusez un domaine.</strong> Choisissez une industrie. Apprenez-la en profondeur. L'intersection de la maîtrise technique et de l'expertise métier, c'est là que la plus haute valeur se trouve.</li>
 </ol>
 <p>Pour les <strong>organisations</strong> :</p>
