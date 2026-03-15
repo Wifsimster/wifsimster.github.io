@@ -131,7 +131,29 @@ const englishContent: PostContent = {
 <p>I'm not claiming to have all the answers. Agents get things wrong. They hallucinate, they miss edge cases, they produce code that looks right but isn't. I've seen it. Studies even show experienced developers can be slower with current AI tools on codebases they already know well. The gains come from rethinking the workflow, not just bolting AI onto the old one. But the answer isn't to go back to three-day PR reviews and manual QA. The answer is better context, better guardrails, better automated verification. The developers who adapt will thrive. The ones who don't will be replaced - not by AI, but by developers who use AI.</p>
 <p>AI needs to be part of every day. Not as a novelty, not as an experiment — as a reflex. The use cases are endless and most of them haven't been discovered yet. This is just the start, and everything is going to move very fast.</p>
 <p>Stop debating. Start building. The tools are here. The only thing missing is the will to use them.</p>
-<p>What's the one process you'd kill tomorrow if you could?</p>`
+<p>What's the one process you'd kill tomorrow if you could?</p>
+
+<hr>
+<h2>Sources</h2>
+<ol>
+<li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development">Stanford HAI AI Index Report 2025</a> — AI foundation models by country (US 40, China 15, Europe 3)</li>
+<li><a href="https://epoch.ai/data-insights/ai-supercomputers-performance-share-by-country">Epoch AI — AI Supercomputers Performance Share by Country</a> — global AI compute share (US ~74%, EU ~5%)</li>
+<li><a href="https://www.oecd.org/en/publications/oecd-compendium-of-productivity-indicators-2025_b024d9e1-en/full-report/cross-country-comparisons-of-labour-productivity-levels_b2fdb493.html">OECD Compendium of Productivity Indicators 2025</a> — Europe/US productivity gap</li>
+<li><a href="https://www.reveliolabs.com/news/macro/is-ai-responsible-for-the-rise-in-entry-level-unemployment/">Revelio Labs — Is AI responsible for the rise in entry-level unemployment?</a> — Big Tech junior hiring collapse</li>
+<li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey — The State of AI</a> — productivity gains from AI adoption</li>
+<li><a href="https://www.cnbc.com/2026/03/13/software-ai-agents-college-graduate-unemployment.html">CNBC — Bill McDermott (ServiceNow) on graduate unemployment</a></li>
+<li><a href="https://techcrunch.com/2026/03/14/meta-reportedly-considering-layoffs-that-could-affect-20-of-the-company/">TechCrunch — Meta reportedly considering layoffs affecting up to 20%</a></li>
+<li><a href="https://x.com/naval/status/2027981651012473197">Naval Ravikant on X — "Pure software is rapidly becoming un-investable"</a></li>
+<li><a href="https://www.nbcmiami.com/news/local/innovation-on-6/man-uses-chatgpt-to-sell-his-cooper-city-home-it-exceeded-our-expectations/3778919/">NBC Miami — Man sells his house in 5 days using ChatGPT</a></li>
+<li><a href="https://awesomeagents.ai/news/anthropic-claude-double-usage-off-peak-march-2026/">Anthropic doubles Claude usage limits</a> / <a href="https://awesomeagents.ai/news/anthropic-1m-context-ga-opus-sonnet/">1M context window now GA</a></li>
+<li><a href="https://www.cnbc.com/2025/04/07/shopify-ceo-prove-ai-cant-do-jobs-before-asking-for-more-headcount.html">CNBC — Shopify CEO requires proof AI can't do the job before hiring</a></li>
+<li><a href="https://www.inc.com/ben-sherry/anthropic-ceo-dario-amodei-predicts-the-first-billion-dollar-solopreneur-by-2026/91193609">Inc. — Anthropic CEO predicts first billion-dollar one-person company</a></li>
+<li><a href="https://x.com/garrytan/status/1897303270311489931">Garry Tan on X</a> / <a href="https://www.cnbc.com/2025/03/15/y-combinator-startups-are-fastest-growing-in-fund-history-because-of-ai.html">CNBC — 25% of YC batch with 95% AI-written code</a></li>
+<li><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/agentic-ai-workforce-redesign.html">PwC — No more pyramids: Rethinking your workforce for the agentic AI era</a></li>
+<li><a href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT on GitHub</a> — autonomous agents (122K+ stars)</li>
+<li><a href="https://jobsdata.ai/task-visualizer">Job Task Visualizer</a> — AI task automation by occupation</li>
+<li><a href="https://www.ismyjobscrewed.com/">Is My Job Screwed?</a> — personalized AI risk assessment</li>
+</ol>`
 }
 
 const frenchContent: PostContent = {
@@ -254,7 +276,29 @@ const frenchContent: PostContent = {
 <p>Je ne prétends pas avoir toutes les réponses. Les agents se trompent. Ils hallucinent, ils ratent des cas limites, ils produisent du code qui a l'air correct mais ne l'est pas. Je l'ai vu. Des études montrent même que des développeurs expérimentés peuvent être plus lents avec les outils IA actuels sur des codebases qu'ils connaissent déjà bien. Les gains viennent de la refonte du workflow, pas du simple ajout de l'IA sur l'ancien. Mais la réponse, ce n'est pas de revenir aux revues de PR de trois jours et à la QA manuelle. La réponse, c'est un meilleur contexte, de meilleurs garde-fous, une meilleure vérification automatisée. Les développeurs qui s'adaptent vont prospérer. Ceux qui ne le font pas seront remplacés - pas par l'IA, mais par des développeurs qui utilisent l'IA.</p>
 <p>L'IA doit faire partie de chaque journée. Pas comme une nouveauté, pas comme une expérimentation — comme un réflexe. Les usages sont infinis et la plupart restent à découvrir. Ce n'est que le début, et tout va aller très vite.</p>
 <p>Le débat a assez duré. Il est temps de passer à l'action. Les outils sont là. La seule chose qui manque, c'est la volonté de s'en servir.</p>
-<p>Quel est le processus que vous supprimeriez demain si vous le pouviez ?</p>`
+<p>Quel est le processus que vous supprimeriez demain si vous le pouviez ?</p>
+
+<hr>
+<h2>Sources</h2>
+<ol>
+<li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development">Stanford HAI AI Index Report 2025</a> — modèles de fondation IA par pays (US 40, Chine 15, Europe 3)</li>
+<li><a href="https://epoch.ai/data-insights/ai-supercomputers-performance-share-by-country">Epoch AI — AI Supercomputers Performance Share by Country</a> — part de la puissance de calcul IA mondiale (US ~74%, UE ~5%)</li>
+<li><a href="https://www.oecd.org/en/publications/oecd-compendium-of-productivity-indicators-2025_b024d9e1-en/full-report/cross-country-comparisons-of-labour-productivity-levels_b2fdb493.html">OECD Compendium of Productivity Indicators 2025</a> — écart de productivité Europe/US</li>
+<li><a href="https://www.reveliolabs.com/news/macro/is-ai-responsible-for-the-rise-in-entry-level-unemployment/">Revelio Labs — Is AI responsible for the rise in entry-level unemployment?</a> — effondrement du recrutement junior en Big Tech</li>
+<li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey — The State of AI</a> — gains de productivité liés à l'adoption de l'IA</li>
+<li><a href="https://www.cnbc.com/2026/03/13/software-ai-agents-college-graduate-unemployment.html">CNBC — Bill McDermott (ServiceNow) sur le chômage des diplômés</a></li>
+<li><a href="https://techcrunch.com/2026/03/14/meta-reportedly-considering-layoffs-that-could-affect-20-of-the-company/">TechCrunch — Meta envisage des licenciements touchant jusqu'à 20% des effectifs</a></li>
+<li><a href="https://x.com/naval/status/2027981651012473197">Naval Ravikant sur X — "Pure software is rapidly becoming un-investable"</a></li>
+<li><a href="https://www.nbcmiami.com/news/local/innovation-on-6/man-uses-chatgpt-to-sell-his-cooper-city-home-it-exceeded-our-expectations/3778919/">NBC Miami — Un homme vend sa maison en 5 jours avec ChatGPT</a></li>
+<li><a href="https://awesomeagents.ai/news/anthropic-claude-double-usage-off-peak-march-2026/">Anthropic double les limites d'utilisation de Claude</a> / <a href="https://awesomeagents.ai/news/anthropic-1m-context-ga-opus-sonnet/">Fenêtre de contexte 1M en disponibilité générale</a></li>
+<li><a href="https://www.cnbc.com/2025/04/07/shopify-ceo-prove-ai-cant-do-jobs-before-asking-for-more-headcount.html">CNBC — Le PDG de Shopify exige de prouver que l'IA ne peut pas faire le travail avant d'embaucher</a></li>
+<li><a href="https://www.inc.com/ben-sherry/anthropic-ceo-dario-amodei-predicts-the-first-billion-dollar-solopreneur-by-2026/91193609">Inc. — Le PDG d'Anthropic prédit la première entreprise à 1 milliard avec un seul employé</a></li>
+<li><a href="https://x.com/garrytan/status/1897303270311489931">Garry Tan sur X</a> / <a href="https://www.cnbc.com/2025/03/15/y-combinator-startups-are-fastest-growing-in-fund-history-because-of-ai.html">CNBC — 25% de la promo YC avec 95% de code écrit par l'IA</a></li>
+<li><a href="https://www.pwc.com/us/en/tech-effect/ai-analytics/agentic-ai-workforce-redesign.html">PwC — No more pyramids: Rethinking your workforce for the agentic AI era</a></li>
+<li><a href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT sur GitHub</a> — agents autonomes (122K+ étoiles)</li>
+<li><a href="https://jobsdata.ai/task-visualizer">Job Task Visualizer</a> — visualisation des tâches automatisées par métier</li>
+<li><a href="https://www.ismyjobscrewed.com/">Is My Job Screwed?</a> — évaluation personnalisée du risque IA</li>
+</ol>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
