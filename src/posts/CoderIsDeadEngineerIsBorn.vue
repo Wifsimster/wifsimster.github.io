@@ -9,7 +9,7 @@ export const metadata: PostMetadata = {
 }
 
 const englishContent: PostContent = {
-  title: 'The Coder Is Dead. The Software Engineer Is Finally Born.',
+  title: 'Coding Was Never the Job',
   description: 'Coding was never the job. It was the bottleneck we mistook for the craft. AI removed it. What remains is what always mattered: architecture, domain expertise, product vision, and judgment. A look at the new roles emerging in software development.',
   html: `<p><strong>TL;DR:</strong> The "coder" job — the person whose primary value is translating intent into syntax — is being automated away. But software development isn't dying. It's evolving into what it always should have been: designing systems, understanding businesses, engineering context, and exercising judgment. The roles of tomorrow are already emerging. Some companies are already hiring for them.</p>
 <hr>
@@ -77,7 +77,7 @@ const englishContent: PostContent = {
 </ol>
 
 <h2>Conclusion</h2>
-<p>The coder is dead. The person whose primary value was translating business intent into programming language syntax — that role is being automated. Fast. Andrej Karpathy scored it 8-9 out of 10 on AI exposure. The market agrees: junior developer hiring in Big Tech has collapsed 73% in a year.</p>
+<p>Coding was never the job. The person whose primary value was translating business intent into programming language syntax — that role is being automated. Fast. Andrej Karpathy scored it 8-9 out of 10 on AI exposure. The market agrees: junior developer hiring in Big Tech has collapsed 73% in a year.</p>
 <p>But software development? Software development is finally being born. Freed from the weight of syntax, it's becoming what it always should have been: understanding problems, designing solutions, engineering context, and exercising judgment. The roles are merging. The walls are falling. The person who can think about the product, design the architecture, engineer the context, and validate the output — that person doesn't just survive. They thrive.</p>
 <p>My team already works this way. Every person owns the full chain. The interns learn faster than any junior I've ever seen. The quality is higher because the cognitive energy goes to the domain, not to debugging semicolons.</p>
 <p>This is not a prediction. This is a Tuesday at my office.</p>
@@ -106,7 +106,7 @@ const englishContent: PostContent = {
 }
 
 const frenchContent: PostContent = {
-  title: 'Le codeur est mort. L\'ingénieur logiciel est enfin né.',
+  title: 'Coder n\'a jamais été le métier',
   description: 'Coder n\'a jamais été le métier. C\'était le goulot d\'étranglement qu\'on a confondu avec l\'artisanat. L\'IA l\'a supprimé. Ce qui reste est ce qui a toujours compté : l\'architecture, l\'expertise métier, la vision produit et le jugement. Un regard sur les nouveaux rôles qui émergent dans le développement logiciel.',
   html: `<p><strong>TL;DR :</strong> Le métier de "codeur" — la personne dont la valeur principale est de traduire une intention en syntaxe — est en train d'être automatisé. Mais le développement logiciel ne meurt pas. Il évolue vers ce qu'il aurait toujours dû être : concevoir des systèmes, comprendre les métiers, ingénierer le contexte et exercer son jugement. Les rôles de demain émergent déjà. Certaines entreprises recrutent déjà pour eux.</p>
 <hr>
@@ -174,7 +174,7 @@ const frenchContent: PostContent = {
 </ol>
 
 <h2>Conclusion</h2>
-<p>Le codeur est mort. La personne dont la valeur principale était de traduire une intention métier en syntaxe de langage de programmation — ce rôle est en train d'être automatisé. Vite. Andrej Karpathy l'a noté 8-9 sur 10 en exposition à l'IA. Le marché est d'accord : le recrutement junior en Big Tech s'est effondré de 73% en un an.</p>
+<p>Coder n'a jamais été le métier. La personne dont la valeur principale était de traduire une intention métier en syntaxe de langage de programmation — ce rôle est en train d'être automatisé. Vite. Andrej Karpathy l'a noté 8-9 sur 10 en exposition à l'IA. Le marché est d'accord : le recrutement junior en Big Tech s'est effondré de 73% en un an.</p>
 <p>Mais le développement logiciel ? Le développement logiciel est enfin en train de naître. Libéré du poids de la syntaxe, il devient ce qu'il aurait toujours dû être : comprendre les problèmes, concevoir des solutions, ingénierer le contexte et exercer le jugement. Les rôles fusionnent. Les murs tombent. La personne qui peut penser le produit, concevoir l'architecture, ingénierer le contexte et valider le résultat — cette personne ne se contente pas de survivre. Elle prospère.</p>
 <p>Mon équipe fonctionne déjà comme ça. Chaque personne maîtrise toute la chaîne. Les stagiaires apprennent plus vite que n'importe quel junior que j'ai vu. La qualité est meilleure parce que l'énergie cognitive va au domaine, pas au débogage de points-virgules.</p>
 <p>Ce n'est pas une prédiction. C'est un mardi à mon bureau.</p>
