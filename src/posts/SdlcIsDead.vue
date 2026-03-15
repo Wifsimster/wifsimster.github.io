@@ -122,7 +122,7 @@ const englishContent: PostContent = {
 <li><strong>Measure your cycle time.</strong> How long from intent to production? Identify every human gate in that chain.</li>
 <li><strong>Invest in automated verification.</strong> Tests, type checks, architectural fitness functions, audit trails. Build the safety net before you remove the human gates.</li>
 <li><strong>Rethink one role.</strong> Not just the job description — the role itself. Can your developer also own the product vision? Can your PO also design? Replace "5 years of Java" with domain expertise, architectural thinking, context engineering, and judgment.</li>
-<li><strong>Run a pilot.</strong> One team, one product, one workflow. Replace manual review with automated checks. Measure quality and speed for 30 days.</li>
+<li><strong>Run a pilot.</strong> One team, one product, one workflow. Replace manual review with automated checks. Measure speed and customer feedback for 30 days. Quality is subjective — what matters is what your users actually report.</li>
 <li><strong>Build the context layer.</strong> Document your architecture decisions, domain rules, and constraints in a format agents can consume. This is the highest-leverage investment you can make right now.</li>
 </ol>
 
@@ -244,10 +244,10 @@ const frenchContent: PostContent = {
 <h2>Quoi faire lundi matin</h2>
 <p>Si quoi que ce soit dans cet article résonne, voici par où commencer :</p>
 <ol>
-<li><strong>Mesurez votre cycle time.</strong> Combien de temps entre l'intention et la production ? Identifiez chaque porte humaine dans cette chaîne.</li>
-<li><strong>Investissez dans la vérification automatisée.</strong> Tests, typage, fonctions de fitness architecturale, pistes d'audit. Construisez le filet de sécurité avant de retirer les portes humaines.</li>
+<li><strong>Mesurez votre cycle time.</strong> Combien de temps entre l'intention et la production ? Identifiez chaque point de blocage humain dans cette chaîne.</li>
+<li><strong>Investissez dans la vérification automatisée.</strong> Tests, typage, fonctions de fitness architecturale, pistes d'audit. Construisez le filet de sécurité avant de retirer les points de blocage humains.</li>
 <li><strong>Repensez un poste.</strong> Pas juste la fiche — le rôle lui-même. Est-ce que votre développeur peut aussi porter la vision produit ? Est-ce que votre PO peut aussi concevoir ? Remplacez "5 ans de Java" par expertise métier, pensée architecturale, ingénierie de contexte et jugement.</li>
-<li><strong>Lancez un pilote.</strong> Une équipe, un produit, un workflow. Remplacez la revue manuelle par des vérifications automatisées. Mesurez qualité et vitesse pendant 30 jours.</li>
+<li><strong>Lancez un pilote.</strong> Une équipe, un produit, un workflow. Remplacez la revue manuelle par des vérifications automatisées. Mesurez la vitesse et les retours clients pendant 30 jours. La qualité est subjective — ce qui compte, c'est ce que vos utilisateurs remontent vraiment.</li>
 <li><strong>Construisez la couche de contexte.</strong> Documentez vos décisions d'architecture, vos règles métier et vos contraintes dans un format que les agents peuvent consommer. C'est l'investissement à plus fort effet de levier que vous puissiez faire maintenant.</li>
 </ol>
 
