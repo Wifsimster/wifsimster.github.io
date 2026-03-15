@@ -132,6 +132,7 @@ const englishContent: PostContent = {
 <p>AI needs to be part of every day. Not as a novelty, not as an experiment — as a reflex. The use cases are endless and most of them haven't been discovered yet. This is just the start, and everything is going to move very fast.</p>
 <p>Stop debating. Start building. The tools are here. The only thing missing is the will to use them.</p>
 <p>What's the one process you'd kill tomorrow if you could?</p>
+<p><strong>Read the sequel:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">Coding Was Never the Job</a> — if AI killed the SDLC, what happens to the roles? The coder disappears. The software engineer is finally born.</p>
 
 <hr>
 <h2>Sources</h2>
@@ -277,6 +278,7 @@ const frenchContent: PostContent = {
 <p>L'IA doit faire partie de chaque journée. Pas comme une nouveauté, pas comme une expérimentation — comme un réflexe. Les usages sont infinis et la plupart restent à découvrir. Ce n'est que le début, et tout va aller très vite.</p>
 <p>Le débat a assez duré. Il est temps de passer à l'action. Les outils sont là. La seule chose qui manque, c'est la volonté de s'en servir.</p>
 <p>Quel est le processus que vous supprimeriez demain si vous le pouviez ?</p>
+<p><strong>Lire la suite :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">Coder n'a jamais été le métier</a> — si l'IA a tué le SDLC, qu'advient-il des rôles ? Le codeur disparaît. L'ingénieur logiciel est enfin né.</p>
 
 <hr>
 <h2>Sources</h2>
