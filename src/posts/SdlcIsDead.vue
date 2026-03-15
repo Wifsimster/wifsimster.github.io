@@ -127,8 +127,9 @@ const englishContent: PostContent = {
 </ol>
 
 <h2>Conclusion</h2>
-<p>I wrote this article in one sitting. Not because I had it all figured out, but because I couldn't hold it in anymore. Every day brings a new model, a new agent capability, a new proof that the old way of building software is dying. And every day, I see the same organizations pretending nothing has changed.</p>
+<p>I read a lot of articles about AI. Most of the time, I disagree. At some point, I needed to speak up about it. AI helped me do it fast, in the right way — structuring the article, writing it in two languages, fact-checking the data, sourcing the statistics. This article is itself proof of what I'm arguing: the tools are here, and they multiply what one person can do.</p>
 <p>I'm not claiming to have all the answers. Agents get things wrong. They hallucinate, they miss edge cases, they produce code that looks right but isn't. I've seen it. Studies even show experienced developers can be slower with current AI tools on codebases they already know well. The gains come from rethinking the workflow, not just bolting AI onto the old one. But the answer isn't to go back to three-day PR reviews and manual QA. The answer is better context, better guardrails, better automated verification. The developers who adapt will thrive. The ones who don't will be replaced - not by AI, but by developers who use AI.</p>
+<p>AI needs to be part of every day. Not as a novelty, not as an experiment — as a reflex. The use cases are endless and most of them haven't been discovered yet. This is just the start, and everything is going to move very fast.</p>
 <p>Stop debating. Start building. The tools are here. The only thing missing is the will to use them.</p>
 <p>What's the one process you'd kill tomorrow if you could?</p>`
 }
@@ -146,7 +147,7 @@ const frenchContent: PostContent = {
 <p>Boris Tane a récemment écrit que <a href="https://boristane.com/blog/the-software-development-lifecycle-is-dead/">le cycle de vie du développement logiciel est mort</a>. Les agents IA ne l'ont pas accéléré, ils l'ont tué. Il a raison. Mais je veux être clair : <strong>je n'avais pas besoin de l'IA pour me dire que le SDLC était cassé.</strong> Je le dis depuis des années.</p>
 <p>Ce que les agents IA font maintenant ne révèle pas une nouvelle vérité. Ils rendent une vieille vérité impossible à ignorer : <strong>la majeure partie du processus a toujours été du gaspillage.</strong> Et nulle part cela n'est plus visible que dans l'industrie européenne - surtout en France - où les organisations fonctionnent encore comme en 2015.</p>
 
-<h2>Qui je suis et pourquoi c'est important</h2>
+<h2>D'où je parle</h2>
 <p>Je suis Tech Lead Manager. Je travaille dans de grandes entreprises depuis 2012, du secteur bancaire à la santé. Je dirige une équipe de développeurs, travaillant sur un système legacy de 30 ans et sa migration vers un écosystème moderne. Un avertissement : je ne suis pas un expert en IA. Je suis un développeur senior qui s'est plongé à fond dans l'IA il y a un an. Il y a cinq mois, je n'aurais pas écrit cet article. Les récents modèles de LLM ont complètement réécrit ma façon de penser ce métier.</p>
 <p>J'ai passé plus d'une décennie dans ce monde. Un monde où un bug ne casse pas un tableau de bord, il casse un workflow métier critique. Un monde où les gens vous diront que vous avez absolument besoin de la cérémonie SDLC complète parce que les enjeux sont trop élevés.</p>
 <p>Et je vous le dis : le SDLC a toujours été la mauvaise réponse à la bonne question.</p>
@@ -252,8 +253,9 @@ const frenchContent: PostContent = {
 </ol>
 
 <h2>Conclusion</h2>
-<p>J'ai écrit cet article d'une traite. Pas parce que j'avais tout compris, mais parce que je ne pouvais plus le garder pour moi. Chaque jour apporte un nouveau modèle, une nouvelle capacité d'agent, une nouvelle preuve que l'ancienne façon de construire du logiciel est en train de mourir. Et chaque jour, je vois les mêmes organisations faire comme si rien n'avait changé.</p>
+<p>Je lis beaucoup d'articles sur l'IA. La plupart du temps, je ne suis pas d'accord. À un moment, j'ai eu besoin d'en parler. L'IA m'a aidé à le faire vite, de la bonne manière — structurer l'article, l'écrire en deux langues, vérifier les données, sourcer les statistiques. Cet article est lui-même la preuve de ce que j'avance : les outils sont là, et ils multiplient ce qu'une seule personne peut faire.</p>
 <p>Je ne prétends pas avoir toutes les réponses. Les agents se trompent. Ils hallucinent, ils ratent des cas limites, ils produisent du code qui a l'air correct mais ne l'est pas. Je l'ai vu. Des études montrent même que des développeurs expérimentés peuvent être plus lents avec les outils IA actuels sur des codebases qu'ils connaissent déjà bien. Les gains viennent de la refonte du workflow, pas du simple ajout de l'IA sur l'ancien. Mais la réponse, ce n'est pas de revenir aux revues de PR de trois jours et à la QA manuelle. La réponse, c'est un meilleur contexte, de meilleurs garde-fous, une meilleure vérification automatisée. Les développeurs qui s'adaptent vont prospérer. Ceux qui ne le font pas seront remplacés - pas par l'IA, mais par des développeurs qui utilisent l'IA.</p>
+<p>L'IA doit faire partie de chaque journée. Pas comme une nouveauté, pas comme une expérimentation — comme un réflexe. Les usages sont infinis et la plupart restent à découvrir. Ce n'est que le début, et tout va aller très vite.</p>
 <p>Le débat a assez duré. Il est temps de passer à l'action. Les outils sont là. La seule chose qui manque, c'est la volonté de s'en servir.</p>
 <p>Quel est le processus que vous supprimeriez demain si vous le pouviez ?</p>`
 }
