@@ -83,6 +83,20 @@ export function getSlugFromFilename(filename: string): string {
  * @param order - Sort order: 'desc' for newest first (default), 'asc' for oldest first
  * @returns Sorted array of posts (original array is not modified)
  */
+/**
+ * Estimates reading time from HTML content
+ * @param html - HTML string content
+ * @param lang - Language: 'fr' reads ~200 wpm, 'en' reads ~238 wpm
+ * @returns Estimated reading time in minutes (minimum 1)
+ */
+export function estimateReadingTime(html: string, lang: 'fr' | 'en' = 'fr'): number {
+  if (!html) return 1
+  const text = html.replace(/<[^>]*>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim()
+  const wordCount = text.split(/\s+/).filter(w => w.length > 0).length
+  const wpm = lang === 'fr' ? 200 : 238
+  return Math.max(1, Math.ceil(wordCount / wpm))
+}
+
 export function sortPostsByDate(posts: Post[], order: 'asc' | 'desc' = 'desc'): Post[] {
   if (!Array.isArray(posts)) {
     if (import.meta.env.DEV) {

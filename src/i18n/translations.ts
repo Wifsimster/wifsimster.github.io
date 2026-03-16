@@ -40,6 +40,8 @@ export const translations: Record<string, Record<string, string>> = {
     'post.notFound.suggestion': 'Peut-être qu\'il est parti en vacances ? 🌴',
     'post.notFound.backHome': 'Retourner à l\'accueil',
     'toc.title': 'Table des matières',
+    'post.readingTime': '{min} min de lecture',
+    'post.relatedPosts': 'Articles similaires',
     'footer.copyright': '© 2017-2025 Wifsimster',
     'footer.blog': 'Blog personnel'
   },
@@ -84,6 +86,8 @@ export const translations: Record<string, Record<string, string>> = {
     'post.notFound.suggestion': 'Maybe it went on vacation? 🌴',
     'post.notFound.backHome': 'Go back home',
     'toc.title': 'Table of Contents',
+    'post.readingTime': '{min} min read',
+    'post.relatedPosts': 'Related Posts',
     'footer.copyright': '© 2017-2025 Wifsimster',
     'footer.blog': 'Personal Blog'
   }

@@ -4,8 +4,10 @@
       <h2 class="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
         {{ post.title }}
       </h2>
-      <div class="flex items-center text-sm text-gray-500 dark:text-zinc-400 mb-3">
+      <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-zinc-400 mb-3">
         <time :datetime="post.date">{{ formattedDate }}</time>
+        <span class="text-gray-300 dark:text-zinc-600">|</span>
+        <span>{{ i18n.t('post.readingTime', { min: String(readingTime) }) }}</span>
       </div>
       <p v-if="post.description" class="text-gray-700 dark:text-zinc-300 mb-4 line-clamp-3">
         {{ post.description }}
@@ -27,7 +29,7 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import type { Post } from '@/utils/posts'
-import { formatDate } from '@/utils/posts'
+import { formatDate, estimateReadingTime } from '@/utils/posts'
 import { useI18n } from '@/composables/useI18n'
 
 const props = defineProps<{
@@ -38,4 +40,5 @@ const i18n = useI18n()
 
 const postLink = computed(() => `${i18n.langPrefix.value}/posts/${props.post.slug}`)
 const formattedDate = computed(() => formatDate(props.post.date, i18n.language.value))
+const readingTime = computed(() => estimateReadingTime(props.post.html, i18n.language.value))
 </script>
