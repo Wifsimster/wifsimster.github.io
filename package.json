@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-og.mjs",
     "preview": "vite preview",
     "docker:build": "docker build -t wifsimster/wifsimster-blog .",
     "docker:run": "docker run -p 8080:80 wifsimster/wifsimster-blog",
@@ -34,6 +34,8 @@
     "@vitejs/plugin-vue": "^6.0.3",
     "tailwindcss": "^4.1.18",
     "vite": "^7.3.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.12.2",
     "vite-plugin-vue-devtools": "^8.0.5"
   },
   "engines": {
