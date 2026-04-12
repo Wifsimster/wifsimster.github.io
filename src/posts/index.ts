@@ -26,6 +26,7 @@ import RenovationChambresMaison1970, { metadata as renovationChambresMaison1970M
 import RenovationCellierBureauMaison1970, { metadata as renovationCellierBureauMaison1970Metadata, getContent as getRenovationCellierBureauMaison1970Content } from './RenovationCellierBureauMaison1970.vue'
 import SdlcIsDead, { metadata as sdlcIsDeadMetadata, getContent as getSdlcIsDeadContent } from './SdlcIsDead.vue'
 import CoderIsDeadEngineerIsBorn, { metadata as coderIsDeadMetadata, getContent as getCoderIsDeadContent } from './CoderIsDeadEngineerIsBorn.vue'
+import AiMarketSegmentation, { metadata as aiMarketSegmentationMetadata, getContent as getAiMarketSegmentationContent } from './AiMarketSegmentation.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -168,6 +169,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: coderIsDeadMetadata,
     getContent: getCoderIsDeadContent,
     component: CoderIsDeadEngineerIsBorn
+  },
+  'ai-market-segmentation': {
+    metadata: aiMarketSegmentationMetadata,
+    getContent: getAiMarketSegmentationContent,
+    component: AiMarketSegmentation
   }
 }
 
