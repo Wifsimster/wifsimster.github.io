@@ -11,8 +11,10 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: 'Le marché à deux IA que personne ne veut voir',
   description: 'OpenAI lance une offre à 100$/mois entre le Plus et le Pro. On construit sans le dire un marché à deux vitesses : l\'IA cheap que tout le monde commente, et l\'IA premium que personne ne connaît. Le débat public est biaisé à la source.',
-  html: `<p><strong>TL;DR :</strong> OpenAI vient de lancer un plan à 100 dollars par mois. Entre le Plus à 20 et le Pro à 200, ciblé développeurs Codex, avec cinq fois plus d'usage. On est en train de construire, sans le dire, un marché à deux IA. D'un côté les plans gratuits et bon marché avec des modèles bridés. De l'autre les plans premium où l'IA est réellement transformatrice. Le problème : le débat public se base sur la première. Et ça fausse tout.</p>
+  html: `<p><strong>TL;DR :</strong> OpenAI vient de lancer un plan à 100 dollars par mois. Entre le Plus à 20 et le Pro à 200, ciblé sur les développeurs Codex, avec cinq fois plus d'usage. On est en train de construire, sans le dire, un marché à deux IA. D'un côté les plans gratuits et bon marché avec des modèles bridés. De l'autre les plans premium où l'IA est réellement transformatrice. Le problème : le débat public se base sur la première. Et ça fausse tout.</p>
 <hr>
+<p>Dans mes deux articles précédents, j'ai argumenté que <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">le SDLC est mort</a> et que <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coder n'a jamais été le métier</a>. Je parlais du processus et des rôles. Mais il y a un sujet que je n'avais pas abordé — et qui change la donne sur tout le reste.</p>
+<p>Quand OpenAI annonce un plan à 100 dollars par mois, coincé entre le Plus à 20 et le Pro à 200, ce n'est pas juste un ajustement tarifaire. C'est la confirmation d'un phénomène que je constate depuis des mois : <strong>on n'utilise pas tous la même IA.</strong> Et le débat public qui en découle est faussé à la racine.</p>
 
 <h2>Deux IA, un seul nom</h2>
 <p>Regardez la grille tarifaire d'OpenAI aujourd'hui. Gratuit. Plus à 20 dollars. Le nouveau plan à 100 dollars. Pro à 200 dollars. Quatre niveaux. Quatre expériences radicalement différentes.</p>
@@ -63,7 +65,9 @@ const frenchContent: PostContent = {
 <p>Le clivage de l'IA n'est pas entre ceux qui utilisent l'IA et ceux qui ne l'utilisent pas. Ce serait trop simple. <strong>Le vrai clivage est entre ceux qui utilisent l'IA premium et ceux qui pensent utiliser l'IA.</strong></p>
 <p>Le plan gratuit donne une impression. Le plan premium donne une transformation.</p>
 <p>Et tant que le débat public sera alimenté par des gens qui n'ont connu que l'impression, les décisions qui en découleront seront décalées de la réalité. On régulera une technologie d'hier. On investira trop peu, trop tard. On perdra du terrain face à des compétiteurs qui, eux, ont compris que 200 dollars par mois n'est pas un abonnement — c'est un avantage compétitif.</p>
-<blockquote><p>Le plus grand risque avec l'IA en 2026, ce n'est pas qu'elle soit surestimée. C'est que les gens qui la sous-estiment soient exactement ceux qui prennent les décisions.</p></blockquote>`
+<blockquote><p>Le plus grand risque avec l'IA en 2026, ce n'est pas qu'elle soit surestimée. C'est que les gens qui la sous-estiment soient exactement ceux qui prennent les décisions.</p></blockquote>
+
+<p><strong>Lire aussi :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> — pourquoi le processus était toujours cassé, et pourquoi les agents IA rendent impossible de faire semblant. Et sa suite : <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">Coder n'a jamais été le métier</a> — si l'IA a tué le processus, qu'advient-il des rôles ?</p>`
 }
 
 const englishContent: PostContent = {
@@ -71,6 +75,8 @@ const englishContent: PostContent = {
   description: 'OpenAI just launched a $100/month plan between Plus and Pro. We are silently building a two-speed AI market: the cheap AI everyone comments on, and the premium AI nobody knows. The public debate is biased at the source.',
   html: `<p><strong>TL;DR:</strong> OpenAI just launched a $100/month plan. Between Plus at $20 and Pro at $200, targeted at Codex developers, with five times more usage. We are building, without saying it, a two-tier AI market. On one side, free and cheap plans with throttled models. On the other, premium plans where AI is genuinely transformative. The problem: the public debate is based on the first. And that distorts everything.</p>
 <hr>
+<p>In my two previous articles, I argued that <a target="_blank" rel="noopener noreferrer" href="/en/posts/sdlc-is-dead">the SDLC is dead</a> and that <a target="_blank" rel="noopener noreferrer" href="/en/posts/coder-is-dead-engineer-is-born">coding was never the job</a>. I was talking about process and roles. But there's a topic I hadn't addressed — and it changes the equation on everything else.</p>
+<p>When OpenAI announces a $100/month plan, wedged between Plus at $20 and Pro at $200, it's not just a pricing adjustment. It's the confirmation of something I've been observing for months: <strong>we're not all using the same AI.</strong> And the public debate that follows is distorted at the root.</p>
 
 <h2>Two AIs, one name</h2>
 <p>Look at OpenAI's pricing grid today. Free. Plus at $20. The new plan at $100. Pro at $200. Four tiers. Four radically different experiences.</p>
@@ -121,7 +127,9 @@ const englishContent: PostContent = {
 <p>The AI divide isn't between those who use AI and those who don't. That would be too simple. <strong>The real divide is between those who use premium AI and those who think they use AI.</strong></p>
 <p>The free plan gives an impression. The premium plan gives a transformation.</p>
 <p>And as long as the public debate is fed by people who've only known the impression, the decisions that follow will be disconnected from reality. We'll regulate yesterday's technology. We'll invest too little, too late. We'll lose ground to competitors who understood that $200/month isn't a subscription — it's a competitive advantage.</p>
-<blockquote><p>The greatest risk with AI in 2026 isn't that it's overestimated. It's that the people underestimating it are exactly the ones making the decisions.</p></blockquote>`
+<blockquote><p>The greatest risk with AI in 2026 isn't that it's overestimated. It's that the people underestimating it are exactly the ones making the decisions.</p></blockquote>
+
+<p><strong>Read also:</strong> <a target="_blank" rel="noopener noreferrer" href="/en/posts/sdlc-is-dead">The SDLC Is Dead</a> — why the process was always broken, and why AI agents are making it impossible to pretend otherwise. And its follow-up: <a target="_blank" rel="noopener noreferrer" href="/en/posts/coder-is-dead-engineer-is-born">Coding Was Never the Job</a> — if AI killed the process, what happens to the roles?</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
