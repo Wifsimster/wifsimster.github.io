@@ -120,6 +120,16 @@
             <i class="pi pi-twitter text-base"></i>
             <span>{{ i18n.t('sidebar.x') }}</span>
           </a>
+          <a
+            :href="rssFeedUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            type="application/rss+xml"
+            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
+          >
+            <i class="pi pi-rss text-base"></i>
+            <span>{{ i18n.t('sidebar.rssFeed') }}</span>
+          </a>
         </div>
       </div>
     </div>
@@ -141,6 +151,7 @@ const { searchQuery, setSearchQuery, clearSearch: clearGlobalSearch } = useSearc
 
 const lang = computed(() => i18n.language.value)
 const localSearchQuery = ref('')
+const rssFeedUrl = computed(() => lang.value === 'en' ? '/en/rss.xml' : '/rss.xml')
 
 // Get top 3 tags
 const tagCounts = getAllTags()
