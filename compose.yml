@@ -22,6 +22,26 @@ services:
       - traefik.http.routers.blog.tls.certresolver=letsencrypt
       - traefik.http.services.blog.loadbalancer.server.port=80
 
+  # Self-hosted, cookieless, GDPR-friendly analytics.
+  # Stores hits in a SQLite file under the mounted volume, no external DB.
+  # First-time setup: see ANALYTICS.md for creating the admin account and site.
+  goatcounter:
+    image: arp242/goatcounter:latest
+    container_name: wifsimster-goatcounter
+    restart: unless-stopped
+    volumes:
+      - ./goatcounter-data:/home/goatcounter/.local/share/goatcounter
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - lan
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.goatcounter.rule=Host(`stats.battistella.ovh`)
+      - traefik.http.routers.goatcounter.entrypoints=websecure
+      - traefik.http.routers.goatcounter.tls.certresolver=letsencrypt
+      - traefik.http.services.goatcounter.loadbalancer.server.port=8080
+
 networks:
   lan:
     external: true

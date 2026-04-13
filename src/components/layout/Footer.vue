@@ -2,8 +2,15 @@
   <footer class="border-t border-gray-200 dark:border-zinc-800 mt-12 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <div class="text-sm text-gray-600 dark:text-zinc-400">
-          {{ i18n.t('footer.copyright') }} - {{ i18n.t('footer.blog') }}
+        <div class="text-sm text-gray-600 dark:text-zinc-400 flex flex-wrap items-center gap-x-2 gap-y-1 justify-center md:justify-start">
+          <span>{{ i18n.t('footer.copyright') }} - {{ i18n.t('footer.blog') }}</span>
+          <span aria-hidden="true">·</span>
+          <RouterLink
+            :to="`${i18n.langPrefix.value}/privacy`"
+            class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          >
+            {{ i18n.t('footer.privacy') }}
+          </RouterLink>
         </div>
         <div class="flex items-center space-x-6">
           <a
@@ -42,6 +49,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { RouterLink } from 'vue-router'
 import { useI18n } from '@/composables/useI18n'
 
 const i18n = useI18n()

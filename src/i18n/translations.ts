@@ -43,7 +43,19 @@ export const translations: Record<string, Record<string, string>> = {
     'post.readingTime': '{min} min de lecture',
     'post.relatedPosts': 'Articles similaires',
     'footer.copyright': '© 2017-2025 Wifsimster',
-    'footer.blog': 'Blog personnel'
+    'footer.blog': 'Blog personnel',
+    'footer.privacy': 'Vie privée',
+    'privacy.title': 'Politique de confidentialité',
+    'privacy.lastUpdated': 'Dernière mise à jour : avril 2026',
+    'privacy.intro': "Ce blog respecte votre vie privée. Aucun cookie n'est déposé, aucune publicité n'est affichée et aucune donnée personnelle n'est collectée.",
+    'privacy.analyticsTitle': 'Mesure d\'audience',
+    'privacy.analyticsBody': "J'utilise une instance auto-hébergée de GoatCounter pour mesurer le nombre de lectures par article. Un signal anonyme est envoyé lorsque vous avez passé au moins 10 secondes sur un article ou fait défiler plus de la moitié de la page. Ce signal contient uniquement l'URL de l'article et son titre. Aucun identifiant unique, aucun cookie, aucune adresse IP complète ne sont stockés. Les données sont hébergées sur mon propre serveur en France et ne sont jamais partagées.",
+    'privacy.legalBasisTitle': 'Base légale',
+    'privacy.legalBasisBody': "Cette mesure d'audience relève de l'exemption de consentement prévue par la CNIL pour les statistiques anonymes et strictement nécessaires à l'exploitation du site.",
+    'privacy.rightsTitle': 'Vos droits',
+    'privacy.rightsBody': "Aucune donnée personnelle n'étant collectée, il n'y a rien à consulter, rectifier ou supprimer. Pour toute question, vous pouvez me contacter à battistella@proton.me.",
+    'privacy.thirdPartyTitle': 'Services tiers',
+    'privacy.thirdPartyBody': "Les polices Merriweather sont servies par Google Fonts. Les images OpenGraph sont générées localement. Aucun autre service externe n'est utilisé."
   },
   en: {
     'nav.home': 'Home',
@@ -89,6 +101,18 @@ export const translations: Record<string, Record<string, string>> = {
     'post.readingTime': '{min} min read',
     'post.relatedPosts': 'Related Posts',
     'footer.copyright': '© 2017-2025 Wifsimster',
-    'footer.blog': 'Personal Blog'
+    'footer.blog': 'Personal Blog',
+    'footer.privacy': 'Privacy',
+    'privacy.title': 'Privacy Policy',
+    'privacy.lastUpdated': 'Last updated: April 2026',
+    'privacy.intro': 'This blog respects your privacy. No cookies are set, no ads are shown, and no personal data is collected.',
+    'privacy.analyticsTitle': 'Audience measurement',
+    'privacy.analyticsBody': 'I run a self-hosted GoatCounter instance to measure the number of reads per article. An anonymous signal is sent when you have spent at least 10 seconds on an article or scrolled past more than half of the page. This signal only contains the article URL and its title. No unique identifier, no cookie, and no full IP address are stored. Data is hosted on my own server in France and is never shared.',
+    'privacy.legalBasisTitle': 'Legal basis',
+    'privacy.legalBasisBody': 'This audience measurement falls under the consent exemption set by the French CNIL for anonymous statistics strictly necessary to operate the site.',
+    'privacy.rightsTitle': 'Your rights',
+    'privacy.rightsBody': 'Since no personal data is collected, there is nothing to access, correct, or delete. For any question, you can reach me at battistella@proton.me.',
+    'privacy.thirdPartyTitle': 'Third-party services',
+    'privacy.thirdPartyBody': 'The Merriweather fonts are served by Google Fonts. OpenGraph images are generated locally. No other external service is used.'
   }
 }
