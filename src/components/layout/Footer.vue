@@ -24,6 +24,16 @@
           >
             <i class="pi pi-twitter text-xl"></i>
           </a>
+          <a
+            :href="rssFeedUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            type="application/rss+xml"
+            class="text-gray-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            :aria-label="i18n.t('sidebar.rssFeed')"
+          >
+            <i class="pi pi-rss text-xl"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -31,7 +41,9 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from '@/composables/useI18n'
 
 const i18n = useI18n()
+const rssFeedUrl = computed(() => i18n.language.value === 'en' ? '/en/rss.xml' : '/rss.xml')
 </script>
