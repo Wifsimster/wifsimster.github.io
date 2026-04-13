@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 import Post from '@/views/Post.vue'
 import Archives from '@/views/Archives.vue'
 import Tag from '@/views/Tag.vue'
+import Privacy from '@/views/Privacy.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -46,6 +47,16 @@ const router = createRouter({
       path: '/en/tags/:tag',
       name: 'TagEn',
       component: Tag
+    },
+    {
+      path: '/privacy',
+      name: 'Privacy',
+      component: Privacy
+    },
+    {
+      path: '/en/privacy',
+      name: 'PrivacyEn',
+      component: Privacy
     }
   ]
 })

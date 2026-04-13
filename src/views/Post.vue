@@ -115,6 +115,7 @@ import { useI18n } from '@/composables/useI18n'
 import { usePosts } from '@/composables/usePosts'
 import { useImageGallery } from '@/composables/useImageGallery'
 import { useReadingProgress } from '@/composables/useReadingProgress'
+import { useEngagedReadBeacon } from '@/composables/useAnalytics'
 import { formatDate, estimateReadingTime } from '@/utils/posts'
 import type { Post } from '@/utils/posts'
 import { getAllPosts } from '@/posts'
@@ -148,6 +149,18 @@ const formattedDate = computed(() => {
 const readingTime = computed(() => {
   if (!post.value) return 1
   return estimateReadingTime(post.value.html, lang.value)
+})
+
+// Fire a single cookieless "engaged read" beacon once the reader has either
+// dwelled for 10s or scrolled past 50%. Opts-out automatically if the post
+// failed to load (404), if VITE_STATS_URL is unset, or if the reader leaves
+// before the threshold.
+useEngagedReadBeacon(() => {
+  if (!post.value) return null
+  return {
+    path: route.path,
+    title: post.value.title
+  }
 })
 
 // Dynamic document title
