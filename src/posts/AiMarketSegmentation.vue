@@ -17,7 +17,7 @@ const frenchContent: PostContent = {
 <p>Quand OpenAI annonce un plan à 100 dollars par mois, coincé entre le Plus à 20 et le Pro à 200, ce n'est pas juste un ajustement tarifaire. C'est la confirmation d'un phénomène que je constate depuis des mois : <strong>on n'utilise pas tous la même IA.</strong> Et le débat public qui en découle est faussé à la racine.</p>
 
 <h2>Deux IA, un seul nom</h2>
-<p>Regardez la grille tarifaire d'OpenAI aujourd'hui. Gratuit. Plus à 20 dollars. Le nouveau plan à 100 dollars. Pro à 200 dollars. Quatre niveaux. Quatre expériences radicalement différentes.</p>
+<p>Regardez <a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">la grille tarifaire d'OpenAI</a> aujourd'hui. Gratuit. Plus à 20 dollars. Le nouveau plan à 100 dollars. <a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">Pro à 200 dollars</a>. Quatre niveaux. Quatre expériences radicalement différentes. <em>(Sources : <a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">openai.com/chatgpt/pricing</a>, <a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">openai.com/index/introducing-chatgpt-pro</a>.)</em></p>
 <p>Sur le plan gratuit, vous avez un modèle bridé, des quotas serrés, des temps de réponse dégradés aux heures de pointe, et un accès limité aux derniers modèles. Sur le Plus à 20 dollars, c'est mieux — mais les quotas restent contraignants, surtout si vous travaillez sérieusement. Vous touchez le plafond en milieu de journée. Vous attendez. Vous reformulez pour économiser des tokens. <strong>Vous adaptez votre façon de travailler aux limites de l'outil au lieu de l'inverse.</strong></p>
 <p>Sur le plan à 100 dollars, cinq fois plus de capacité. Accès prioritaire à Codex et aux modèles les plus puissants. Sur le Pro à 200 dollars, usage quasi illimité des meilleurs modèles, mode recherche approfondie, capacités étendues.</p>
 <p>Même marque. Même interface. Même nom. <strong>Mais ce ne sont pas les mêmes produits.</strong></p>
@@ -67,6 +67,13 @@ const frenchContent: PostContent = {
 <p>Et tant que le débat public sera alimenté par des gens qui n'ont connu que l'impression, les décisions qui en découleront seront décalées de la réalité. On régulera une technologie d'hier. On investira trop peu, trop tard. On perdra du terrain face à des compétiteurs qui, eux, ont compris que 200 dollars par mois n'est pas un abonnement — c'est un avantage compétitif.</p>
 <blockquote><p>Le plus grand risque avec l'IA en 2026, ce n'est pas qu'elle soit surestimée. C'est que les gens qui la sous-estiment soient exactement ceux qui prennent les décisions.</p></blockquote>
 
+<h2>Sources</h2>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">OpenAI — Tarifs ChatGPT</a> : page officielle listant l'ensemble des plans ChatGPT (Free, Plus à 20 $/mois, Business, Pro à 200 $/mois) et leurs quotas respectifs.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">OpenAI — Introducing ChatGPT Pro</a> : annonce officielle du plan ChatGPT Pro à 200 $/mois, avec accès étendu aux modèles de raisonnement avancé et au mode recherche approfondie.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/codex/">OpenAI — Codex</a> : page officielle de l'agent de développement Codex, inclus dans les plans Plus, Business et Pro avec des quotas différenciés.</li>
+</ul>
+
 <p><strong>Lire aussi :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> — pourquoi le processus était toujours cassé, et pourquoi les agents IA rendent impossible de faire semblant. Et sa suite : <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">Coder n'a jamais été le métier</a> — si l'IA a tué le processus, qu'advient-il des rôles ?</p>`
 }
 
@@ -79,7 +86,7 @@ const englishContent: PostContent = {
 <p>When OpenAI announces a $100/month plan, wedged between Plus at $20 and Pro at $200, it's not just a pricing adjustment. It's the confirmation of something I've been observing for months: <strong>we're not all using the same AI.</strong> And the public debate that follows is distorted at the root.</p>
 
 <h2>Two AIs, one name</h2>
-<p>Look at OpenAI's pricing grid today. Free. Plus at $20. The new plan at $100. Pro at $200. Four tiers. Four radically different experiences.</p>
+<p>Look at <a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">OpenAI's pricing grid</a> today. Free. Plus at $20. The new plan at $100. <a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">Pro at $200</a>. Four tiers. Four radically different experiences. <em>(Sources: <a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">openai.com/chatgpt/pricing</a>, <a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">openai.com/index/introducing-chatgpt-pro</a>.)</em></p>
 <p>On the free plan, you get a throttled model, tight quotas, degraded response times during peak hours, and limited access to the latest models. On Plus at $20, it's better — but quotas remain constraining, especially if you're doing serious work. You hit the ceiling by mid-afternoon. You wait. You rephrase to save tokens. <strong>You adapt your workflow to the tool's limits instead of the other way around.</strong></p>
 <p>On the $100 plan, five times more capacity. Priority access to Codex and the most powerful models. On Pro at $200, near-unlimited usage of the best models, deep research mode, extended capabilities.</p>
 <p>Same brand. Same interface. Same name. <strong>But these are not the same products.</strong></p>
@@ -128,6 +135,13 @@ const englishContent: PostContent = {
 <p>The free plan gives an impression. The premium plan gives a transformation.</p>
 <p>And as long as the public debate is fed by people who've only known the impression, the decisions that follow will be disconnected from reality. We'll regulate yesterday's technology. We'll invest too little, too late. We'll lose ground to competitors who understood that $200/month isn't a subscription — it's a competitive advantage.</p>
 <blockquote><p>The greatest risk with AI in 2026 isn't that it's overestimated. It's that the people underestimating it are exactly the ones making the decisions.</p></blockquote>
+
+<h2>Sources</h2>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">OpenAI — ChatGPT pricing</a>: official page listing every ChatGPT plan (Free, Plus at $20/month, Business, Pro at $200/month) and their respective quotas.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">OpenAI — Introducing ChatGPT Pro</a>: official announcement of the ChatGPT Pro plan at $200/month, with expanded access to advanced reasoning models and deep research mode.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/codex/">OpenAI — Codex</a>: official page for the Codex development agent, bundled into the Plus, Business and Pro plans with differentiated quotas.</li>
+</ul>
 
 <p><strong>Read also:</strong> <a target="_blank" rel="noopener noreferrer" href="/en/posts/sdlc-is-dead">The SDLC Is Dead</a> — why the process was always broken, and why AI agents are making it impossible to pretend otherwise. And its follow-up: <a target="_blank" rel="noopener noreferrer" href="/en/posts/coder-is-dead-engineer-is-born">Coding Was Never the Job</a> — if AI killed the process, what happens to the roles?</p>`
 }
