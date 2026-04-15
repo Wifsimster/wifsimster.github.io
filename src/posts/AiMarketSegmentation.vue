@@ -21,6 +21,7 @@ const frenchContent: PostContent = {
 <p>Sur le plan gratuit, vous avez un modèle bridé, des quotas serrés, des temps de réponse dégradés aux heures de pointe, et un accès limité aux derniers modèles. Sur le Plus à 23 €, c'est mieux — mais les quotas restent contraignants, surtout si vous travaillez sérieusement. Vous touchez le plafond en milieu de journée. Vous attendez. Vous reformulez pour économiser des tokens. <strong>Vous adaptez votre façon de travailler aux limites de l'outil au lieu de l'inverse.</strong></p>
 <p>Sur le plan à 109 €, cinq fois plus de capacité. Accès prioritaire à Codex et aux modèles les plus puissants. Sur le Pro à 229 €, usage quasi illimité des meilleurs modèles, mode recherche approfondie, capacités étendues.</p>
 <p>Même marque. Même interface. Même nom. <strong>Mais ce ne sont pas les mêmes produits.</strong></p>
+<blockquote><p>"Ils ne vendent plus un produit avec des options. Ils vendent deux produits sous la même marque — et seuls ceux qui paient savent ce que l'autre groupe manque."</p></blockquote>
 <p>Et OpenAI n'est pas seul. Anthropic a <a target="_blank" rel="noopener noreferrer" href="https://www.anthropic.com/pricing">son offre Max à 109 € et 229 € pour Claude</a>. Google pousse <a target="_blank" rel="noopener noreferrer" href="https://gemini.google/subscriptions/">Gemini Advanced</a>. Tous construisent la même structure : une vitrine gratuite pour les masses, et un vrai produit pour ceux qui paient.</p>
 
 <h2>Le fossé d'expérience</h2>
@@ -92,6 +93,7 @@ const englishContent: PostContent = {
 <p>On the free plan, you get a throttled model, tight quotas, degraded response times during peak hours, and limited access to the latest models. On Plus at $20, it's better — but quotas remain constraining, especially if you're doing serious work. You hit the ceiling by mid-afternoon. You wait. You rephrase to save tokens. <strong>You adapt your workflow to the tool's limits instead of the other way around.</strong></p>
 <p>On the $100 plan, five times more capacity. Priority access to Codex and the most powerful models. On Pro at $200, near-unlimited usage of the best models, deep research mode, extended capabilities.</p>
 <p>Same brand. Same interface. Same name. <strong>But these are not the same products.</strong></p>
+<blockquote><p>"They're no longer selling one product with options. They're selling two products under the same brand — and only those who pay know what the other group is missing."</p></blockquote>
 <p>And OpenAI isn't alone. Anthropic has its <a target="_blank" rel="noopener noreferrer" href="https://www.anthropic.com/pricing">Max offering at $100 and $200 for Claude</a>. Google pushes <a target="_blank" rel="noopener noreferrer" href="https://gemini.google/subscriptions/">Gemini Advanced</a>. Everyone is building the same structure: a free showcase for the masses, and a real product for those who pay.</p>
 
 <h2>The experience gap</h2>
