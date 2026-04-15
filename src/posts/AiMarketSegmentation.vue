@@ -21,7 +21,7 @@ const frenchContent: PostContent = {
 <p>Sur le plan gratuit, vous avez un modèle bridé, des quotas serrés, des temps de réponse dégradés aux heures de pointe, et un accès limité aux derniers modèles. Sur le Plus à 20 dollars, c'est mieux — mais les quotas restent contraignants, surtout si vous travaillez sérieusement. Vous touchez le plafond en milieu de journée. Vous attendez. Vous reformulez pour économiser des tokens. <strong>Vous adaptez votre façon de travailler aux limites de l'outil au lieu de l'inverse.</strong></p>
 <p>Sur le plan à 100 dollars, cinq fois plus de capacité. Accès prioritaire à Codex et aux modèles les plus puissants. Sur le Pro à 200 dollars, usage quasi illimité des meilleurs modèles, mode recherche approfondie, capacités étendues.</p>
 <p>Même marque. Même interface. Même nom. <strong>Mais ce ne sont pas les mêmes produits.</strong></p>
-<p>Et OpenAI n'est pas seul. Anthropic a son offre Max à 100 et 200 dollars pour Claude. Google pousse Gemini Advanced. Tous construisent la même structure : une vitrine gratuite pour les masses, et un vrai produit pour ceux qui paient.</p>
+<p>Et OpenAI n'est pas seul. Anthropic a <a target="_blank" rel="noopener noreferrer" href="https://www.anthropic.com/pricing">son offre Max à 100 et 200 dollars pour Claude</a>. Google pousse <a target="_blank" rel="noopener noreferrer" href="https://gemini.google/subscriptions/">Gemini Advanced</a>. Tous construisent la même structure : une vitrine gratuite pour les masses, et un vrai produit pour ceux qui paient.</p>
 
 <h2>Le fossé d'expérience</h2>
 <p>Ce n'est pas juste une question de quotas. C'est une question d'expérience qualitative.</p>
@@ -72,6 +72,8 @@ const frenchContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">OpenAI — Tarifs ChatGPT</a> : page officielle listant l'ensemble des plans ChatGPT (Free, Plus à 20 $/mois, Business, Pro à 200 $/mois) et leurs quotas respectifs.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">OpenAI — Introducing ChatGPT Pro</a> : annonce officielle du plan ChatGPT Pro à 200 $/mois, avec accès étendu aux modèles de raisonnement avancé et au mode recherche approfondie.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/codex/">OpenAI — Codex</a> : page officielle de l'agent de développement Codex, inclus dans les plans Plus, Business et Pro avec des quotas différenciés.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.anthropic.com/pricing">Anthropic — Tarifs Claude</a> : page officielle listant les plans Claude (Free, Pro à 20 $/mois, Max à 100 $ et 200 $/mois) avec leurs quotas d'usage et les modèles disponibles.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://gemini.google/subscriptions/">Google — Abonnements Gemini</a> : page officielle des plans Gemini (Free, Gemini Advanced via Google AI Pro et Google AI Ultra) avec les modèles Gemini les plus récents et les capacités étendues.</li>
 </ul>
 
 <p><strong>Lire aussi :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> — pourquoi le processus était toujours cassé, et pourquoi les agents IA rendent impossible de faire semblant. Et sa suite : <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">Coder n'a jamais été le métier</a> — si l'IA a tué le processus, qu'advient-il des rôles ?</p>`
@@ -90,7 +92,7 @@ const englishContent: PostContent = {
 <p>On the free plan, you get a throttled model, tight quotas, degraded response times during peak hours, and limited access to the latest models. On Plus at $20, it's better — but quotas remain constraining, especially if you're doing serious work. You hit the ceiling by mid-afternoon. You wait. You rephrase to save tokens. <strong>You adapt your workflow to the tool's limits instead of the other way around.</strong></p>
 <p>On the $100 plan, five times more capacity. Priority access to Codex and the most powerful models. On Pro at $200, near-unlimited usage of the best models, deep research mode, extended capabilities.</p>
 <p>Same brand. Same interface. Same name. <strong>But these are not the same products.</strong></p>
-<p>And OpenAI isn't alone. Anthropic has its Max offering at $100 and $200 for Claude. Google pushes Gemini Advanced. Everyone is building the same structure: a free showcase for the masses, and a real product for those who pay.</p>
+<p>And OpenAI isn't alone. Anthropic has its <a target="_blank" rel="noopener noreferrer" href="https://www.anthropic.com/pricing">Max offering at $100 and $200 for Claude</a>. Google pushes <a target="_blank" rel="noopener noreferrer" href="https://gemini.google/subscriptions/">Gemini Advanced</a>. Everyone is building the same structure: a free showcase for the masses, and a real product for those who pay.</p>
 
 <h2>The experience gap</h2>
 <p>This isn't just about quotas. It's about qualitative experience.</p>
@@ -141,6 +143,8 @@ const englishContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/chatgpt/pricing/">OpenAI — ChatGPT pricing</a>: official page listing every ChatGPT plan (Free, Plus at $20/month, Business, Pro at $200/month) and their respective quotas.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/index/introducing-chatgpt-pro/">OpenAI — Introducing ChatGPT Pro</a>: official announcement of the ChatGPT Pro plan at $200/month, with expanded access to advanced reasoning models and deep research mode.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://openai.com/codex/">OpenAI — Codex</a>: official page for the Codex development agent, bundled into the Plus, Business and Pro plans with differentiated quotas.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.anthropic.com/pricing">Anthropic — Claude pricing</a>: official page listing the Claude plans (Free, Pro at $20/month, Max at $100 and $200/month) with their usage quotas and available models.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://gemini.google/subscriptions/">Google — Gemini subscriptions</a>: official page for Gemini plans (Free, Gemini Advanced via Google AI Pro and Google AI Ultra) with the latest Gemini models and extended capabilities.</li>
 </ul>
 
 <p><strong>Read also:</strong> <a target="_blank" rel="noopener noreferrer" href="/en/posts/sdlc-is-dead">The SDLC Is Dead</a> — why the process was always broken, and why AI agents are making it impossible to pretend otherwise. And its follow-up: <a target="_blank" rel="noopener noreferrer" href="/en/posts/coder-is-dead-engineer-is-born">Coding Was Never the Job</a> — if AI killed the process, what happens to the roles?</p>`
