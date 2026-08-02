@@ -34,6 +34,7 @@ import ProxmoxNvmeMigration, { metadata as proxmoxNvmeMigrationMetadata, getCont
 import ForfaitJoursSalariesDares, { metadata as forfaitJoursMetadata, getContent as getForfaitJoursContent } from './ForfaitJoursSalariesDares.vue'
 import AiAgentsH1Verdict, { metadata as aiAgentsH1VerdictMetadata, getContent as getAiAgentsH1VerdictContent } from './AiAgentsH1Verdict.vue'
 import AgenticAddiction, { metadata as agenticAddictionMetadata, getContent as getAgenticAddictionContent } from './AgenticAddiction.vue'
+import PoIsDeadJudgmentIsNot, { metadata as poIsDeadMetadata, getContent as getPoIsDeadContent } from './PoIsDeadJudgmentIsNot.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -216,6 +217,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: agenticAddictionMetadata,
     getContent: getAgenticAddictionContent,
     component: AgenticAddiction
+  },
+  'po-is-dead-judgment-is-not': {
+    metadata: poIsDeadMetadata,
+    getContent: getPoIsDeadContent,
+    component: PoIsDeadJudgmentIsNot
   }
 }
 
