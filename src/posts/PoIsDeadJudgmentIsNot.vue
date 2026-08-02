@@ -143,12 +143,17 @@ const englishContent: PostContent = {
 <path d="M 80 130 C 300 127 500 126 716 124 L 716 280 C 650 278 550 274 440 248 C 320 214 220 148 80 130 Z" fill="currentColor" fill-opacity="0.10" stroke="none"></path>
 <path d="M 80 130 C 220 148 320 214 440 248 C 550 274 650 278 716 280" fill="none" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.8" stroke-linecap="round"></path>
 <path d="M 80 130 C 300 127 500 126 716 124" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="5,4" stroke-linecap="round"></path>
+<line x1="110" y1="267" x2="142" y2="267" stroke="currentColor" stroke-opacity="0.8" stroke-width="2.5" stroke-linecap="round"></line>
 <text x="150" y="272" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">cost of producing a feature</text>
+<line x1="320" y1="107" x2="352" y2="107" stroke="currentColor" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5,4" stroke-linecap="round"></line>
 <text x="360" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">cost of knowing what to build</text>
-<g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
-<path d="M 738 124 L 744 124 L 744 280 L 738 280"></path>
+<text x="560" y="180" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650" text-anchor="middle">the widening gap</text>
+<text x="560" y="203" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650" text-anchor="middle">= product judgment</text>
+<g fill="none" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+<line x1="688" y1="138" x2="688" y2="266"></line>
+<path d="M 681 148 L 688 138 L 695 148"></path>
+<path d="M 681 256 L 688 266 L 695 256"></path>
 </g>
-<text x="764" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" text-anchor="middle" transform="rotate(-90 764 202)">where product judgment lives</text>
 <text x="736" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="end" opacity="0.6">2023 → 2026</text>
 <text x="48" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.6" transform="rotate(-90 48 194)">cost</text>
 <text x="64" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">conceptual diagram — shapes, not measurements</text>
@@ -323,12 +328,17 @@ const frenchContent: PostContent = {
 <path d="M 80 130 C 300 127 500 126 716 124 L 716 280 C 650 278 550 274 440 248 C 320 214 220 148 80 130 Z" fill="currentColor" fill-opacity="0.10" stroke="none"></path>
 <path d="M 80 130 C 220 148 320 214 440 248 C 550 274 650 278 716 280" fill="none" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.8" stroke-linecap="round"></path>
 <path d="M 80 130 C 300 127 500 126 716 124" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="5,4" stroke-linecap="round"></path>
+<line x1="110" y1="267" x2="142" y2="267" stroke="currentColor" stroke-opacity="0.8" stroke-width="2.5" stroke-linecap="round"></line>
 <text x="150" y="272" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">coût de production d'une fonctionnalité</text>
+<line x1="320" y1="107" x2="352" y2="107" stroke="currentColor" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="5,4" stroke-linecap="round"></line>
 <text x="360" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">coût de savoir quoi construire</text>
-<g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
-<path d="M 738 124 L 744 124 L 744 280 L 738 280"></path>
+<text x="560" y="180" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650" text-anchor="middle">l'écart qui s'ouvre</text>
+<text x="560" y="203" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650" text-anchor="middle">= le jugement produit</text>
+<g fill="none" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+<line x1="688" y1="138" x2="688" y2="266"></line>
+<path d="M 681 148 L 688 138 L 695 148"></path>
+<path d="M 681 256 L 688 266 L 695 256"></path>
 </g>
-<text x="764" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" text-anchor="middle" transform="rotate(-90 764 202)">là où vit le jugement produit</text>
 <text x="736" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="end" opacity="0.6">2023 → 2026</text>
 <text x="48" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.6" transform="rotate(-90 48 194)">coût</text>
 <text x="64" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">diagramme conceptuel — des formes, pas des mesures</text>
