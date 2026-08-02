@@ -58,6 +58,39 @@ const englishContent: PostContent = {
 </svg>
 <p>There is a serious objection here, and it deserves to be stated at full strength. <abbr title="Richard Sutton — reinforcement-learning researcher, author of the 2019 essay The Bitter Lesson">Richard Sutton</abbr>'s Bitter Lesson, applied to agents, says every scaffold is a bet against the next model: the elaborate orchestration you hand-roll today is exactly what the next release absorbs, and the harness builders themselves have deleted large parts of their scaffolding at each generation. That critique is correct — about <em>procedural</em> scaffolding. Hand-written control flow, orchestration logic, prompt choreography: that layer depreciates with the models, and we have thrown ours away more than once.</p>
 <p>But it does not touch the other layer. No model release will ever ship knowing that in our product, a specific field is locked after signature for legal reasons. That fact is not intelligence; it is <em>our</em> system. The declarative layer — decisions, constraints, domain rules, acceptance criteria — is knowledge no amount of model progress makes obsolete, because no vendor has it. The thesis of this post is deliberately narrow: procedural scaffolding depreciates like models do. What compounds is declarative, machine-checked doctrine.</p>
+<svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Bitter Lesson applied: each model generation's procedural scaffolding gets thrown away and rebuilt, while the declarative doctrine — ADRs, domain rules, acceptance criteria — crosses generations intact, because it belongs to no model." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE BITTER LESSON, APPLIED · WHAT IS DISCARDED, WHAT STAYS</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">Scaffolding is discarded. Doctrine crosses over.</text>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" text-anchor="middle" opacity="0.55" letter-spacing="0.08em">
+<text x="176" y="106">GENERATION N</text>
+<text x="400" y="106">GENERATION N+1</text>
+<text x="624" y="106">GENERATION N+2</text>
+</g>
+<g stroke="currentColor" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="5,4">
+<rect x="76" y="116" width="200" height="60" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
+<rect x="300" y="116" width="200" height="60" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
+</g>
+<rect x="524" y="116" width="200" height="60" rx="8" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.28" stroke-width="1"></rect>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" text-anchor="middle" opacity="0.7">
+<text x="176" y="150">procedural scaffolding</text>
+<text x="400" y="150">procedural scaffolding</text>
+<text x="624" y="150">procedural scaffolding</text>
+</g>
+<g stroke="currentColor" stroke-opacity="0.35" stroke-width="1.2" stroke-linecap="round">
+<line x1="90" y1="170" x2="262" y2="122"></line>
+<line x1="314" y1="170" x2="486" y2="122"></line>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" text-anchor="middle" opacity="0.55">
+<text x="176" y="196">thrown away</text>
+<text x="400" y="196">thrown away</text>
+<text x="624" y="196">in service</text>
+</g>
+<path d="M 618 202 L 624 212 L 630 202" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<rect x="64" y="222" width="672" height="56" rx="8" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
+<text x="400" y="255" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">declarative doctrine — ADRs · domain rules · acceptance criteria</text>
+<text x="400" y="298" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="middle" opacity="0.6">crosses generations, intact</text>
+<text x="64" y="322" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">the procedural layer depreciates with the models — the declarative layer belongs to no model</text>
+</svg>
 
 <h2>What agents read before touching code</h2>
 <p>Concretely, on <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, an agent does not start from a blank prompt. There is an official reading order, written down: the root context file, then the ADRs, then the context file of the subsystem it is about to touch, then the domain rules, the design rules, the security rules. The corpus behind that order, as of late July: 59 ADRs that agents must read before any structural change. 134-plus enforceable rules, each linked to the acceptance criteria of the spec it serves, each imposed by blocking CI — no rule drifts silently. 23 anti-drift check scripts. 47 packaged skills. 42 context files: one at the root, one per subsystem, each documenting the service's role, its applicable ADRs, its local conventions.</p>
@@ -68,6 +101,57 @@ const englishContent: PostContent = {
 <p>Now the paragraph I owe you. My first post in this series declared the <abbr title="Software Development Life Cycle">SDLC</abbr> dead: the process was always waste, ceremony is what you do when you don't trust your tools. A hostile reader writes the tweet in ten seconds: <em>he killed the SDLC and rebuilt it in YAML.</em></p>
 <blockquote><p>Yes, I rebuilt a process. The promise was never "no process". It was "no process that burns human hours without verifying anything".</p></blockquote>
 <p>Here is the discriminator, and it is falsifiable. A ceremony consumes human time at every occurrence and verifies nothing: the estimation meeting, the sign-off, the status update — hours per week, forever, and none of them ever caught a regression. A compiled constraint consumes zero marginal human time and verifies every time: the rule runs in seconds, blocks deterministically, and never gets tired on a Friday afternoon. The old process taxed humans to produce a feeling of control. The doctrine taxes machines to produce actual control. And the day one of our rules requires a meeting to interpret, it has become a ceremony again — and it must die.</p>
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The falsifiable discriminator between ceremony and compiled constraint: a ceremony costs human hours at every occurrence and verifies nothing, while a compiled constraint costs zero marginal human time and verifies at every occurrence — the tax moves from humans to machines." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE DISCRIMINATOR · CEREMONY vs COMPILED CONSTRAINT</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">The tax changes payer.</text>
+<text x="64" y="104" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" opacity="0.6">ceremony — human cost at every occurrence</text>
+<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
+<rect x="64" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="127" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="190" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="253" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="316" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="379" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="442" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="505" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="568" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="631" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+</g>
+<text x="690" y="140" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">verifies:</text>
+<text x="690" y="155" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">nothing</text>
+<text x="64" y="228" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" opacity="0.6">compiled constraint — zero marginal human cost</text>
+<g fill="none" stroke="currentColor" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 76 258 L 82 264 L 94 250"></path>
+<path d="M 139 258 L 145 264 L 157 250"></path>
+<path d="M 202 258 L 208 264 L 220 250"></path>
+<path d="M 265 258 L 271 264 L 283 250"></path>
+<path d="M 328 258 L 334 264 L 346 250"></path>
+<path d="M 391 258 L 397 264 L 409 250"></path>
+<path d="M 454 258 L 460 264 L 472 250"></path>
+<path d="M 517 258 L 523 264 L 535 250"></path>
+<path d="M 580 258 L 586 264 L 598 250"></path>
+<path d="M 643 258 L 649 264 L 661 250"></path>
+</g>
+<g stroke="none">
+<rect x="64" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="127" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="190" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="253" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="316" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="379" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="442" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="505" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="568" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="631" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+</g>
+<text x="690" y="262" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">verifies:</text>
+<text x="690" y="277" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">every time</text>
+<g fill="none" stroke="currentColor" stroke-opacity="0.32" stroke-width="1.5">
+<line x1="64" y1="308" x2="671" y2="308"></line>
+</g>
+<text x="64" y="328" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" opacity="0.6">occurrences →</text>
+<text x="64" y="352" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">the day a rule needs a meeting to be interpreted, it has become a ceremony again</text>
+</svg>
 <p>I will even concede the receipts: the March post already praised the agent that "validates against architectural constraints". The doctrine is that sentence, industrialized. What died was not process. What died was process aimed at people.</p>
 <p>One flank stays open, and I would rather name it than have it named for me. A doctrine that only ever accretes is the new waste — 134 rules in four and a half months extrapolates to a number I refuse to type. Pruning has started where it was cheapest: four skills were deleted from the bundle when models made them native. Rules deleted so far: zero. That is the open flank. Quote it back at me.</p>
 
@@ -177,6 +261,39 @@ const frenchContent: PostContent = {
 </svg>
 <p>Il y a ici une objection sérieuse, et elle mérite d'être énoncée à pleine puissance. La Bitter Lesson de <abbr title="Richard Sutton — chercheur en apprentissage par renforcement, auteur de l'essai The Bitter Lesson (2019)">Richard Sutton</abbr>, appliquée aux agents, dit que tout échafaudage est un pari contre le prochain modèle : l'orchestration sophistiquée que vous écrivez à la main aujourd'hui est exactement ce que la prochaine version absorbe, et les constructeurs de harnais eux-mêmes ont supprimé des pans entiers de leur échafaudage à chaque génération. Cette critique est juste — pour l'échafaudage <em>procédural</em>. Le flux de contrôle écrit à la main, la logique d'orchestration, la chorégraphie de prompts : cette couche se déprécie avec les modèles, et nous avons jeté la nôtre plus d'une fois.</p>
 <p>Mais elle ne touche pas l'autre couche. Aucune version de modèle ne saura jamais, en sortant de l'usine, que dans notre produit un champ précis est verrouillé après signature pour des raisons légales. Ce fait n'est pas de l'intelligence ; c'est <em>notre</em> système. La couche déclarative — les décisions, les contraintes, les règles métier, les critères d'acceptation — est un savoir qu'aucun progrès des modèles ne rend obsolète, parce qu'aucun éditeur ne le possède. La thèse de ce billet est volontairement étroite : l'échafaudage procédural se déprécie comme les modèles. Ce qui se capitalise, c'est la doctrine déclarative et vérifiée par la machine.</p>
+<svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La Bitter Lesson appliquée : l'échafaudage procédural de chaque génération de modèle est jeté puis reconstruit, tandis que la doctrine déclarative — ADR, règles métier, critères d'acceptation — traverse les générations intacte, parce qu'elle n'appartient à aucun modèle." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA BITTER LESSON, APPLIQUÉE · CE QUI SE JETTE, CE QUI RESTE</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">L'échafaudage se jette. La doctrine traverse.</text>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" text-anchor="middle" opacity="0.55" letter-spacing="0.08em">
+<text x="176" y="106">GÉNÉRATION N</text>
+<text x="400" y="106">GÉNÉRATION N+1</text>
+<text x="624" y="106">GÉNÉRATION N+2</text>
+</g>
+<g stroke="currentColor" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="5,4">
+<rect x="76" y="116" width="200" height="60" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
+<rect x="300" y="116" width="200" height="60" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
+</g>
+<rect x="524" y="116" width="200" height="60" rx="8" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.28" stroke-width="1"></rect>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" text-anchor="middle" opacity="0.7">
+<text x="176" y="150">échafaudage procédural</text>
+<text x="400" y="150">échafaudage procédural</text>
+<text x="624" y="150">échafaudage procédural</text>
+</g>
+<g stroke="currentColor" stroke-opacity="0.35" stroke-width="1.2" stroke-linecap="round">
+<line x1="90" y1="170" x2="262" y2="122"></line>
+<line x1="314" y1="170" x2="486" y2="122"></line>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" text-anchor="middle" opacity="0.55">
+<text x="176" y="196">jeté</text>
+<text x="400" y="196">jeté</text>
+<text x="624" y="196">en service</text>
+</g>
+<path d="M 618 202 L 624 212 L 630 202" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<rect x="64" y="222" width="672" height="56" rx="8" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
+<text x="400" y="255" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">doctrine déclarative — ADR · règles métier · critères d'acceptation</text>
+<text x="400" y="298" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="middle" opacity="0.6">traverse les générations, intacte</text>
+<text x="64" y="322" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">la couche procédurale se déprécie avec les modèles — la couche déclarative n'appartient à aucun modèle</text>
+</svg>
 
 <h2>Ce que les agents lisent avant de toucher au code</h2>
 <p>Concrètement, sur <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, un agent ne part pas d'un prompt vide. Il existe un ordre de lecture officiel, écrit : le fichier de contexte racine, puis les ADR, puis le fichier de contexte du sous-système qu'il s'apprête à toucher, puis les règles métier, les règles de design, la sécurité. Le corpus derrière cet ordre, à fin juillet : 59 ADR que les agents doivent lire avant tout changement structurel. Plus de 134 règles opposables, chacune reliée aux critères d'acceptation de la spec qu'elle sert, chacune imposée par une CI bloquante — aucune règle ne dérive en silence. 23 scripts de contrôle anti-dérive. 47 skills packagés. 42 fichiers de contexte : un à la racine, un par sous-système, chacun documentant le rôle du service, ses ADR applicables, ses conventions locales.</p>
@@ -187,6 +304,57 @@ const frenchContent: PostContent = {
 <p>Voici le paragraphe que je vous dois. Mon premier billet de cette série déclarait le <abbr title="Software Development Life Cycle — le cycle de vie du développement logiciel">SDLC</abbr> mort : le processus a toujours été du gaspillage, la cérémonie est ce qu'on fait quand on ne fait pas confiance à ses outils. Un lecteur hostile écrit le tweet en dix secondes : <em>il a tué le SDLC et l'a reconstruit en YAML.</em></p>
 <blockquote><p>Oui, j'ai reconstruit un processus. La promesse n'a jamais été « zéro processus ». C'était « zéro processus qui brûle des heures humaines sans rien vérifier ».</p></blockquote>
 <p>Voici le discriminant, et il est falsifiable. Une cérémonie consomme du temps humain à chaque occurrence et ne vérifie rien : la réunion d'estimation, la signature de validation, le point d'avancement — des heures par semaine, pour toujours, et aucune n'a jamais attrapé une régression. Une contrainte compilée consomme zéro temps humain marginal et vérifie à chaque fois : la règle tourne en secondes, bloque de façon déterministe, et ne fatigue pas le vendredi après-midi. L'ancien processus taxait les humains pour produire un sentiment de contrôle. La doctrine taxe les machines pour produire du contrôle réel. Et le jour où une de nos règles exige une réunion pour être interprétée, elle est redevenue une cérémonie — et elle doit mourir.</p>
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Le discriminant falsifiable entre cérémonie et contrainte compilée : une cérémonie coûte des heures humaines à chaque occurrence et ne vérifie rien, tandis qu'une contrainte compilée coûte zéro temps humain marginal et vérifie à chaque occurrence — la taxe passe des humains aux machines." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">LE DISCRIMINANT · CÉRÉMONIE vs CONTRAINTE COMPILÉE</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">La taxe change de payeur.</text>
+<text x="64" y="104" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" opacity="0.6">cérémonie — coût humain à chaque occurrence</text>
+<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
+<rect x="64" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="127" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="190" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="253" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="316" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="379" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="442" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="505" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="568" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="631" y="116" width="40" height="56" rx="6" fill="currentColor" fill-opacity="0.14"></rect>
+</g>
+<text x="690" y="140" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">vérifie :</text>
+<text x="690" y="155" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">rien</text>
+<text x="64" y="228" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" opacity="0.6">contrainte compilée — coût humain marginal zéro</text>
+<g fill="none" stroke="currentColor" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 76 258 L 82 264 L 94 250"></path>
+<path d="M 139 258 L 145 264 L 157 250"></path>
+<path d="M 202 258 L 208 264 L 220 250"></path>
+<path d="M 265 258 L 271 264 L 283 250"></path>
+<path d="M 328 258 L 334 264 L 346 250"></path>
+<path d="M 391 258 L 397 264 L 409 250"></path>
+<path d="M 454 258 L 460 264 L 472 250"></path>
+<path d="M 517 258 L 523 264 L 535 250"></path>
+<path d="M 580 258 L 586 264 L 598 250"></path>
+<path d="M 643 258 L 649 264 L 661 250"></path>
+</g>
+<g stroke="none">
+<rect x="64" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="127" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="190" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="253" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="316" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="379" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="442" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="505" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="568" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+<rect x="631" y="276" width="40" height="6" rx="3" fill="currentColor" fill-opacity="0.35"></rect>
+</g>
+<text x="690" y="262" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">vérifie :</text>
+<text x="690" y="277" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600" opacity="0.8">à chaque fois</text>
+<g fill="none" stroke="currentColor" stroke-opacity="0.32" stroke-width="1.5">
+<line x1="64" y1="308" x2="671" y2="308"></line>
+</g>
+<text x="64" y="328" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" opacity="0.6">occurrences →</text>
+<text x="64" y="352" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">le jour où une règle exige une réunion pour être interprétée, elle est redevenue une cérémonie</text>
+</svg>
 <p>Je concède même les pièces à conviction : le billet de mars louait déjà l'agent qui « valide contre les contraintes architecturales ». La doctrine, c'est cette phrase, industrialisée. Ce qui est mort, ce n'est pas le processus. C'est le processus pointé sur les gens.</p>
 <p>Un flanc reste ouvert, et je préfère le nommer moi-même. Une doctrine qui ne fait qu'accréter est le nouveau gaspillage — 134 règles en quatre mois et demi, extrapolez, je refuse d'écrire le chiffre. L'élagage a commencé là où il était le moins cher : quatre skills ont été supprimés du bundle quand les modèles les ont rendus natifs. Règles supprimées à ce jour : zéro. C'est le flanc ouvert. Ressortez-le-moi.</p>
 

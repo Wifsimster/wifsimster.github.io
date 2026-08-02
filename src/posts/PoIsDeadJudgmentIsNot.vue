@@ -17,6 +17,36 @@ const englishContent: PostContent = {
 <p>Four posts, four authors who don't know each other, four angles. A lead product manager wrote that the PO role was always an organizational aberration and has become indefensible in the AI era: hiring someone to feed a backlog, write tickets and relay information between business and developers is optimizing an organization that is already obsolete. A transformation consultant answered, without knowing she was answering: her team generated two days' worth of user stories in two hours, well-written, well-sliced — and disconnected from the field constraints only real interviews would have surfaced. Her conclusion: the tool accelerated production, not the understanding of the problem, so the PM's value moves to arbitration and to field knowledge that cannot be delegated. A staff platform engineer admitted he no longer has the capacity to re-read all the code his agents produce, and that line-by-line review is probably no longer the right fight: invest in specifications, give the agents the means to test their own work, demand verifiable reports. And an independent developer observed that a single person can now carry a product end to end — code becoming one means among others, no longer the main activity.</p>
 <p>Each of them is right about their segment. The lead PM is right that a role reduced to relaying is dead weight. The consultant is right that generated output is not understanding. The engineer is right that human attention has to move upstream, toward the spec and the verification harness. The indie developer is right that the walls between specialties are falling. They just aren't describing four different things.</p>
 <blockquote><p>Four angles, one event: production stopped being the scarce thing.</p></blockquote>
+<svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four LinkedIn posts from four authors who don't know each other — the PO is indefensible, the PM remains essential, I no longer review line by line, one product one person — converge on a single event: production stopped being the scarce thing." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE SAME WEEK · FOUR POSTS</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">Four angles. One event.</text>
+<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
+<rect x="64" y="102" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="64" y="156" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.13"></rect>
+<rect x="64" y="210" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="64" y="264" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.15"></rect>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif">
+<text x="80" y="121" font-size="12" font-weight="600">« The PO is indefensible »</text>
+<text x="80" y="138" font-size="10" opacity="0.55">a lead product manager</text>
+<text x="80" y="175" font-size="12" font-weight="600">« The PM remains essential »</text>
+<text x="80" y="192" font-size="10" opacity="0.55">a transformation consultant</text>
+<text x="80" y="229" font-size="12" font-weight="600">« I no longer review line by line »</text>
+<text x="80" y="246" font-size="10" opacity="0.55">a staff platform engineer</text>
+<text x="80" y="283" font-size="12" font-weight="600">« One product, one person »</text>
+<text x="80" y="300" font-size="10" opacity="0.55">an independent developer</text>
+</g>
+<g fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round">
+<path d="M 336 124 C 430 124 480 176 540 194"></path>
+<path d="M 336 178 C 430 178 480 194 540 200"></path>
+<path d="M 336 232 C 430 232 480 212 540 206"></path>
+<path d="M 336 286 C 430 286 480 230 540 212"></path>
+</g>
+<circle cx="550" cy="203" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="570" y="197" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">production stopped</text>
+<text x="570" y="215" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">being the scarce thing</text>
+<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">four authors who don't know each other — paraphrased, anonymized</text>
+</svg>
 <p>I wrote the engineering side of this a few months ago: <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coding was never the job</a>. This is the product side, seen from where I sit — an engineering lead on regulated healthcare software, on the other side of the wall from the product people. And from that side, the debate about whether the PO is dead misses the corpse.</p>
 
 <h2>What the product week was actually made of</h2>
@@ -61,6 +91,43 @@ const englishContent: PostContent = {
 <p><strong>Refusal.</strong> The most valuable sentence a product person says to my team is no. No, this drafted requirement contradicts how the certified module handles retention. No, we will not ship this to satisfy one hospital's workaround. Refusal requires knowing why, and being able to say why in a language an auditor accepts.</p>
 <p><strong>The field.</strong> Agents interpolate from tickets, and tickets lie by omission. Nobody's backlog contains the fact that the night-shift nurse uses the software with gloves on, standing, interrupted every ninety seconds. Someone has to have watched. That knowledge does not come out of a language model, because it was never written down anywhere a model could read it.</p>
 <p>My industry adds a fourth thing, and it is the one the LinkedIn debate never touches. In regulated healthcare software, a requirement is not a to-do item. It is a compliance artifact. The chain from user need to requirement to architecture to verification test is not bureaucracy; it is the thing the auditor reads, and every link carries a human signature that means something. An agent can draft every link of that chain. It cannot own a single one. "The agent generated it" is not provenance an audit accepts — the questions remain who reviewed it, when, under which procedure.</p>
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The traceability chain of regulated healthcare software — user need, requirement, architecture, verification test — where an agent can draft every link but own none: every link carries a human signature, and the most dangerous generated link is the one approved without being read." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">REGULATED HEALTHCARE · THE TRACEABILITY CHAIN</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">The agent drafts. The human signs.</text>
+<g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
+<path d="M 64 118 L 64 110 L 736 110 L 736 118"></path>
+</g>
+<text x="400" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle" opacity="0.75">an agent can draft every link…</text>
+<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
+<rect x="64" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="240" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="416" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="592" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+<text x="136" y="159">user need</text>
+<text x="312" y="159">requirement</text>
+<text x="488" y="159">architecture</text>
+<text x="664" y="152">verification</text>
+<text x="664" y="168">test</text>
+</g>
+<g fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 216 146 L 228 154 L 216 162"></path>
+<path d="M 392 146 L 404 154 L 392 162"></path>
+<path d="M 568 146 L 580 154 L 568 162"></path>
+</g>
+<g fill="none" stroke="currentColor" stroke-opacity="0.65" stroke-width="1.5" stroke-linecap="round">
+<path d="M 108 200 C 124 192 138 206 148 196 C 154 191 160 195 164 193"></path>
+<path d="M 284 200 C 300 192 314 206 324 196 C 330 191 336 195 340 193"></path>
+<path d="M 460 200 C 476 192 490 206 500 196 C 506 191 512 195 516 193"></path>
+<path d="M 636 200 C 652 192 666 206 676 196 C 682 191 688 195 692 193"></path>
+</g>
+<g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
+<path d="M 64 220 L 64 228 L 736 228 L 736 220"></path>
+</g>
+<text x="400" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">…it can own none: who reviewed, when, under which procedure</text>
+<text x="64" y="286" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">the most dangerous generated link is the one approved without being read</text>
+</svg>
 <p>And here the acceleration cuts both ways. A product owner who wrote twelve requirements had read them. A product owner who approves sixty agent-drafted requirements per sprint is a click-through risk. The failure mode is not new. I have <a target="_blank" rel="noopener noreferrer" href="/posts/the-lan-is-dead">already been burned</a> by a checkbox that everyone trusted and nobody read; the same checkbox is now waiting inside the traceability chain. AI makes the chain cheaper to produce and more dangerous to rubber-stamp. The trap even has a recognizable shape: a generated story that is internally perfect — testable, well-sliced, <abbr title="INVEST — Independent, Negotiable, Valuable, Estimable, Small, Testable: the classic checklist for well-formed user stories">INVEST</abbr>-compliant — and wrong, because it assumes a field is editable that is locked after signature for legal reasons. Every test passes. Only the person who knows the domain flinches. That person is the exact mirror of the engineer I described in the <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coder post</a>: the one who notices something is wrong when everything is green.</p>
 
 <h2>The boundary dissolves — and the trap accelerates</h2>
@@ -129,6 +196,36 @@ const frenchContent: PostContent = {
 <p>Quatre posts, quatre auteurs qui ne se connaissent pas, quatre angles. Un lead product écrivait que le poste de PO a toujours été une aberration organisationnelle et devient indéfendable à l'ère de l'IA : recruter quelqu'un pour alimenter un backlog, rédiger des tickets et faire l'intermédiaire entre le métier et les développeurs, c'est optimiser une organisation déjà obsolète. Une consultante en transformation lui répondait sans le savoir : son équipe a généré en deux heures ce qui prenait deux jours de user stories — bien rédigées, bien découpées, et déconnectées des contraintes terrain que seuls de vrais entretiens auraient fait remonter. Sa conclusion : l'outil a accéléré la production, pas la compréhension du problème ; la valeur du PM se déplace vers l'arbitrage et vers une connaissance du terrain qui ne se délègue pas. Un staff engineer reconnaissait ne plus avoir la capacité de relire tout le code produit par ses agents, et que la relecture ligne à ligne n'est probablement plus le bon combat : investir dans les spécifications, donner aux agents les moyens de tester leur travail, exiger des rapports vérifiables. Et un développeur indépendant observait qu'une personne seule peut désormais porter un produit de bout en bout — le code devenant un moyen parmi d'autres, et non plus l'activité principale.</p>
 <p>Chacun a raison sur son segment. Le lead product a raison : un rôle réduit au relais est un poids mort. La consultante a raison : la production générée n'est pas de la compréhension. L'ingénieur a raison : l'attention humaine doit remonter vers la spec et le harnais de vérification. L'indépendant a raison : les murs entre spécialités tombent. Simplement, ils ne décrivent pas quatre choses différentes.</p>
 <blockquote><p>Quatre angles, un seul événement : la production a cessé d'être la chose rare.</p></blockquote>
+<svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Quatre posts LinkedIn de quatre auteurs qui ne se connaissent pas — le PO est indéfendable, le PM reste indispensable, je ne relis plus ligne à ligne, un produit une personne — convergent vers un seul événement : la production a cessé d'être la chose rare." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA MÊME SEMAINE · QUATRE POSTS</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">Quatre angles. Un événement.</text>
+<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
+<rect x="64" y="102" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="64" y="156" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.13"></rect>
+<rect x="64" y="210" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="64" y="264" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.15"></rect>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif">
+<text x="80" y="121" font-size="12" font-weight="600">« Le PO est indéfendable »</text>
+<text x="80" y="138" font-size="10" opacity="0.55">un lead product</text>
+<text x="80" y="175" font-size="12" font-weight="600">« Le PM reste indispensable »</text>
+<text x="80" y="192" font-size="10" opacity="0.55">une consultante en transformation</text>
+<text x="80" y="229" font-size="12" font-weight="600">« Je ne relis plus ligne à ligne »</text>
+<text x="80" y="246" font-size="10" opacity="0.55">un staff engineer</text>
+<text x="80" y="283" font-size="12" font-weight="600">« Un produit, une seule personne »</text>
+<text x="80" y="300" font-size="10" opacity="0.55">un développeur indépendant</text>
+</g>
+<g fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round">
+<path d="M 336 124 C 430 124 480 176 540 194"></path>
+<path d="M 336 178 C 430 178 480 194 540 200"></path>
+<path d="M 336 232 C 430 232 480 212 540 206"></path>
+<path d="M 336 286 C 430 286 480 230 540 212"></path>
+</g>
+<circle cx="550" cy="203" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="570" y="197" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">la production a cessé</text>
+<text x="570" y="215" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">d'être la chose rare</text>
+<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">quatre auteurs qui ne se connaissent pas — paraphrasés, anonymisés</text>
+</svg>
 <p>J'ai écrit le versant ingénierie de cette histoire il y a quelques mois : <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coder n'a jamais été le métier</a>. Voici le versant produit, vu de là où je suis — lead d'une équipe sur du logiciel de santé réglementé, de l'autre côté du mur des gens du produit. Et vu de ce côté-là, le débat sur la mort du PO se trompe de cadavre.</p>
 
 <h2>Ce que la semaine produit contenait vraiment</h2>
@@ -173,6 +270,44 @@ const frenchContent: PostContent = {
 <p><strong>Le refus.</strong> La phrase la plus précieuse qu'une personne produit dit à mon équipe, c'est non. Non, cette exigence générée contredit la gestion de la rétention du module certifié. Non, on ne livre pas ça pour satisfaire le contournement d'un seul établissement. Refuser exige de savoir pourquoi, et de pouvoir le dire dans une langue qu'un auditeur accepte.</p>
 <p><strong>Le terrain.</strong> Les agents interpolent à partir des tickets, et les tickets mentent par omission. Aucun backlog ne contient le fait que l'infirmière de nuit utilise le logiciel debout, avec des gants, interrompue toutes les quatre-vingt-dix secondes. Il faut que quelqu'un ait regardé. Ce savoir-là ne sort pas d'un modèle de langage : il n'a jamais été écrit nulle part où un modèle aurait pu le lire.</p>
 <p>Mon secteur ajoute une quatrième chose, celle que le débat LinkedIn ne touche jamais. Dans le logiciel de santé réglementé, une exigence n'est pas une tâche à faire. C'est un artefact de conformité. La chaîne qui va du besoin utilisateur à l'exigence, à l'architecture, au test de vérification n'est pas de la bureaucratie : c'est ce que l'auditeur lit, et chaque maillon porte une signature humaine qui veut dire quelque chose. Un agent peut rédiger chaque maillon de cette chaîne. Il ne peut en posséder aucun. « C'est l'agent qui l'a générée » n'est pas une provenance qu'un audit accepte — les questions restent : qui a relu, quand, selon quelle procédure.</p>
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La chaîne de traçabilité du logiciel de santé réglementé — besoin utilisateur, exigence, architecture, test de vérification — où un agent peut rédiger chaque maillon mais n'en posséder aucun : chaque maillon porte une signature humaine, et le maillon généré le plus dangereux est celui qu'on approuve sans le lire." class="diagram-svg">
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">SANTÉ RÉGLEMENTÉE · LA CHAÎNE DE TRAÇABILITÉ</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">L'agent rédige. L'humain signe.</text>
+<g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
+<path d="M 64 118 L 64 110 L 736 110 L 736 118"></path>
+</g>
+<text x="400" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle" opacity="0.75">un agent peut rédiger chaque maillon…</text>
+<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
+<rect x="64" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="240" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="416" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+<rect x="592" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+<text x="136" y="152">besoin</text>
+<text x="136" y="168">utilisateur</text>
+<text x="312" y="159">exigence</text>
+<text x="488" y="159">architecture</text>
+<text x="664" y="152">test de</text>
+<text x="664" y="168">vérification</text>
+</g>
+<g fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M 216 146 L 228 154 L 216 162"></path>
+<path d="M 392 146 L 404 154 L 392 162"></path>
+<path d="M 568 146 L 580 154 L 568 162"></path>
+</g>
+<g fill="none" stroke="currentColor" stroke-opacity="0.65" stroke-width="1.5" stroke-linecap="round">
+<path d="M 108 200 C 124 192 138 206 148 196 C 154 191 160 195 164 193"></path>
+<path d="M 284 200 C 300 192 314 206 324 196 C 330 191 336 195 340 193"></path>
+<path d="M 460 200 C 476 192 490 206 500 196 C 506 191 512 195 516 193"></path>
+<path d="M 636 200 C 652 192 666 206 676 196 C 682 191 688 195 692 193"></path>
+</g>
+<g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
+<path d="M 64 220 L 64 228 L 736 228 L 736 220"></path>
+</g>
+<text x="400" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">…il ne peut en posséder aucun : qui a relu, quand, selon quelle procédure</text>
+<text x="64" y="286" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">le maillon généré le plus dangereux est celui qu'on approuve sans le lire</text>
+</svg>
 <p>Et là, l'accélération coupe dans les deux sens. Un PO qui rédigeait douze exigences les avait lues. Un PO qui approuve soixante exigences générées par sprint est un risque de tampon automatique. Le mode de défaillance n'est pas nouveau. Je me suis <a target="_blank" rel="noopener noreferrer" href="/posts/the-lan-is-dead">déjà fait avoir</a> par une case à cocher que tout le monde validait et que personne ne lisait ; la même case attend désormais au milieu de la chaîne de traçabilité. L'IA rend cette chaîne moins chère à produire et plus dangereuse à tamponner. Le piège a même une forme reconnaissable : une story générée, intérieurement parfaite — testable, bien découpée, conforme à <abbr title="INVEST — Independent, Negotiable, Valuable, Estimable, Small, Testable : la check-list classique des user stories bien formées">INVEST</abbr> — et fausse, parce qu'elle suppose modifiable un champ verrouillé après signature pour des raisons légales. Tous les tests passent. Seule la personne qui connaît le domaine tique. Cette personne est le miroir exact de l'ingénieur que je décrivais dans le <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">post sur le code</a> : celle qui remarque que quelque chose cloche quand tout est vert.</p>
 
 <h2>La frontière se dissout — et le piège accélère</h2>
