@@ -136,6 +136,19 @@ Where they disagreed, and resolution:
   transformation consultant", "a staff platform engineer", "an indie developer").
 - Diagrams labeled illustrative/conceptual — diagnosis vs arithmetic rule.
 
+## Material banked for a future post
+
+During the session the author supplied a full inventory of the team's AI-native
+method (instruction layer, skills/hooks, CI guardrails, training sessions, AI
+squad, roadmap). Only the product-relevant core was used in this post. The rest
+is a strong candidate for a dedicated engineering-side article — working title
+beat: "La doctrine se capitalise. Les modèles, non." (doctrine-as-code, the agent
+context itself under a CI guardrail, a verify gate whose JSON is written to be
+read by an agent, the model as a versioned dependency). The squad's key finding —
+the bottleneck moved from code to specification — independently confirms this
+post's thesis. CAUTION for any future use: the inventory contains real names of
+partners, products and people; the blog only ever says Solstice*.
+
 ## Follow-ups for Wifsimster (the human)
 
 - Read the FR and EN drafts for anything that overclaims about the real team; the
