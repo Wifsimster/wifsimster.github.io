@@ -11,15 +11,15 @@ export const metadata: PostMetadata = {
 const englishContent: PostContent = {
   title: 'The Backlog Was Never the Job',
   description: 'The same week, my feed buried the Product Owner, saved the Product Manager, gave up reading AI code line by line, and handed a whole product to one person. Four posts, one event: production stopped being the scarce thing. What dies is the transmission belt. What survives is product judgment — and it no longer belongs to a single role.',
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> The same week, my feed buried the <abbr title="Product Owner — the Scrum role responsible for the backlog">PO</abbr> and saved the <abbr title="Product Manager">PM</abbr>. A third post gave up re-reading AI-generated code line by line. A fourth argued that one person can now carry a product end to end. Four posts, one event: production stopped being the scarce thing. What dies is the transmission-belt function — feeding a backlog, formatting tickets, relaying answers. What survives is product judgment, and it stops being the property of one role. People stay. The job description doesn't.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> The same week, my feed buried the <abbr title="Product Owner — the Scrum role responsible for the backlog">PO</abbr> and saved the <abbr title="Product Manager">PM</abbr>. A third post gave up re-reading AI-generated code line by line. A fourth argued that one person can now carry a product end to end. Four posts, one event: producing is no longer the scarce part. The relay function — feeding a backlog, formatting tickets, ferrying answers back and forth — dies. Product judgment survives, and it stops being the property of one role. People stay. The job description doesn't.</p></div>
 <hr>
 <p>The same week, my feed buried the Product Owner and saved him.</p>
 <p>Four posts, four authors who don't know each other, four angles. A lead product manager wrote that the PO role was always an organizational aberration and has become indefensible in the AI era: hiring someone to feed a backlog, write tickets and relay information between business and developers is optimizing an organization that is already obsolete. A transformation consultant answered, without knowing she was answering: her team generated two days' worth of user stories in two hours, well-written, well-sliced — and disconnected from the field constraints only real interviews would have surfaced. Her conclusion: the tool accelerated production, not the understanding of the problem, so the PM's value moves to arbitration and to field knowledge that cannot be delegated. A staff platform engineer admitted he no longer has the capacity to re-read all the code his agents produce, and that line-by-line review is probably no longer the right fight: invest in specifications, give the agents the means to test their own work, demand verifiable reports. And an independent developer observed that a single person can now carry a product end to end — code becoming one means among others, no longer the main activity.</p>
 <p>Each of them is right about their segment. The lead PM is right that a role reduced to relaying is dead weight. The consultant is right that generated output is not understanding. The engineer is right that human attention has to move upstream, toward the spec and the verification harness. The indie developer is right that the walls between specialties are falling. They just aren't describing four different things.</p>
 <blockquote><p>Four angles, one event: production stopped being the scarce thing.</p></blockquote>
 <svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four LinkedIn posts from four authors who don't know each other — the PO is indefensible, the PM remains essential, I no longer review line by line, one product one person — converge on a single event: production stopped being the scarce thing." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE SAME WEEK · FOUR POSTS</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">Four angles. One event.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE SAME WEEK · FOUR POSTS</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Four angles. One event.</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="64" y="102" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
 <rect x="64" y="156" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.13"></rect>
@@ -27,14 +27,14 @@ const englishContent: PostContent = {
 <rect x="64" y="264" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.15"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif">
-<text x="80" y="121" font-size="12" font-weight="600">« The PO is indefensible »</text>
-<text x="80" y="138" font-size="10" opacity="0.55">a lead product manager</text>
-<text x="80" y="175" font-size="12" font-weight="600">« The PM remains essential »</text>
-<text x="80" y="192" font-size="10" opacity="0.55">a transformation consultant</text>
-<text x="80" y="229" font-size="12" font-weight="600">« I no longer review line by line »</text>
-<text x="80" y="246" font-size="10" opacity="0.55">a staff platform engineer</text>
-<text x="80" y="283" font-size="12" font-weight="600">« One product, one person »</text>
-<text x="80" y="300" font-size="10" opacity="0.55">an independent developer</text>
+<text x="80" y="121" font-size="14.5" font-weight="600">« The PO is indefensible »</text>
+<text x="80" y="138" font-size="12.5" opacity="0.55">a lead product manager</text>
+<text x="80" y="175" font-size="14.5" font-weight="600">« The PM remains essential »</text>
+<text x="80" y="192" font-size="12.5" opacity="0.55">a transformation consultant</text>
+<text x="80" y="229" font-size="14.5" font-weight="600">« I no longer review line by line »</text>
+<text x="80" y="246" font-size="12.5" opacity="0.55">a staff platform engineer</text>
+<text x="80" y="283" font-size="14.5" font-weight="600">« One product, one person »</text>
+<text x="80" y="300" font-size="12.5" opacity="0.55">an independent developer</text>
 </g>
 <g fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round">
 <path d="M 336 124 C 430 124 480 176 540 194"></path>
@@ -43,9 +43,9 @@ const englishContent: PostContent = {
 <path d="M 336 286 C 430 286 480 230 540 212"></path>
 </g>
 <circle cx="550" cy="203" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="570" y="197" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">production stopped</text>
-<text x="570" y="215" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">being the scarce thing</text>
-<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">four authors who don't know each other — paraphrased, anonymized</text>
+<text x="570" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650">production stopped</text>
+<text x="570" y="217" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650">being the scarce thing</text>
+<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">four authors who don't know each other — paraphrased, anonymized</text>
 </svg>
 <p>I wrote the engineering side of this a few months ago: <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coding was never the job</a>. This is the product side, seen from where I sit — an engineering lead on regulated healthcare software, on the other side of the wall from the product people. And from that side, the debate about whether the PO is dead misses the corpse.</p>
 
@@ -55,12 +55,12 @@ const englishContent: PostContent = {
 <p>The daily version has the same shape. Twenty minutes of context assembly by someone who knows the domain, thirty seconds of generation, then the conversation that actually matters — this draft contradicts the retention policy, kill it; these two stories assume the same screen, merge them.</p>
 <blockquote><p>The brief became the work. The drafting was only ever the packaging.</p></blockquote>
 <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative decomposition of a product week as a single stacked bar: the transmission share — backlog feeding, ticket writing, relaying and status — is what AI agents absorb; the remaining share — arbitration, field knowledge, refusal — is what survives and becomes the job." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE PRODUCT WEEK, DECOMPOSED · ILLUSTRATIVE</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">The drafting leaves. The judgment stays.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE PRODUCT WEEK, DECOMPOSED · ILLUSTRATIVE</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">The drafting leaves. The judgment stays.</text>
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 64 118 L 64 110 L 450 110 L 450 118"></path>
 </g>
-<text x="257" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle" opacity="0.75">what agents absorb</text>
+<text x="257" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle" opacity="0.75">what agents absorb</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="64" y="140" width="136" height="56" rx="8" fill="currentColor" fill-opacity="0.10"></rect>
 <rect x="204" y="140" width="126" height="56" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
@@ -69,7 +69,7 @@ const englishContent: PostContent = {
 <rect x="558" y="140" width="92" height="56" rx="8" fill="currentColor" fill-opacity="0.34"></rect>
 <rect x="654" y="140" width="82" height="56" rx="8" fill="currentColor" fill-opacity="0.38"></rect>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="middle" opacity="0.6">
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.6">
 <text x="132" y="216">backlog</text>
 <text x="267" y="216">tickets</text>
 <text x="392" y="216">relay &amp; status</text>
@@ -80,10 +80,10 @@ const englishContent: PostContent = {
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 458 228 L 458 236 L 736 236 L 736 228"></path>
 </g>
-<text x="597" y="258" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">what remains — and becomes the job</text>
-<text x="64" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">illustrative proportions — a model, not a measurement</text>
+<text x="597" y="258" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">what remains — and becomes the job</text>
+<text x="64" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">illustrative proportions — a model, not a measurement</text>
 </svg>
-<p>One thing the obituary posts get wrong, though. The ticket-clerk PO was not born a clerk. <abbr title="Marty Cagan — founder of the Silicon Valley Product Group, theorist of empowered product teams">Marty Cagan</abbr> has said for a decade that "product owner" names a set of responsibilities in a delivery process, not a profession — and that feature-factory organizations manufactured backlog administrators by design: output roadmaps, proxy stakeholders, no mandate to talk to users. Keep his taxonomy, keep your skepticism — he has been selling the empowered-team alternative for twenty years. But the diagnosis stands. The role was configured into a transmission belt by the organization around it. What AI removes is not the person. It removes the excuse for that configuration.</p>
+<p>One thing the gravediggers get wrong, though. The ticket-clerk PO was not born a clerk. <abbr title="Marty Cagan — founder of the Silicon Valley Product Group, theorist of empowered product teams">Marty Cagan</abbr> has said for a decade that "product owner" names a set of responsibilities in a delivery process, not a profession — and that feature-factory organizations manufactured backlog administrators by design: output roadmaps, proxy stakeholders, no mandate to talk to users. Keep his taxonomy, keep your skepticism — he has been selling the empowered-team alternative for twenty years. But the diagnosis stands. It was the surrounding organization that dressed the role up as a relay desk. What AI removes is not the person. It removes the excuse for that configuration.</p>
 
 <h2>What survives — and who signs it</h2>
 <p>So what is the judgment share made of, concretely? Three things, seen from the engineering side of the wall.</p>
@@ -92,24 +92,24 @@ const englishContent: PostContent = {
 <p><strong>The field.</strong> Agents interpolate from tickets, and tickets lie by omission. Nobody's backlog contains the fact that the night-shift nurse uses the software with gloves on, standing, interrupted every ninety seconds. Someone has to have watched. That knowledge does not come out of a language model, because it was never written down anywhere a model could read it.</p>
 <p>My industry adds a fourth thing, and it is the one the LinkedIn debate never touches. In regulated healthcare software, a requirement is not a to-do item. It is a compliance artifact. The chain from user need to requirement to architecture to verification test is not bureaucracy; it is the thing the auditor reads, and every link carries a human signature that means something. An agent can draft every link of that chain. It cannot own a single one. "The agent generated it" is not provenance an audit accepts — the questions remain who reviewed it, when, under which procedure.</p>
 <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The traceability chain of regulated healthcare software — user need, requirement, architecture, verification test — where an agent can draft every link but own none: every link carries a human signature, and the most dangerous generated link is the one approved without being read." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">REGULATED HEALTHCARE · THE TRACEABILITY CHAIN</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">The agent drafts. The human signs.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">REGULATED HEALTHCARE · THE TRACEABILITY CHAIN</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">The agent drafts. The human signs.</text>
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 64 118 L 64 110 L 736 110 L 736 118"></path>
 </g>
-<text x="400" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle" opacity="0.75">an agent can draft every link…</text>
+<text x="400" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle" opacity="0.75">an agent can draft every link…</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="64" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 <rect x="240" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 <rect x="416" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 <rect x="592" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" text-anchor="middle">
 <text x="136" y="159">user need</text>
 <text x="312" y="159">requirement</text>
 <text x="488" y="159">architecture</text>
-<text x="664" y="152">verification</text>
-<text x="664" y="168">test</text>
+<text x="664" y="149">verification</text>
+<text x="664" y="169">test</text>
 </g>
 <g fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 <path d="M 216 146 L 228 154 L 216 162"></path>
@@ -125,8 +125,8 @@ const englishContent: PostContent = {
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 64 220 L 64 228 L 736 228 L 736 220"></path>
 </g>
-<text x="400" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">…it can own none: who reviewed, when, under which procedure</text>
-<text x="64" y="286" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">the most dangerous generated link is the one approved without being read</text>
+<text x="400" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">…it can own none: who reviewed, when, under which procedure</text>
+<text x="64" y="286" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">the most dangerous generated link is the one approved without being read</text>
 </svg>
 <p>And here the acceleration cuts both ways. A product owner who wrote twelve requirements had read them. A product owner who approves sixty agent-drafted requirements per sprint is a click-through risk. The failure mode is not new. I have <a target="_blank" rel="noopener noreferrer" href="/posts/the-lan-is-dead">already been burned</a> by a checkbox that everyone trusted and nobody read; the same checkbox is now waiting inside the traceability chain. AI makes the chain cheaper to produce and more dangerous to rubber-stamp. The trap even has a recognizable shape: a generated story that is internally perfect — testable, well-sliced, <abbr title="INVEST — Independent, Negotiable, Valuable, Estimable, Small, Testable: the classic checklist for well-formed user stories">INVEST</abbr>-compliant — and wrong, because it assumes a field is editable that is locked after signature for legal reasons. Every test passes. Only the person who knows the domain flinches. That person is the exact mirror of the engineer I described in the <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coder post</a>: the one who notices something is wrong when everything is green.</p>
 
@@ -134,8 +134,8 @@ const englishContent: PostContent = {
 <p>Now put the two sides of the wall together. My engineers, driving agents all day, make product micro-decisions hourly: this edge case matters, that one doesn't, this error message will confuse a nurse. The product people, briefing agents that draft their specifications, are doing design. <abbr title="DORA — DevOps Research and Assessment, Google Cloud's research program on software delivery">DORA</abbr>'s 2025 research describes the same blur from survey data — product managers and analysts now use AI to do technical work that used to be beyond their reach, engineers absorb product work — treat the percentages with the usual survey caution, but the direction is symmetrical. Job boards have started advertising "product engineers". On Solstice, our own method says it in its impact table: the developer becomes an orchestrator of agents; the designer guards a design system instead of producing mockups; the PO feeds context through the workshops; the PM steers on measured delivery numbers instead of estimates. Four roles augmented, none deleted. The two sides of the wall are not trading tasks. They are converging on the same scarce thing.</p>
 <blockquote><p>AI accelerated production. It did not accelerate understanding the problem. It made understanding the only expensive thing left.</p></blockquote>
 <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Conceptual chart: since 2023 the cost of producing a feature collapses while the cost of knowing what to build stays flat; the widening gap between the two curves is where product judgment now lives." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">COST OF PRODUCING vs COST OF UNDERSTANDING · CONCEPTUAL</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">The gap is the new job.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">COST OF PRODUCING vs COST OF UNDERSTANDING · CONCEPTUAL</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">The gap is the new job.</text>
 <g fill="none" stroke="currentColor" stroke-opacity="0.32" stroke-width="1.5">
 <line x1="64" y1="96" x2="64" y2="292"></line>
 <line x1="64" y1="292" x2="736" y2="292"></line>
@@ -143,18 +143,18 @@ const englishContent: PostContent = {
 <path d="M 80 130 C 300 127 500 126 716 124 L 716 280 C 650 278 550 274 440 248 C 320 214 220 148 80 130 Z" fill="currentColor" fill-opacity="0.10" stroke="none"></path>
 <path d="M 80 130 C 220 148 320 214 440 248 C 550 274 650 278 716 280" fill="none" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.8" stroke-linecap="round"></path>
 <path d="M 80 130 C 300 127 500 126 716 124" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="5,4" stroke-linecap="round"></path>
-<text x="360" y="272" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" opacity="0.7">cost of producing a feature</text>
-<text x="360" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" opacity="0.7">cost of knowing what to build</text>
+<text x="150" y="272" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">cost of producing a feature</text>
+<text x="360" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">cost of knowing what to build</text>
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 738 124 L 744 124 L 744 280 L 738 280"></path>
 </g>
-<text x="764" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle" transform="rotate(-90 764 202)">where product judgment lives</text>
-<text x="736" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="end" opacity="0.6">2023 → 2026</text>
-<text x="48" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="middle" opacity="0.6" transform="rotate(-90 48 194)">cost</text>
-<text x="64" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">conceptual diagram — shapes, not measurements</text>
+<text x="764" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" text-anchor="middle" transform="rotate(-90 764 202)">where product judgment lives</text>
+<text x="736" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="end" opacity="0.6">2023 → 2026</text>
+<text x="48" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.6" transform="rotate(-90 48 194)">cost</text>
+<text x="64" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">conceptual diagram — shapes, not measurements</text>
 </svg>
 <p>Which is exactly why the acceleration is dangerous. Ten hypotheses in thirty seconds is not ten times more understanding; it is ten times more output against the same discovery deficit. <abbr title="Melissa Perri — product management author and consultant, wrote Escaping the Build Trap">Melissa Perri</abbr> named this trap years before the agents arrived: a team measured on output ships features nobody needs, faithfully and forever. A feature factory with agents is a faster feature factory. I made the same point about my own field in the <a target="_blank" rel="noopener noreferrer" href="/posts/dora-ai-roi-report">DORA post</a>: AI amplifies the system you have. If your product organization was a transmission belt, automation makes the belt spin faster. It does not tell you the conveyor is pointed at the wrong wall.</p>
-<p>One more honest complication, because my own team is the counterexample to any tidy story. We grew this year — interns and apprentices included. Distributed product judgment is a senior-team luxury. A senior engineer with years in the domain can absorb arbitration; an apprentice given the same fused role produces confident, well-formatted, wrong decisions — faster than before, because the agent formats the wrongness beautifully. And the transmission belt, whatever its waste, was accidentally a school: writing tickets badly was how juniors learned the domain. Kill the belt and you kill the on-ramp with it. The replacement has to be built on purpose — juniors in the user calls, juniors reviewing requirements next to a senior who explains their no. It is the same junior-pipeline problem I flagged for engineers, transposed to product. Nobody inherits judgment. Someone teaches it.</p>
+<p>One more honest complication, because my own team is the counterexample to any tidy story. We grew this year — interns and apprentices included. Distributed product judgment is a senior-team luxury. A senior engineer with years in the domain can absorb arbitration; an apprentice given the same fused role produces confident, well-formatted, wrong decisions — faster than before, because the agent formats the wrongness beautifully. And the relay work, whatever its waste, was accidentally a school: writing tickets badly was how juniors learned the domain. Kill the belt and you kill the on-ramp with it. The replacement has to be built on purpose — juniors in the user calls, juniors reviewing requirements next to a senior who explains their no. It is the same junior-pipeline problem I flagged for engineers, transposed to product. Nobody inherits judgment. Someone teaches it.</p>
 
 <h2>What still belongs to humans</h2>
 <p>The list, stated plainly, because this is the section the obituary posts skip.</p>
@@ -190,15 +190,15 @@ const englishContent: PostContent = {
 const frenchContent: PostContent = {
   title: 'Le backlog n\'a jamais été le métier',
   description: 'La même semaine, mon fil d\'actualité a enterré le Product Owner, sauvé le Product Manager, renoncé à relire le code ligne à ligne et confié un produit entier à une seule personne. Quatre posts, un seul événement : la production a cessé d\'être la chose rare. Ce qui meurt, c\'est la courroie de transmission. Ce qui survit, c\'est le jugement produit — et il n\'appartient plus à un seul rôle.',
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> La même semaine, mon fil d'actualité a enterré le <abbr title="Product Owner — le rôle Scrum responsable du backlog">PO</abbr> et sauvé le <abbr title="Product Manager — responsable produit">PM</abbr>. Un troisième post renonçait à relire ligne à ligne le code généré par l'IA. Un quatrième affirmait qu'une personne seule peut désormais porter un produit de bout en bout. Quatre posts, un seul événement : la production a cessé d'être la chose rare. Ce qui meurt, c'est la fonction de courroie de transmission — alimenter un backlog, formater des tickets, relayer des réponses. Ce qui survit, c'est le jugement produit, et il cesse d'appartenir à un seul rôle. Les personnes restent. La fiche de poste, non.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> La même semaine, mon fil d'actualité a enterré le <abbr title="Product Owner — le rôle Scrum responsable du backlog">PO</abbr> et sauvé le <abbr title="Product Manager — responsable produit">PM</abbr>. Un troisième post renonçait à relire ligne à ligne le code généré par l'IA. Un quatrième affirmait qu'une personne seule peut désormais porter un produit de bout en bout. Quatre posts, un seul événement : produire n'est plus ce qui est rare. La fonction de relais — alimenter un backlog, formater des tickets, faire suivre des réponses — meurt. Le jugement produit, lui, survit, et cesse d'appartenir à un seul rôle. Les personnes restent. La fiche de poste, non.</p></div>
 <hr>
 <p>La même semaine, mon fil d'actualité a enterré le Product Owner et l'a sauvé.</p>
 <p>Quatre posts, quatre auteurs qui ne se connaissent pas, quatre angles. Un lead product écrivait que le poste de PO a toujours été une aberration organisationnelle et devient indéfendable à l'ère de l'IA : recruter quelqu'un pour alimenter un backlog, rédiger des tickets et faire l'intermédiaire entre le métier et les développeurs, c'est optimiser une organisation déjà obsolète. Une consultante en transformation lui répondait sans le savoir : son équipe a généré en deux heures ce qui prenait deux jours de user stories — bien rédigées, bien découpées, et déconnectées des contraintes terrain que seuls de vrais entretiens auraient fait remonter. Sa conclusion : l'outil a accéléré la production, pas la compréhension du problème ; la valeur du PM se déplace vers l'arbitrage et vers une connaissance du terrain qui ne se délègue pas. Un staff engineer reconnaissait ne plus avoir la capacité de relire tout le code produit par ses agents, et que la relecture ligne à ligne n'est probablement plus le bon combat : investir dans les spécifications, donner aux agents les moyens de tester leur travail, exiger des rapports vérifiables. Et un développeur indépendant observait qu'une personne seule peut désormais porter un produit de bout en bout — le code devenant un moyen parmi d'autres, et non plus l'activité principale.</p>
 <p>Chacun a raison sur son segment. Le lead product a raison : un rôle réduit au relais est un poids mort. La consultante a raison : la production générée n'est pas de la compréhension. L'ingénieur a raison : l'attention humaine doit remonter vers la spec et le harnais de vérification. L'indépendant a raison : les murs entre spécialités tombent. Simplement, ils ne décrivent pas quatre choses différentes.</p>
 <blockquote><p>Quatre angles, un seul événement : la production a cessé d'être la chose rare.</p></blockquote>
 <svg viewBox="0 0 800 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Quatre posts LinkedIn de quatre auteurs qui ne se connaissent pas — le PO est indéfendable, le PM reste indispensable, je ne relis plus ligne à ligne, un produit une personne — convergent vers un seul événement : la production a cessé d'être la chose rare." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA MÊME SEMAINE · QUATRE POSTS</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">Quatre angles. Un événement.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA MÊME SEMAINE · QUATRE POSTS</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Quatre angles. Un événement.</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="64" y="102" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
 <rect x="64" y="156" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.13"></rect>
@@ -206,14 +206,14 @@ const frenchContent: PostContent = {
 <rect x="64" y="264" width="272" height="44" rx="8" fill="currentColor" fill-opacity="0.15"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif">
-<text x="80" y="121" font-size="12" font-weight="600">« Le PO est indéfendable »</text>
-<text x="80" y="138" font-size="10" opacity="0.55">un lead product</text>
-<text x="80" y="175" font-size="12" font-weight="600">« Le PM reste indispensable »</text>
-<text x="80" y="192" font-size="10" opacity="0.55">une consultante en transformation</text>
-<text x="80" y="229" font-size="12" font-weight="600">« Je ne relis plus ligne à ligne »</text>
-<text x="80" y="246" font-size="10" opacity="0.55">un staff engineer</text>
-<text x="80" y="283" font-size="12" font-weight="600">« Un produit, une seule personne »</text>
-<text x="80" y="300" font-size="10" opacity="0.55">un développeur indépendant</text>
+<text x="80" y="121" font-size="14.5" font-weight="600">« Le PO est indéfendable »</text>
+<text x="80" y="138" font-size="12.5" opacity="0.55">un lead product</text>
+<text x="80" y="175" font-size="14.5" font-weight="600">« Le PM reste indispensable »</text>
+<text x="80" y="192" font-size="12.5" opacity="0.55">une consultante en transformation</text>
+<text x="80" y="229" font-size="14.5" font-weight="600">« Je ne relis plus ligne à ligne »</text>
+<text x="80" y="246" font-size="12.5" opacity="0.55">un staff engineer</text>
+<text x="80" y="283" font-size="14.5" font-weight="600">« Un produit, une seule personne »</text>
+<text x="80" y="300" font-size="12.5" opacity="0.55">un développeur indépendant</text>
 </g>
 <g fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round">
 <path d="M 336 124 C 430 124 480 176 540 194"></path>
@@ -222,9 +222,9 @@ const frenchContent: PostContent = {
 <path d="M 336 286 C 430 286 480 230 540 212"></path>
 </g>
 <circle cx="550" cy="203" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="570" y="197" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">la production a cessé</text>
-<text x="570" y="215" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650">d'être la chose rare</text>
-<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">quatre auteurs qui ne se connaissent pas — paraphrasés, anonymisés</text>
+<text x="570" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650">la production a cessé</text>
+<text x="570" y="217" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="650">d'être la chose rare</text>
+<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">quatre auteurs qui ne se connaissent pas — paraphrasés, anonymisés</text>
 </svg>
 <p>J'ai écrit le versant ingénierie de cette histoire il y a quelques mois : <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coder n'a jamais été le métier</a>. Voici le versant produit, vu de là où je suis — lead d'une équipe sur du logiciel de santé réglementé, de l'autre côté du mur des gens du produit. Et vu de ce côté-là, le débat sur la mort du PO se trompe de cadavre.</p>
 
@@ -234,12 +234,12 @@ const frenchContent: PostContent = {
 <p>La version quotidienne a la même forme. Vingt minutes d'assemblage de contexte par quelqu'un qui connaît le domaine, trente secondes de génération, puis la conversation qui compte vraiment — ce brouillon contredit la politique de rétention, on le tue ; ces deux stories supposent le même écran, on les fusionne.</p>
 <blockquote><p>Le brief est devenu le travail. La rédaction n'a jamais été que l'emballage.</p></blockquote>
 <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Décomposition illustrative d'une semaine produit en une seule barre empilée : la part transmission — alimentation du backlog, rédaction de tickets, relais et statuts — est ce que les agents IA absorbent ; la part restante — arbitrage, terrain, refus — est ce qui survit et devient le métier." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA SEMAINE PRODUIT, DÉCOMPOSÉE · ILLUSTRATIF</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">La rédaction part. Le jugement reste.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA SEMAINE PRODUIT, DÉCOMPOSÉE · ILLUSTRATIF</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">La rédaction part. Le jugement reste.</text>
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 64 118 L 64 110 L 450 110 L 450 118"></path>
 </g>
-<text x="257" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle" opacity="0.75">ce que les agents absorbent</text>
+<text x="257" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle" opacity="0.75">ce que les agents absorbent</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="64" y="140" width="136" height="56" rx="8" fill="currentColor" fill-opacity="0.10"></rect>
 <rect x="204" y="140" width="126" height="56" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
@@ -248,7 +248,7 @@ const frenchContent: PostContent = {
 <rect x="558" y="140" width="92" height="56" rx="8" fill="currentColor" fill-opacity="0.34"></rect>
 <rect x="654" y="140" width="82" height="56" rx="8" fill="currentColor" fill-opacity="0.38"></rect>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="middle" opacity="0.6">
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.6">
 <text x="132" y="216">backlog</text>
 <text x="267" y="216">tickets</text>
 <text x="392" y="216">relais &amp; statuts</text>
@@ -259,10 +259,10 @@ const frenchContent: PostContent = {
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 458 228 L 458 236 L 736 236 L 736 228"></path>
 </g>
-<text x="597" y="258" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">ce qui reste — et devient le métier</text>
-<text x="64" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">proportions illustratives — un modèle, pas une mesure</text>
+<text x="597" y="258" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">ce qui reste — et devient le métier</text>
+<text x="64" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">proportions illustratives — un modèle, pas une mesure</text>
 </svg>
-<p>Un point, quand même, que les posts-nécrologies ratent. Le PO greffier de tickets n'est pas né greffier. <abbr title="Marty Cagan — fondateur du Silicon Valley Product Group, théoricien des équipes produit « empowered »">Marty Cagan</abbr> répète depuis dix ans que « product owner » désigne un ensemble de responsabilités dans un processus de livraison, pas une profession — et que les usines à features ont fabriqué des administrateurs de backlog par construction : des roadmaps d'output, des parties prenantes par procuration, aucun mandat pour parler aux utilisateurs. Gardez sa taxonomie, gardez votre scepticisme — il vend l'alternative « empowered » depuis vingt ans. Mais le diagnostic tient. C'est l'organisation qui a configuré le rôle en courroie de transmission. Ce que l'IA supprime, ce n'est pas la personne. C'est l'excuse de cette configuration.</p>
+<p>Un point, quand même, que les fossoyeurs ratent. Le PO greffier de tickets n'est pas né greffier. <abbr title="Marty Cagan — fondateur du Silicon Valley Product Group, théoricien des équipes produit « empowered »">Marty Cagan</abbr> répète depuis dix ans que « product owner » désigne un ensemble de responsabilités dans un processus de livraison, pas une profession — et que les usines à features ont fabriqué des administrateurs de backlog par construction : des roadmaps d'output, des parties prenantes par procuration, aucun mandat pour parler aux utilisateurs. Gardez sa taxonomie, gardez votre scepticisme — il vend l'alternative « empowered » depuis vingt ans. Mais le diagnostic tient. C'est l'organisation autour du rôle qui l'a déguisé en guichet de relais. Ce que l'IA supprime, ce n'est pas la personne. C'est l'excuse de cette configuration.</p>
 
 <h2>Ce qui survit — et qui le signe</h2>
 <p>De quoi est faite la part jugement, concrètement ? Trois choses, vues du côté ingénierie du mur.</p>
@@ -271,25 +271,25 @@ const frenchContent: PostContent = {
 <p><strong>Le terrain.</strong> Les agents interpolent à partir des tickets, et les tickets mentent par omission. Aucun backlog ne contient le fait que l'infirmière de nuit utilise le logiciel debout, avec des gants, interrompue toutes les quatre-vingt-dix secondes. Il faut que quelqu'un ait regardé. Ce savoir-là ne sort pas d'un modèle de langage : il n'a jamais été écrit nulle part où un modèle aurait pu le lire.</p>
 <p>Mon secteur ajoute une quatrième chose, celle que le débat LinkedIn ne touche jamais. Dans le logiciel de santé réglementé, une exigence n'est pas une tâche à faire. C'est un artefact de conformité. La chaîne qui va du besoin utilisateur à l'exigence, à l'architecture, au test de vérification n'est pas de la bureaucratie : c'est ce que l'auditeur lit, et chaque maillon porte une signature humaine qui veut dire quelque chose. Un agent peut rédiger chaque maillon de cette chaîne. Il ne peut en posséder aucun. « C'est l'agent qui l'a générée » n'est pas une provenance qu'un audit accepte — les questions restent : qui a relu, quand, selon quelle procédure.</p>
 <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La chaîne de traçabilité du logiciel de santé réglementé — besoin utilisateur, exigence, architecture, test de vérification — où un agent peut rédiger chaque maillon mais n'en posséder aucun : chaque maillon porte une signature humaine, et le maillon généré le plus dangereux est celui qu'on approuve sans le lire." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">SANTÉ RÉGLEMENTÉE · LA CHAÎNE DE TRAÇABILITÉ</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">L'agent rédige. L'humain signe.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SANTÉ RÉGLEMENTÉE · LA CHAÎNE DE TRAÇABILITÉ</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">L'agent rédige. L'humain signe.</text>
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 64 118 L 64 110 L 736 110 L 736 118"></path>
 </g>
-<text x="400" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle" opacity="0.75">un agent peut rédiger chaque maillon…</text>
+<text x="400" y="100" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle" opacity="0.75">un agent peut rédiger chaque maillon…</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="64" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 <rect x="240" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 <rect x="416" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 <rect x="592" y="130" width="144" height="48" rx="8" fill="currentColor" fill-opacity="0.14"></rect>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
-<text x="136" y="152">besoin</text>
-<text x="136" y="168">utilisateur</text>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" text-anchor="middle">
+<text x="136" y="149">besoin</text>
+<text x="136" y="169">utilisateur</text>
 <text x="312" y="159">exigence</text>
 <text x="488" y="159">architecture</text>
-<text x="664" y="152">test de</text>
-<text x="664" y="168">vérification</text>
+<text x="664" y="149">test de</text>
+<text x="664" y="169">vérification</text>
 </g>
 <g fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 <path d="M 216 146 L 228 154 L 216 162"></path>
@@ -305,8 +305,8 @@ const frenchContent: PostContent = {
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 64 220 L 64 228 L 736 228 L 736 220"></path>
 </g>
-<text x="400" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">…il ne peut en posséder aucun : qui a relu, quand, selon quelle procédure</text>
-<text x="64" y="286" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">le maillon généré le plus dangereux est celui qu'on approuve sans le lire</text>
+<text x="400" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600" text-anchor="middle">…il ne peut en posséder aucun : qui a relu, quand, selon quelle procédure</text>
+<text x="64" y="286" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">le maillon généré le plus dangereux est celui qu'on approuve sans le lire</text>
 </svg>
 <p>Et là, l'accélération coupe dans les deux sens. Un PO qui rédigeait douze exigences les avait lues. Un PO qui approuve soixante exigences générées par sprint est un risque de tampon automatique. Le mode de défaillance n'est pas nouveau. Je me suis <a target="_blank" rel="noopener noreferrer" href="/posts/the-lan-is-dead">déjà fait avoir</a> par une case à cocher que tout le monde validait et que personne ne lisait ; la même case attend désormais au milieu de la chaîne de traçabilité. L'IA rend cette chaîne moins chère à produire et plus dangereuse à tamponner. Le piège a même une forme reconnaissable : une story générée, intérieurement parfaite — testable, bien découpée, conforme à <abbr title="INVEST — Independent, Negotiable, Valuable, Estimable, Small, Testable : la check-list classique des user stories bien formées">INVEST</abbr> — et fausse, parce qu'elle suppose modifiable un champ verrouillé après signature pour des raisons légales. Tous les tests passent. Seule la personne qui connaît le domaine tique. Cette personne est le miroir exact de l'ingénieur que je décrivais dans le <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">post sur le code</a> : celle qui remarque que quelque chose cloche quand tout est vert.</p>
 
@@ -314,8 +314,8 @@ const frenchContent: PostContent = {
 <p>Rassemblez maintenant les deux côtés du mur. Mes ingénieurs, qui pilotent des agents toute la journée, prennent des micro-décisions produit toutes les heures : ce cas limite compte, celui-là non, ce message d'erreur va perdre une infirmière. Les gens du produit, qui briefent des agents rédigeant leurs spécifications, font de la conception. La recherche 2025 de <abbr title="DORA — DevOps Research and Assessment, le programme de recherche de Google Cloud sur le delivery logiciel">DORA</abbr> décrit le même flou depuis ses données d'enquête — les PM et analystes utilisent l'IA pour faire un travail technique qui leur était inaccessible, les ingénieurs absorbent du travail produit. Prenez les pourcentages avec la prudence des données déclaratives ; la direction, elle, est symétrique. Les offres d'emploi commencent à afficher « product engineer ». Sur Solstice, notre propre méthode le dit dans sa table d'impact : le développeur devient orchestrateur d'agents ; le designer garantit un design system au lieu de produire des maquettes ; le PO nourrit le contexte par les ateliers ; le PM pilote sur des métriques mesurées au lieu d'estimations. Quatre rôles augmentés, aucun supprimé. Les deux côtés du mur n'échangent pas des tâches. Ils convergent vers la même chose rare.</p>
 <blockquote><p>L'IA a accéléré la production. Elle n'a pas accéléré la compréhension du problème. Elle en a fait la seule chose chère.</p></blockquote>
 <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme conceptuel : depuis 2023, le coût de production d'une fonctionnalité s'effondre tandis que le coût de savoir quoi construire reste stable ; l'écart grandissant entre les deux courbes est l'endroit où vit désormais le jugement produit." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">COÛT DE PRODUCTION vs COÛT DE COMPRÉHENSION · CONCEPTUEL</text>
-<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="23" font-weight="650">L'écart, c'est le nouveau métier.</text>
+<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">COÛT DE PRODUCTION vs COÛT DE COMPRÉHENSION · CONCEPTUEL</text>
+<text x="64" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">L'écart, c'est le nouveau métier.</text>
 <g fill="none" stroke="currentColor" stroke-opacity="0.32" stroke-width="1.5">
 <line x1="64" y1="96" x2="64" y2="292"></line>
 <line x1="64" y1="292" x2="736" y2="292"></line>
@@ -323,18 +323,18 @@ const frenchContent: PostContent = {
 <path d="M 80 130 C 300 127 500 126 716 124 L 716 280 C 650 278 550 274 440 248 C 320 214 220 148 80 130 Z" fill="currentColor" fill-opacity="0.10" stroke="none"></path>
 <path d="M 80 130 C 220 148 320 214 440 248 C 550 274 650 278 716 280" fill="none" stroke="currentColor" stroke-width="2.5" stroke-opacity="0.8" stroke-linecap="round"></path>
 <path d="M 80 130 C 300 127 500 126 716 124" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.6" stroke-dasharray="5,4" stroke-linecap="round"></path>
-<text x="360" y="272" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" opacity="0.7">coût de production d'une fonctionnalité</text>
-<text x="360" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" opacity="0.7">coût de savoir quoi construire</text>
+<text x="150" y="272" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">coût de production d'une fonctionnalité</text>
+<text x="360" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" opacity="0.7">coût de savoir quoi construire</text>
 <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1.3" fill="none" stroke-linecap="round">
 <path d="M 738 124 L 744 124 L 744 280 L 738 280"></path>
 </g>
-<text x="764" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle" transform="rotate(-90 764 202)">là où vit le jugement produit</text>
-<text x="736" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="end" opacity="0.6">2023 → 2026</text>
-<text x="48" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" text-anchor="middle" opacity="0.6" transform="rotate(-90 48 194)">coût</text>
-<text x="64" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10.5" font-style="italic" opacity="0.6">diagramme conceptuel — des formes, pas des mesures</text>
+<text x="764" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" text-anchor="middle" transform="rotate(-90 764 202)">là où vit le jugement produit</text>
+<text x="736" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="end" opacity="0.6">2023 → 2026</text>
+<text x="48" y="194" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.6" transform="rotate(-90 48 194)">coût</text>
+<text x="64" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">diagramme conceptuel — des formes, pas des mesures</text>
 </svg>
 <p>C'est exactement pour ça que l'accélération est dangereuse. Dix hypothèses en trente secondes, ce n'est pas dix fois plus de compréhension ; c'est dix fois plus d'output face au même déficit de découverte. <abbr title="Melissa Perri — autrice et consultante en product management, a écrit Escaping the Build Trap">Melissa Perri</abbr> a nommé ce piège des années avant l'arrivée des agents : une équipe mesurée à l'output livre des fonctionnalités dont personne n'a besoin, consciencieusement et pour toujours. Une usine à features avec des agents est une usine à features plus rapide. J'ai fait le même constat pour mon propre métier dans le <a target="_blank" rel="noopener noreferrer" href="/posts/dora-ai-roi-report">post sur DORA</a> : l'IA amplifie le système que vous avez. Si votre organisation produit était une courroie de transmission, l'automatisation fait tourner la courroie plus vite. Elle ne vous dit pas que le tapis pointe vers le mauvais mur.</p>
-<p>Une complication honnête pour finir, parce que ma propre équipe est le contre-exemple de toute histoire trop propre. On a grandi cette année — alternants et stagiaires compris. Le jugement produit distribué est un luxe d'équipe senior. Un ingénieur senior avec des années de domaine peut absorber de l'arbitrage ; un alternant à qui on confie le même rôle fusionné produit des décisions confiantes, bien formatées et fausses — plus vite qu'avant, parce que l'agent met magnifiquement en forme l'erreur. Et la courroie de transmission, quel que soit son gaspillage, était accidentellement une école : écrire des tickets, même mal, c'était apprendre le domaine. Tuez la courroie et vous tuez la rampe d'accès avec. Le remplacement doit se construire délibérément — des juniors dans les appels utilisateurs, des juniors qui relisent les exigences à côté d'un senior qui explique son non. C'est le même problème de vivier junior que j'ai signalé pour les ingénieurs, transposé au produit. Personne n'hérite du jugement. Quelqu'un l'enseigne.</p>
+<p>Une complication honnête pour finir, parce que ma propre équipe est le contre-exemple de toute histoire trop propre. On a grandi cette année — alternants et stagiaires compris. Le jugement produit distribué est un luxe d'équipe senior. Un ingénieur senior avec des années de domaine peut absorber de l'arbitrage ; un alternant à qui on confie le même rôle fusionné produit des décisions confiantes, bien formatées et fausses — plus vite qu'avant, parce que l'agent met magnifiquement en forme l'erreur. Et le travail de relais, quel que soit son gaspillage, était accidentellement une école : écrire des tickets, même mal, c'était apprendre le domaine. Tuez la courroie et vous tuez la rampe d'accès avec. Le remplacement doit se construire délibérément — des juniors dans les appels utilisateurs, des juniors qui relisent les exigences à côté d'un senior qui explique son non. C'est le même problème de vivier junior que j'ai signalé pour les ingénieurs, transposé au produit. Personne n'hérite du jugement. Quelqu'un l'enseigne.</p>
 
 <h2>Ce qui reste aux humains</h2>
 <p>La liste, dite simplement, parce que c'est la section que les posts-nécrologies sautent.</p>
