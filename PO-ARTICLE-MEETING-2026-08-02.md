@@ -88,6 +88,19 @@ Author answered "no preference" on both — decisions delegated to the session:
 2. **Title/slug:** « Le backlog n'a jamais été le métier » / "The Backlog Was Never
    the Job", slug `po-is-dead-judgment-is-not`.
 
+## Mid-meeting addendum (author input)
+
+While the article was being drafted, the author supplied the written state of the
+team's AI-native method (weekly PO/PM/tech-lead/designer workshop recorded, agent
+turns the transcript into report + business rules + pre-built issues within the
+hour; role impact table — dev orchestrator, designer guards the design system, PO
+feeds context, PM steers on measured metrics; open-fronts list naming specs as
+the active frontier). This resolved Adrien's and Élise's escalation about
+first-person product material. Integrated into the post anonymized under the
+canon codename Solstice* — the real project name is never used on the blog.
+KPI figures from the method deck were deliberately NOT quoted in the post
+(diagnosis vs arithmetic rule; the H1 verdict post already carries the counters).
+
 ## Round 2 — convergence
 
 Where the personas independently agreed:
