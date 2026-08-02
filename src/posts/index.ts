@@ -35,6 +35,7 @@ import ForfaitJoursSalariesDares, { metadata as forfaitJoursMetadata, getContent
 import AiAgentsH1Verdict, { metadata as aiAgentsH1VerdictMetadata, getContent as getAiAgentsH1VerdictContent } from './AiAgentsH1Verdict.vue'
 import AgenticAddiction, { metadata as agenticAddictionMetadata, getContent as getAgenticAddictionContent } from './AgenticAddiction.vue'
 import PoIsDeadJudgmentIsNot, { metadata as poIsDeadMetadata, getContent as getPoIsDeadContent } from './PoIsDeadJudgmentIsNot.vue'
+import DoctrineAsCode, { metadata as doctrineAsCodeMetadata, getContent as getDoctrineAsCodeContent } from './DoctrineAsCode.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -222,6 +223,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: poIsDeadMetadata,
     getContent: getPoIsDeadContent,
     component: PoIsDeadJudgmentIsNot
+  },
+  'doctrine-as-code': {
+    metadata: doctrineAsCodeMetadata,
+    getContent: getDoctrineAsCodeContent,
+    component: DoctrineAsCode
   }
 }
 
