@@ -157,7 +157,9 @@ const englishContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT on GitHub</a> — autonomous agents (122K+ stars)</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://jobsdata.ai/task-visualizer">Job Task Visualizer</a> — AI task automation by occupation</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.ismyjobscrewed.com/">Is My Job Screwed?</a> — personalized AI risk assessment</li>
-</ol>`
+</ol>
+<hr>
+<p><strong>Five months later:</strong> I partially came back on this one. My team now maintains 134 machine-enforced rules — and I stand by every word above. How both are true is in <a target="_blank" rel="noopener noreferrer" href="/posts/doctrine-as-code">Doctrine Compounds. Models Don't.</a> — ceremonies for humans died; executable constraints for machines were born.</p>`
 }
 
 const frenchContent: PostContent = {
@@ -306,7 +308,9 @@ const frenchContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/Significant-Gravitas/AutoGPT">AutoGPT sur GitHub</a> — agents autonomes (122K+ étoiles)</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://jobsdata.ai/task-visualizer">Job Task Visualizer</a> — visualisation des tâches automatisées par métier</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.ismyjobscrewed.com/">Is My Job Screwed?</a> — évaluation personnalisée du risque IA</li>
-</ol>`
+</ol>
+<hr>
+<p><strong>Cinq mois plus tard :</strong> je suis partiellement revenu sur ce billet. Mon équipe maintient aujourd'hui 134 règles imposées par des machines — et je maintiens chaque mot ci-dessus. Comment les deux sont vrais à la fois : <a target="_blank" rel="noopener noreferrer" href="/posts/doctrine-as-code">La doctrine se capitalise. Les modèles, non.</a> — les cérémonies pour humains sont mortes ; les contraintes exécutables pour machines sont nées.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
