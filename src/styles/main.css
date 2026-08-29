@@ -214,16 +214,22 @@
   }
 
   /* Diagrams read small because the 800-unit viewBox scales to the rendered
-     width: inside the ~38rem prose column a 13px label lands near 9px. Two
-     fixes, both verified in a browser rather than assumed.
+     width: in the prose column a 13px label lands near 10px.
 
-     Wide viewports: widen the box. The breakout is anchored on the column's
-     LEFT edge and bounded by the viewport, never centred — this page has a
-     table of contents occupying the first 23rem, and a centred breakout slid
-     underneath it (-192px at 1280) while overflowing the right edge at 1024.
+     There is almost no room to widen them. This layout has a table of
+     contents rail on each side, and the column already fills the space
+     between them — measured gap from the column's right edge to the right
+     rail is a constant 49px at 1024/1280/1440. An earlier attempt to break
+     out to min(68rem, ...) did not widen anything, it slid 215px underneath
+     the right rail. So the bleed here is deliberately small enough to fit
+     that gap, and verified not to overlap at 390 through 1920.
 
-     Narrow viewports: no width is available, so shrinking the SVG to fit only
-     destroys the type. .diagram-scroll keeps it at a legible min-width and
+     The real lever is the viewBox itself, not the CSS: a diagram drawn on a
+     narrower canvas gets a larger effective type size at the same rendered
+     width. New diagrams should be authored for the width they actually get.
+
+     On narrow viewports no width exists at all, and shrinking the SVG only
+     destroys the type, so .diagram-scroll holds a legible min-width and
      scrolls horizontally instead. */
   .prose .diagram-scroll {
     width: 100%;
@@ -235,7 +241,7 @@
 
   @media (min-width: 1024px) {
     .prose .diagram-scroll {
-      width: min(68rem, calc(100vw - 23rem - 2.5rem));
+      width: calc(100% + 2rem);
     }
   }
 
@@ -249,7 +255,7 @@
   }
 
   .prose .diagram-scroll > .diagram-svg {
-    min-width: 40rem;
+    min-width: 38rem;
     margin: 0;
   }
 
