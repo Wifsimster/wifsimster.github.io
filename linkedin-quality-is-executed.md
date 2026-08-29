@@ -6,7 +6,7 @@ Et ça ne prouve rien.
 
 Ma confiance parle de moi, pas du logiciel. Elle ne se transmet pas à la personne qui arrive lundi. Elle ne s'audite pas. Et elle ne vaudra rien devant quelqu'un qui demande comment on garantit qu'une trace d'audit est écrite.
 
-Je dirige l'ingénierie sur un ERP hospitalier. En santé régulée, la qualité n'est pas un nombre de bogues. C'est une liste de propriétés qui doivent tenir après chaque changement — et aucune ne dépend de qui a écrit la ligne.
+Le logiciel qu'on écrit gère des dossiers patients dans des hôpitaux publics. En santé régulée, la qualité n'est pas un nombre de bogues : c'est une liste de propriétés qui doivent tenir après chaque changement — et aucune ne dépend de qui a écrit la ligne.
 
 —
 
