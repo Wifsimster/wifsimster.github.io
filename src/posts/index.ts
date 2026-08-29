@@ -237,21 +237,50 @@ const postRegistry: Record<string, PostComponentInfo> = {
   }
 }
 
-export function getAllPosts(locale: 'fr' | 'en' = 'fr'): Post[] {
-  return Object.values(postRegistry).map(info => {
-    const content = info.getContent(locale)
-    return {
-      slug: info.metadata.slug,
-      title: content.title,
-      date: info.metadata.date,
-      description: content.description,
-      tags: info.metadata.tags,
-      html: content.html,
-      lang: locale
-    }
-  })
+export interface PostQueryOptions {
+  /** Include posts flagged `draft: true`. Off everywhere the public reads. */
+  includeDrafts?: boolean
 }
 
+export function isDraft(info: PostComponentInfo): boolean {
+  return info.metadata.draft === true
+}
+
+function toPost(info: PostComponentInfo, locale: 'fr' | 'en'): Post {
+  const content = info.getContent(locale)
+  return {
+    slug: info.metadata.slug,
+    title: content.title,
+    date: info.metadata.date,
+    description: content.description,
+    tags: info.metadata.tags,
+    html: content.html,
+    lang: locale,
+    draft: info.metadata.draft === true
+  }
+}
+
+/**
+ * Every public listing goes through here, so drafts are excluded by default.
+ * Direct access by slug is deliberately not filtered — see getPostBySlug.
+ */
+export function getAllPosts(locale: 'fr' | 'en' = 'fr', options: PostQueryOptions = {}): Post[] {
+  return Object.values(postRegistry)
+    .filter(info => options.includeDrafts || !isDraft(info))
+    .map(info => toPost(info, locale))
+}
+
+/** Drafts only, for the private /drafts review page. */
+export function getDraftPosts(locale: 'fr' | 'en' = 'fr'): Post[] {
+  return Object.values(postRegistry)
+    .filter(isDraft)
+    .map(info => toPost(info, locale))
+}
+
+/**
+ * Resolves a slug whatever its draft state: a draft must stay readable live at
+ * its own URL while it is being written and reviewed.
+ */
 export function getPostBySlug(slug: string): PostComponentInfo | undefined {
   return postRegistry[slug]
 }
@@ -263,6 +292,7 @@ export function getPostsByTag(tag: string, locale: 'fr' | 'en' = 'fr'): Post[] {
 export function getAllTags(): Record<string, number> {
   const tags: Record<string, number> = {}
   Object.values(postRegistry).forEach(info => {
+    if (isDraft(info)) return
     info.metadata.tags?.forEach(tag => {
       tags[tag] = (tags[tag] || 0) + 1
     })

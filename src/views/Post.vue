@@ -22,6 +22,18 @@
           {{ i18n.t('post.goBack') }}
         </RouterLink>
       </div>
+      <div
+        v-if="post.draft"
+        class="mb-6 flex items-start gap-3 rounded-lg border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/40 px-4 py-3"
+      >
+        <svg class="w-5 h-5 mt-0.5 shrink-0 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+        </svg>
+        <div>
+          <p class="font-semibold text-amber-900 dark:text-amber-200">{{ i18n.t('post.draft.title') }}</p>
+          <p class="text-sm text-amber-800 dark:text-amber-300/90">{{ i18n.t('post.draft.notice') }}</p>
+        </div>
+      </div>
       <article>
         <header class="mb-8">
           <h1 class="text-4xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
@@ -121,6 +133,7 @@ import { useImageGallery } from '@/composables/useImageGallery'
 import { useReadingProgress } from '@/composables/useReadingProgress'
 import { useHeaderVisibility } from '@/composables/useHeaderVisibility'
 import { useEngagedReadBeacon } from '@/composables/useAnalytics'
+import { useNoindex } from '@/composables/useRobotsMeta'
 import { formatDate, estimateReadingTime } from '@/utils/posts'
 import type { Post } from '@/utils/posts'
 import { getAllPosts } from '@/posts'
@@ -164,16 +177,22 @@ const readingTime = computed(() => {
 // before the threshold.
 useEngagedReadBeacon(() => {
   if (!post.value) return null
+  // A draft is only read by its author. Don't pollute the stats with it.
+  if (post.value.draft) return null
   return {
     path: route.path,
     title: post.value.title
   }
 })
 
+// A draft is live for review but must never be indexed.
+useNoindex(() => post.value?.draft === true)
+
 // Dynamic document title
 watchEffect(() => {
   if (post.value) {
-    document.title = `${post.value.title} | Wifsimster Blog`
+    const prefix = post.value.draft ? `[${i18n.t('post.draft.badge')}] ` : ''
+    document.title = `${prefix}${post.value.title} | Wifsimster Blog`
   } else {
     document.title = 'Wifsimster Blog'
   }

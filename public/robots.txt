@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /drafts
+Disallow: /en/drafts
 
 Sitemap: https://blog.battistella.ovh/sitemap.xml

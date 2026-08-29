@@ -4,6 +4,12 @@ export interface PostMetadata {
   slug: string
   date: string
   tags?: string[]
+  /**
+   * Work in progress. A draft is kept out of every listing, feed and sitemap,
+   * but stays reachable live at its own URL so it can be reviewed as written.
+   * Remove the flag (or set it to false) to publish.
+   */
+  draft?: boolean
 }
 
 export interface PostContent {
@@ -20,6 +26,7 @@ export interface Post {
   tags?: string[]
   html: string
   lang: 'fr' | 'en'
+  draft?: boolean
 }
 
 export interface PostsData {
