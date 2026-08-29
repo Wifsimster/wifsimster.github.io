@@ -77,16 +77,61 @@ the honest half of the post is longer than the triumphant half.
 - Git history squashed at import **2026-08-21** → older guard creation dates are unusable.
   Only the last five (25, 27, 29 Aug) are genuinely datable. Stated in the article.
 
+## Author rulings after the first publication
+
+The piece shipped as incident forensics and was corrected twice by the author the same day.
+
+**1. "Nous ne sommes pas encore en production."** The article asserted that a regulatory
+obligation had gone unmet in production. False, and on regulated healthcare software a serious
+claim to get wrong. Removed in both languages, and the pre-production status is now stated
+outright early in the piece. This is a fact-checking failure on my side: the incident material
+came from guard headers describing environments, and I read deployment as production. **Rule for
+the next session: never infer production from a repository. Ask.**
+
+**2. "Un exemple d'audit corrigé hier ? je ne trouve pas ça judicieux."** Correct. Anchoring a
+public post on a compliance gap closed the previous day, on a product with no users yet, exposes
+the employer for no editorial gain. The incident was removed entirely — prose, both diagrams, and
+the fact-versus-judgement example, which now uses keyboard accessibility. **Rule: an incident is
+publishable when it is old, closed, and non-compliance-shaped. Freshness is a cost, not a hook.**
+
+**3. The real subject was never the incident.** The author's framing: *"je veux surtout une vision
+de ce que j'ai construit sur le projet alliage, les CI guardrails, et comment de manière générale
+je vois la qualité et comment on l'a prouvé."* The article was rebuilt around that — the system,
+the definition, and the proof. Incidents became brief illustrations.
+
+This third ruling also answers Théo's objection better than my own reframe did. He was right that
+a guard-count spine reruns `doctrine-as-code`; the genuinely new material turned out to be the
+**measurement layer**, which `doctrine-as-code` never touched: defects classified by the stage
+that caught them (build, review, manual test, QA, pilot, production), with the last two counted as
+escaped. That reframes a guardrail as something that moves a class one rung left permanently —
+bugs are a flow, rules are a ratchet.
+
+## Final shape
+
+TL;DR → what quality means here (five properties, none verified by "does the feature work") →
+why reading stopped being the instrument → the four layers (67 decisions, 39 blocking checks in 44
+CI jobs, one PASS/FAIL verdict, one deliberately human perimeter) → how we prove it (the detection
+ladder) → what none of it proves → what still belongs to humans → Monday morning.
+
+Titles: *Quality Isn't Read. It's Executed.* / *La qualité ne se relit pas. Elle s'exécute.*
+Slug unchanged (`tests-pass-nothing-happens`), per the agentic-addiction retitle precedent — open
+question for the author, since the slug no longer matches the title.
+
 ## Decisions
 
-- Title EN *The Tests Passed. Nothing Happened.* / FR *Les tests passent. Il ne se passe rien.*
+- Title EN *Quality Isn't Read. It's Executed.* / FR *La qualité ne se relit pas. Elle s'exécute.*
+  (the original *The Tests Passed. Nothing Happened.* belonged to the incident framing)
 - Tags `['Software', 'AI', 'Opinion']`. `Security` rejected (homelab lane), `Analysis` rejected
   (no measured defect count published).
-- Two diagrams, three blockquotes per language. Diagram 1 = gates passed vs records delivered;
-  diagram 2 = 23 → 41 as shared baseline + delta with bracket callout.
+- Two diagrams, two blockquotes per language. Diagram 1 = the four layers as a narrowing funnel;
+  diagram 2 = the six-rung detection ladder with the escaped-defect bracket. Both initially
+  overflowed in FR (longer strings) and were restructured after a headless-Chromium check.
 - Anonymization: Solstice*, no org/product names, no issue numbers, no links to internal trackers.
 
 ## Follow-ups for Wifsimster (the human)
+
+- Slug still reads `tests-pass-nothing-happens` while the title is now about executed quality.
+  Say the word and it changes; the cost is one broken URL, hours old.
 
 - The exemption ratchet is a real gap on Solstice*, not just an article concession: one guard
   counts its derogations, forty do not. Worth an issue.
