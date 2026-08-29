@@ -4,6 +4,7 @@ import Post from '@/views/Post.vue'
 import Archives from '@/views/Archives.vue'
 import Tag from '@/views/Tag.vue'
 import Privacy from '@/views/Privacy.vue'
+import Drafts from '@/views/Drafts.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -52,6 +53,18 @@ const router = createRouter({
       path: '/en/tags/:tag',
       name: 'TagEn',
       component: Tag
+    },
+    {
+      // Unlisted review page for posts flagged `draft: true`. Kept out of the
+      // navigation, the sitemap and robots.txt on purpose.
+      path: '/drafts',
+      name: 'Drafts',
+      component: Drafts
+    },
+    {
+      path: '/en/drafts',
+      name: 'DraftsEn',
+      component: Drafts
     },
     {
       path: '/privacy',

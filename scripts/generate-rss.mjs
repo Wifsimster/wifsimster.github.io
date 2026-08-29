@@ -120,6 +120,17 @@ function extractContentBlock(content, varName) {
 }
 
 /**
+ * True when the post's metadata block carries `draft: true`. Drafts stay
+ * reachable in the SPA for review, but are excluded from everything a crawler
+ * or a feed reader sees.
+ */
+function isDraft(content) {
+  const match = /export\s+const\s+metadata\s*:\s*PostMetadata\s*=\s*\{([\s\S]*?)\n\}/.exec(content)
+  const block = match ? match[1] : ''
+  return /\bdraft\s*:\s*true\b/.test(block)
+}
+
+/**
  * Parse a Vue SFC file and extract post metadata + content for both languages.
  */
 function extractPostData(filePath) {
@@ -138,7 +149,7 @@ function extractPostData(filePath) {
   const fr = extractContentBlock(content, 'frenchContent')
   const en = extractContentBlock(content, 'englishContent')
 
-  return { slug, date, tags, fr, en }
+  return { slug, date, tags, fr, en, draft: isDraft(content) }
 }
 
 // ─── RSS generation ────────────────────────────────────────────────
@@ -250,12 +261,15 @@ function main() {
   }
 
   const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.vue'))
-  const posts = postFiles
+  const parsed = postFiles
     .map(f => extractPostData(join(POSTS_SRC, f)))
     .filter(Boolean)
+  const drafts = parsed.filter(p => p.draft)
+  const posts = parsed
+    .filter(p => !p.draft)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
-  console.log(`  Found ${posts.length} posts`)
+  console.log(`  Found ${posts.length} posts (${drafts.length} draft(s) skipped)`)
 
   // French feed → dist/rss.xml
   const frFeed = buildRssFeed(posts, 'fr')

@@ -5,6 +5,12 @@
         {{ post.title }}
       </h2>
       <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-zinc-400 mb-3">
+        <span
+          v-if="post.draft"
+          class="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300"
+        >
+          {{ i18n.t('post.draft.badge') }}
+        </span>
         <time :datetime="post.date">{{ formattedDate }}</time>
         <span class="text-gray-300 dark:text-zinc-600">|</span>
         <span>{{ i18n.t('post.readingTime', { min: String(readingTime) }) }}</span>

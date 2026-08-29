@@ -66,6 +66,17 @@ function extractTitleFor(content, varName) {
   return extractStringAfterKey(fieldsBlock, 'title')
 }
 
+/**
+ * True when the post's metadata block carries `draft: true`. Drafts stay
+ * reachable in the SPA for review, but are excluded from everything a crawler
+ * or a feed reader sees.
+ */
+function isDraft(content) {
+  const match = /export\s+const\s+metadata\s*:\s*PostMetadata\s*=\s*\{([\s\S]*?)\n\}/.exec(content)
+  const block = match ? match[1] : ''
+  return /\bdraft\s*:\s*true\b/.test(block)
+}
+
 function extractPostData(filePath) {
   const content = readFileSync(filePath, 'utf-8')
   const slug = extractStringAfterKey(content, 'slug')
@@ -75,7 +86,7 @@ function extractPostData(filePath) {
   const hasFr = hasContentBlock(content, 'frenchContent') && !!extractTitleFor(content, 'frenchContent')
   const hasEn = hasContentBlock(content, 'englishContent') && !!extractTitleFor(content, 'englishContent')
 
-  return { slug, date, hasFr, hasEn }
+  return { slug, date, hasFr, hasEn, draft: isDraft(content) }
 }
 
 // ─── Tag collection ────────────────────────────────────────────────
@@ -146,8 +157,10 @@ function main() {
   }
 
   const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.vue'))
-  const posts = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
-  console.log(`  Found ${posts.length} posts`)
+  const parsed = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
+  const draftCount = parsed.filter(p => p.draft).length
+  const posts = parsed.filter(p => !p.draft)
+  console.log(`  Found ${posts.length} posts (${draftCount} draft(s) skipped)`)
 
   const today = new Date().toISOString()
   const entries = []

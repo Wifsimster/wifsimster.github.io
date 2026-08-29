@@ -90,6 +90,17 @@ function extractContentBlock(content, varName) {
 }
 
 /**
+ * True when the post's metadata block carries `draft: true`. Drafts stay
+ * reachable in the SPA for review, but are excluded from everything a crawler
+ * or a feed reader sees.
+ */
+function isDraft(content) {
+  const match = /export\s+const\s+metadata\s*:\s*PostMetadata\s*=\s*\{([\s\S]*?)\n\}/.exec(content)
+  const block = match ? match[1] : ''
+  return /\bdraft\s*:\s*true\b/.test(block)
+}
+
+/**
  * Parse a Vue SFC file and extract post metadata + content for both languages.
  */
 function extractPostData(filePath) {
@@ -108,7 +119,7 @@ function extractPostData(filePath) {
   const fr = extractContentBlock(content, 'frenchContent')
   const en = extractContentBlock(content, 'englishContent')
 
-  return { slug, date, tags, fr, en }
+  return { slug, date, tags, fr, en, draft: isDraft(content) }
 }
 
 // ─── Font loading ───────────────────────────────────────────────────
@@ -551,8 +562,12 @@ async function main() {
 
   // 1. Extract post data from Vue SFC files
   const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.vue'))
-  const posts = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
-  console.log(`  Found ${posts.length} posts`)
+  const parsed = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
+  const draftCount = parsed.filter(p => p.draft).length
+  // Drafts get neither an OG image nor a pre-rendered page: their URL falls
+  // back to the SPA shell, which renders them client-side with a noindex tag.
+  const posts = parsed.filter(p => !p.draft)
+  console.log(`  Found ${posts.length} posts (${draftCount} draft(s) skipped)`)
 
   // 2. Load fonts
   let fonts

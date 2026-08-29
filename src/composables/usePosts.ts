@@ -1,7 +1,7 @@
 import { computed } from 'vue'
 import type { Post } from '@/utils/posts'
 import type { Language } from '@/types/i18n'
-import { getAllPosts, getPostBySlug as getPostInfoBySlug, getPostsByTag as getPostsByTagFromRegistry } from '@/posts'
+import { getAllPosts, getDraftPosts, getPostBySlug as getPostInfoBySlug, getPostsByTag as getPostsByTagFromRegistry } from '@/posts'
 import { sortPostsByDate } from '@/utils/posts'
 import { useI18n } from './useI18n'
 
@@ -38,7 +38,8 @@ export function usePosts() {
       description: content.description,
       tags: postInfo.metadata.tags,
       html: content.html,
-      lang: targetLang
+      lang: targetLang,
+      draft: postInfo.metadata.draft === true
     }
   }
 
@@ -52,6 +53,10 @@ export function usePosts() {
     return sortPostsByDate(getAllPosts(targetLang))
   }
 
+  const drafts = computed(() => {
+    return sortPostsByDate(getDraftPosts(i18n.language.value))
+  })
+
   const latestPosts = computed(() => {
     return sortPostsByDate(getAllPosts(i18n.language.value)).slice(0, 10)
   })
@@ -61,6 +66,7 @@ export function usePosts() {
     getPostBySlug,
     getPostsByTag,
     getArchivedPosts,
+    drafts,
     latestPosts
   }
 }
