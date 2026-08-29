@@ -109,7 +109,7 @@ const englishContent: PostContent = {
 <h2>What still belongs to humans</h2>
 <p>Being surprised first. Every one of these checks exists because a person felt something was off and went looking. No rule has ever written the first rule.</p>
 <p>Deciding what a defect means. That a control cannot be reached with a keyboard is a technical fact. That it puts us in breach of a legal accessibility obligation, and therefore blocks a release instead of joining a backlog, is a judgement.</p>
-<p>Judging a derogation. Greppable means auditable only if somebody greps.</p>
+<p>Judging a derogation. An exemption marked in the code is auditable only if somebody goes and reads it — the marker does not audit itself.</p>
 <p>Signing. An opposable decision commits somebody, and a model cannot be that somebody. That is not a limit of the current generation. It is what the word means.</p>
 <p>And the question no check asks: whether the thing should exist at all.</p>
 <p>None of this is an argument for fewer people. People are the ones who get surprised first, and being surprised is the only part of this that does not scale by writing more scripts.</p>
@@ -236,7 +236,7 @@ const frenchContent: PostContent = {
 <h2>Ce qui reste aux humains</h2>
 <p>Être surpris le premier. Chacun de ces contrôles existe parce qu'une personne a senti que quelque chose clochait et est allée regarder. Aucune règle n'a jamais écrit la première règle.</p>
 <p>Décider ce qu'un défaut signifie. Qu'un contrôle ne soit pas atteignable au clavier est un fait technique. Que cela nous mette en défaut sur une obligation légale d'accessibilité, et bloque donc une livraison au lieu de rejoindre un backlog, est un jugement.</p>
-<p>Juger une dérogation. Greppable veut dire auditable seulement si quelqu'un greppe.</p>
+<p>Juger une dérogation. Une exemption marquée dans le code n'est auditable que si quelqu'un va la lire — le marqueur ne s'audite pas tout seul.</p>
 <p>Signer. Une décision opposable engage quelqu'un, et un modèle ne peut pas être ce quelqu'un. Ce n'est pas une limite de la génération actuelle. C'est le sens du mot.</p>
 <p>Et la question qu'aucun contrôle ne pose : est-ce que ça devrait exister.</p>
 <p>Rien de tout cela n'est un argument pour moins de monde. Ce sont les gens qui sont surpris les premiers, et être surpris est la seule partie de tout ceci qui ne passe pas à l'échelle en écrivant plus de scripts.</p>
