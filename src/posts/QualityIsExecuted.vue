@@ -47,28 +47,21 @@ const englishContent: PostContent = {
 <p>A word on review, because the word misleads. On my team it is overwhelmingly automated: agents review agents and file a report. The human does not read the lines. The human reads what happened, and owns what a machine cannot own — the opposable calls and the security trade-offs.</p>
 <blockquote><p>Responsibility does not delegate to a model.</p></blockquote>
 <p>None of this exists to slow anyone down, and I would drop all of it tomorrow if it did. An executable rule is what lets us merge without a meeting. Speed and quality are not traded against each other here: they move together.</p>
-<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The quality system has 4 layers, each narrower than the last: 67 recorded architecture decisions, 39 checks that fail the build, one pre-merge PASS or FAIL verdict, and one perimeter deliberately reserved for human review." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WHAT A CHANGE MEETS, IN ORDER</text>
-<text x="64" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">4 layers. Only one is a person.</text>
+<svg viewBox="0 0 640 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The quality system has four layers, each narrower than the last: 67 recorded architecture decisions, 39 checks that fail the build, one pre-merge PASS or FAIL verdict, and one perimeter deliberately reserved for human review." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WHAT A CHANGE MEETS, IN ORDER</text>
+<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">4 layers. Only one is a person.</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="64" y="100" width="672" height="46" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="64" y="156" width="520" height="46" rx="8" fill="currentColor" fill-opacity="0.18"></rect>
-<rect x="64" y="212" width="368" height="46" rx="8" fill="currentColor" fill-opacity="0.24"></rect>
-<rect x="64" y="268" width="216" height="46" rx="8" fill="currentColor" fill-opacity="0.34"></rect>
+<rect x="32" y="100" width="576" height="40" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="152" width="448" height="40" rx="8" fill="currentColor" fill-opacity="0.18"></rect>
+<rect x="32" y="204" width="320" height="40" rx="8" fill="currentColor" fill-opacity="0.25"></rect>
+<rect x="32" y="256" width="200" height="40" rx="8" fill="currentColor" fill-opacity="0.34"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600">
-<text x="84" y="129">67 recorded decisions</text>
-<text x="84" y="185">39 checks that fail the build</text>
-<text x="84" y="241">1 pre-merge verdict</text>
-<text x="84" y="297">1 human perimeter</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="end">
-<text x="736" y="129">the reasons, so they survive a refactor</text>
-<text x="736" y="185">one property each, one past mistake each</text>
-<text x="736" y="241">PASS or FAIL, scoped to the diff</text>
-<text x="736" y="297">reviewed by a non-author, by choice</text>
-</g>
-</svg>
+<text x="48" y="126">67 recorded decisions</text>
+<text x="48" y="178">39 blocking checks</text>
+<text x="48" y="230">1 pre-merge verdict</text>
+<text x="48" y="282">1 human perimeter</text>
+</g></svg>
 
 <h2>How we prove it</h2>
 <p>"We have guardrails" is a claim, not evidence. A system that enforces properties has to be measured, or it is just architecture with good intentions.</p>
@@ -76,40 +69,40 @@ const englishContent: PostContent = {
 <p>The rightmost two rungs get their own name, and it is the only number I would defend in a steering committee: <strong>escaped defects</strong>. Anything found at the pilot or in production escaped every net we own.</p>
 <p>This reframes what a guardrail is <em>for</em>. A check is not there to reduce a defect count. It is there to move one class of defect permanently leftward — from "a tester finds it" to "the build refuses it" — and it never moves back. That is why the count of executable rules matters more than the count of bugs. Bugs are a flow. Rules are a ratchet.</p>
 <blockquote><p>The question is not how many defects we found. It is how far each one got before something stopped it.</p></blockquote>
-<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Defects are classified by the stage that caught them, across 6 rungs from the build pipeline through code review, manual testing, QA and the pilot site to production; the last two rungs are counted as escaped defects, and every executable rule added moves a class of defect permanently leftward." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE ONLY LADDER WE SCORE ON</text>
-<text x="64" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Which stage caught it?</text>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Defects are classified by the stage that caught them, across six stages from the build pipeline through code review, manual testing, QA and the pilot site to production; the last two count as escaped defects, and every executable rule added gets a class of defect caught one stage earlier, permanently." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THE ONLY LADDER WE SCORE ON</text>
+<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Which stage caught it?</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="64" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.30"></rect>
-<rect x="178" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.25"></rect>
-<rect x="292" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.20"></rect>
-<rect x="406" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
-<rect x="520" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="634" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.3"></rect>
+<rect x="129" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.25"></rect>
+<rect x="226" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.2"></rect>
+<rect x="323" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
+<rect x="420" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="517" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.8">
-<text x="115" y="138">build</text>
-<text x="229" y="138">review</text>
-<text x="343" y="138">manual test</text>
-<text x="457" y="138">QA</text>
-<text x="571" y="138">pilot</text>
-<text x="685" y="138">production</text>
+<text x="76" y="128">build</text>
+<text x="173" y="128">review</text>
+<text x="270" y="128">manual test</text>
+<text x="367" y="128">QA</text>
+<text x="464" y="128">pilot</text>
+<text x="561" y="128">production</text>
 </g>
-<path d="M 520 166 L 520 178 L 736 178 L 736 166" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M 628 178 L 628 190" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round"></path>
-<text x="628" y="216" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650" text-anchor="middle">escaped defects</text>
-<path d="M 640 268 L 96 268" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M 108 260 L 96 268 L 108 276" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<text x="96" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.8">every executable rule gets a class caught one stage earlier, for good</text>
-<text x="64" y="304" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">the classification we use, not a measured distribution</text>
-<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">we are pre-production: the last rungs are empty by stage, not by merit</text>
+<path d="M 420 152 L 420 164 L 606 164 L 606 152" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M 513 164 L 513 176" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round"></path>
+<text x="513" y="200" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650" text-anchor="middle">escaped defects</text>
+<text x="48" y="228" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.8">every executable rule gets a class caught one stage earlier</text>
+<path d="M 350 246 L 48 246" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
+<path d="M 60 238 L 48 246 L 60 254" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<text x="32" y="276" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">the classification we use, not a measured distribution</text>
+<text x="32" y="294" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">the last two stages are empty: the product is not live yet, tests on site are weeks away</text>
 </svg>
 
 <h2>What none of this proves</h2>
 <p><strong>My confidence does not transfer.</strong> It does not exist for the person who joins on Monday, nor for a model I have not put through its paces, nor for me on a subject I know badly. The checks are what remains when my calibration is absent.</p>
 <p><strong>It is a ratchet, not a net.</strong> 39 checks encode 39 defects already paid for. Each exists precisely because it did not. We cannot repeat 39 specific mistakes — which says nothing about the ones nobody has noticed yet.</p>
 <p><strong>The verdict is narrow.</strong> PASS means no <em>known</em> rule is violated. The end-to-end phase runs against mocks, never a real database. Several of the defects that taught us most would have sailed through it.</p>
-<p><strong>The right-hand rungs are empty by calendar, not by merit.</strong> We are not in production. The hardest evidence — what survives real users on real hospital data — is evidence we do not have. Anyone showing a leakage chart with the last two columns empty is showing a calendar, not a result. Including me.</p>
+<p><strong>The last two stages are empty because we have not reached them yet.</strong> Nothing escaped to a pilot site or to production because there is neither, yet. The first on-site tests are a few weeks away. That is when those two columns start filling, and when I find out what everything above is actually worth. The hardest evidence — what survives real users on real hospital data — is evidence we do not have. Anyone showing a leakage chart with the last two columns empty is showing a calendar, not a result. Including me.</p>
 <p><strong>Checks catch the disease they treat.</strong> One of ours came from a schema change that only applied to freshly created databases: green in the pipeline, green locally, broken everywhere else. Its first version had a blind spot of exactly the same shape.</p>
 <p><strong>Derogations are not counted.</strong> About 12 are in use, each with a written reason beside it. Exactly one check counts them over time. Nothing prevents an agent from writing its own exemption to turn itself green. That is the open flaw in everything above, and I have no fix for it.</p>
 
@@ -182,28 +175,21 @@ const frenchContent: PostContent = {
 <p>Un mot sur la revue, parce que le mot induit en erreur. Chez nous elle est très majoritairement automatisée : des agents relisent des agents et rendent un rapport. L'humain ne lit pas les lignes, il lit ce qui s'est passé — et il assume ce qu'une machine ne peut pas assumer, l'opposable et la sécurité.</p>
 <blockquote><p>Une responsabilité ne se délègue pas à un modèle.</p></blockquote>
 <p>Rien de tout cela n'existe pour ralentir, et j'abandonnerais l'ensemble demain si c'était le cas. Une règle exécutable est ce qui permet de fusionner sans réunion. La vélocité et la qualité ne s'échangent pas ici : elles montent ensemble.</p>
-<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Le système qualité compte 4 couches, chacune plus étroite que la précédente : 67 décisions d'architecture consignées, 39 contrôles qui font échouer la compilation, un verdict PASS ou FAIL avant fusion, et un périmètre volontairement réservé à la revue humaine." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CE QU'UN CHANGEMENT RENCONTRE, DANS L'ORDRE</text>
-<text x="64" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">4 couches. Une seule est humaine.</text>
+<svg viewBox="0 0 640 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Le système qualité compte quatre couches, chacune plus étroite que la précédente : 67 décisions d'architecture consignées, 39 contrôles qui font échouer la compilation, un verdict PASS ou FAIL avant fusion, et un périmètre volontairement réservé à la revue humaine." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CE QU'UN CHANGEMENT RENCONTRE, DANS L'ORDRE</text>
+<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">4 couches. Une seule est humaine.</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="64" y="100" width="672" height="46" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="64" y="156" width="520" height="46" rx="8" fill="currentColor" fill-opacity="0.18"></rect>
-<rect x="64" y="212" width="368" height="46" rx="8" fill="currentColor" fill-opacity="0.24"></rect>
-<rect x="64" y="268" width="216" height="46" rx="8" fill="currentColor" fill-opacity="0.34"></rect>
+<rect x="32" y="100" width="576" height="40" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="152" width="448" height="40" rx="8" fill="currentColor" fill-opacity="0.18"></rect>
+<rect x="32" y="204" width="320" height="40" rx="8" fill="currentColor" fill-opacity="0.25"></rect>
+<rect x="32" y="256" width="200" height="40" rx="8" fill="currentColor" fill-opacity="0.34"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600">
-<text x="84" y="129">67 décisions consignées</text>
-<text x="84" y="185">39 contrôles bloquants</text>
-<text x="84" y="241">1 verdict avant fusion</text>
-<text x="84" y="297">1 périmètre humain</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="end">
-<text x="736" y="129">les raisons, pour qu'elles survivent</text>
-<text x="736" y="185">une propriété, une erreur passée chacun</text>
-<text x="736" y="241">PASS ou FAIL, cadré sur le diff</text>
-<text x="736" y="297">relu par un non-auteur, par choix</text>
-</g>
-</svg>
+<text x="48" y="126">67 décisions consignées</text>
+<text x="48" y="178">39 contrôles bloquants</text>
+<text x="48" y="230">1 verdict avant fusion</text>
+<text x="48" y="282">1 périmètre humain</text>
+</g></svg>
 
 <h2>Comment on le prouve</h2>
 <p>« Nous avons des garde-fous » est une affirmation, pas une preuve. Un système qui impose des propriétés doit être mesuré, sinon ce n'est que de l'architecture pleine de bonnes intentions.</p>
@@ -211,40 +197,40 @@ const frenchContent: PostContent = {
 <p>Les deux dernières étapes ont leur propre nom, et c'est le seul chiffre que je défendrais en comité de pilotage : les <strong>défauts échappés</strong>. Tout ce qui est trouvé chez le pilote ou en production a échappé à tous nos filets.</p>
 <p>Cela redéfinit ce à quoi sert un garde-fou. Un contrôle n'est pas là pour faire baisser un décompte. Il est là pour déplacer une classe de défauts définitivement vers la gauche — de « un testeur le trouve » à « la compilation le refuse » — et cela ne revient jamais en arrière. Voilà pourquoi le nombre de règles exécutables compte davantage que le nombre de bogues. Un bogue corrigé peut revenir. Une règle écrite, non.</p>
 <blockquote><p>La question n'est pas combien de défauts nous avons trouvés. C'est jusqu'où chacun est allé avant que quelque chose l'arrête.</p></blockquote>
-<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Les défauts sont classés par l'étape qui les a attrapés, sur 6 étapes allant de la chaîne de compilation à la production en passant par la revue, le test manuel, la recette et le client pilote ; les deux dernières étapes comptent comme défauts échappés, et chaque règle exécutable ajoutée déplace une classe de défauts définitivement vers la gauche." class="diagram-svg">
-<text x="64" y="36" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA SEULE ÉCHELLE QUI NOUS NOTE</text>
-<text x="64" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">À quelle étape a-t-il été attrapé ?</text>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Les défauts sont classés par l'étape qui les a attrapés, sur six étapes allant de la chaîne de compilation à la production en passant par la revue, le test manuel, la recette et le client pilote ; les deux dernières comptent comme défauts échappés, et chaque règle exécutable ajoutée fait attraper une classe de défauts une étape plus tôt, définitivement." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">LA SEULE ÉCHELLE QUI NOUS NOTE</text>
+<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">À quelle étape a-t-il été attrapé ?</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="64" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.30"></rect>
-<rect x="178" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.25"></rect>
-<rect x="292" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.20"></rect>
-<rect x="406" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
-<rect x="520" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="634" y="112" width="102" height="42" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.3"></rect>
+<rect x="129" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.25"></rect>
+<rect x="226" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.2"></rect>
+<rect x="323" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
+<rect x="420" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="517" y="104" width="89" height="38" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle" opacity="0.8">
-<text x="115" y="138">chaîne</text>
-<text x="229" y="138">revue</text>
-<text x="343" y="138">test manuel</text>
-<text x="457" y="138">recette</text>
-<text x="571" y="138">pilote</text>
-<text x="685" y="138">production</text>
+<text x="76" y="128">chaîne</text>
+<text x="173" y="128">revue</text>
+<text x="270" y="128">test manuel</text>
+<text x="367" y="128">recette</text>
+<text x="464" y="128">pilote</text>
+<text x="561" y="128">production</text>
 </g>
-<path d="M 520 166 L 520 178 L 736 178 L 736 166" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M 628 178 L 628 190" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round"></path>
-<text x="628" y="216" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650" text-anchor="middle">défauts échappés</text>
-<path d="M 640 268 L 96 268" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
-<path d="M 108 260 L 96 268 L 108 276" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<text x="96" y="250" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.8">chaque règle exécutable fait attraper une classe une étape plus tôt</text>
-<text x="64" y="304" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">la classification que nous utilisons, pas une distribution mesurée</text>
-<text x="64" y="326" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">nous sommes avant production : les dernières étapes sont vides par calendrier, pas par mérite</text>
+<path d="M 420 152 L 420 164 L 606 164 L 606 152" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M 513 164 L 513 176" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round"></path>
+<text x="513" y="200" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650" text-anchor="middle">défauts échappés</text>
+<text x="48" y="228" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.8">chaque règle exécutable fait attraper une classe une étape plus tôt</text>
+<path d="M 350 246 L 48 246" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
+<path d="M 60 238 L 48 246 L 60 254" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<text x="32" y="276" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">la classification que nous utilisons, pas une distribution mesurée</text>
+<text x="32" y="294" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">les deux dernières étapes sont vides : le produit n'est pas encore en service</text>
 </svg>
 
 <h2>Ce que tout cela ne prouve pas</h2>
 <p><strong>Ma confiance ne se transmet pas.</strong> Elle n'existe pas chez la personne qui arrive lundi, ni pour un modèle que je n'ai pas encore éprouvé, ni pour moi sur un sujet que je maîtrise mal. Les contrôles sont ce qui reste quand mon étalonnage n'est pas là.</p>
 <p><strong>Ça n'attrape pas tout, ça empêche de retomber.</strong> 39 contrôles encodent 39 défauts déjà payés. Chacun existe parce qu'il n'existait pas. Nous ne pouvons plus refaire 39 erreurs précises — cela ne dit rien de celles que personne n'a encore remarquées.</p>
 <p><strong>Le verdict est étroit.</strong> PASS signifie qu'aucune règle <em>connue</em> n'est violée. La phase de bout en bout tourne sur des bouchons, jamais sur une vraie base. Plusieurs des défauts qui nous ont le plus appris seraient passés au travers.</p>
-<p><strong>Les dernières étapes sont vides par calendrier, pas par mérite.</strong> Nous ne sommes pas en production. La preuve la plus dure — ce qui survit à de vrais utilisateurs, sur de vraies données hospitalières — nous ne l'avons pas. Quiconque montre un tableau de détection avec les deux dernières colonnes vides montre un calendrier, pas un résultat. Moi compris.</p>
+<p><strong>Les deux dernières étapes sont vides parce que nous n'y sommes pas encore arrivés.</strong> Rien ne s'est échappé chez un client pilote ni en production, pour la bonne raison qu'il n'y a encore ni l'un ni l'autre. Les premiers tests sur site sont dans quelques semaines. C'est là que ces deux colonnes commenceront à se remplir, et que je saurai ce que tout ce qui précède vaut vraiment. La preuve la plus dure — ce qui survit à de vrais utilisateurs, sur de vraies données hospitalières — nous ne l'avons pas. Quiconque montre un tableau de détection avec les deux dernières colonnes vides montre un calendrier, pas un résultat. Moi compris.</p>
 <p><strong>Les contrôles attrapent la maladie qu'ils soignent.</strong> L'un des nôtres est né d'un changement de schéma qui ne s'appliquait qu'aux bases neuves : vert en chaîne, vert en local, cassé partout ailleurs. Sa première version avait un angle mort exactement de la même forme.</p>
 <p><strong>Les dérogations ne sont pas comptées.</strong> Environ 12 sont en usage, chacune avec sa raison écrite à côté. Un seul contrôle les compte dans le temps. Rien n'empêche un agent d'écrire sa propre exemption pour se rendre vert. C'est la faille ouverte de tout ce qui précède, et je n'ai pas de correctif.</p>
 <h2>Ce qui reste aux humains</h2>

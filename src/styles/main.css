@@ -229,8 +229,9 @@
      width. New diagrams should be authored for the width they actually get.
 
      On narrow viewports no width exists at all, and shrinking the SVG only
-     destroys the type, so .diagram-scroll holds a legible min-width and
-     scrolls horizontally instead. */
+     destroys the type, so .diagram-scroll holds a min-width equal to the
+     640-unit canvas and scrolls horizontally instead. At that floor the
+     scale never drops below 1, so a 13px label never renders below 13px. */
   .prose .diagram-scroll {
     width: 100%;
     margin-top: 2.5rem;
@@ -255,7 +256,7 @@
   }
 
   .prose .diagram-scroll > .diagram-svg {
-    min-width: 38rem;
+    min-width: 40rem;
     margin: 0;
   }
 
