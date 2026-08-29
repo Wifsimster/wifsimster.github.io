@@ -36,6 +36,7 @@ import AiAgentsH1Verdict, { metadata as aiAgentsH1VerdictMetadata, getContent as
 import AgenticAddiction, { metadata as agenticAddictionMetadata, getContent as getAgenticAddictionContent } from './AgenticAddiction.vue'
 import PoIsDeadJudgmentIsNot, { metadata as poIsDeadMetadata, getContent as getPoIsDeadContent } from './PoIsDeadJudgmentIsNot.vue'
 import DoctrineAsCode, { metadata as doctrineAsCodeMetadata, getContent as getDoctrineAsCodeContent } from './DoctrineAsCode.vue'
+import TestsPassNothingHappens, { metadata as testsPassMetadata, getContent as getTestsPassContent } from './TestsPassNothingHappens.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -228,6 +229,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: doctrineAsCodeMetadata,
     getContent: getDoctrineAsCodeContent,
     component: DoctrineAsCode
+  },
+  'tests-pass-nothing-happens': {
+    metadata: testsPassMetadata,
+    getContent: getTestsPassContent,
+    component: TestsPassNothingHappens
   }
 }
 
