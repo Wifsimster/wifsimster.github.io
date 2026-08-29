@@ -1,5 +1,8 @@
 <template>
-  <header class="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-zinc-800">
+  <header
+    class="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-zinc-800 transition-transform duration-300 ease-out pt-[env(safe-area-inset-top)] motion-reduce:transition-none"
+    :class="headerHidden ? '-translate-y-full' : 'translate-y-0'"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-14">
         <RouterLink :to="i18n.langPrefix.value || '/'" class="text-lg font-bold text-gray-900 dark:text-zinc-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
@@ -72,20 +75,54 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
+import { useThrottleFn } from '@vueuse/core'
 import { useI18n } from '@/composables/useI18n'
 import { useDarkMode } from '@/composables/useDarkMode'
 import { useSearch } from '@/composables/useSearch'
+import { useHeaderVisibility } from '@/composables/useHeaderVisibility'
 import FlagIcon from './FlagIcon.vue'
 
 const i18n = useI18n()
 const darkMode = useDarkMode()
 const router = useRouter()
 const { searchQuery, setSearchQuery } = useSearch()
+const { headerHidden } = useHeaderVisibility()
 
 const menuOpen = ref(false)
 const localSearchQuery = ref('')
+
+// Slide the header away while reading down, bring it back on the first
+// upward scroll. Small deltas are ignored so it doesn't flicker on momentum
+// bounce; the header always stays visible near the top and while the menu
+// is open.
+let lastScrollY = 0
+
+const handleHeaderScroll = useThrottleFn(() => {
+  const y = window.scrollY
+  if (menuOpen.value || y < 64) {
+    headerHidden.value = false
+  } else if (y > lastScrollY + 4) {
+    headerHidden.value = true
+  } else if (y < lastScrollY - 4) {
+    headerHidden.value = false
+  }
+  lastScrollY = y
+}, 100)
+
+watch(menuOpen, (open) => {
+  if (open) headerHidden.value = false
+})
+
+onMounted(() => {
+  lastScrollY = window.scrollY
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleHeaderScroll)
+})
 
 watch(searchQuery, (newValue) => {
   localSearchQuery.value = newValue
