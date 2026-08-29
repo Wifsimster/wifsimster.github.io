@@ -18,7 +18,7 @@ const englishContent: PostContent = {
 <p>My confidence is a fact about me, not a property of the software. It does not transfer, it cannot be audited, and it is worth nothing to someone asking how we guarantee that an audit record gets written. That is why I no longer read diffs line by line, and why I built something else instead.</p>
 
 <h2>What quality means here</h2>
-<p>I lead engineering on <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, an <abbr title="Enterprise Resource Planning — the administrative backbone of a hospital group">ERP</abbr> for a group of French public hospitals. That context sets the whole definition.</p>
+<p>The software we write — <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, an <abbr title="Enterprise Resource Planning — the administrative backbone of a hospital group">ERP</abbr> for a group of French public hospitals — manages patient records. That context sets the whole definition.</p>
 <p>Quality here is not a score and not a defect count. It is a short list of properties that have to be true after every change, without exception:</p>
 <ul>
 <li>Writes that can be held against us later carry a legal audit trail, and the write is refused if the trail cannot be written.</li>
@@ -146,7 +146,7 @@ const frenchContent: PostContent = {
 <p>Ma confiance parle de moi, pas du logiciel. Elle ne se transmet pas, elle ne s'audite pas, et elle ne vaudra rien devant quelqu'un qui demande comment nous garantissons qu'une trace d'audit est écrite. C'est pour cela que je ne relis plus les diffs ligne à ligne, et que j'ai construit autre chose à la place.</p>
 
 <h2>Ce que « qualité » veut dire ici</h2>
-<p>Je dirige l'ingénierie sur <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, un <abbr title="Enterprise Resource Planning — la colonne vertébrale administrative d'un groupement hospitalier">ERP</abbr> hospitalier pour un groupement public. Ce contexte décide de toute la définition.</p>
+<p>Le logiciel qu'on écrit — <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, un <abbr title="Enterprise Resource Planning — la colonne vertébrale administrative d'un groupement hospitalier">ERP</abbr> pour un groupement d'hôpitaux publics — gère des dossiers patients. Ce contexte décide de toute la définition.</p>
 <p>Ici, la qualité n'est ni une note ni un décompte de défauts. C'est une courte liste de propriétés qui doivent être vraies après chaque changement, sans exception :</p>
 <ul>
 <li>Une écriture qui peut nous être opposée porte une trace d'audit légale, et l'écriture est refusée si la trace ne peut pas être écrite.</li>
