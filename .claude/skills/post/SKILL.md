@@ -1,0 +1,129 @@
+---
+name: post
+description: Write, register and ship a new bilingual blog post. Use when adding an article to this blog, drafting a new opinion or homelab piece, or when the user invokes /post. Covers the persona meeting, the SFC scaffold, registration in the post registry, diagram rules and the commit convention.
+---
+
+# Shipping a post
+
+CLAUDE.md is the doctrine — voice (§2), the persona method (§3), the never-do
+list (§6). **Read it; do not restate it here.** This file is only the procedure.
+
+## 1. Decide if it needs a meeting
+
+A new opinion article does (CLAUDE.md §3): four personas in parallel, escalate
+anything architectural to the author mid-meeting, then write the convergence
+yourself. Document it at the repo root as `TOPIC-MEETING-YYYY-MM-DD.md`.
+
+A homelab/DIY post, or an edit to an existing piece, does not.
+
+## 2. Scaffold
+
+One file, `src/posts/PascalCaseName.vue`. Copy the shape from the most recent
+post in the canon table (CLAUDE.md §8) rather than from memory — the scaffold
+has drifted before.
+
+```
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+import type { PostMetadata, PostContent } from '@/utils/posts'
+
+export const metadata: PostMetadata = {
+  slug: 'kebab-case-slug',        // must match the registry key exactly
+  date: 'YYYY-MM-DD',
+  tags: ['Software', 'AI', 'Opinion']   // English tags, even on FR posts
+}
+
+const englishContent: PostContent = { title, description, html: `…` }
+const frenchContent: PostContent = { title, description, html: `…` }
+
+export function getContent(locale: 'fr' | 'en'): PostContent {
+  return locale === 'fr' ? frenchContent : englishContent
+}
+
+export default defineComponent({
+  name: 'PascalCaseName',
+  props: { locale: { type: String as () => 'fr' | 'en', required: true } },
+  setup(props) {
+    const content = computed(() => getContent(props.locale))
+    return { content }
+  },
+  template: '<div v-html="content.html"></div>'
+})
+</script>
+
+<template>
+  <div v-html="content.html"></div>
+</template>
+```
+
+`description` is the meta description. Per CLAUDE.md §2 it must make the point
+in **different words** from the TL;DR, the opening line and the blockquote.
+
+## 3. Register it
+
+`src/posts/index.ts`, three edits, all required:
+
+1. the `import Foo, { metadata as fooMetadata, getContent as getFooContent } from './Foo.vue'` line;
+2. the `'kebab-case-slug': { metadata, getContent, component }` entry in `postRegistry`;
+3. nothing else — `getAllPosts`, `getAllTags` and the RSS/sitemap generators all read the registry.
+
+A post that is written but not registered builds green and 404s. The hook
+catches this; do not rely on noticing it.
+
+## 4. The sanitizer is the real constraint
+
+Post HTML is rendered `v-html` through DOMPurify in
+`src/components/blog/PostContent.vue`. **Any tag or attribute outside
+`ALLOWED_TAGS` / `ALLOWED_ATTR` is deleted at render with no error** — the
+build passes, the content is simply gone.
+
+- Need a tag the allowlist lacks? Extend the allowlist deliberately, in the
+  same PR, and say so in the description.
+- `iframe` stays out. A third-party embed contradicts CLAUDE.md §5
+  (privacy first). Link to the video instead of embedding it.
+- `style` is not allowed either. Styling goes through classes.
+
+## 5. Diagrams
+
+CLAUDE.md §2 has the full rules. The three that are actually violated:
+
+- `fill="currentColor"` + `fill-opacity`, never a hex — a hex will not invert
+  under dark mode.
+- No `<linearGradient>` with `stop-color="currentColor"`. It collapses to
+  transparent in Chromium. Verified on the DARES post.
+- **Font floor is 13** inside an 800-wide viewBox. The prose column renders
+  that viewBox at ~700 px, so everything shrinks ~15%. If a label does not
+  fit at 13, redesign the layout — never shrink the text.
+
+`role="img"` plus an `aria-label` that states the chart's *conclusion*, not
+its axes.
+
+## 6. Check before committing
+
+```
+node .claude/hooks/check-post.mjs src/posts/YourPost.vue
+```
+
+Runs automatically after every Edit/Write via the `PostToolUse` hook in
+`.claude/settings.json`. It reads the allowlist out of `PostContent.vue`
+directly, so it cannot fall out of date.
+
+It checks the mechanical rules only — registration, the sanitizer allowlist,
+diagram palette/typography/a11y, emoji, both locales present. **It cannot
+check voice.** Concision, no verbatim repetition across TL;DR / opening /
+blockquote / description, the "what still belongs to humans" beat, `<abbr>` on
+every acronym at first use per language — those are still yours to verify by
+reading, in both languages.
+
+There is no lint, typecheck or test in this repo. `npm run build` is the only
+other gate and it is slow (image optimization + Vite + OG + RSS + sitemap).
+Run it once before opening the PR, not per edit.
+
+## 7. Ship
+
+- Branch: whatever the task preset gives you. Never push to `master`.
+- Commit title: `post(<slug>): <short headline>` for a new post,
+  `edit(<slug>): <what changed>` for a change to one.
+- Never hand-edit `package.json`'s `version` — `release.yml` owns it.
+- PR is **`draft: false`** (CLAUDE.md §5 overrides the harness default).
+- Squash-merge it yourself once the build passes. No confirmation round-trip.
