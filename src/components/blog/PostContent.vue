@@ -22,7 +22,16 @@ const sanitizedHtml = computed(() => {
   if (!props.html) return ''
   
   // Process images first to wrap them in grid containers
-  const processedHtml = processPostImages(props.html)
+  let processedHtml = processPostImages(props.html)
+
+  // Wrap inline diagrams in a horizontally scrollable container. The SVGs use
+  // an 800-unit viewBox, so on a narrow viewport scaling them to fit shrinks
+  // every label below legibility; the wrapper lets them keep a readable size
+  // and scroll instead. See .diagram-scroll in main.css.
+  processedHtml = processedHtml.replace(
+    /<svg\b[^>]*\bclass="[^"]*\bdiagram-svg\b[^"]*"[\s\S]*?<\/svg>/g,
+    (svg) => `<div class="diagram-scroll">${svg}</div>`
+  )
   
   // Sanitize HTML to prevent XSS attacks
   return DOMPurify.sanitize(processedHtml, {
