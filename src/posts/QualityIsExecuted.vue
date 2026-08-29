@@ -3,7 +3,7 @@ import { defineComponent, computed } from 'vue'
 import type { PostMetadata, PostContent } from '@/utils/posts'
 
 export const metadata: PostMetadata = {
-  slug: 'tests-pass-nothing-happens',
+  slug: 'quality-is-executed',
   date: '2026-08-29',
   tags: ['Software', 'AI', 'Opinion']
 }
@@ -282,7 +282,7 @@ export function getContent(locale: 'fr' | 'en'): PostContent {
 }
 
 export default defineComponent({
-  name: 'TestsPassNothingHappens',
+  name: 'QualityIsExecuted',
   props: {
     locale: {
       type: String as () => 'fr' | 'en',
