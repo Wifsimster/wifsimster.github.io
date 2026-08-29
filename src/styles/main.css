@@ -214,11 +214,36 @@
   }
 
   .prose .diagram-svg {
-    @apply block my-10 text-gray-700 dark:text-zinc-300;
+    @apply block my-10 text-gray-700 dark:text-zinc-100;
     width: 100%;
     max-width: 100%;
     height: auto;
   }
+
+  /* Dark-mode legibility floor for diagrams. Every diagram draws with
+     currentColor + per-element opacity; the tonality ladder that reads fine
+     on white (text at 0.45-0.65) drops below comfortable contrast on
+     zinc-900. Rather than editing 40+ inline SVGs, dark mode lifts the low
+     end of the ladder here — each step keeps its rank, so the typographic
+     hierarchy survives. Values are matched exactly as authored; new diagrams
+     should keep using the same ladder. */
+  .dark .prose .diagram-svg text[opacity="0.45"] { opacity: 0.65; }
+  .dark .prose .diagram-svg text[opacity="0.5"]  { opacity: 0.68; }
+  .dark .prose .diagram-svg text[opacity="0.55"] { opacity: 0.72; }
+  .dark .prose .diagram-svg text[opacity="0.6"]  { opacity: 0.76; }
+  .dark .prose .diagram-svg text[opacity="0.65"] { opacity: 0.8; }
+
+  /* Same idea for faint panel fills: data boxes need to read as surfaces
+     against the deep background, so the faint band gets a ~+0.04 lift. */
+  .dark .prose .diagram-svg [fill-opacity="0.07"] { fill-opacity: 0.11; }
+  .dark .prose .diagram-svg [fill-opacity="0.09"] { fill-opacity: 0.13; }
+  .dark .prose .diagram-svg [fill-opacity="0.10"] { fill-opacity: 0.14; }
+  .dark .prose .diagram-svg [fill-opacity="0.12"] { fill-opacity: 0.16; }
+  .dark .prose .diagram-svg [fill-opacity="0.13"] { fill-opacity: 0.17; }
+  .dark .prose .diagram-svg [fill-opacity="0.14"] { fill-opacity: 0.18; }
+  .dark .prose .diagram-svg [fill-opacity="0.15"] { fill-opacity: 0.19; }
+  .dark .prose .diagram-svg [fill-opacity="0.16"] { fill-opacity: 0.2; }
+  .dark .prose .diagram-svg [fill-opacity="0.17"] { fill-opacity: 0.21; }
 
   .prose blockquote {
     @apply border-l-4 border-primary-500 pl-4 italic my-4 text-gray-600 dark:text-zinc-400;

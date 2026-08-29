@@ -1,9 +1,12 @@
 <template>
   <div>
-    <!-- Reading progress bar -->
+    <!-- Reading progress bar. On mobile it sits just under the sticky header
+         and follows it to the very top when the header slides away; on
+         desktop (no header) it always hugs the top edge. -->
     <div
       v-if="postInfo && post"
-      class="fixed top-0 left-0 z-50 h-[3px] bg-primary-500 transition-all duration-150 ease-out"
+      class="fixed left-0 z-50 h-[3px] bg-primary-500 transition-all duration-150 ease-out lg:top-0"
+      :class="headerHidden ? 'top-0' : 'top-[calc(3.5rem+env(safe-area-inset-top))]'"
       :style="{ width: `${progress}%` }"
     ></div>
 
@@ -116,6 +119,7 @@ import { useI18n } from '@/composables/useI18n'
 import { usePosts } from '@/composables/usePosts'
 import { useImageGallery } from '@/composables/useImageGallery'
 import { useReadingProgress } from '@/composables/useReadingProgress'
+import { useHeaderVisibility } from '@/composables/useHeaderVisibility'
 import { useEngagedReadBeacon } from '@/composables/useAnalytics'
 import { formatDate, estimateReadingTime } from '@/utils/posts'
 import type { Post } from '@/utils/posts'
@@ -133,6 +137,7 @@ const i18n = useI18n()
 const { getPostBySlug } = usePosts()
 const gallery = useImageGallery()
 const { progress } = useReadingProgress()
+const { headerHidden } = useHeaderVisibility()
 
 const lang = computed(() => route.path.startsWith('/en') ? 'en' : 'fr')
 const langPrefix = computed(() => lang.value === 'en' ? '/en' : '')
