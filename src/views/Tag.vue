@@ -16,21 +16,15 @@
       <div class="mb-6">
         <div class="relative">
           <input
-            :model-value="searchQuery"
+            :value="searchQuery"
             @input="(e) => setSearchQuery((e.target as HTMLInputElement).value)"
             type="text"
-            :placeholder="i18n.t('home.searchPlaceholder')"
+            :placeholder="searchPlaceholder"
             :class="[
               'w-full px-4 py-2 text-sm border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900',
-              searchQuery ? 'pr-10' : 'pr-24'
+              'pr-10'
             ]"
           />
-          <div
-            v-if="!searchQuery"
-            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-gray-400 dark:text-zinc-500 pointer-events-none"
-          >
-            {{ filteredPostsCountText }}
-          </div>
           <button
             v-if="searchQuery"
             @click="clearSearch"
@@ -42,15 +36,15 @@
         </div>
       </div>
 
-      <!-- Tag Filters -->
+      <!-- Tag Filters — single scrollable row on mobile, wrapping cloud on larger screens -->
       <div class="mb-6">
-        <div class="flex flex-wrap gap-2">
+        <div class="flex gap-2 flex-nowrap overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:overflow-visible">
           <RouterLink
             v-for="availableTag in availableTags"
             :key="availableTag"
             :to="`${langPrefix}/tags/${encodeURIComponent(availableTag)}`"
             :class="[
-              'px-3 py-1 text-sm rounded-full transition-colors focus-ring',
+              'shrink-0 whitespace-nowrap px-3 py-1.5 text-sm rounded-full transition-colors focus-ring',
               availableTag === tag
                 ? 'bg-primary-600 dark:bg-primary-500 text-white'
                 : 'bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300'
@@ -71,29 +65,13 @@
         </button>
       </div>
 
-      <div v-if="filteredPosts.length > 0" class="space-y-8">
-        <div v-for="yearGroup in postsByYear" :key="yearGroup.year" class="space-y-4">
+      <div v-if="filteredPosts.length > 0" class="space-y-10">
+        <div v-for="yearGroup in postsByYear" :key="yearGroup.year" class="space-y-5">
           <h2 class="flex justify-between items-center text-2xl font-bold text-gray-900 dark:text-zinc-100 border-b border-gray-200 dark:border-zinc-800 pb-2">
             <span>{{ yearGroup.year }}</span>
             <span class="text-sm text-gray-500 dark:text-zinc-400 font-normal">({{ yearGroup.posts.length }})</span>
           </h2>
-          <article
-            v-for="post in yearGroup.posts"
-            :key="post.slug"
-            class="group"
-          >
-            <RouterLink
-              :to="`${langPrefix}/posts/${post.slug}`"
-              class="flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 p-3 rounded-lg transition-colors focus-ring"
-            >
-              <time :datetime="post.date" class="text-sm text-gray-500 dark:text-zinc-400 whitespace-nowrap min-w-[100px]">
-                {{ formatDate(post.date, lang) }}
-              </time>
-              <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
-                {{ post.title }}
-              </h3>
-            </RouterLink>
-          </article>
+          <PostList :posts="yearGroup.posts" />
         </div>
       </div>
       <div v-else class="text-center py-12 text-gray-500 dark:text-zinc-400">
@@ -104,14 +82,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { RouterLink } from 'vue-router'
 import { useI18n } from '@/composables/useI18n'
 import { usePosts } from '@/composables/usePosts'
 import { useSearch } from '@/composables/useSearch'
-import { formatDate } from '@/utils/posts'
 import { getAllTags } from '@/posts'
+import PostList from '@/components/blog/PostList.vue'
 
 const route = useRoute()
 const i18n = useI18n()
@@ -190,19 +168,14 @@ const clearFilters = () => {
   clearSearch()
 }
 
-const postsCountText = computed(() => {
-  const count = taggedPosts.value.length
-  const template = count === 1 
-    ? i18n.t('home.postsCount') 
-    : i18n.t('home.postsCountPlural')
-  return template.replace('{{count}}', count.toString())
+const searchPlaceholder = computed(() => {
+  return i18n.t('home.searchPlaceholderCount', { count: String(taggedPosts.value.length) })
 })
 
-const filteredPostsCountText = computed(() => {
-  const count = filteredPosts.value.length
-  const template = count === 1 
-    ? i18n.t('home.postsCount') 
-    : i18n.t('home.postsCountPlural')
-  return template.replace('{{count}}', count.toString())
+const postsCountText = computed(() => {
+  const count = taggedPosts.value.length
+  const key = count === 1 ? 'home.postsCount' : 'home.postsCountPlural'
+  return i18n.t(key, { count: String(count) })
 })
+
 </script>
