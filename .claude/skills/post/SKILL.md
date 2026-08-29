@@ -30,7 +30,8 @@ import type { PostMetadata, PostContent } from '@/utils/posts'
 export const metadata: PostMetadata = {
   slug: 'kebab-case-slug',        // must match the registry key exactly
   date: 'YYYY-MM-DD',
-  tags: ['Software', 'AI', 'Opinion']   // English tags, even on FR posts
+  tags: ['Software', 'AI', 'Opinion'],  // English tags, even on FR posts
+  draft: true                     // while writing; delete the line to publish
 }
 
 const englishContent: PostContent = { title, description, html: `…` }
@@ -55,6 +56,10 @@ export default defineComponent({
   <div v-html="content.html"></div>
 </template>
 ```
+
+`draft: true` keeps the post out of every listing, feed, sitemap and OG image
+while leaving it readable at `/posts/<slug>` with a banner and `noindex`. All
+drafts are listed at the unlisted `/drafts`. Publishing is deleting the line.
 
 `description` is the meta description. Per CLAUDE.md §2 it must make the point
 in **different words** from the TL;DR, the opening line and the blockquote.
@@ -91,9 +96,14 @@ CLAUDE.md §2 has the full rules. The three that are actually violated:
   under dark mode.
 - No `<linearGradient>` with `stop-color="currentColor"`. It collapses to
   transparent in Chromium. Verified on the DARES post.
-- **Font floor is 13** inside an 800-wide viewBox. The prose column renders
-  that viewBox at ~700 px, so everything shrinks ~15%. If a label does not
-  fit at 13, redesign the layout — never shrink the text.
+- **Draw on a 640-unit viewBox.** The prose column is boxed in by a
+  table-of-contents rail on each side and cannot be widened — a CSS breakout
+  slides the diagram *under* the rail. At 640 the scale never drops below 1,
+  so **a nominal size is the size the reader gets**. Usable content width is
+  576 units (32-unit margins).
+- **Font floor is 13** nominal — eyebrow 14.5, headline 28, labels and
+  footnotes 13. If a label does not fit, redesign the layout or cut the
+  label. Never shrink the text, and never widen the canvas to make room.
 
 `role="img"` plus an `aria-label` that states the chart's *conclusion*, not
 its axes.

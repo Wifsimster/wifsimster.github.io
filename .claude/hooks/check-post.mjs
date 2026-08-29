@@ -112,13 +112,21 @@ function checkFile(file, { tags, attrs }, registry) {
         add(at(c.index), 'hardcoded-color',
           `${c[1]} will not invert under dark mode — use fill="currentColor" with fill-opacity`)
 
+      // Author's ruling 2026-08-29: draw on 640 units. At 640 the scale never
+      // drops below 1, so a nominal font size is the size the reader gets.
+      // A wider canvas shrinks every label (800 units put a 13px label at
+      // 9.9px, and near 5.7px on a phone).
       const vb = open.match(/viewBox="0 0 (\d+)/)
-      const w = vb ? Number(vb[1]) : 800
+      const w = vb ? Number(vb[1]) : 0
+      if (w && w !== 640)
+        add(at(0), 'canvas-width',
+          `viewBox is ${w} units — diagrams are drawn on 640 so nominal sizes survive; never widen the canvas to make room`)
+
       for (const f of body.matchAll(/font-size="([\d.]+)"/g)) {
-        const px = Number(f[1]) * (800 / w)
-        if (px < 13)
+        const nominal = Number(f[1])
+        if (nominal < 13)
           add(at(f.index), 'tiny-font',
-            `font-size ${f[1]} renders ~${(px * 0.875).toFixed(1)}px in the prose column — floor is 13 in an 800-wide viewBox`)
+            `font-size ${nominal} is under the floor of 13 (eyebrow 14.5, headline 28) — redesign the layout or cut the label, never shrink the text`)
       }
     }
 
