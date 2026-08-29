@@ -6,34 +6,50 @@
     :dismissableMask="true"
     :closeOnEscape="true"
     :showHeader="false"
-    :style="{ width: '90vw', maxWidth: '1200px' }"
-    :breakpoints="{ '960px': '95vw', '640px': '98vw' }"
+    :style="{
+      width: '100vw',
+      maxWidth: '100vw',
+      height: '100dvh',
+      maxHeight: '100dvh',
+      margin: '0',
+      border: 'none',
+      borderRadius: '0',
+      background: 'transparent',
+      boxShadow: 'none'
+    }"
     :pt="{
-      root: 'bg-black/80 backdrop-blur-sm border-none',
-      content: 'p-0 bg-transparent relative border-none',
-      mask: 'bg-black/80'
+      root: 'bg-transparent border-none shadow-none',
+      content: 'p-0 bg-transparent relative border-none h-full flex flex-col justify-center'
     }"
     @hide="onHide"
   >
     <button
       @click="visible = false"
-      class="absolute top-4 right-4 z-50 text-white hover:text-gray-200 transition-all p-2.5 rounded-full hover:bg-white/20 bg-black/50 backdrop-blur-md shadow-lg hover:scale-110"
+      class="absolute top-[calc(1rem+env(safe-area-inset-top))] right-4 z-50 text-white hover:text-gray-200 transition-all p-2.5 rounded-full hover:bg-white/20 bg-black/50 backdrop-blur-md shadow-lg hover:scale-110"
       aria-label="Close gallery"
     >
       <i class="pi pi-times text-xl font-semibold"></i>
     </button>
+    <!-- Position counter, so readers know where they are in the series -->
+    <div
+      v-if="images.length > 1"
+      class="absolute top-[calc(1.5rem+env(safe-area-inset-top))] left-5 z-50 text-sm font-medium text-white/90 bg-black/50 backdrop-blur-md rounded-full px-3 py-1 tabular-nums pointer-events-none"
+      aria-live="polite"
+    >
+      {{ activeIndex + 1 }} / {{ images.length }}
+    </div>
     <Galleria
       v-model:activeIndex="activeIndex"
       :value="images"
       :numVisible="7"
       :circular="true"
-      :showItemNavigators="true"
-      :showThumbnails="true"
+      :showItemNavigators="images.length > 1"
+      :showThumbnails="images.length > 1"
       :responsiveOptions="responsiveOptions"
       containerStyle="max-width: 100%"
       :pt="{
         root: 'w-full border-none',
-        content: 'bg-transparent p-4 border-none',
+        content: 'bg-transparent p-0 sm:p-4 border-none',
         item: 'flex items-center justify-center p-2',
         itemWrapper: 'border-none',
         thumbnails: { 
@@ -54,11 +70,14 @@
       }"
     >
       <template #item="slotProps">
-        <div class="relative w-full h-full flex items-center justify-center">
+        <!-- The full-screen dialog covers the mask, so clicking the empty
+             space around the image must close the gallery itself. -->
+        <div class="relative w-full h-full flex items-center justify-center" @click.self="visible = false">
           <img
             :src="slotProps.item.itemImageSrc"
             :alt="slotProps.item.alt"
-            class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"
+            class="max-w-[96vw] object-contain rounded-lg shadow-2xl"
+            :class="images.length > 1 ? 'max-h-[calc(100dvh-9.5rem)]' : 'max-h-[calc(100dvh-3rem)]'"
           />
         </div>
       </template>
@@ -67,7 +86,7 @@
           <img
             :src="slotProps.item.thumbnailImageSrc"
             :alt="slotProps.item.alt"
-            class="w-20 h-20 object-cover rounded-lg cursor-pointer transition-all hover:opacity-90 hover:scale-105 shadow-md"
+            class="w-14 h-14 sm:w-20 sm:h-20 object-cover rounded-lg cursor-pointer transition-all hover:opacity-90 hover:scale-105 shadow-md"
           />
         </div>
       </template>
@@ -154,6 +173,16 @@ onKeyStroke('ArrowRight', () => {
 </script>
 
 <style scoped>
+/* The gallery mask must be near-black so the article never shows through.
+   The Dialog mask is teleported to <body> (out of scoped reach) and the
+   PrimeVue theme sets its background with priority that beats pt inline
+   styles, hence the :global + !important. This app's only Dialog is the
+   image gallery, so the selector can stay generic. */
+:global(.p-dialog-mask.p-overlay-mask) {
+  background: rgba(0, 0, 0, 0.92) !important;
+  backdrop-filter: blur(4px);
+}
+
 /* Hide scrollbars on ALL elements within Galleria - comprehensive approach */
 :deep(.p-galleria),
 :deep(.p-galleria *),
