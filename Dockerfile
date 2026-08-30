@@ -11,8 +11,6 @@ WORKDIR /app
 # Re-declare build-time args inside the stage so they're visible to `npm run build`.
 # Vite only inlines env vars prefixed with VITE_ into the client bundle, and they
 # must be present in the process env when `vite build` runs — hence the ENV line.
-ARG VITE_STATS_URL
-ENV VITE_STATS_URL=${VITE_STATS_URL}
 
 # Copy package files
 COPY package*.json ./

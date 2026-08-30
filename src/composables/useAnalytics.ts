@@ -1,7 +1,7 @@
 /**
  * Privacy-friendly, cookieless "engaged read" beacon for article pages.
  *
- * Fires a single hit to the GoatCounter `/count` endpoint when either:
+ * Fires a single `engaged_read` event to Umami when either:
  *   - the reader has stayed ≥ ENGAGEMENT_DWELL_MS on the page, OR
  *   - the reader has scrolled past ENGAGEMENT_SCROLL_PCT of the article,
  * whichever happens first.
@@ -9,12 +9,26 @@
  * Deduped per mount: at most one beacon per navigation. If the reader leaves
  * before the threshold, nothing is sent — that's the "engaged read" metric.
  *
- * Endpoint is configured via the VITE_STATS_URL env var (e.g.
- * https://stats.battistella.ovh/count). If unset (dev), the composable is a
- * no-op. No cookies, no client IDs, no PII.
+ * Umami is loaded from index.html, so there is no endpoint to configure here.
+ * The tracker only exists once its script has run: in dev, or if the script is
+ * blocked, `window.umami` is undefined and the composable is a no-op.
+ *
+ * The plain pageview is already sent by the Umami tracker on every navigation.
+ * This composable adds the *editorial* metric on top: a read only counts once
+ * the reader actually engaged, which a pageview cannot tell you.
+ *
+ * No cookies, no client IDs, no PII.
  */
 
 import { onMounted, onBeforeUnmount } from 'vue'
+
+declare global {
+  interface Window {
+    umami?: {
+      track: (event: string, data?: Record<string, unknown>) => void
+    }
+  }
+}
 
 const ENGAGEMENT_DWELL_MS = 10_000
 const ENGAGEMENT_SCROLL_PCT = 50
@@ -32,39 +46,20 @@ interface EngagedReadOptions {
  */
 type EngagedReadOptionsGetter = () => EngagedReadOptions | null
 
-function getStatsUrl(): string | undefined {
-  const url = import.meta.env.VITE_STATS_URL
-  if (typeof url !== 'string' || url.length === 0) return undefined
-  return url
-}
-
-function sendBeacon(statsUrl: string, path: string, title: string): void {
-  // GoatCounter accepts GET /count?p=<path>&t=<title>&r=<referrer>.
-  // We use navigator.sendBeacon when available (survives tab close),
-  // falling back to fetch with keepalive.
-  const params = new URLSearchParams({
-    p: path,
-    t: title,
-    // GoatCounter tolerates an empty referrer; we only pass document.referrer
-    // when it's same-origin to avoid leaking cross-site referrers.
-    r: isSameOriginReferrer(document.referrer) ? document.referrer : '',
-    // Cache-buster so intermediaries don't dedupe identical GETs.
-    rnd: Math.random().toString(36).slice(2, 10)
-  })
-  const url = `${statsUrl}?${params.toString()}`
+function sendEngagedRead(path: string, title: string): void {
+  // The tracker defines window.umami once stats.js has executed. Absent in dev
+  // and if the script fails to load — analytics must never break the page.
+  const umami = typeof window !== 'undefined' ? window.umami : undefined
+  if (!umami || typeof umami.track !== 'function') return
 
   try {
-    if (typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
-      // sendBeacon uses POST; GoatCounter's /count endpoint accepts POST too.
-      navigator.sendBeacon(url)
-      return
-    }
-  } catch {
-    // fall through to fetch
-  }
-
-  try {
-    void fetch(url, { method: 'GET', keepalive: true, mode: 'no-cors', credentials: 'omit' })
+    umami.track('engaged_read', {
+      path,
+      title,
+      // Only same-origin referrers: we never forward where a reader came from
+      // on another site.
+      referrer: isSameOriginReferrer(document.referrer) ? document.referrer : ''
+    })
   } catch {
     // Analytics must never break the page.
   }
@@ -97,17 +92,11 @@ export function useEngagedReadBeacon(options: EngagedReadOptionsGetter): void {
   const fire = () => {
     if (fired) return
 
-    const statsUrl = getStatsUrl()
-    if (!statsUrl) {
-      fired = true
-      return // no-op in dev / when unconfigured
-    }
-
     const payload = options()
     if (!payload) return // suppress (e.g. 404) — keep waiting in case post loads
 
     fired = true
-    sendBeacon(statsUrl, payload.path, payload.title)
+    sendEngagedRead(payload.path, payload.title)
   }
 
   onMounted(() => {
