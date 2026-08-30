@@ -20,6 +20,12 @@
          l'attribution UTM des campagnes. -->
     <script defer src="https://umami.battistella.ovh/stats.js"
       data-website-id="acb4f274-58c4-4acb-b114-7fc7ac2e1510"></script>
+
+    <!-- Heatmaps. Script distinct du tracker : `stats.js` ne l'embarque pas.
+         `replayEnabled` est OFF côté serveur, donc la charge utile ne contient
+         que des coordonnées de clic et de scroll — aucun DOM, aucun texte. -->
+    <script defer src="https://umami.battistella.ovh/recorder.js"
+      data-website-id="acb4f274-58c4-4acb-b114-7fc7ac2e1510"></script>
   </head>
   <body>
     <div id="app"></div>
