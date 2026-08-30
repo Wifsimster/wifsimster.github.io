@@ -173,7 +173,7 @@ const readingTime = computed(() => {
 
 // Fire a single cookieless "engaged read" beacon once the reader has either
 // dwelled for 10s or scrolled past 50%. Opts-out automatically if the post
-// failed to load (404), if VITE_STATS_URL is unset, or if the reader leaves
+// failed to load (404), if the Umami tracker is absent, or if the reader leaves
 // before the threshold.
 useEngagedReadBeacon(() => {
   if (!post.value) return null

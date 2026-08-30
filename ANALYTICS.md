@@ -1,141 +1,97 @@
 # Analytics setup
 
-This blog uses a self-hosted [GoatCounter](https://www.goatcounter.com/) instance
-to measure **engaged reads per article** in a privacy-friendly, cookieless way.
+This blog uses the self-hosted [Umami](https://umami.is/) instance shared by every
+`battistella.ovh` service to measure **engaged reads per article** in a
+privacy-friendly, cookieless way.
 
 - **Zero cookies, zero client-side IDs** — nothing is stored in the browser.
 - **Zero third-party services** — all data stays on `battistella.ovh`.
 - **CNIL-exemption-eligible** audience measurement; no consent banner required.
-- **Engaged reads only** — a hit is sent only after the reader has dwelled
-  for 10 seconds **or** scrolled past 50% of the article, whichever happens first.
+- **Engaged reads only** — the `engaged_read` event is sent only after the reader
+  has dwelled for 10 seconds **or** scrolled past 50% of the article, whichever
+  happens first. This is the editorial metric; the plain pageview is sent
+  separately by the tracker on every navigation.
 
 ## Architecture
 
 ```
-┌─────────────────────┐          beacon (GET /count)         ┌────────────────┐
-│  blog.battistella   │ ─────────────────────────────────▶  │ stats.batti… │
-│  (nginx + SPA)      │                                      │ (goatcounter)│
-└─────────────────────┘                                      └──────┬───────┘
-                                                                    │
-                                                            SQLite file
-                                                    ./goatcounter-data/db.sqlite3
+┌─────────────────────┐   stats.js + engaged_read event   ┌──────────────────────┐
+│  blog.battistella   │ ────────────────────────────────▶ │ umami.battistella    │
+│  (nginx + SPA)      │                                    │ (Umami + Postgres)  │
+└─────────────────────┘                                    └──────────────────────┘
 ```
 
-Both services run side-by-side in the same `docker-compose.yml` under the shared
-`lan` Traefik network. GoatCounter uses SQLite, so **no external database
-service is needed**.
+The tracker is loaded from `index.html` — there is **no build-time env var** to
+configure (the former `VITE_STATS_URL` is gone). Website id:
+`acb4f274-58c4-4acb-b114-7fc7ac2e1510`.
 
-## One-time server setup
+The CSP in `nginx.conf` must allow `umami.battistella.ovh` on **two** directives:
+`script-src` to load `stats.js` and `connect-src` to post the measurement.
+Opening only one gives a silent failure — the script loads and sends nothing.
 
-On the host where `docker compose` runs (i.e. `/opt/blog` per `deploy/deploy.sh`):
+> **Historique GoatCounter.** Le blog a utilisé une instance GoatCounter
+> auto-hébergée sur `stats.battistella.ovh` jusqu'au 2026-08-30. Le conteneur et
+> sa base SQLite (~1,9 Mo) sont **conservés** : c'est là que vit l'historique
+> d'avant la migration. Rien n'y est plus écrit.
 
-### 1. DNS
+## Setup
 
-Add an `A` record (or `AAAA`) for `stats.battistella.ovh` pointing to the same
-server IP as `blog.battistella.ovh`.
+Nothing to provision per-deploy: Umami runs at `umami.battistella.ovh` (see
+`/opt/docker/umami`) and the site `blog.battistella.ovh` already exists in it.
 
-### 2. Sync `compose.yml`
+The only things this repo owns:
 
-Pull the latest `compose.yml` from the repo into `/opt/blog`:
+1. the tracker tag in `index.html` (website id above);
+2. `umami.battistella.ovh` on `script-src` **and** `connect-src` in `nginx.conf`;
+3. the `engaged_read` event in `src/composables/useAnalytics.ts`.
 
-```bash
-cd /opt/blog
-curl -fsSL https://raw.githubusercontent.com/Wifsimster/personal.blog/master/compose.yml -o compose.yml
-```
-
-(or `scp`/`git pull` if you version-control this directory)
-
-### 3. Create the data volume and start GoatCounter
-
-```bash
-mkdir -p /opt/blog/goatcounter-data
-chown -R 1000:1000 /opt/blog/goatcounter-data
-docker compose up -d goatcounter
-```
-
-Wait ~10 seconds for Traefik to issue the Let's Encrypt certificate for
-`stats.battistella.ovh`, then check it's reachable:
-
-```bash
-curl -sI https://stats.battistella.ovh | head -1
-# HTTP/2 200
-```
-
-### 4. Create the admin user and site
-
-GoatCounter's first-run setup is done via its CLI inside the container:
-
-```bash
-# Create the site (code = subdomain prefix inside GoatCounter, use "blog")
-docker compose exec goatcounter goatcounter db create site \
-  -vhost stats.battistella.ovh \
-  -user.email battistella@proton.me \
-  -user.password '<choose-a-password>'
-```
-
-Then log in at `https://stats.battistella.ovh` with that email/password.
-
-### 5. Configure the blog to send beacons
-
-Set the `VITE_STATS_URL` environment variable at **build time** in your GitHub
-Actions workflow (or wherever the Docker image is built):
-
-```yaml
-# .github/workflows/release.yml
-env:
-  VITE_STATS_URL: https://stats.battistella.ovh/count
-```
-
-Rebuild and redeploy the blog image:
-
-```bash
-docker compose pull blog
-docker compose up -d blog
-```
-
-### 6. Verify
+### Verify
 
 1. Open an article on `blog.battistella.ovh`.
 2. Stay 10+ seconds or scroll past the middle of the article.
-3. Check the GoatCounter dashboard — the article path should appear within
-   ~1 minute.
+3. In the Umami dashboard for `blog.battistella.ovh`, the pageview appears
+   immediately and `engaged_read` shows up under **Events** within ~1 minute.
+
+If pageviews appear but `engaged_read` never does, check the browser console for
+a CSP violation on `connect-src` — that is the failure mode this setup is most
+prone to.
 
 ## What gets collected
 
-For each engaged read, a single HTTP request is sent to GoatCounter containing
-only:
+The tracker sends a pageview per navigation. On top of that, each engaged read
+sends one `engaged_read` event carrying only:
 
 | Field | Value | Notes |
 |---|---|---|
-| `p` | `/posts/slug` or `/en/posts/slug` | Article path, FR/EN kept separate |
-| `t` | Article title | For the dashboard label |
-| `r` | Same-origin referrer, else empty | Cross-site referrers are stripped |
+| `path` | `/posts/slug` or `/en/posts/slug` | Article path, FR/EN kept separate |
+| `title` | Article title | For the dashboard label |
+| `referrer` | Same-origin referrer, else empty | Cross-site referrers are stripped |
 
-GoatCounter additionally truncates the IP address and rotates a salt daily to
-derive the visitor hash, per its [privacy design](https://www.goatcounter.com/help/gdpr).
+Umami is cookieless: it derives a daily-rotating visitor hash server-side and
+never stores a raw IP.
 
-**Never collected:** cookies, `localStorage`, `User-Agent` fingerprint, cross-site
-referrer with query params, persistent visitor IDs.
+**Never collected:** cookies, `localStorage`, `User-Agent` fingerprint,
+cross-site referrer with query params, persistent visitor IDs.
 
 ## Operational notes
 
-- **Backups.** The only state is `./goatcounter-data/db.sqlite3`. Back it up with
-  your usual backup tool; no dump step needed since SQLite files are atomic.
-- **Upgrades.** `docker compose pull goatcounter && docker compose up -d goatcounter`.
-  GoatCounter handles its own schema migrations on start.
-- **Log rotation.** GoatCounter writes minimal logs to stdout; rely on Docker's
-  default log driver.
-- **Uninstall.** `docker compose rm -sf goatcounter` and delete the
-  `goatcounter-data` directory. The blog continues to work; the beacon silently
-  no-ops if the endpoint is unreachable.
+- **State.** Umami stores everything in its own Postgres (`/opt/docker/umami`);
+  this repo owns no analytics state at all.
+- **Upgrades / backups.** Handled with the Umami stack, not here.
+- **The old GoatCounter instance.** Its container and SQLite database (~1,9 Mo of
+  pre-migration history) are deliberately left running on
+  `stats.battistella.ovh`. Nothing writes to it any more. Retire it only after
+  exporting whatever history you still want — deleting the volume is
+  irreversible.
 
 ## Local development
 
-In dev mode, `VITE_STATS_URL` is unset, so the composable is a **no-op**.
-No beacons are sent, no network calls happen.
+`window.umami` only exists once `stats.js` has loaded. In dev the tracker is
+still requested from `umami.battistella.ovh`, so:
 
-If you want to test locally against a dev GoatCounter:
+- if you are online, events land in the **production** site — prefer not to.
+- if you are offline or the script is blocked, `useEngagedReadBeacon` is a
+  **no-op**: no network call, no error.
 
-```bash
-VITE_STATS_URL=https://stats.battistella.ovh/count npm run dev
-```
+To keep dev traffic out of the dashboard, comment out the tracker tag in
+`index.html`, or create a separate Umami site and swap the `data-website-id`.

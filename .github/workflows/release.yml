@@ -135,7 +135,6 @@ jobs:
             VERSION=${{ steps.version.outputs.new_version }}
             BUILD_DATE=${{ steps.version_parts.outputs.build_date }}
             VCS_REF=${{ github.sha }}
-            VITE_STATS_URL=https://stats.battistella.ovh/count
           cache-from: type=gha
           cache-to: type=gha,mode=max,ignore-error=true
           platforms: linux/amd64
